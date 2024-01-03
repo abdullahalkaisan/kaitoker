@@ -1,4 +1,4 @@
-import { Avatar, Box, IconButton, Stack } from "@mui/material";
+import { Avatar, Box, IconButton } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 // import { Link } from 'react-router-dom';
@@ -7,14 +7,15 @@ import { UilSearch, UilBars } from "@iconscout/react-unicons";
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
 
-export default function Navbar() {
+export default function TopBar() {
   return (
     <Box bgcolor={"background.default"} color={"text.primary"}>
-      <Stack
+      <Box
         sx={{ p: 0 }}
-        direction={"row"}
         justifyContent="space-between"
         alignItems="center"
+        display={"flex"}
+        flexDirection={"row"}
       >
         <IconButton sx={{ mx: 1, display: { lg: "none", xs: "flex" } }}>
           <UilBars />
@@ -23,7 +24,7 @@ export default function Navbar() {
         <Logo />
         <NavMenu />
 
-        <Stack>
+        <Box display={"flex"}>
           <Box>
             {/* , bgcolor:"#F5FAFD"  */}
 
@@ -43,10 +44,14 @@ export default function Navbar() {
                 sx={{ width: 32, height: 32 }}
               />
             </IconButton>
+
+
+
+
             {/* </Link> */}
           </Box>
-        </Stack>
-      </Stack>
+        </Box>
+      </Box>
     </Box>
   );
 }
