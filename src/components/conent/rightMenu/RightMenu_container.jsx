@@ -2,7 +2,6 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Badge} from '@mui/material';
 import PeopleList from './peopleList';
@@ -23,6 +22,11 @@ export function CustomTabPanel(props) {
 
   return (
     <div
+      style={{
+        // width:"100%", 
+        flexGrow:1,
+        height:"100%"
+      }}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -30,8 +34,16 @@ export function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box flex={1} sx={{ p: 3, display:"flex", flexDirection:"column", overflowY:"auto"}}>
-          <Typography>{children}</Typography>
+        <Box   
+        sx={{ 
+          // p: 3, 
+          display:"flex", 
+          flexDirection:"column", 
+          overflowY:"auto",
+          width:"100%", 
+          height:"100%"
+          }}>
+          {children}
         </Box>
       )}
     </div>
@@ -107,41 +119,50 @@ export default function RightMenu_container() {
       </Box>
 
 
+        <Box height={"100%"} width={"100%"} display={"flex"} overflow={"auto"}>
+            <CustomTabPanel value={value} index={0}>
+              <Box 
+                display={"flex"} 
+                height={"100%"} 
+                // width={"100%"}
+                flexDirection={"column"}
+                overflow={"auto"} 
+                sx={{flexGrow:1}}
+                p={3}
+                  
+              >
+
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+              </Box>
+            </CustomTabPanel>
+
+            <CustomTabPanel value={value} index={1}>
+              Item Two
+            </CustomTabPanel>
 
 
-      <Box 
-        display={"flex"}
-        height={"100%"}
-        width={"100%"}
-        justifyContent={"center"}
-        overflow={"auto"}
-      >
-          <CustomTabPanel value={value} index={0}>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-                <PeopleList/>
-          </CustomTabPanel>
-
-          <CustomTabPanel value={value} index={1}>
-            Item Two
-          </CustomTabPanel>
+            <CustomTabPanel value={value} index={2}>
+              Item Three
+            </CustomTabPanel>
+        </Box>
 
 
-          <CustomTabPanel value={value} index={2}>
-            Item Three
-          </CustomTabPanel>
-      </Box>
 
 
 

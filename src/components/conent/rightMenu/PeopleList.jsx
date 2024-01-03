@@ -13,6 +13,7 @@ export default function PeopleList() {
     <Box
       display={"flex"}
       width={"100%"}
+      height={"max-content"}
       // flexDirection={"row"}
       justifyContent={"space-between"}
       alignItems={"center"}

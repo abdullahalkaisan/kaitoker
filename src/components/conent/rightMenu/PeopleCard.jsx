@@ -1,10 +1,10 @@
-import { Avatar, CardActionArea, Stack, Typography } from '@mui/material'
+import { Avatar, Box, CardActionArea, Typography } from '@mui/material'
 import VerifiedIcon from '@mui/icons-material/Verified';
 
 
 export default function PeopleCard() {
   return (
-    <Stack flexDirection={"row"} alignItems={"center"}>
+    <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
 
     <CardActionArea sx={{height:"auto", width:"auto", borderRadius:"999px"}}>
         <Avatar
@@ -15,7 +15,7 @@ export default function PeopleCard() {
     </CardActionArea>
 
 
-    <Stack flexDirection={"column"} mx={1}>
+    <Box display={"flex"} flexDirection={"column"} mx={1}>
       <Typography
         display={"flex"}
         alignItems={"center"}
@@ -31,7 +31,7 @@ export default function PeopleCard() {
       <Typography mt={-0.5} color={"#777"} variant="body2" component="h6">
         CEO at Kaitoker
       </Typography>
-    </Stack>
-  </Stack>
+    </Box>
+  </Box>
   )
 }
