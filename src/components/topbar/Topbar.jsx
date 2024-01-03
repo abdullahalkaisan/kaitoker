@@ -1,7 +1,7 @@
 import { Avatar, Box, IconButton } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { UilSearch, UilBars } from "@iconscout/react-unicons";
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
@@ -36,7 +36,7 @@ export default function TopBar() {
 
             <Notification_section />
 
-            {/* <Link to="/profile"> */}
+            <Link to="/profile">
             <IconButton sx={{ m: "0 10px" }}>
               <Avatar
                 alt="Remy Sharp"
@@ -48,7 +48,7 @@ export default function TopBar() {
 
 
 
-            {/* </Link> */}
+            </Link>
           </Box>
         </Box>
       </Box>

@@ -8,6 +8,7 @@ import {
   UilMoon,
   UilSun,
 } from '@iconscout/react-unicons'
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 // import { useMediaQuery } from '@mui/material'
 
 
@@ -48,7 +49,7 @@ export default function MainWithTheme() {
             <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App darkIcon={icon} darkModeToggle={toggleTheme} />} />
-                {/* <Route path="/profile" element={<ProfilePage/>} /> */}
+                <Route path="/profile" element={<ProfilePage/>} />
             </Routes>
             </BrowserRouter>
         </ThemeProvider>

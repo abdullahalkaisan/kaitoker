@@ -1,0 +1,241 @@
+import styled from '@emotion/styled';
+import { Avatar, Box, Stack, Typography, CardActionArea, Badge, Button, IconButton, AvatarGroup, Tooltip } from '@mui/material'
+import VerifiedIcon from '@mui/icons-material/Verified';
+import TranslateIcon from '@mui/icons-material/Translate';
+import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
+import StarIcon from '@mui/icons-material/Star';
+
+import { 
+  UilCommentLines,
+  // UilRssAlt,
+  UilLocationPoint,
+  UilPlusCircle,
+
+ } from '@iconscout/react-unicons'
+
+
+import { useTheme } from '@emotion/react';
+import AudioSlider_custom from '../../components/callCard/AudioSlider_custom';
+import AudioPlay_button from '../../components/callCard/AudioPlay_button';
+import ChipsCustom from '../../components/callCard/ChipsCustom';
+
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    width:"10px",
+    height:"10px",
+    outline: `4px solid ${theme.palette.background.paper}`,
+    padding: '0 0px',
+  },
+}));
+
+
+
+
+export default function SideControlPic() {
+  const theme = useTheme();
+
+  const useMyTheme = theme.palette.mode;
+
+  return (
+    <Box>
+
+      <Stack bgcolor={"background.default"} color={"text.primary"} width={"100%"} direction={"column"} alignItems={"center"} justifyContent={"center"}>
+      
+      <StyledBadge
+          color="primary"
+          variant="dot"
+          badgeContent={1}
+          overlap="circular"
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+            }}
+          >
+
+        <CardActionArea sx={{width:"auto", borderRadius:999}}>
+          
+          
+            <Avatar
+                  alt="Remy Sharp"
+                  src="https://mui.com/static/images/avatar/1.jpg"
+                  sx={{ width: 120, height: 120 }}
+              />
+          
+
+
+        </CardActionArea>
+        </StyledBadge>
+ 
+
+        <Box my={2}>
+          <Typography display={"flex"} alignItems={"center"} variant="h1" fontWeight={"bold"} fontSize={"24px"} bgcolor={"background.default"} color={"text.primary"}>
+            Abdullah Al Kaisan
+            <VerifiedIcon color='primary' fontSize='small' sx={{mx:0.5}}/>
+          </Typography>
+          <Typography variant="" fontSize={"16px"}
+            sx={{
+              color: `${useMyTheme==="dark"? "#999": "#777"}`,
+            }}
+
+          >
+            Web developer
+          </Typography>
+
+
+
+          <Typography display={"none"} sx={{color:"#999"}} mt={1} variant="subtitle1"   p={0} gutterBottom>
+            <Stack flexWrap={"wrap"} flexDirection={"row"} justifyContent={"center"} >
+            <UilLocationPoint/>
+            <Box>
+              {"Bangladesh"}
+            </Box>
+
+            <Tooltip title={"Bangladesh"} placement="top">
+              <Box sx={{display:"flex", alignItems:"center", px:1}}>
+              {/* , border:"1px solid #ebebeb"  */}
+                <img style={{borderRadius:3}} src={`https://flagcdn.com/w20/bd.png`} />
+              </Box>
+            </Tooltip>
+
+            </Stack>
+
+          </Typography>
+
+
+
+        </Box>
+
+
+        <Box width={"70%"} mx={3} mb={2}>
+          {/* <Slider
+            size="small"
+            defaultValue={0}
+            aria-label="Small"
+            valueLabelDisplay="auto"
+          /> */}
+
+          <AudioSlider_custom/>
+
+
+        </Box>
+
+
+
+        <Stack direction={"row"} alignItems={"center"} spacing={1}>
+
+            <IconButton color='primary'>
+              {/* <UilRssAlt/> */}
+              <UilPlusCircle/>
+
+            </IconButton>
+
+            {/* <IconButton color='primary'>
+              <UilPlay/>
+            </IconButton> */}
+
+            <AudioPlay_button/>
+
+            <IconButton color='primary'>
+              <UilCommentLines/>
+            </IconButton>
+            <Box>
+              <Button size='small' variant='contained' sx={{borderRadius:999, textTransform:"none"}}>$2.24/hr</Button>
+            </Box>
+
+        </Stack>
+
+
+
+
+
+
+
+
+
+
+        <Stack  bgcolor={"background.default"} color={"text.primary"} fontSize={"medium"} mb={0.5} fontWeight={"boldd"} sx={{color:"#777"}} flexDirection={"row"} justifyContent={"center"} pl={0} pt={2} pb={1} alignItems={"center"} >
+          <Box sx={{display:"flex", alignItems:"center", pr:1}}> 
+            <RssFeedRoundedIcon sx={{fontSize:"medium"}}/> 
+            {254}
+          </Box>
+          <Box sx={{display:"flex", alignItems:"center", pr:1}}>
+              <StarIcon sx={{fontSize:"medium", color:"#25c600"}} />
+            <Box sx={{fontWeight:"bold", pr:0.5, color:"#25C600"}}>
+              78%
+            </Box>
+            (123.3K)
+            </Box>
+
+            <Box sx={{display:"flex", alignItems:"center", pr:1}}>
+              <TranslateIcon sx={{fontSize:"medium"}}/>
+              English
+            </Box>
+
+        </Stack>
+
+
+
+
+
+
+
+
+
+        <Typography my={2} mx={4} variant="body1" color="#666">
+          Hey My name is Kaisan Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, magni? Dolorem, aperiam neque pariatur dicta iure facilis aliquid odit ea.
+        </Typography>
+
+
+
+
+            <Stack direction={"row"} my={2} alignItems={"center"}>
+              <AvatarGroup 
+                size="small"
+                total={31}
+                renderSurplus={(surplus) => <span>+{surplus.toString()[0]}k</span>}
+                
+
+
+                >
+                <Avatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/2.jpg" />
+                <Avatar alt="Travis Howard" src="https://mui.com/static/images/avatar/3.jpg" />
+                <Avatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+                <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
+              
+              </AvatarGroup>
+
+              <Box>
+                <Button color='error' size='' variant='contained' sx={{borderRadius:999, textTransform:"none", mx:1}}>Get 20% off</Button>
+              </Box>
+  
+            </Stack>
+
+            <Stack display={""} bgcolor={"background.default"} color={"text.primary"} direction="row" justifyContent={"center"} flexWrap={"wrap"} px={2}>
+            
+              <ChipsCustom label={"Full-stack Web developer (MERN)"}/>
+              <ChipsCustom label={"SEO"}/>
+              <ChipsCustom label={"Photoshop"}/>
+              <ChipsCustom label={"UX UI design"}/>
+              <ChipsCustom label={"English"}/>
+
+          </Stack>
+
+      </Stack>
+
+
+
+
+    </Box>
+  )
+}

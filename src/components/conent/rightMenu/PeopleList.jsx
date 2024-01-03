@@ -1,4 +1,4 @@
-import { Box, IconButton, Stack } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 
 import { 
     UilVideo,
@@ -10,18 +10,16 @@ import PeopleCard from "./PeopleCard";
 
 export default function PeopleList() {
   return (
-    <Stack
-      flexDirection={"row"}
+    <Box
+      display={"flex"}
+      width={"100%"}
+      // flexDirection={"row"}
       justifyContent={"space-between"}
       alignItems={"center"}
       mb={2}
     >
 
-
-
       <PeopleCard/>
-
-
 
 
       <Box>
@@ -34,6 +32,6 @@ export default function PeopleList() {
           <UilEllipsisV />
         </IconButton>
       </Box>
-    </Stack>
+    </Box>
   );
 }

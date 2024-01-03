@@ -112,6 +112,8 @@ export default function RightMenu_container() {
       <Box 
         display={"flex"}
         height={"100%"}
+        width={"100%"}
+        justifyContent={"center"}
         overflow={"auto"}
       >
           <CustomTabPanel value={value} index={0}>
