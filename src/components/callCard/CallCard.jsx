@@ -126,9 +126,9 @@ export default function CallCard(props) {
             {/* <Link to={"./profile"}> */}
               <IconButton aria-label="delete" size="small">
                 <StyledBadge
-                badgeContent={1}
-                color="info"
-                variant="dot"   
+                  color='info'
+                  badgeContent={1}
+                  variant="dot"   
                 anchorOrigin={{
                   vertical: 'bottom',
                   horizontal: 'right',
@@ -251,7 +251,7 @@ export default function CallCard(props) {
             px={2}
             overflow={"auto"}
             sx={{
-              maxHeight:{md:"80px", xs:"auto"},
+              maxHeight:{md:"80px", xs:"80px"},
               minHeight:{md:"80px", xs:"auto"},
             }}
           >

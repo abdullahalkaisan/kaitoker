@@ -51,15 +51,15 @@ export default function LeftMenu_container(props) {
 
 
 
-      <IconButton sx={{mt:1}}>
+      <IconButton sx={{m:1}}>
         <UilSlidersVAlt/>
       </IconButton>
 
-      <IconButton >
+      <IconButton sx={{m:1}}>
         <UilAnalysis/>
       </IconButton>
 
-      <IconButton onClick={handleClickOpen} >
+      <IconButton sx={{m:1}} onClick={handleClickOpen} >
         <UilMobileAndroid/>
       </IconButton>
 
@@ -150,19 +150,19 @@ export default function LeftMenu_container(props) {
 
 
 
-      <IconButton >
+      <IconButton sx={{m:1}}>
         <UilQuestionCircle/>
       </IconButton>
 
 
 
 
-      <IconButton >
+      <IconButton sx={{m:1}}>
         <UilArrowCircleUp/>
       </IconButton>
 
 
-      <Tooltip title="Theme" placement="right"  >
+      <Tooltip sx={{m:1}} title="Theme" placement="right"  >
           <IconButton onClick={darkModeToggle}>
               {darkIcon}
           </IconButton>
@@ -171,7 +171,7 @@ export default function LeftMenu_container(props) {
 
 
 
-        <Tooltip title="Setting" placement="right"  >
+        <Tooltip sx={{m:1}} title="Setting" placement="right"  >
           <IconButton >
             <UilSetting/>
           </IconButton>
@@ -180,7 +180,7 @@ export default function LeftMenu_container(props) {
 
 
 
-      <IconButton >
+      <IconButton sx={{m:1}} >
         <UilSignout/>
       </IconButton>
       </Box>

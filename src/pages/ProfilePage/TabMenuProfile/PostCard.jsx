@@ -97,7 +97,7 @@ export default function PostCard(props) {
 
       <CardContent >
         <Typography variant="p" color="text.default">
-          Hello everyone!
+            {`Hello everyone! it's been a long I haven't post anything`}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

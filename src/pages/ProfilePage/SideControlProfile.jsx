@@ -44,7 +44,7 @@ export default function SideControlPic() {
       <Stack bgcolor={"background.default"} color={"text.primary"} width={"100%"} direction={"column"} alignItems={"center"} justifyContent={"center"}>
       
       <StyledBadge
-          color="primary"
+          color='info'
           variant="dot"
           badgeContent={1}
           overlap="circular"
@@ -59,7 +59,7 @@ export default function SideControlPic() {
           
             <Avatar
                   alt="Remy Sharp"
-                  src="https://mui.com/static/images/avatar/1.jpg"
+                  src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
                   sx={{ width: 120, height: 120 }}
               />
           
