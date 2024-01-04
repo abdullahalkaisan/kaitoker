@@ -6,7 +6,7 @@ export default function PostCardWrapper() {
   return (
     <>
 
-      <Box display={"flex"} flexWrap={"wrap"} flexDirection={"column"}>
+      <Box p={3} display={"flex"} flexWrap={"wrap"} flexDirection={"column"}>
           <PostCard
             name="Moinuddin chisti"
             profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { Badge} from '@mui/material';
+import { Badge, TextField} from '@mui/material';
 import PeopleList from './peopleList';
 
 import { 
@@ -121,6 +121,17 @@ export default function RightMenu_container() {
 
         <Box height={"100%"} width={"100%"} display={"flex"} overflow={"auto"}>
             <CustomTabPanel value={value} index={0}>
+
+            <TextField
+              sx={{m:3, mb:2}}
+              id="filled-search"
+              label="Search"
+              type="search"
+              size='small'
+              variant="outlined"
+            />
+
+
               <Box 
                 display={"flex"} 
                 height={"100%"} 
