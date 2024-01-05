@@ -40,7 +40,7 @@ export default function TopBar() {
             <IconButton sx={{ m: "0 10px" }}>
               <Avatar
                 alt="Remy Sharp"
-                src="https://lh3.googleusercontent.com/a/AAcHTtf9QKmULxbKZfhBo3i_oCrpURXUixIwJGHkn9UjIfk8QC0"
+                src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
                 sx={{ width: 32, height: 32 }}
               />
             </IconButton>

@@ -85,6 +85,24 @@ export default function SideControlPic() {
 
 
 
+
+          <Box sx={{cursor:"pointer", width:"max-content"}} my={1} border={"1px solid #f1f1f1"} padding={1} borderRadius={999} display={"flex"} flexDirection={"row"} alignItems={"center"}>
+            <Avatar
+              alt="Remy Sharp"
+              src="https://mui.com/static/images/avatar/5.jpg"
+              sx={{ width: 24, height: 24 }}
+            />
+
+            <Box display={"flex"} flexDirection={"column"} mx={1}>
+              <Typography color={"green"} fontWeight={""} variant="body2" component="h6">
+                $50K
+              </Typography>
+            </Box>
+          </Box>
+
+
+
+
           <Typography display={"none"} sx={{color:"#999"}} mt={1} variant="subtitle1"   p={0} gutterBottom>
             <Stack flexWrap={"wrap"} flexDirection={"row"} justifyContent={"center"} >
             <UilLocationPoint/>
@@ -120,6 +138,13 @@ export default function SideControlPic() {
 
 
         </Box>
+
+
+
+
+
+
+
 
 
 
@@ -177,6 +202,18 @@ export default function SideControlPic() {
 
 
 
+        <Stack display={""} bgcolor={"background.default"} color={"text.primary"} direction="row" justifyContent={"center"} flexWrap={"wrap"} px={2}>
+            
+            <ChipsCustom label={"Full-stack Web developer (MERN)"}/>
+            <ChipsCustom label={"SEO"}/>
+            <ChipsCustom label={"Photoshop"}/>
+            <ChipsCustom label={"UX UI design"}/>
+            <ChipsCustom label={"English"}/>
+
+          </Stack>
+
+
+
 
 
 
@@ -221,15 +258,7 @@ export default function SideControlPic() {
   
             </Stack>
 
-            <Stack display={""} bgcolor={"background.default"} color={"text.primary"} direction="row" justifyContent={"center"} flexWrap={"wrap"} px={2}>
-            
-              <ChipsCustom label={"Full-stack Web developer (MERN)"}/>
-              <ChipsCustom label={"SEO"}/>
-              <ChipsCustom label={"Photoshop"}/>
-              <ChipsCustom label={"UX UI design"}/>
-              <ChipsCustom label={"English"}/>
 
-          </Stack>
 
       </Stack>
 

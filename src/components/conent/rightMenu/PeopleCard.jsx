@@ -1,13 +1,13 @@
 import { Avatar, Badge, Box, CardActionArea, Typography } from '@mui/material'
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
 
 
 
 export default function PeopleCard() {
   
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {

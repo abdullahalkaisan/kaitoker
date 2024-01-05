@@ -40,7 +40,7 @@ import styled from "@emotion/styled";
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 // import CableIcon from '@mui/icons-material/Cable';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 // import CallCardDynamic from "./CallCardDynamic";
 import AudioPlay_button from "./AudioPlay_button";
@@ -123,7 +123,7 @@ export default function CallCard(props) {
 
           <Box  bgcolor={"background.default"}  sx={{display:'flex', justifyContent:"center", m:1}}>
             
-            {/* <Link to={"./profile"}> */}
+            <Link to={"./profile"}>
               <IconButton aria-label="delete" size="small">
                 <StyledBadge
                   color='info'
@@ -141,7 +141,7 @@ export default function CallCard(props) {
                 </StyledBadge>
 
               </IconButton>
-            {/* </Link> */}
+            </Link>
           </Box>
 
 
@@ -149,12 +149,12 @@ export default function CallCard(props) {
 
         <Box  bgcolor={"background.default"} color={"text.primary"} sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", width:"100%"}}>
           
-          {/* <Link style={{
+          <Link style={{
             textDecoration:"none", 
             color:`${theme.palette.mode === "light"? "#333" : "#fff"}`, 
             '&:visited': { color: `${theme.palette.mode === "light"? "#333" : "#fff"}`,}
 
-          }} to={"/profile"}> */}
+          }} to={"/profile"}>
 
 
             <Typography sx={{ display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", width:"max-content", textDecoration:"none",   "&:hover":{textDecoration:"underline"}}} textAlign={"center"} fontWeight={"bold"} variant="h6" gutterBottom>
@@ -167,7 +167,7 @@ export default function CallCard(props) {
               
               
             </Typography>
-          {/* </Link> */}
+          </Link>
 
           <Typography sx={{color:"#777"}} textAlign={"center"} variant="subtitle1" mt={-2}  p={0} gutterBottom>
             {user_profetion}

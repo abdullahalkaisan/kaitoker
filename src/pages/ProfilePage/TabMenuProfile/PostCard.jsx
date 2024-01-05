@@ -1,13 +1,13 @@
-import { useState } from 'react'
+
 // import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-import Avatar from '@mui/material/Avatar';
-import { Badge, Box, Card,  CardMedia } from '@mui/material';
+
+import {  Box, Card,  } from '@mui/material';
 
 // import InsertCommentOutlinedIcon from '@mui/icons-material/InsertCommentOutlined';
 // import InsertCommentIcon from '@mui/icons-material/InsertComment';
 // import DeleteIcon from '@mui/icons-material/Delete';
-import styled from "@emotion/styled";
+
 import PropTypes from 'prop-types';
 
 
@@ -15,33 +15,17 @@ import PropTypes from 'prop-types';
 // import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+
+
 import PeopleCard from '../../../components/conent/rightMenu/PeopleCard';
 import ChipsCustom from '../../../components/callCard/ChipsCustom';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
 
 
-
-
-
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    outline: `3px solid ${theme.palette.background.paper}`,
-    right:4,
-    bottom:5,
-    // top:15,
-    // right:7,
-    // height:10,
-    // width:10,
-    borderRadius:9999
-  },
-}));
 
 
 
@@ -71,7 +55,7 @@ export default function PostCard(props) {
       </IconButton>
     </Box>
 
-    <Box m={1} mb={0}>
+    <Box display={"none"} m={1} mb={0}>
       <ChipsCustom label="Javascript"/>
     </Box>
 
@@ -97,15 +81,19 @@ export default function PostCard(props) {
 
       <CardContent >
         <Typography variant="p" color="text.default">
-            {`Hello everyone! it's been a long I haven't post anything`}
+            {`
+              Hello everyone! it's been a long I haven't post anything
+              Hello everyone! it's been a long I haven't post anything
+              Hello everyone! it's been a long I haven't post anything
+            `}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <FavoriteBorderOutlinedIcon />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+          <ThumbDownAltOutlinedIcon />
         </IconButton>
       </CardActions>
     </Card>

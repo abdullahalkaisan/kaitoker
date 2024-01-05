@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { Badge, TextField} from '@mui/material';
+import { Avatar, Badge, CardActionArea, IconButton, TextField, Typography} from '@mui/material';
 import PeopleList from './peopleList';
 
 import { 
@@ -11,11 +11,13 @@ import {
   UilCommentLines,
   UilUsdCircle,
   UilHistory, 
+  UilMessage
 } from '@iconscout/react-unicons'
-
-
-
-
+import MessageList from './MessageList';
+import PeopleCard from './PeopleCard';
+import Avatar_small from '../../Avatar_Small';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 export function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -164,7 +166,298 @@ export default function RightMenu_container() {
             </CustomTabPanel>
 
             <CustomTabPanel value={value} index={1}>
-              Item Two
+              <Box
+                display={"flex"} 
+                height={"100%"} 
+                // width={"100%"}
+                flexDirection={"column"}
+                justifyContent={"space-between"}
+                overflow={"auto"} 
+                sx={{flexGrow:1}}
+                py={3}
+              >
+
+
+                <Box px={3} display={"flex"} justifyContent={"space-between"} alignItems={"center"} mb={2}>
+                  <IconButton>
+                    <ArrowBackIcon/>
+                  </IconButton>
+                  <PeopleCard/>
+                  <IconButton>
+                    <MoreHorizIcon/>
+                  </IconButton>
+                </Box>
+
+
+
+
+{/* justifyContent:"flex-end",  */}
+                <Box px={2} sx={{flexGrow:1,  flexDirection:"column", height:"100%", display:"flex", overflowY:"auto"}}>
+                  
+
+
+
+
+
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quibusdam asperiores, soluta aliquam at explicabo ad perspiciatis veritatis voluptatum tenetur!
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+                  <Box display={"flex"} justifyContent={"flex-end"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      backgroundColor:"#333000",
+                      color:"#fff"
+
+                    }} 
+
+                    >
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quibusdam asperiores, soluta aliquam at explicabo ad perspiciatis veritatis voluptatum tenetur!
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+                  <Box display={"flex"} justifyContent={"flex-end"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      backgroundColor:"#333000",
+                      color:"#fff"
+
+                    }} 
+
+                    >
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quibusdam asperiores, soluta aliquam at explicabo ad perspiciatis veritatis voluptatum tenetur!
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+                  <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      bgColor:"red"
+
+                    }} bgcolor={"#f1f1f1"}>
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+                  <Box display={"flex"} justifyContent={"flex-end"}  width={"100%"} my={0.5}>
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      backgroundColor:"#333000",
+                      color:"#fff"
+
+                    }} 
+
+                    >
+                      {/* <Avatar_small/> */}
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor.
+                      </Typography>
+
+                    </Box>
+                  </Box>
+
+
+
+
+
+
+
+
+                </Box>
+                
+                <Box display={"flex"} mt={2} alignItems={"center"} justifyContent={"space-between"}>
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Type a message"
+                    multiline
+                    maxRows={4}
+                    sx={{flexGrow:1}}
+                  />
+                  <Box ml={1}>
+                    <IconButton aria-label="delete">
+                      <UilMessage/>
+                    </IconButton>
+                  </Box>
+
+                </Box>
+
+
+                  {/* <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/>
+                  <PeopleList/> */}
+              </Box>
+              {/* <MessageList/> */}
+              
+ 
+              
+
+
+
+              
             </CustomTabPanel>
 
 
