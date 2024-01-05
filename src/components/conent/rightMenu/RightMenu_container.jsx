@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { Avatar, Badge, CardActionArea, IconButton, TextField, Typography} from '@mui/material';
+import { Badge, IconButton, TextField, Typography} from '@mui/material';
 import PeopleList from './peopleList';
 
 import { 
@@ -11,13 +11,11 @@ import {
   UilCommentLines,
   UilUsdCircle,
   UilHistory, 
-  UilMessage
 } from '@iconscout/react-unicons'
-import MessageList from './MessageList';
 import PeopleCard from './PeopleCard';
-import Avatar_small from '../../Avatar_Small';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import TypeMessageBox from '../../TypeMessageBox';
 
 export function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -370,9 +368,11 @@ export default function RightMenu_container() {
                       maxWidth:"fit-content",
                       flexWrap:"wrap",
                       wordWrap:"break-word", 
-                      bgColor:"red"
+                      backgroundColor:"#f1f1f1",
+                      
 
-                    }} bgcolor={"#f1f1f1"}>
+
+                    }}>
                       {/* <Avatar_small/> */}
                       <Typography m={1} variant="p" gutterBottom>
                         Lorem, ipsum dolor.
@@ -415,22 +415,7 @@ export default function RightMenu_container() {
 
                 </Box>
                 
-                <Box display={"flex"} mt={2} alignItems={"center"} justifyContent={"space-between"}>
-                  <TextField
-                    id="outlined-multiline-flexible"
-                    label="Type a message"
-                    multiline
-                    maxRows={4}
-                    sx={{flexGrow:1}}
-                  />
-                  <Box ml={1}>
-                    <IconButton aria-label="delete">
-                      <UilMessage/>
-                    </IconButton>
-                  </Box>
-
-                </Box>
-
+                  <TypeMessageBox/>
 
                   {/* <PeopleList/>
                   <PeopleList/>

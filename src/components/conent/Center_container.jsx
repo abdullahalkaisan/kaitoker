@@ -94,6 +94,7 @@ export default function Center_container() {
           // width: "100%",
           flexGrow:1,
           height:"100%",
+          width:"100%",
           overflowY: "auto",
           display:"flex", 
           flexWrap:"wrap",
@@ -137,8 +138,8 @@ export default function Center_container() {
         <CallCardLite/>
          */}
 
-
-        <CallCard 
+<Box display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
+<CallCard 
           user_name="Abullah Al Kaisan"
           user_profetion="Web developer"
           user_profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" 
@@ -234,6 +235,10 @@ export default function Center_container() {
           user_skills="asdfasdf" 
           user_language="English"
         />
+
+</Box>
+
+
 
 
 
