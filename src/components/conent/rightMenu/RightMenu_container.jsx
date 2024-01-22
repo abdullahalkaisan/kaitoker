@@ -16,6 +16,8 @@ import PeopleCard from './PeopleCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TypeMessageBox from '../../TypeMessageBox';
+import { useTheme } from '@emotion/react';
+
 
 export function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,6 +68,10 @@ function a11yProps(index) {
 
 
 export default function RightMenu_container() {
+  const theme = useTheme();
+  const themeUse = theme.palette.mode;
+
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -119,7 +125,12 @@ export default function RightMenu_container() {
       </Box>
 
 
+
+
+
         <Box height={"100%"} width={"100%"} display={"flex"} overflow={"auto"}>
+
+          
             <CustomTabPanel value={value} index={0}>
 
             <TextField
@@ -142,24 +153,8 @@ export default function RightMenu_container() {
                 p={3}
                   
               >
+                  <PeopleList />
 
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
-                  <PeopleList/>
               </Box>
             </CustomTabPanel>
 
@@ -180,7 +175,7 @@ export default function RightMenu_container() {
                   <IconButton>
                     <ArrowBackIcon/>
                   </IconButton>
-                  <PeopleCard/>
+                  <PeopleCard title='Abdullah Al Kaisan' subTitle='Web deloper' avatar={1} badge={1}  />
                   <IconButton>
                     <MoreHorizIcon/>
                   </IconButton>
@@ -210,8 +205,9 @@ export default function RightMenu_container() {
                       wordWrap:"break-word", 
                       bgColor:"red"
 
-                    }} bgcolor={"#f1f1f1"}>
+                    }} bgcolor={`${themeUse === "dark" ? "#222" :"#f1f1f1"}`}>
                       {/* <Avatar_small/> */}
+                      <PeopleCard/>
                       <Typography m={1} variant="p" gutterBottom>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quibusdam asperiores, soluta aliquam at explicabo ad perspiciatis veritatis voluptatum tenetur!
                       </Typography>
@@ -229,7 +225,6 @@ export default function RightMenu_container() {
                       maxWidth:"fit-content",
                       flexWrap:"wrap",
                       wordWrap:"break-word", 
-                      bgColor:"red"
 
                     }} bgcolor={"#f1f1f1"}>
                       {/* <Avatar_small/> */}

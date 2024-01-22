@@ -20,7 +20,7 @@ export default function PeopleList() {
       mb={2}
     >
 
-      <PeopleCard/>
+      <PeopleCard  title="Abdullah Al Kaisan" subTitle="Web developer" accountType="verified" avatar={1} badge={1}  />
 
 
       <Box>

@@ -27,7 +27,7 @@ export default function AboutList() {
               <ListItemIcon>
                 <UilUser />
               </ListItemIcon>
-              <ListItemText primary="546523" />
+              <ListItemText primary="abdullahalkaisan" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -78,7 +78,6 @@ export default function AboutList() {
               <ListItemText primary="21 Dec 2022 (1y 4m)" />
             </ListItemButton>
           </ListItem>
-
 
           <ListItem disablePadding>
             <ListItemButton>

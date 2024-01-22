@@ -1,7 +1,7 @@
 // import { useTheme } from '@emotion/react';
 // import { PauseRounded, PlayArrowRounded } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { 
     UilPlay,
@@ -10,8 +10,29 @@ import {
   } from '@iconscout/react-unicons'
   
 
+  import AudioPlayer from 'react-audio-player';
+
+
+
+
+
+
+
+
+
 export default function AudioPlay_button() {
 
+
+  const [audioSrc, setAudioSrc] = useState('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
+  };
 
 
     // const theme = useTheme();
@@ -20,15 +41,24 @@ export default function AudioPlay_button() {
     // const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
 
 
-
   return (
     <>
+
+      <AudioPlayer
+        src={audioSrc}
+        autoPlay={false}
+        controls
+        loop={false}
+        onPlay={handlePlayPause}
+        onPause={handlePlayPause}
+        onEnded={handleAudioEnded}
+      />
+
         <IconButton
+        onPlay={handlePlayPause}
         color="primary"
         aria-label={paused ? 'play' : 'pause'}
-        onClick={() => setPaused(!paused)
-
-        } 
+        onClick={() => setPaused(!paused)} 
         >
         {paused ? (
         <UilPlay

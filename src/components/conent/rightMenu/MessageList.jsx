@@ -10,7 +10,7 @@ export default function MessageList() {
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem>
-        <PeopleCard/>
+        <PeopleCard title='Abdullah Al Kaisan'/>
       </ListItem>
       <ListItem>
         <ListItemAvatar>

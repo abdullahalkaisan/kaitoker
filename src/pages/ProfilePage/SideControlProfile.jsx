@@ -18,6 +18,7 @@ import { useTheme } from '@emotion/react';
 import AudioSlider_custom from '../../components/callCard/AudioSlider_custom';
 import AudioPlay_button from '../../components/callCard/AudioPlay_button';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
+import DonateCard from './TabMenuProfile/DonateCard';
 
 
 
@@ -33,7 +34,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 
-export default function SideControlPic() {
+export default function SideControlProfile() {
   const theme = useTheme();
 
   const useMyTheme = theme.palette.mode;
@@ -41,7 +42,7 @@ export default function SideControlPic() {
   return (
     <Box>
 
-      <Stack bgcolor={"background.default"} color={"text.primary"} width={"100%"} direction={"column"} alignItems={"center"} justifyContent={"center"}>
+      <Box display={"flex"} bgcolor={"background.default"} color={"text.primary"} width={"100%"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"}>
       
       <StyledBadge
           color='info'
@@ -85,26 +86,14 @@ export default function SideControlPic() {
 
 
 
+            <DonateCard/>
 
-          <Box sx={{cursor:"pointer", width:"max-content"}} my={1} border={"1px solid #f1f1f1"} padding={1} borderRadius={999} display={"flex"} flexDirection={"row"} alignItems={"center"}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://mui.com/static/images/avatar/5.jpg"
-              sx={{ width: 24, height: 24 }}
-            />
-
-            <Box display={"flex"} flexDirection={"column"} mx={1}>
-              <Typography color={"green"} fontWeight={""} variant="body2" component="h6">
-                $50K
-              </Typography>
-            </Box>
-          </Box>
 
 
 
 
           <Typography display={"none"} sx={{color:"#999"}} mt={1} variant="subtitle1"   p={0} gutterBottom>
-            <Stack flexWrap={"wrap"} flexDirection={"row"} justifyContent={"center"} >
+            <Box display={"flex"} flexWrap={"wrap"} flexDirection={"row"} justifyContent={"center"} >
             <UilLocationPoint/>
             <Box>
               {"Bangladesh"}
@@ -117,7 +106,7 @@ export default function SideControlPic() {
               </Box>
             </Tooltip>
 
-            </Stack>
+            </Box>
 
           </Typography>
 
@@ -148,7 +137,7 @@ export default function SideControlPic() {
 
 
 
-        <Stack direction={"row"} alignItems={"center"} spacing={1}>
+        <Box display={"flex"} flexDirection={"row"} alignItems={"center"} spacing={1}>
 
             <IconButton color='primary'>
               {/* <UilRssAlt/> */}
@@ -169,7 +158,7 @@ export default function SideControlPic() {
               <Button size='small' variant='contained' sx={{borderRadius:999, textTransform:"none"}}>$2.24/hr</Button>
             </Box>
 
-        </Stack>
+        </Box>
 
 
 
@@ -260,7 +249,7 @@ export default function SideControlPic() {
 
 
 
-      </Stack>
+      </Box>
 
 
 

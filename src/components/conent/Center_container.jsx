@@ -6,6 +6,7 @@ import { useTheme } from "@emotion/react";
 import LanguageSelect from "../callCard/LanguageSelect";
 // import CallCardDynamic from "../callCard/CallCardDynamic";
 import CallCard from "../callCard/CallCard";
+import GroupCallCard from "../GroupCallCard";
 // import CallCardLite from "../callCard/CallCardLite";
 
 // import CallCard3 from "./CallCard3";
@@ -94,7 +95,7 @@ export default function Center_container() {
           // width: "100%",
           flexGrow:1,
           height:"100%",
-          width:"100%",
+          // width:"100%",
           overflowY: "auto",
           display:"flex", 
           flexWrap:"wrap",
@@ -139,6 +140,15 @@ export default function Center_container() {
          */}
 
 <Box display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
+
+  <GroupCallCard/>
+  <GroupCallCard/>
+  <GroupCallCard/>
+  <GroupCallCard/>
+  <GroupCallCard/>
+
+
+
 <CallCard 
           user_name="Abullah Al Kaisan"
           user_profetion="Web developer"

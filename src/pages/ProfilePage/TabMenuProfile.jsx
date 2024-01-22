@@ -2,7 +2,6 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Schedule from './TabMenuProfile/Schedule';
 import AboutList from './TabMenuProfile/AboutList';
@@ -28,8 +27,8 @@ function CustomTabPanel(props) {
     >
       {value === index && (
         // sx={{ p:0}} 
-        <Box >
-          <Typography>{children}</Typography>
+        <Box sx={{flexGrow:1, width:"100%", height:"100%"}}>
+          {children}
         </Box>
       )}
     </div>
@@ -57,14 +56,9 @@ export default function TabMenuProfile() {
   };
 
   return (
-    <Box 
-      display={"flex"} 
-      flexDirection={"column"} 
-      height={"100vh"} 
-      overflow={"hidden"}
-    >
+    <Box width={"100%"} height={"100%"}>
 
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', width:1 }}>
         <Tabs 
           value={value} 
           onChange={handleChange} 
@@ -86,7 +80,7 @@ export default function TabMenuProfile() {
       </Box>
 
 
-      <Box overflow={"auto"}>
+      <Box height={"100%"} overflow={"auto"}>
 
         <CustomTabPanel value={value} index={0}>
           <PostCardWrapper/>
