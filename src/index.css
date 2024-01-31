@@ -6,6 +6,47 @@
 
 }
 
+
+/* @font-face {
+  font-family: "CustomFont";
+    src:url("../src/NotoColorEmoji-Regular.ttf");
+    letter-spacing: -0.5px;
+
+} */
+
+@font-face {
+  font-family: 'NotoEmoji';
+  src: url('../src/NotoColorEmoji-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TwitterColorEmoji';
+  src: url('../src/TwitterColorEmoji-SVGinOT.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'NotoColorEmoji';
+  src: url('../src/NotoColorEmoji.ttf') format('truetype');
+}
+
+
+
+
+/* @font-face {
+  font-family: 'NotoColorEmoji';
+  src: url('gs://keen-diode-344417.appspot.com/NotoColorEmoji.ttf') format('truetype');
+} */
+
+p{
+  font-family: 'NotoColorEmoji', "Roboto" ;
+}
+
+
+
 html{
   scroll-behavior: smooth;
 }

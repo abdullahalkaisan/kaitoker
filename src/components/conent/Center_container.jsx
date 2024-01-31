@@ -6,7 +6,10 @@ import { useTheme } from "@emotion/react";
 import LanguageSelect from "../callCard/LanguageSelect";
 // import CallCardDynamic from "../callCard/CallCardDynamic";
 import CallCard from "../callCard/CallCard";
-import GroupCallCard from "../GroupCallCard";
+import GroupCallCard from "../groupCallCard/GroupCallCard";
+import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
+import VideoCard from "../VideoCard/VideoCard";
+
 // import CallCardLite from "../callCard/CallCardLite";
 
 // import CallCard3 from "./CallCard3";
@@ -59,13 +62,13 @@ export default function Center_container() {
           id="combo-box-demo"
           options={searchItemsSuggetioins}
           sx={{ width: "70%", m: 1 }}
-          renderInput={(params) => <TextField {...params} label="Search" />}
+          renderInput={(params) => <TextField {...params} label="Search profession, name, id, skills" />}
         />
 
 
         <LanguageSelect />
 
-        <Button
+        {/* <Button
           variant="contained"
           sx={{ 
             borderRadius: 999, m: "0 15px", 
@@ -81,7 +84,16 @@ export default function Center_container() {
           }} 
             />
           534
+        </Button> */}
+
+
+        <Button variant="soft" color="info" size="small" sx={{m:1, borderRadius:999}}>
+        <AllInclusiveOutlinedIcon color="info" sx={{marginRight: 1}}/>
+            10.16K
         </Button>
+
+
+
       </Box>
 
 
@@ -141,6 +153,11 @@ export default function Center_container() {
 
 <Box display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
 
+  <VideoCard/>
+  <VideoCard/>
+  <VideoCard/>
+  <VideoCard/>
+
   <GroupCallCard/>
   <GroupCallCard/>
   <GroupCallCard/>
@@ -148,14 +165,49 @@ export default function Center_container() {
   <GroupCallCard/>
 
 
+          <PostCard
+            name="Moinuddin chisti"
+            profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+            profession="CEO at Kaitoker"
+            onlineStatus="success"
+            accountType="verified"
+            postContent="In today's fast-paced world, where technological advancements continue to shape our daily lives, it's crucial for businesses to adapt and evolve with the ever-changing digital landscape. In this post, we explore the importance of embracing change and provide insights on how to navigate the dynamic world of digital marketing, web development, and user experience."
+            topic="Update"
+            topicLogoUrl="https://img.icons8.com/?size=512&id=bDkQlpOV2TWB&format=png"
+            postTime="Just now"
+            likes={20}
+            disLikes={10}
+            comments={12}
+            shares={2}
+          />
 
-<CallCard 
+<PostCard
+            name="Moinuddin chisti"
+            profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+            profession="CEO at Kaitoker"
+            onlineStatus="success"
+            accountType="verified"
+            postContent="In today's fast-paced world, where technological advancements continue to shape our daily lives, it's crucial for businesses to adapt and evolve with the ever-changing digital landscape. In this post, we explore the importance of embracing change and provide insights on how to navigate the dynamic world of digital marketing, web development, and user experience."
+            topic="Update"
+            topicLogoUrl="https://img.icons8.com/?size=512&id=bDkQlpOV2TWB&format=png"
+            postTime="Just now"
+            likes={20}
+            disLikes={10}
+            comments={12}
+            shares={2}
+          />
+
+
+
+
+
+        <CallCard 
           user_name="Abullah Al Kaisan"
           user_profetion="Web developer"
           user_profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" 
           user_country="Bangladesh" 
           user_country_flag="bd" 
-          user_followers="145"
+          user_followers={4999}
           user_accoutType="vip"
           user_about="asdfsadf" 
           user_rating="45"

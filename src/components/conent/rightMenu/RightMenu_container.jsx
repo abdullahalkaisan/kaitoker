@@ -153,7 +153,8 @@ export default function RightMenu_container() {
                 p={3}
                   
               >
-                  <PeopleList />
+                  <PeopleList title="Abdullah Al Kaisan" subTitle="Web developer" accountType="verified" avatar={1} badge={1}/>
+                  <PeopleList title="Sky -" subTitle="Vat" accountType="verified" avatar={1} avatarUrl="https://lh3.googleusercontent.com/a/ACg8ocIVo-17q-Rqyv2QouPGMQ5zfNxVzL66sBgLZ1HgN73MOhQ" badge={1}/>
 
               </Box>
             </CustomTabPanel>

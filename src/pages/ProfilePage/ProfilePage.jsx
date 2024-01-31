@@ -21,7 +21,7 @@ export default function ProfilePage() {
         sx={{
           display: { md: "block", xs: "none" },
           height: "100%",
-          width: "370px",
+          width:"400px",
           overflow: "auto",
           borderRight: "1px solid rgba(0,0,0,0.12)",
         }}
@@ -31,6 +31,7 @@ export default function ProfilePage() {
       </Box>
 
       <TabMenuProfile />
+
     </Box>
   );
 }

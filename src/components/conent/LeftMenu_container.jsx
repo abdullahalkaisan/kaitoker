@@ -8,6 +8,9 @@ import {
   UilSetting,
   UilQuestionCircle,
   UilMobileAndroid,
+  UilAndroidAlt,
+  UilAndroid,
+  UilCloudDownload,
   UilDownloadAlt,
   UilWebGrid,
   UilGift,
@@ -51,28 +54,28 @@ export default function LeftMenu_container(props) {
         <UilSlidersVAlt />
       </IconButton>
 
-      <IconButton sx={{ m: 1 }}>
+      {/* <IconButton sx={{ m: 1 }}>
         <UilWebGrid />
-      </IconButton>
+      </IconButton> */}
 
       <IconButton sx={{ m: 1 }}>
         <UilAnalysis />
       </IconButton>
 
 
-      <Tooltip sx={{ m: 1 }} title="Pro User" placement="right">
+      {/* <Tooltip sx={{ m: 1 }} title="Pro User" placement="right">
         <IconButton >
           <Badge color="error" variant="dot" badgeContent={1}>
           <UilBell />
           </Badge>
         </IconButton>
-      </Tooltip>
+      </Tooltip> */}
 
 
 
 
       <IconButton sx={{ m: 1 }} onClick={handleClickOpen}>
-        <UilMobileAndroid />
+        <UilCloudDownload />
       </IconButton>
 
       <Dialog

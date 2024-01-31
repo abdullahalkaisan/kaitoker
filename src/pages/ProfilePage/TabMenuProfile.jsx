@@ -56,7 +56,7 @@ export default function TabMenuProfile() {
   };
 
   return (
-    <Box width={"100%"} height={"100%"}>
+    <Box sx={{flexGrow:1}} height={"100%"}>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', width:1 }}>
         <Tabs 

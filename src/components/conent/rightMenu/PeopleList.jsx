@@ -7,8 +7,24 @@ import {
   
 import PeopleCard from "./PeopleCard";
 
+import { PropTypes } from "prop-types";
 
-export default function PeopleList() {
+PeopleList.propTypes = {
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  accountType: PropTypes.string,
+  avatar: PropTypes.bool,
+  badge: PropTypes.bool,
+};
+
+
+
+
+export default function PeopleList(props) {
+
+  const {title, subTitle,accountType, avatar, badge } = props;
+
+
   return (
     <Box
       display={"flex"}
@@ -20,7 +36,13 @@ export default function PeopleList() {
       mb={2}
     >
 
-      <PeopleCard  title="Abdullah Al Kaisan" subTitle="Web developer" accountType="verified" avatar={1} badge={1}  />
+      <PeopleCard  
+        title={title} 
+        subTitle={subTitle} 
+        accountType={accountType} 
+        avatar={avatar} 
+        badge={badge}  
+      />
 
 
       <Box>

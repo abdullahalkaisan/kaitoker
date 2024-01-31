@@ -89,9 +89,6 @@ export default function SideControlProfile() {
             <DonateCard/>
 
 
-
-
-
           <Typography display={"none"} sx={{color:"#999"}} mt={1} variant="subtitle1"   p={0} gutterBottom>
             <Box display={"flex"} flexWrap={"wrap"} flexDirection={"row"} justifyContent={"center"} >
             <UilLocationPoint/>
@@ -248,8 +245,12 @@ export default function SideControlProfile() {
             </Stack>
 
 
+      {/* <iframe style={{border:"none", borderRadius:9}} width="auto" height="200" src="https://www.youtube.com/embed/pBzrHxm6mco?si=IwitSnSkiKX73d3o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen /> */}
 
       </Box>
+
+
+
 
 
 
