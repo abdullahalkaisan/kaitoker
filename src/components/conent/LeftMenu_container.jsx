@@ -19,6 +19,7 @@ import {
 } from '@iconscout/react-unicons'
 
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 export default function LeftMenu_container(props) {
 
 
@@ -48,15 +49,18 @@ export default function LeftMenu_container(props) {
       width={"100px"}
       height={"100%"}
       overflow={"auto"}
+
       sx={{ display: { md: "flex", xs: "none" } }}
     >
       <IconButton sx={{ m: 1 }}>
         <UilSlidersVAlt />
       </IconButton>
-
-      {/* <IconButton sx={{ m: 1 }}>
+    
+    <Link to={"/reel"}>
+      <IconButton sx={{ m: 1 }}>
         <UilWebGrid />
-      </IconButton> */}
+      </IconButton>
+    </Link>
 
       <IconButton sx={{ m: 1 }}>
         <UilAnalysis />

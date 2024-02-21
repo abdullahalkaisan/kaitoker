@@ -1,13 +1,14 @@
 // import styled from "@emotion/styled";
 import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 import { PropTypes } from 'prop-types';
-
+import RoomIcon from '@mui/icons-material/Room';
 
 
 import { 
   // UilInfoCircle,
   // UilPlay,
   UilLocationPoint,
+  UilUserPlus,
   // UilEllipsisH
   // UilRssAlt,
   // UilHeart,
@@ -92,11 +93,15 @@ export default function CallCard(props) {
 
   const StyledBadge = styled(Badge)({
   '& .MuiBadge-badge': {
-    height:"10px",
-    width:"10px",
+    // height:"10px",
+    // width:"10px",
+    height:"8px",
+    width:"8px",
     borderRadius:999,
-    right: 15,
-    bottom: 15,
+    // right: 15,
+    // bottom: 15,
+    right: 10,
+    bottom: 10,
     outline: `4px solid ${theme.palette.background.paper}`,
     padding:"0"
   },
@@ -118,7 +123,11 @@ export default function CallCard(props) {
         borderRadius={1}
         m={2}
       >
-        <Box
+
+
+      <Box display={"flex"} flexDirection={"row"}>
+
+      <Box
           bgcolor={"background.default"}
           sx={{ display: "flex", justifyContent: "center", m: 1 }}
         >
@@ -133,10 +142,11 @@ export default function CallCard(props) {
                   horizontal: "right",
                 }}
               >
+                {/* 110  */}
                 <Avatar
                   alt="Remy Sharp"
                   src={user_profilePicture}
-                  sx={{ width: 110, height: 110 }}
+                  sx={{ width: 70, height: 70 }}
                 />
               </StyledBadge>
             </IconButton>
@@ -150,8 +160,9 @@ export default function CallCard(props) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center",
+            // alignItems: "center",
             width: "100%",
+            pl:1
           }}
         >
           <Link
@@ -201,7 +212,7 @@ export default function CallCard(props) {
 
           <Typography
             sx={{ color: "#777" }}
-            textAlign={"center"}
+            // textAlign={"center"}
             variant="subtitle1"
             mt={-2}
             p={0}
@@ -210,6 +221,35 @@ export default function CallCard(props) {
             {user_profetion}
           </Typography>
 
+          <Typography
+            sx={{ color: "#777", display:"flex", alignItems:"center" }}
+            // textAlign={"center"}
+            variant="subtitle1"
+            mt={-1.5}
+            p={0}
+            gutterBottom
+          >
+            <RoomIcon sx={{ fontSize: "medium" }} />
+
+            {"China"}
+          </Typography>
+
+          <Typography
+            sx={{ color: "#777", display:"flex", alignItems:"center" }}
+            // textAlign={"center"}
+            variant="subtitle1"
+            mt={-2}
+            p={0}
+            gutterBottom
+          >
+            {/* <RoomIcon sx={{ fontSize: "medium" }} /> */}
+          </Typography>
+
+          
+
+
+
+{/* 
           <Typography
             sx={{ color: "#999", mt: "-5px" }}
             textAlign={"center"}
@@ -229,9 +269,8 @@ export default function CallCard(props) {
 
               <Tooltip title={user_country} placement="top">
                 <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
-                  {/* , border:"1px solid #ebebeb"  */}
                   <img
-                    style={{ borderRadius: 3 }}
+                    style={{ borderRadius: 3, boxShadow:"1px 1px 1px solid #00000050" }}
                     src={`https://flagcdn.com/w20/${user_country_flag}.png`}
                   />
                 </Box>
@@ -242,15 +281,45 @@ export default function CallCard(props) {
                 {user_language}
               </Box>
             </Stack>
-          </Typography>
+          </Typography> */}
         </Box>
 
-        <SubDetails
-          user_followers={user_followers}
-          user_rating={user_rating}
-          user_language={user_language}
-          user_total_call={user_total_call}
-        />
+
+
+
+
+
+      </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Box>
+              <SubDetails
+                user_followers={user_followers}
+                user_rating={user_rating}
+                user_language={user_language}
+                user_total_call={user_total_call}
+              />
+            </Box>
+
+
+
+
+
 
         <Box display={"none"}>
           <Typography
@@ -269,31 +338,37 @@ export default function CallCard(props) {
           </Typography>
         </Box>
 
-        <Stack
+        <Box
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
-          justifyContent={"center"}
+          // justifyContent={"center"}
           flexWrap={"wrap"}
           px={2}
+          mt={2}
           overflow={"auto"}
+          // fontWeight={"bold"}
+          textAlign={"center"}
           sx={{
-            maxHeight: { md: "80px", xs: "80px" },
-            minHeight: { md: "80px", xs: "auto" },
+            maxHeight: { md: "56px", xs: "56px" },
+            minHeight: { md: "56px", xs: "auto" },
           }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
 
-          <ChipsCustom label="Javascript" />
-          <ChipsCustom label="Node js" />
-          <ChipsCustom label="React" />
-          <ChipsCustom label="MongoDB" />
-          <ChipsCustom label="UI/UX design" />
-          <ChipsCustom label="UI/UX design" />
-          <ChipsCustom label="UI/UX design" />
-          <ChipsCustom label="UI/UX design" />
-          <ChipsCustom label="UI/UX design" />
-        </Stack>
+
+
+          <ChipsCustom hashTagStyle={true} label="Javascript" />
+          <ChipsCustom hashTagStyle={true} label="Node js" />
+          <ChipsCustom hashTagStyle={true} label="React" />
+          <ChipsCustom hashTagStyle={true} label="MongoDB" />
+          <ChipsCustom hashTagStyle={true} label="Photoshop" />
+          <ChipsCustom hashTagStyle={true} label="Video editor" />
+          <ChipsCustom hashTagStyle={true} label="Premire Pro" />
+          <ChipsCustom hashTagStyle={true} label="Graphics designer" />
+          <ChipsCustom hashTagStyle={true} label="Mern stack developer" />
+        
+        </Box>
 
         <Box sx={{ px: 4 }}>
           <AudioSlider_custom />
@@ -317,7 +392,7 @@ export default function CallCard(props) {
             {/* <UilStar/> */}
             {/* <UilUserPlus/> */}
             {/* <UilPlus/> */}
-            <UilPlusCircle />
+            <UilUserPlus />
           </IconButton>
 
           <AudioPlay_button />
@@ -337,8 +412,6 @@ export default function CallCard(props) {
                 {/* $120 Month */}
                 {`$${user_perHourCost}/hr`}
               </Button>
-
-
             </Link>
           </Box>
         </Stack>

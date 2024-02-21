@@ -186,11 +186,46 @@ export default function RightMenu_container() {
 
 
 {/* justifyContent:"flex-end",  */}
-                <Box px={2} sx={{flexGrow:1,  flexDirection:"column", height:"100%", display:"flex", overflowY:"auto"}}>
+                <Box px={2} sx={{flexGrow:1, flexDirection:"column",  height:"100%",  display:"flex", overflowY:"auto"}}>
                   
 
+                <Box display={"flex"} justifyContent={"flex-start"}  width={"100%"} my={0.5}>
+                    
+                    <Box sx={{
+                      p:1,
+                      borderRadius:4,
+                      display:"flex",
+                      // width:"max-content"
+                      minWidth:"auto",
+                      maxWidth:"fit-content",
+                      flexWrap:"wrap",
+                      wordWrap:"break-word", 
+                      // border:"1px solid #99999920"
+                    }} bgcolor={`${themeUse === "dark" ? "#222" :"#f1f1f190"}`}>
+                      {/* <Avatar_small/> */}
+
+                      <Box display={"flex"} justifyContent={"space-between"} width={1}>
+                        <PeopleCard title={"Abdullah Al Kaisan"} varified={1} subTitle='Founder of Kaitoker' avatar={true}/>
+                        <IconButton>
+                        <MoreHorizIcon/>
+                        </IconButton>
+                      </Box>
+
+                      <Typography m={1} variant="p" gutterBottom>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quibusdam asperiores, soluta aliquam at explicabo ad perspiciatis veritatis voluptatum tenetur!
+                      </Typography>
+
+                      <Box width={1} textAlign={"end"}>
+                        <Typography mx={1} variant="caption" gutterBottom>
+                          3:11 AM - 1/2/2024
+                        </Typography>
+                      </Box>
 
 
+
+
+                    </Box>
+                  </Box>
 
 
 
@@ -377,6 +412,7 @@ export default function RightMenu_container() {
                     </Box>
                   </Box>
 
+   
 
                   <Box display={"flex"} justifyContent={"flex-end"}  width={"100%"} my={0.5}>
                     <Box sx={{

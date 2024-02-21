@@ -7,6 +7,7 @@ import RightMenu_container from "./components/conent/rightMenu/RightMenu_contain
 import LeftMenu_container from "./components/conent/LeftMenu_container"
 import Center_container from "./components/conent/Center_container"
 import PropTypes from 'prop-types';
+// import NavMenu from "./components/topbar/others/NavMenu"
 
 
 function App(props) {
@@ -26,6 +27,7 @@ function App(props) {
       </Box> */}
 
       <TopBar/>
+
       <Profession_filter/>
 
       <Box 

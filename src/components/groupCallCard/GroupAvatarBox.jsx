@@ -16,7 +16,7 @@ import {
 } from '@iconscout/react-unicons'
 
 
-export default function GroupAvatarBox() {
+export default function GroupAvatarBox({followers, avatarUrl, flag}) {
 
 
 
@@ -129,8 +129,6 @@ export default function GroupAvatarBox() {
         >
 
             <PeopleCard
-              avatar={true}
-              badge={true}
               title={"Abdullah Al Kaisan"}
               subTitle={"CEO at Kaitoker"}
               accountType={"verified"}
@@ -207,7 +205,7 @@ export default function GroupAvatarBox() {
     >
 
 <BadgeFollowers 
-    badgeContent={"134"}
+    badgeContent={followers}
     max={99999} 
     color="error"
     anchorOrigin={{
@@ -232,7 +230,7 @@ export default function GroupAvatarBox() {
 
               // borderRadius: "0px",
             }}
-            src="https://flagcdn.com/w20/bd.png"
+            src={`https://flagcdn.com/w20/${flag}.png`}
           />
         }
         anchorOrigin={{
@@ -242,9 +240,7 @@ export default function GroupAvatarBox() {
       >
         <Avatar
           alt="Remy Sharp"
-          src={
-            "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-          }
+          src={avatarUrl}
           sx={{ width: 70, height: 70, borderRadius:9999 }}
         />
       </StyledBadge>

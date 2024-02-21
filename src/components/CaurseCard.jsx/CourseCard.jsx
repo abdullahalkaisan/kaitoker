@@ -3,18 +3,16 @@ import PeopleCard from "../conent/rightMenu/PeopleCard";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChipsCustom from "../callCard/ChipsCustom";
 
-export default function VideoCard() {
+export default function CourseCard({imgUrl, title}) {
 
-    const videoTitle = `It was a great Conversation with an amazing English Teacher.`
+    const videoTitle = title;
 
 
   return (
     <Card
-    // 340 
       sx={{
         width: { md: 340, xs: 1 },
         height: { md: "max-content", xs: 1 },
-        // height:"100%",
         cursor:"pointer",
         borderRadius: { md: 2, xs: 0 },
         m: { md: 1, xs: 0 },
@@ -35,26 +33,26 @@ export default function VideoCard() {
 
       <CardMedia
           component="img"
+          // height="194"
           height="auto"
           width={1}
-          sx={{ display:"", margin:"10px 0", cursor:"pointer", objectFit: "cover", borderRadius: 2, marginTop: 1 }}
-          image="https://i3.ytimg.com/vi/-qxklAasPJw/maxresdefault.jpg"
+          sx={{ margin:"10px 0", cursor:"pointer", objectFit: "cover", borderRadius: 2, marginTop: 1 }}
+          image={imgUrl}
           alt="Paella dish"
         />
 
-      {/* <iframe style={{border:"none", borderRadius:9, margin:"10px 0"}} height={"500"} width="100%" src="https://www.youtube.com/embed/pBzrHxm6mco?si=IwitSnSkiKX73d3o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-       */}
+        <ChipsCustom hashTagStyle={true} label="Web development"/>
 
-    <ChipsCustom hashTagStyle={true} label="English conversation"/>
 
+      {/* <iframe style={{border:"none", borderRadius:9, flexGrow:1, margin:"10px 0"}} width="100%" height="200" src="https://www.youtube.com/embed/pBzrHxm6mco?si=IwitSnSkiKX73d3o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen /> */}
       <Typography variant="h6" sx={{fontSize:"medium", fontWeight:"bold"}}> {videoTitle.length >= 40 ? videoTitle.slice(0, 40)+"..." : videoTitle }</Typography>
         <Typography variant="body2">
         <Box color={"#777"} display={"flex"} alignItems={"center"}>
-            465.46K views 
+            (465)
             <Box sx={{color:"green", fontWeight:"bold", margin:"0 5px"}}>
                 56% 
             </Box>
-            15 mins ago
+            65 classes 
         </Box>
 
 

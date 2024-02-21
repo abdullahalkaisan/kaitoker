@@ -6,7 +6,7 @@ import React from 'react'
     UilNewspaper,
     UilPresentationMinus, 
     UilUsersAlt,
-    UilPlayCircle
+    // UilPlayCircle
 } from '@iconscout/react-unicons'
 
 
@@ -37,9 +37,9 @@ export default function NavMenu() {
             <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab sx={{minWidth:70}} icon={<UilPresentationMinus />} aria-label="person" />
             </Tooltip>
-            <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab sx={{minWidth:70}} icon={<UilPlayCircle />} aria-label="person" />
-            </Tooltip>
+            </Tooltip> */}
           </Tabs>
         </Box>
   )

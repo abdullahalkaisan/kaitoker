@@ -54,8 +54,8 @@ export default function GroupCallCard() {
 
 
 
-        <GroupAvatarBox/>
-        <GroupAvatarBox/>
+        <GroupAvatarBox followers={264} avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" flag="bd"/>
+        <GroupAvatarBox followers={46} avatarUrl="https://pbs.twimg.com/profile_images/1377353524661604356/DIMdJND1_400x400.jpg" flag="us"/>
 
 
 

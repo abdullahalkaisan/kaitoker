@@ -10,6 +10,7 @@ import {
 } from '@iconscout/react-unicons'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import CallPage from './pages/CallPage/CallPage';
+import ReelPage from './pages/ReelPage/ReelPage';
 // import { useMediaQuery } from '@mui/material'
 
 
@@ -52,6 +53,7 @@ export default function MainWithTheme() {
                 <Route path="/" element={<App darkIcon={icon} darkModeToggle={toggleTheme} />} />
                 <Route path="/profile" element={<ProfilePage/>} />
                 <Route path="/callpage" element={<CallPage/>} />
+                <Route path="/reel" element={<ReelPage/>} />
             </Routes>
             </BrowserRouter>
         </ThemeProvider>
