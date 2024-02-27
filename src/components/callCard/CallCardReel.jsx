@@ -2,6 +2,9 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Avatar, Badge, Box, Button, Card, CardActionArea, CardMedia, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Tooltip, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import RoomIcon from '@mui/icons-material/Room';
+import TranslateIcon from '@mui/icons-material/Translate';
+
 import { 
     // UilInfoCircle,
     // UilPlay,
@@ -14,6 +17,9 @@ import {
     // UilUserPlus,
     // UilPlus,
     UilSkipForwardCircle,
+    UilVideo,
+    UilCommentMessage,
+    UilUserPlus,
     UilPlusCircle
   
   } from '@iconscout/react-unicons'
@@ -32,40 +38,58 @@ import {
 } from '@iconscout/react-unicons'
 
 
+
+
 export default function CallCardReel() {
 
     const theme = useTheme();
 
     const StyledBadge = styled(Badge)({
         '& .MuiBadge-badge': {
-          height:"10px",
-          width:"10px",
-          borderRadius:999,
-          right: 15,
-          bottom: 15,
-          outline: `4px solid ${theme.palette.background.paper}`,
+          height:"15px",
+          width:"15px",
+          borderRadius:4,
+          right: 8,
+          bottom: 10,
+          outline: `15px solid ${theme.palette.background.paper}`,
           padding:"0"
         },
         });
 
 
   return (
-    <Card variant="outlined" sx={{ height: 1, width: 800, mb: 2 }}>
+    <Card variant="none" sx={{ height: 1, width: 800, mb: 2, mt: 5 }}>
       <Box
         width={1}
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"start"}
       >
-        <Box p={1.5} width={1}>
-          <CardActionArea>
-            <Avatar
-              alt="Remy Sharp"
-              src={
-                "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-              }
-              sx={{ width: 1, height: "auto", borderRadius: 2 }}
-            />
+        <Box
+          p={1.5}
+          width={1}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+        >
+          <CardActionArea sx={{ width: 300, borderRadius: 6 }}>
+            <StyledBadge
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              variant="dot"
+              badgeContent={1}
+              color="primary"
+            >
+              <Avatar
+                alt="Remy Sharp"
+                src={
+                  "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+                }
+                sx={{ width: 300, height: 300, borderRadius: 6 }}
+              />
+            </StyledBadge>
           </CardActionArea>
           {/* <CardActionArea style={{marginTop:10}}>
                     <Box>
@@ -73,56 +97,23 @@ export default function CallCardReel() {
                     </Box>
                 </CardActionArea> */}
 
-<Box
-            display={"flex"}
-            width={1}
-            flexGrow={1}
-            flexDirection={"column"}
-            alignItems={""}
-            ml={4}
-          >
-            <Typography
-              style={{ marginTop: 25 }}
-              variant="h5"
-              fontWeight={"bold"}
-            >
-            <Badge color="primary" variant="dot">
-              Abdullah Al Kaisan
-            </Badge>
-            </Typography>
-            <Typography
-              style={{ marginBottom: 5 }}
-              fontSize={"large"}
-              marginTop={-1}
-              color={"#777"}
-              variant="subtitle1"
-            >
-              Web Developer
-            </Typography>
-          </Box>
-
-
-
-
-
-
-          <Box sx={{ px: 4 }}>
+          <Box sx={{ width: 300, marginTop: 2 }}>
             <AudioSlider_custom />
           </Box>
 
-          <Stack
-            sx={{ display: "" }}
+          <Box
+            display={"flex"}
             bgcolor={"background.default"}
             color={"text.primary"}
             flexDirection={"row"}
-            width={1}
+            width={300}
             m={"10px 0"}
             alignItems={"center"}
             justifyContent={"space-evenly"}
           >
-            <IconButton color="primary" size="large">
+            {/* <IconButton color="primary" size="large">
               <UilPlusCircle />
-            </IconButton>
+            </IconButton> */}
 
             <IconButton color="primary" size="large">
               <ArrowBackIosIcon />
@@ -134,7 +125,7 @@ export default function CallCardReel() {
               <ArrowForwardIosIcon />
             </IconButton>
 
-            <Box>
+            {/* <Box>
               <Link to={"/callpage"}>
                 <Button
                   size="small"
@@ -145,8 +136,8 @@ export default function CallCardReel() {
                   {`$${"2.24"}/hr`}
                 </Button>
               </Link>
-            </Box>
-          </Stack>
+            </Box> */}
+          </Box>
         </Box>
 
         <Box
@@ -156,8 +147,6 @@ export default function CallCardReel() {
           alignItems={"center"}
           p={2}
         >
-
-
           {/* <Typography sx={{ color: "#999" }} variant="subtitle1">
             <Box display={"flex"} flexWrap={"wrap"}>
               <UilLocationPoint />
@@ -173,7 +162,6 @@ export default function CallCardReel() {
               </Tooltip>
             </Box>
           </Typography> */}
-
 
           {/* <List  >
             <ListItem >
@@ -200,25 +188,145 @@ export default function CallCardReel() {
             </ListItem>
           </List> */}
 
+          <Box
+            display={"flex"}
+            width={1}
+            flexGrow={1}
+            flexDirection={"column"}
+            // alignItems={"center"}
+            ml={8}
+          >
+            <Typography
+              style={{ marginTop: 25 }}
+              variant="h5"
+              fontWeight={"bold"}
+            >
+              Abdullah Al Kaisan
+            </Typography>
+            <Typography
+              style={{ marginBottom: 5 }}
+              fontSize={"large"}
+              marginTop={-1}
+              color={"#777"}
+              variant="subtitle1"
+            >
+              Web Developer
+            </Typography>
 
-          <SubDetails
-            user_followers={32}
-            user_rating={32}
-            user_language={"English"}
-            user_total_call={145}
-          />
-          <Typography my={2} mx={4} variant="body1" color="#666">
-            Hey My name is Kaisan Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Distinctio, magni? Dolorem, aperiam neque pariatur
-            dicta iure facilis aliquid odit ea.
-          </Typography>
+            {/* <Box display={"flex"} alignItems={"center"} flexDirection={"row"}   >
+            <Badge
+                color="primary"
+                variant="dot"
+                sx={{margin:1.4}}
+              />
+            <Typography
+              style={{ marginBottom: 5 }}
+              fontSize={"large"}
+              color={"#777"}
+              variant="subtitle1"
+            >
+              Online now
+            </Typography>
+          </Box> */}
+          </Box>
+
+          <Box width={1}>
+            <Box
+              display={"flex"}
+              bgcolor={"background.default"}
+              color={"text.primary"}
+              flexDirection={"row"}
+              width={300}
+              // m={"10px 0"}
+              mb={2}
+              mx={2}
+              alignItems={"center"}
+              justifyContent={"space-evenly"}
+            >
+              <IconButton color="primary" size="large">
+                <UilUserPlus />
+              </IconButton>
+              <IconButton color="primary" size="large">
+                <UilCommentMessage />
+              </IconButton>
+              <IconButton color="primary" size="large">
+                <UilVideo />
+              </IconButton>
+
+              <Box>
+                <Link to={"/callpage"}>
+                  <Button
+                    size="small"
+                    sx={{ borderRadius: 2, textTransform: "none" }}
+                    variant="contained"
+                    color="primary"
+                  >
+                    {`$${"2.24"}/hr`}
+                  </Button>
+                </Link>
+              </Box>
+            </Box>
+          </Box>
+
+          <Box
+            width={1}
+            pl={8}
+            display={"flex"}
+            flexDirection={"column"}
+            alignContent={"flex-start"}
+            justifyContent={"flex-start"}
+          >
+            <SubDetails
+              user_followers={32}
+              user_rating={32}
+              // user_language={"English"}
+              justifyContent={"flex-start"}
+              user_total_call={145}
+            />
+
+            <Typography
+              sx={{
+                color: "#777",
+                display: "flex",
+                alignItems: "center",
+                width: 1,
+              }}
+              variant="subtitle1"
+              mt={1}
+              p={0}
+              gutterBottom
+            >
+              <RoomIcon sx={{ fontSize: "medium" }} />
+
+              {"Dhaka, Bangladesh"}
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "#777",
+                display: "flex",
+                alignItems: "center",
+                width: 1,
+              }}
+              variant="subtitle1"
+              mt={0}
+              p={0}
+              gutterBottom
+            >
+              <TranslateIcon sx={{ fontSize: "medium" }} />
+
+              {"English, Bengali, Hindi"}
+            </Typography>
+          </Box>
 
           <Stack
             bgcolor={"background.default"}
             color={"text.primary"}
             direction="row"
-            justifyContent={"center"}
+            justifyContent={""}
             flexWrap={"wrap"}
+            ml={2}
+            mt={2}
             px={2}
             overflow={"auto"}
             //   sx={{
@@ -238,6 +346,12 @@ export default function CallCardReel() {
             <ChipsCustom label="UI/UX design" />
             <ChipsCustom label="UI/UX design" />
           </Stack>
+
+          {/* <Typography my={2} mx={4} variant="body1" color="#666">
+            Hey My name is Kaisan Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Distinctio, magni? Dolorem, aperiam neque pariatur
+            dicta iure facilis aliquid odit ea.
+          </Typography> */}
         </Box>
       </Box>
     </Card>

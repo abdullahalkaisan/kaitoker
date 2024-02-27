@@ -14,7 +14,7 @@ SubDetails.propTypes = {
   user_total_call: PropTypes.number.isRequired,
 };
 
-export default function SubDetails({user_followers, user_rating , user_language, user_total_call }) {
+export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent }) {
   
 
   // const [isBadge, setIsBadge] = useState(false);
@@ -38,7 +38,9 @@ export default function SubDetails({user_followers, user_rating , user_language,
       fontWeight={"boldd"}
       sx={{ color: "#777" }}
       flexDirection={"row"}
-      justifyContent={"center"}
+
+      justifyContent={justifyContent === "flex-start" ? "flex-start" : "center"}
+
       flexWrap={"wrap"}
       pt={2}
       // pb={1}
@@ -59,9 +61,10 @@ export default function SubDetails({user_followers, user_rating , user_language,
             alignItems: "center",
             pr: 1,
             fontSize: "medium",
+            // medium 
           }}
         >
-          <PeopleOutlineOutlinedIcon sx={{ fontSize: "medium" }} />
+          <PeopleOutlineOutlinedIcon sx={{ fontSize: "larger" }} />
           {user_followers}
         </Box>
       )}

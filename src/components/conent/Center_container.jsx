@@ -105,7 +105,7 @@ export default function Center_container() {
 
       <Box
         sx={{
-          bgcolor: `${themeSelect === "light" ? "#f1f1f1" : "#222"}`,
+          // bgcolor: `${themeSelect === "light" ? "#f1f1f1" : "#222"}`,
           // width: "100%",
           flexGrow:1,
           height:"100%",
