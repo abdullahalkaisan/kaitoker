@@ -187,7 +187,7 @@ export default function Center_container() {
 
  
 
-          {/* <PostCard
+          <PostCard
             name="Moinuddin chisti"
             profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
             profession="CEO at Kaitoker"
@@ -217,7 +217,7 @@ export default function Center_container() {
             disLikes={10}
             comments={12}
             shares={2}
-          /> */}
+          />
 
 
 
