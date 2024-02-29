@@ -4,7 +4,7 @@ import { Avatar, Badge, Box, Button, Card, CardActionArea, CardMedia, IconButton
 import { Link } from 'react-router-dom'
 import RoomIcon from '@mui/icons-material/Room';
 import TranslateIcon from '@mui/icons-material/Translate';
-
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { 
     // UilInfoCircle,
     // UilPlay,
@@ -214,12 +214,14 @@ export default function CallCardReel(props) {
             </ListItem>
           </List> */}
 
+          <Box display={"flex"} width={300}  alignItems={"center"} justifyContent={"space-between"}> 
+
           <Box
             display={"flex"}
             width={1}
             flexGrow={1}
             flexDirection={"column"}
-            alignItems={"center"}
+            // alignItems={"center"}
             // ml={8}
           >
             <Typography
@@ -255,6 +257,16 @@ export default function CallCardReel(props) {
             </Typography>
           </Box> */}
           </Box>
+          <Box>
+            <IconButton>
+              <MoreVertIcon/>
+            </IconButton>
+          </Box>
+
+          </Box>
+
+
+
 
           <Box width={1} display={"flex"} justifyContent={"center"}>
             <Box
