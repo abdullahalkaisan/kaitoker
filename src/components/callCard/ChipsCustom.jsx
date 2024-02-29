@@ -14,7 +14,7 @@ export default function ChipsCustom(props) {
 
   return (
 
-    <Chip size="small"  label={props.label} sx={{m:0.2, borderRadius:2}} onClick={handleClick_chips}   />
+    <Chip size={props.size === "large" ?"large":"small"}  label={props.label} sx={{m:0.2, borderRadius:2}} onClick={handleClick_chips}   />
 
     // <Chip onClick={handleClick_chips} sx={{m:0.5, color:"#555", fontSize:"14px", border:"1px solid rgba(0, 0, 0, 0.12)"}} label="SEO"/>
   );
@@ -23,6 +23,7 @@ export default function ChipsCustom(props) {
 
 ChipsCustom.propTypes = {
   label: PropTypes.string,
+  size: PropTypes.string,
   hashTagStyle: PropTypes.bool
 };
 

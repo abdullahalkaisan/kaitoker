@@ -77,7 +77,7 @@ export default function AudioSlider_custom() {
 
 
  
-      style={sliderStyle}
+      // style={sliderStyle}
 
 
 

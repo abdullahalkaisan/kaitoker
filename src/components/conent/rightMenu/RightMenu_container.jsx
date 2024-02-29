@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Badge, IconButton, TextField, Typography} from '@mui/material';
-import PeopleList from './peopleList';
+// import PeopleList from './peopleList';
 
 import { 
   UilUser,
@@ -17,6 +17,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TypeMessageBox from '../../TypeMessageBox';
 import { useTheme } from '@emotion/react';
+// import PeopleList from './peopleList';
 
 
 export function CustomTabPanel(props) {
@@ -153,8 +154,7 @@ export default function RightMenu_container() {
                 p={3}
                   
               >
-                  <PeopleList title="Abdullah Al Kaisan" subTitle="Web developer" accountType="verified" avatar={1} badge={1}/>
-                  <PeopleList title="Sky -" subTitle="Vat" accountType="verified" avatar={1} avatarUrl="https://lh3.googleusercontent.com/a/ACg8ocIVo-17q-Rqyv2QouPGMQ5zfNxVzL66sBgLZ1HgN73MOhQ" badge={1}/>
+                  {/* <PeopleList title="Abdullah Al Kaisan" subTitle="Web developer" accountType="verified" avatar={1} badge={1}/> */}
 
               </Box>
             </CustomTabPanel>

@@ -36,11 +36,38 @@ import {
   UilMoneyWithdraw,
   UilLetterJapaneseA
 } from '@iconscout/react-unicons'
+import { usersDataLocal } from '../../usersDataLocal';
+import { useEffect } from 'react';
 
 
 
 
-export default function CallCardReel() {
+
+export default function CallCardReel(props) {
+
+  
+  let currentUser = 3;
+
+  const {
+    userName,
+    profession,
+    avatar,
+    hourRate,
+    followers,
+    rating,
+    totalCall,
+    flag, 
+    gigLanguage, 
+    languages, 
+    country, 
+    city, 
+    skills,
+    id
+  } = usersDataLocal[currentUser];
+  
+  
+
+  console.log(languages.join(", "));
 
     const theme = useTheme();
 
@@ -48,7 +75,7 @@ export default function CallCardReel() {
         '& .MuiBadge-badge': {
           height:"15px",
           width:"15px",
-          borderRadius:4,
+          borderRadius:44,
           right: 8,
           bottom: 10,
           outline: `15px solid ${theme.palette.background.paper}`,
@@ -72,7 +99,7 @@ export default function CallCardReel() {
           flexDirection={"column"}
           alignItems={"center"}
         >
-          <CardActionArea sx={{ width: 300, borderRadius: 6 }}>
+          <CardActionArea sx={{ width: 250, borderRadius: 6 }}>
             <StyledBadge
               anchorOrigin={{
                 vertical: "bottom",
@@ -83,11 +110,9 @@ export default function CallCardReel() {
               color="primary"
             >
               <Avatar
-                alt="Remy Sharp"
-                src={
-                  "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-                }
-                sx={{ width: 300, height: 300, borderRadius: 6 }}
+                alt={userName}
+                src={avatar}
+                sx={{ width: 250, height: 250, borderRadius: 6 }}
               />
             </StyledBadge>
           </CardActionArea>
@@ -97,7 +122,8 @@ export default function CallCardReel() {
                     </Box>
                 </CardActionArea> */}
 
-          <Box sx={{ width: 300, marginTop: 2 }}>
+          {/* width: 280,  */}
+          <Box sx={{ width: 280, marginTop: 2 }}>
             <AudioSlider_custom />
           </Box>
 
@@ -193,15 +219,15 @@ export default function CallCardReel() {
             width={1}
             flexGrow={1}
             flexDirection={"column"}
-            // alignItems={"center"}
-            ml={8}
+            alignItems={"center"}
+            // ml={8}
           >
             <Typography
               style={{ marginTop: 25 }}
               variant="h5"
               fontWeight={"bold"}
             >
-              Abdullah Al Kaisan
+              {userName}
             </Typography>
             <Typography
               style={{ marginBottom: 5 }}
@@ -210,7 +236,7 @@ export default function CallCardReel() {
               color={"#777"}
               variant="subtitle1"
             >
-              Web Developer
+              {profession}
             </Typography>
 
             {/* <Box display={"flex"} alignItems={"center"} flexDirection={"row"}   >
@@ -230,7 +256,7 @@ export default function CallCardReel() {
           </Box> */}
           </Box>
 
-          <Box width={1}>
+          <Box width={1} display={"flex"} justifyContent={"center"}>
             <Box
               display={"flex"}
               bgcolor={"background.default"}
@@ -242,6 +268,7 @@ export default function CallCardReel() {
               mx={2}
               alignItems={"center"}
               justifyContent={"space-evenly"}
+              // justifyContent={"center"}
             >
               <IconButton color="primary" size="large">
                 <UilUserPlus />
@@ -261,7 +288,7 @@ export default function CallCardReel() {
                     variant="contained"
                     color="primary"
                   >
-                    {`$${"2.24"}/hr`}
+                    {`$${hourRate}/hr`}
                   </Button>
                 </Link>
               </Box>
@@ -277,11 +304,15 @@ export default function CallCardReel() {
             justifyContent={"flex-start"}
           >
             <SubDetails
-              user_followers={32}
-              user_rating={32}
-              // user_language={"English"}
+              user_followers={new Intl.NumberFormat("en-US", {
+                useGrouping: true,
+                notation: 'compact',
+              }).format(followers)}
+              user_rating={rating}
+              // user_language={languages.join(", ")}
               justifyContent={"flex-start"}
-              user_total_call={145}
+              user_total_call={totalCall}
+              // flag={flag}
             />
 
             <Typography
@@ -296,9 +327,21 @@ export default function CallCardReel() {
               p={0}
               gutterBottom
             >
-              <RoomIcon sx={{ fontSize: "medium" }} />
+              <RoomIcon sx={{ fontSize: "medium", mr:0.5 }} />
 
-              {"Dhaka, Bangladesh"}
+              {`${city ? city + "," : ""} ${country}`}
+              <Tooltip title={country} placement="top">
+                <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
+                  <img
+                    style={{
+                      borderRadius: 3,
+                      border: "1px solid #77777750",
+                      boxShadow: "10px 10px 10px solid black",
+                    }}
+                    src={`https://flagcdn.com/w20/${flag}.png`}
+                  />
+                </Box>
+              </Tooltip>
             </Typography>
 
             <Typography
@@ -313,39 +356,50 @@ export default function CallCardReel() {
               p={0}
               gutterBottom
             >
-              <TranslateIcon sx={{ fontSize: "medium" }} />
+              <TranslateIcon sx={{ fontSize: "medium", mr:0.5 }} />
 
-              {"English, Bengali, Hindi"}
+              {languages.join(", ")}
             </Typography>
           </Box>
 
-          <Stack
-            bgcolor={"background.default"}
-            color={"text.primary"}
-            direction="row"
-            justifyContent={""}
-            flexWrap={"wrap"}
-            ml={2}
-            mt={2}
-            px={2}
-            overflow={"auto"}
-            //   sx={{
-            //     maxHeight: { md: "120px", xs: "120px" },
-            //     minHeight: { md: "120px", xs: "auto" },
-            //   }}
-          >
-            {/* <CallCardDynamic user_skills={user_skills}/> */}
+          <Box width={1} display={"flex"} justifyContent={"flex-start"}>
 
-            <ChipsCustom label="Javascript" />
-            <ChipsCustom label="Node js" />
-            <ChipsCustom label="React" />
-            <ChipsCustom label="MongoDB" />
-            <ChipsCustom label="UI/UX design" />
-            <ChipsCustom label="UI/UX design" />
-            <ChipsCustom label="UI/UX design" />
-            <ChipsCustom label="UI/UX design" />
-            <ChipsCustom label="UI/UX design" />
-          </Stack>
+            <Box
+              display={'flex'}
+              bgcolor={"background.default"}
+              color={"text.primary"}
+              direction="row"
+              justifyContent={"flex-start"}
+              flexWrap={"wrap"}
+              ml={2}
+              mt={2}
+              px={2}
+              overflow={"auto"}
+              //   sx={{
+              //     maxHeight: { md: "120px", xs: "120px" },
+              //     minHeight: { md: "120px", xs: "auto" },
+              //   }}
+            >
+              {/* <CallCardDynamic user_skills={user_skills}/> */}
+
+
+              {
+                skills.map((skill) => <ChipsCustom key={id} size={"large"} label={skill} />)
+              }
+
+
+              {/* <ChipsCustom size={"large"} label="Javascript" />
+              <ChipsCustom size={"large"} label="Node js" />
+              <ChipsCustom size={"large"} label="React" />
+              <ChipsCustom size={"large"} label="MongoDB" />
+              <ChipsCustom size={"large"} label="UI/UX design" />
+              <ChipsCustom size={"large"} label="UI/UX design" />
+              <ChipsCustom size={"large"} label="UI/UX design" />
+              <ChipsCustom size={"large"} label="UI/UX design" />
+              <ChipsCustom size={"large"} label="UI/UX design" /> */}
+            </Box>
+
+          </Box>
 
           {/* <Typography my={2} mx={4} variant="body1" color="#666">
             Hey My name is Kaisan Lorem ipsum dolor sit, amet consectetur

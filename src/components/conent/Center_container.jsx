@@ -11,11 +11,12 @@ import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 // import VideoCard from "../VideoCard/VideoCard";
 import CourseCard from "../CaurseCard.jsx/CourseCard";
 import CallCardReel from "../callCard/CallCardReel";
+import { usersDataLocal } from "../../usersDataLocal";
+import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
 
 // import CallCard3 from "./CallCard3";
-
 
 
 export default function Center_container() {
@@ -157,10 +158,18 @@ export default function Center_container() {
 
 <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
 
+    {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
+    
+
+        <CallCardReel />
+
+   
+
+    {/* {usersDataLocal[0]} */}
+    {/* <CallCardReel/>
     <CallCardReel/>
     <CallCardReel/>
-    <CallCardReel/>
-    <CallCardReel/>
+    <CallCardReel/> */}
 
 
   <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More"/>
@@ -178,7 +187,7 @@ export default function Center_container() {
 
  
 
-          <PostCard
+          {/* <PostCard
             name="Moinuddin chisti"
             profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
             profession="CEO at Kaitoker"
@@ -208,7 +217,7 @@ export default function Center_container() {
             disLikes={10}
             comments={12}
             shares={2}
-          />
+          /> */}
 
 
 

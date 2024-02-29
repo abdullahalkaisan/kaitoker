@@ -14,7 +14,7 @@ SubDetails.propTypes = {
   user_total_call: PropTypes.number.isRequired,
 };
 
-export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent }) {
+export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent, flag }) {
   
 
   // const [isBadge, setIsBadge] = useState(false);
@@ -38,9 +38,7 @@ export default function SubDetails({user_followers, user_rating , user_language,
       fontWeight={"boldd"}
       sx={{ color: "#777" }}
       flexDirection={"row"}
-
       justifyContent={justifyContent === "flex-start" ? "flex-start" : "center"}
-
       flexWrap={"wrap"}
       pt={2}
       // pb={1}
@@ -61,10 +59,10 @@ export default function SubDetails({user_followers, user_rating , user_language,
             alignItems: "center",
             pr: 1,
             fontSize: "medium",
-            // medium 
+            // medium
           }}
         >
-          <PeopleOutlineOutlinedIcon sx={{ fontSize: "larger" }} />
+          <PeopleOutlineOutlinedIcon sx={{ fontSize: "larger", mr:0.5 }} />
           {user_followers}
         </Box>
       )}
@@ -103,7 +101,11 @@ export default function SubDetails({user_followers, user_rating , user_language,
         {"Bangladesh"}
       </Box> */}
 
-      <Tooltip title={"India"} placement="top">
+      <Tooltip
+        style={flag ? { display: "block" } : { display: "none" }}
+        title={"India"}
+        placement="top"
+      >
         <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
           <img
             style={{
@@ -111,31 +113,27 @@ export default function SubDetails({user_followers, user_rating , user_language,
               border: "1px solid #77777750",
               boxShadow: "10px 10px 10px solid black",
             }}
-            src={`https://flagcdn.com/w20/${"in"}.png`}
+            src={`https://flagcdn.com/w20/${flag}.png`}
           />
         </Box>
       </Tooltip>
 
-
-
-
-
       <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          pr: 1,
-          fontSize: "medium",
-        }}
+        sx={
+          user_language
+            ? {
+                display: "flex",
+                alignItems: "center",
+                pr: 1,
+                fontSize: "medium",
+              }
+            : { display: "none" }
+        }
       >
         <TranslateIcon sx={{ fontSize: "medium" }} />
-        {"English"}
+        {user_language}
         {/* {" ক क ص 항 あ"} */}
       </Box>
-
-
-
-
     </Box>
   );
 }

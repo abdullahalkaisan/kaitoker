@@ -46,7 +46,7 @@ export default function PostCard(props) {
   
   return (
     <>
-      <Card variant="none" sx={{ maxWidth: 500, m: 1, p: 2 }}>
+      <Card variant="none" sx={{ width: 500, m: 1, p: 2 }}>
         <Box display={"flex"} justifyContent={"space-between"}>
           <PeopleCard
             title="Abdullah Al Kaisan"
@@ -60,7 +60,7 @@ export default function PostCard(props) {
           </IconButton>
         </Box>
 
-        <Box display={"none"} m={1} mb={0}>
+        <Box display={""} m={1} mb={0}>
           <ChipsCustom label="Javascript" />
         </Box>
 
@@ -69,15 +69,15 @@ export default function PostCard(props) {
           // height="194"
           height="auto"
           width={1}
-          sx={{ objectFit: "cover", borderRadius: 2, marginTop: 1 }}
+          sx={{ display:"none", objectFit: "cover", borderRadius: 2, marginTop: 1 }}
           image="https://scontent.fdac5-1.fna.fbcdn.net/v/t1.6435-9/68982374_889372348110010_3855543771697512448_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=2be8e3&_nc_ohc=-gDFsoGZBd0AX9-W01o&_nc_ht=scontent.fdac5-1.fna&oh=00_AfBqVqAwpZHIccqW3ekffHD8xDcMfqlnSVkGkJbQWKE0XQ&oe=65DE4300"
           alt="Paella dish"
         />
 
         <CardContent>
-          <p  color="text.default">
+          <p style={{fontSize:"large"}} color="text.default">
             {`
-              It was a long time ago 😊❤ 🤣🤣😑😎🙈💖💘💚💛🥰😍📉🥵🍗🚲🙄
+              Anyone's want to learn array and object concent in javascript please call me 
             `}
           </p>
         </CardContent>
