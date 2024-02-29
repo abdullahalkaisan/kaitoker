@@ -9,6 +9,7 @@ import {
   // UilPlay,
   UilLocationPoint,
   UilUserPlus,
+  UilVideo,
   // UilEllipsisH
   // UilRssAlt,
   // UilHeart,
@@ -386,6 +387,7 @@ const {
             <UilInfoCircle/>
           </IconButton> */}
 
+
           <IconButton color="primary">
             {/* <UilHeart/> */}
             {/* <UilStar/> */}
@@ -394,7 +396,12 @@ const {
             <UilUserPlus />
           </IconButton>
 
+
           <AudioPlay_button />
+
+          {/* <IconButton color="primary" size="large">
+              <UilVideo />
+          </IconButton> */}
 
           <Box>
             {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}

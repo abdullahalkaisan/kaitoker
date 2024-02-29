@@ -46,7 +46,7 @@ import { useEffect } from 'react';
 export default function CallCardReel(props) {
 
   
-  let currentUser = 10;
+  let currentUser = 0;
 
   const {
     userName,
@@ -288,9 +288,9 @@ export default function CallCardReel(props) {
               <IconButton color="primary" size="large">
                 <UilCommentMessage />
               </IconButton>
-              <IconButton color="primary" size="large">
+              {/* <IconButton color="primary" size="large">
                 <UilVideo />
-              </IconButton>
+              </IconButton> */}
 
               <Box>
                 <Link to={"/callpage"}>
