@@ -220,9 +220,10 @@ export default function Center_container() {
           />
 
 
+    {usersDataLocal.map((item)=> <CallCard key={item.id} item={item}/> )}
 
 
-
+{/* 
         <CallCard 
           user_name="Abullah Al Kaisan"
           user_profetion="Web developer"
@@ -318,7 +319,7 @@ export default function Center_container() {
           user_perHourCost="4.35"
           user_skills="asdfasdf" 
           user_language="English"
-        />
+        /> */}
 
 </Box>
 

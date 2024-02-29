@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, CardActionArea, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu } from '@mui/material';
+import { Avatar, Badge, Box, Button, CardActionArea, Divider, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, Tooltip, Typography } from '@mui/material';
 import { useState } from 'react'
 import AudioPlay_button from '../callCard/AudioPlay_button';
 import AudioSlider_custom from '../callCard/AudioSlider_custom';
@@ -7,10 +7,12 @@ import PeopleCard from '../conent/rightMenu/PeopleCard';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import RoomIcon from '@mui/icons-material/Room';
 
 import { 
     UilLocationPoint, 
+    UilCommentMessage,
+    UilUserPlus,
     UilCalender,
     UilLetterJapaneseA,
 } from '@iconscout/react-unicons'
@@ -142,12 +144,15 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
 
         </Box>
 
+
         <SubDetails
-          user_followers={134}
-          user_rating={50}
-          user_language={"English"}
-          user_total_call={124}
-        />
+              user_followers={134}
+              user_rating={50}
+              user_language={"English"}
+              user_total_call={124}
+            />
+
+
 
 
         <Divider sx={{ mt: 2, display: "none" }} />
@@ -190,7 +195,29 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
       </Box>
       <Box sx={{px:3}}>
           <AudioSlider_custom/>
-          <AudioPlay_button/>
+          <Box
+              display={"flex"}
+              bgcolor={"background.default"}
+              color={"text.primary"}
+              flexDirection={"row"}
+              // width={300}
+              // m={"10px 0"}
+              mb={2}
+              mx={2}
+              alignItems={"center"}
+              justifyContent={"space-evenly"}
+              // justifyContent={"center"}
+            >
+              {/* <IconButton color="primary" size="large">
+                <UilUserPlus />
+              </IconButton> */}
+
+              <AudioPlay_button/>
+
+            </Box>
+
+
+
       </Box>
 
     </Menu>

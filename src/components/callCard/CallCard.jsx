@@ -65,24 +65,43 @@ export default function CallCard(props) {
 
 
 
-  const {
-    // id, 
-    user_name, 
-    user_profetion, 
-    user_profilePicture, 
-    user_country, 
-    user_country_flag, 
-    user_followers, 
-    user_accoutType, 
-    user_about, 
-    user_rating, 
-    user_total_call, 
-    user_perHourCost, 
-    // user_skills, 
-    user_language
-} = props;
+//   const {
+//     // id, 
+//     user_name, 
+//     user_profetion, 
+//     user_profilePicture, 
+//     user_country, 
+//     user_country_flag, 
+//     user_followers, 
+//     user_accoutType, 
+//     user_about, 
+//     user_rating, 
+//     user_total_call, 
+//     user_perHourCost, 
+//     // user_skills, 
+//     user_language
+// } = props;
 
   
+const {
+  userName,
+  profession,
+  avatar,
+  hourRate,
+  followers,
+  rating,
+  totalCall,
+  flag, 
+  gigLanguage,
+  isVarified,
+  isOnline, 
+  languages, 
+  country, 
+  city, 
+  skills,
+  id
+} = props.item;
+
 
 
 
@@ -123,133 +142,139 @@ export default function CallCard(props) {
         borderRadius={1}
         m={2}
       >
-
-
-      <Box display={"flex"} flexDirection={"row"}>
-
-      <Box
-          bgcolor={"background.default"}
-          sx={{ display: "flex", justifyContent: "center", m: 1 }}
-        >
-          <Link to={"./profile"}>
-            <IconButton aria-label="delete" size="small">
-              <StyledBadge
-                color="info"
-                badgeContent={1}
-                variant="dot"
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-              >
-                {/* 110  */}
-                <Avatar
-                  alt="Remy Sharp"
-                  src={user_profilePicture}
-                  sx={{ width: 70, height: 70 }}
-                />
-              </StyledBadge>
-            </IconButton>
-          </Link>
-        </Box>
-
-        <Box
-          bgcolor={"background.default"}
-          color={"text.primary"}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            // alignItems: "center",
-            width: "100%",
-            pl:1
-          }}
-        >
-          <Link
-            style={{
-              textDecoration: "none",
-              color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
-              "&:visited": {
-                color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
-              },
-            }}
-            to={"/profile"}
+        <Box display={"flex"} flexDirection={"row"}>
+          <Box
+            bgcolor={"background.default"}
+            sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
-            <Typography
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                width: "max-content",
+            <Link to={"./profile"}>
+              <IconButton aria-label="delete" size="small">
+                <StyledBadge
+                  color={
+                    isOnline === "online" ? "info" : "warning"
+                  }
+                  badgeContent={
+                    isOnline === "online" || isOnline === "busy" ? 1 : 0
+                  }
+                  variant="dot"
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "right",
+                  }}
+                >
+                  {/* 110  */}
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={avatar}
+                    sx={{ width: 70, height: 70 }}
+                  />
+                </StyledBadge>
+              </IconButton>
+            </Link>
+          </Box>
+
+          <Box
+            bgcolor={"background.default"}
+            color={"text.primary"}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              // alignItems: "center",
+              width: "100%",
+              pl: 1,
+            }}
+          >
+            <Link
+              style={{
                 textDecoration: "none",
-                "&:hover": { textDecoration: "underline" },
+                color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
+                "&:visited": {
+                  color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
+                },
               }}
-              textAlign={"center"}
-              fontWeight={"bold"}
-              variant="h6"
+              to={"/profile"}
+            >
+              <Typography
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                  width: "max-content",
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+                textAlign={"center"}
+                fontWeight={"bold"}
+                variant="h6"
+                gutterBottom
+              >
+                {userName}
+
+                {/* <VerifiedIcon
+                  sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
+                />  */}
+
+                {isVarified && (
+                  <VerifiedIcon
+                    sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
+                  />
+                )}
+              </Typography>
+            </Link>
+
+            <Typography
+              sx={{ color: "#777" }}
+              // textAlign={"center"}
+              variant="subtitle1"
+              mt={-2}
+              p={0}
               gutterBottom
             >
-              {user_name}
-
-              {user_accoutType === "verified" ? (
-                <VerifiedUserIcon
-                  sx={{ mx: 0.5, fontSize: "large", color: "#555" }}
-                />
-              ) : "" || user_accoutType === "vip" ? (
-                <VerifiedIcon
-                  sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
-                />
-              ) : "" || user_accoutType === "pro" ? (
-                <VerifiedUserIcon
-                  sx={{ mx: 0.5, fontSize: "large", color: "#F97316" }}
-                />
-              ) : (
-                ""
-              )}
+              {profession}
             </Typography>
-          </Link>
 
-          <Typography
-            sx={{ color: "#777" }}
-            // textAlign={"center"}
-            variant="subtitle1"
-            mt={-2}
-            p={0}
-            gutterBottom
-          >
-            {user_profetion}
-          </Typography>
+            <Typography
+              sx={{ color: "#777", display: "flex", alignItems: "center" }}
+              // textAlign={"center"}
+              variant="subtitle1"
+              mt={-1.5}
+              p={0}
+              gutterBottom
+            >
+              <RoomIcon sx={{ fontSize: "medium" }} />
 
-          <Typography
-            sx={{ color: "#777", display:"flex", alignItems:"center" }}
-            // textAlign={"center"}
-            variant="subtitle1"
-            mt={-1.5}
-            p={0}
-            gutterBottom
-          >
-            <RoomIcon sx={{ fontSize: "medium" }} />
+              {country}
 
-            {"China"}
-          </Typography>
-
-          <Typography
-            sx={{ color: "#777", display:"flex", alignItems:"center" }}
-            // textAlign={"center"}
-            variant="subtitle1"
-            mt={-2}
-            p={0}
-            gutterBottom
-          >
-            {/* <RoomIcon sx={{ fontSize: "medium" }} /> */}
-          </Typography>
-
-          
+              <Tooltip title={country} placement="top">
+                <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
+                  <img
+                    style={{
+                      borderRadius: 3,
+                      border: "1px solid #77777750",
+                      boxShadow: "10px 10px 10px solid black",
+                    }}
+                    src={`https://flagcdn.com/w20/${flag}.png`}
+                  />
+                </Box>
+              </Tooltip>
 
 
+            </Typography>
 
-{/* 
+            <Typography
+              sx={{ color: "#777", display: "flex", alignItems: "center" }}
+              // textAlign={"center"}
+              variant="subtitle1"
+              mt={-2}
+              p={0}
+              gutterBottom
+            >
+              {/* <RoomIcon sx={{ fontSize: "medium" }} /> */}
+            </Typography>
+
+            {/* 
           <Typography
             sx={{ color: "#999", mt: "-5px" }}
             textAlign={"center"}
@@ -282,46 +307,23 @@ export default function CallCard(props) {
               </Box>
             </Stack>
           </Typography> */}
+          </Box>
         </Box>
 
+        <Box>
+          <SubDetails
+            user_followers={new Intl.NumberFormat("en-US", {
+              useGrouping: true,
+              notation: 'compact',
+            }).format(followers)}
+            user_rating={rating}
+            user_language={gigLanguage}
+            user_total_call={totalCall}
+            // flag={flag}
+          />
+        </Box>
 
-
-
-
-
-      </Box>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <Box>
-              <SubDetails
-                user_followers={user_followers}
-                user_rating={user_rating}
-                user_language={user_language}
-                user_total_call={user_total_call}
-              />
-            </Box>
-
-
-
-
-
-
-        <Box display={"none"}>
+        {/* <Box display={"none"}>
           <Typography
             variant="body2"
             sx={{
@@ -336,7 +338,7 @@ export default function CallCard(props) {
           >
             {user_about}
           </Typography>
-        </Box>
+        </Box> */}
 
         <Box
           bgcolor={"background.default"}
@@ -355,10 +357,8 @@ export default function CallCard(props) {
           }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
-
-
-
-          <ChipsCustom hashTagStyle={true} label="Javascript" />
+          {skills.map((skill)=> <ChipsCustom hashTagStyle={true} label={skill} /> )}
+          {/* <ChipsCustom hashTagStyle={true} label="Javascript" />
           <ChipsCustom hashTagStyle={true} label="Node js" />
           <ChipsCustom hashTagStyle={true} label="React" />
           <ChipsCustom hashTagStyle={true} label="MongoDB" />
@@ -366,8 +366,7 @@ export default function CallCard(props) {
           <ChipsCustom hashTagStyle={true} label="Video editor" />
           <ChipsCustom hashTagStyle={true} label="Premire Pro" />
           <ChipsCustom hashTagStyle={true} label="Graphics designer" />
-          <ChipsCustom hashTagStyle={true} label="Mern stack developer" />
-        
+          <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
         <Box sx={{ px: 4 }}>
@@ -410,7 +409,7 @@ export default function CallCard(props) {
                 {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
                 {/* Hire  */}
                 {/* $120 Month */}
-                {`$${user_perHourCost}/hr`}
+                {`$${hourRate}/hr`}
               </Button>
             </Link>
           </Box>

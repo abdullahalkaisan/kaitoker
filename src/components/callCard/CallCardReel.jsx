@@ -46,7 +46,7 @@ import { useEffect } from 'react';
 export default function CallCardReel(props) {
 
   
-  let currentUser = 3;
+  let currentUser = 10;
 
   const {
     userName,
@@ -123,7 +123,7 @@ export default function CallCardReel(props) {
                 </CardActionArea> */}
 
           {/* width: 280,  */}
-          <Box sx={{ width: 280, marginTop: 2 }}>
+          <Box sx={{ width: 240, marginTop: 2 }}>
             <AudioSlider_custom />
           </Box>
 
