@@ -15,6 +15,7 @@ PeopleList.propTypes = {
   accountType: PropTypes.string,
   avatar: PropTypes.bool,
   badge: PropTypes.bool,
+  avatarUrl: PropTypes.string,
 };
 
 
@@ -22,7 +23,7 @@ PeopleList.propTypes = {
 
 export default function PeopleList(props) {
 
-  const {title, subTitle,accountType, avatar, badge } = props;
+  // const {title, subTitle,accountType, avatar, avatarUrl,  badge , isVarified } = props;
 
 
   return (
@@ -37,11 +38,7 @@ export default function PeopleList(props) {
     >
 
       <PeopleCard  
-        title={title} 
-        subTitle={subTitle} 
-        accountType={accountType} 
-        avatar={avatar} 
-        badge={badge}  
+        {...props}
       />
 
 

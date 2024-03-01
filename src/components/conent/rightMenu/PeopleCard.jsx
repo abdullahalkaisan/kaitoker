@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, CardActionArea, Typography } from '@mui/material'
+import { Avatar, Badge, Box, CardActionArea, Tooltip, Typography } from '@mui/material'
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
@@ -13,22 +13,30 @@ import { useTheme } from '@emotion/react';
 
 
 PeopleCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-  avatar: PropTypes.bool.isRequired,
-  badge: PropTypes.bool.isRequired,
-  accountType: PropTypes.string.isRequired
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  accountType: PropTypes.string,
+  flag: PropTypes.string,
+  country: PropTypes.string,
+  avatar: PropTypes.bool,
+  badge: PropTypes.bool,
+  avatarUrl: PropTypes.string,
+  isVarified: PropTypes.bool,
 };
 
 
 
 export default function PeopleCard(props) {
 
+  
+  
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
+  
+  
+  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified } = props;
 
-
-  const {title,subTitle, avatar, badge, accountType} = props;
+  console.log(flag);
 
   const PeopleStyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -55,11 +63,7 @@ export default function PeopleCard(props) {
             horizontal: "right",
           }}
         >
-          <Avatar
-            sx={{ width: 32, height: 32 }}
-            alt="Remy Sharp"
-            src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-          />
+          <Avatar sx={{ width: 32, height: 32 }} alt={title} src={avatarUrl} />
         </PeopleStyledBadge>
       </CardActionArea>
 
@@ -71,18 +75,36 @@ export default function PeopleCard(props) {
           component="h1"
           sx={{ cursor: "pointer", fontWeight: "bold" }}
         >
-          {title}
+          {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
 
           <VerifiedIcon
             sx={{
-              display: `${accountType === "verified" ? "block" : "none"}`,
+              display: `${isVarified ? "block" : "none"}`,
               mx: 0.5,
               fontSize: "medium",
               color: "#1D9BF0",
             }}
           />
+
+          <Tooltip title={country} placement="top">
+            <Box sx={flag ? { display: "flex", alignItems: "center", px: 1 } : {display:"none"}}>
+              <img
+                style={{
+                  borderRadius: 3,
+                  border: "1px solid #77777750",
+                  boxShadow: "10px 10px 10px solid black",
+                }}
+                src={`https://flagcdn.com/w20/${flag}.png`}
+              />
+            </Box>
+          </Tooltip>
         </Typography>
-        <Typography mt={-0.5} color={isDark ? "#999" : "#777"} variant="body2" component="h6">
+        <Typography
+          mt={-0.5}
+          color={isDark ? "#999" : "#777"}
+          variant="body2"
+          component="h6"
+        >
           {subTitle}
         </Typography>
       </Box>
