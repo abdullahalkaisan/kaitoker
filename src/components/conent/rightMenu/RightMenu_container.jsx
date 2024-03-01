@@ -535,7 +535,12 @@ export default function RightMenu_container() {
           Item Three
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
-          <LogsCard/>
+          <Box display={"flex"} flexWrap={"wrap"} width={1} height={1} justifyContent={"center"} pt={2}>
+            <LogsCard/>
+            <LogsCard/>
+            <LogsCard/>
+
+          </Box>
         </CustomTabPanel>
       </Box>
 
