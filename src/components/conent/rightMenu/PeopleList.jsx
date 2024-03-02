@@ -2,7 +2,8 @@ import { Box, IconButton } from "@mui/material";
 
 import { 
     UilVideo,
-    UilEllipsisV
+    UilEllipsisV, 
+    UilVideoSlash
   } from '@iconscout/react-unicons'
   
 import PeopleCard from "./PeopleCard";
@@ -16,6 +17,7 @@ PeopleList.propTypes = {
   avatar: PropTypes.bool,
   badge: PropTypes.bool,
   avatarUrl: PropTypes.string,
+  isOnline: PropTypes.string,
 };
 
 
@@ -36,18 +38,26 @@ export default function PeopleList(props) {
       alignItems={"center"}
       mb={2}
     >
-
-      <PeopleCard  
-        {...props}
-      />
-
+      <PeopleCard {...props} />
 
       <Box>
-      {/* F5FAFD  */}
-      {/* sx={{bgcolor:"#F5FAFD"}}  */}
-        <IconButton color="info" >
-          <UilVideo />
-        </IconButton>
+        {/* F5FAFD  */}
+        {/* sx={{bgcolor:"#F5FAFD"}}  */}
+        <span
+          style={props.isOnline === "" ? { display: "none" } : { display: "" }}
+        >
+          <IconButton
+            style={
+              props.isOnline === "online"
+                ? { backgroundColor: "#0288D110" }
+                : { backgroundColor: "#FFA50010" }
+            }
+            color={props.isOnline === "online" ? "info" : "warning"}
+          >
+            {props.isOnline === "online" ? <UilVideo /> : <UilVideoSlash />}
+          </IconButton>
+        </span>
+
         <IconButton>
           <UilEllipsisV />
         </IconButton>

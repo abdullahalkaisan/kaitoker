@@ -22,6 +22,7 @@ PeopleCard.propTypes = {
   badge: PropTypes.bool,
   avatarUrl: PropTypes.string,
   isVarified: PropTypes.bool,
+  isOnline: PropTypes.string,
 };
 
 
@@ -34,7 +35,7 @@ export default function PeopleCard(props) {
   const isDark = theme.palette.mode === "dark";
   
   
-  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified } = props;
+  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified, isOnline } = props;
 
   console.log(flag);
 
@@ -55,8 +56,8 @@ export default function PeopleCard(props) {
       >
         <PeopleStyledBadge
           sx={{ display: `${avatar ? "flex" : "none"}` }}
-          color="info"
-          badgeContent={badge ? 1 : 0}
+          color={isOnline === "online" ? "info" : "warning"} 
+          badgeContent={badge && isOnline ? 1 : 0}
           variant="dot"
           anchorOrigin={{
             vertical: "bottom",

@@ -156,6 +156,7 @@ export default function RightMenu_container() {
                 country={item.country}
                 isVarified={item.isVarified}
                 avatarUrl={item.avatar}
+                isOnline={item.isOnline}
                 // flag={item.flag}
                 avatar={1}
                 badge={1}
