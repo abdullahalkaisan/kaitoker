@@ -46,7 +46,7 @@ import { useEffect } from 'react';
 export default function CallCardReel(props) {
 
   
-  let currentUser = 0;
+  let currentUser = 2;
 
   const {
     userName,

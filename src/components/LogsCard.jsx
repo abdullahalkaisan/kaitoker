@@ -88,9 +88,7 @@ export default function LogsCard() {
             </Button>
           </Box>
         </Box>
-        <Typography style={{ padding: "10px", fontSize: "medium" }} variant="">
-          {`Let's discuss about Javascript`}
-        </Typography>
+
 
         {/* FF000010  */}
         <Box>
@@ -107,9 +105,15 @@ export default function LogsCard() {
           </Button>
         </Box>
 
+        <Typography style={{ padding: "10px", fontSize: "medium" }} variant="">
+          {`Let's discuss about Javascript`}
+        </Typography>
+
         <Box sx={{display:"flex", width:1, mt:3, justifyContent:"flex-end"}} >
-          <Button color="error">Reject</Button>
-          <Button>Accept</Button>
+          <Button color="error" size="small" style={{backgroundColor:"#FF000005",}}  >Reject</Button>
+          <Box>
+            <Button size="small" style={{backgroundColor:"#1976D210",}}>Accept</Button>
+          </Box>
         </Box>
 
 
