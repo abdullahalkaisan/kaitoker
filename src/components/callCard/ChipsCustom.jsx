@@ -1,4 +1,4 @@
-import { useTheme } from "@emotion/react";
+// import { useTheme } from "@emotion/react";
 import { Chip } from "@mui/material";
 import PropTypes from 'prop-types';
 
@@ -8,8 +8,8 @@ const handleClick_chips = () => {
 
 
 export default function ChipsCustom(props) {
-  const theme  = useTheme();
-  const themeMode = theme.palette.mode;
+  // const theme  = useTheme();
+  // const isDark = theme.palette.mode === "dark";
 
 
   return (
