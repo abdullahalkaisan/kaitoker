@@ -38,7 +38,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 // } from '@iconscout/react-unicons'
 import { usersDataLocal } from '../../../usersDataLocal';
 import CallCardReel_details from './CallCardReel_details';
-import CallCardReelTap from './CallCardReelTap';
+import CallCardReelTap from './CallCardReel_Tap';
 
 
 
@@ -73,10 +73,6 @@ export default function CallCardReel() {
           bottom: 15,
           outline: `15px solid ${theme.palette.background.paper}`,
 
-
-
-
-          
 
     // round style
           // height:"12px",
@@ -114,7 +110,7 @@ export default function CallCardReel() {
           <CardActionArea
             sx={{
               width: 150,
-              borderRadius: "100px 100px 10px 100px",
+              borderRadius: "100px 100px 70px 100px",
               // borderRadius: 666
             }}
           >
@@ -133,7 +129,7 @@ export default function CallCardReel() {
                 sx={{
                   width: 150,
                   height: 150,
-                  borderRadius: "100px 100px 60px 100px",
+                  borderRadius: "100px 100px 70px 100px",
                   // borderRadius:999
                 }}
               />
