@@ -18,7 +18,7 @@ import { usersDataLocal } from '../../../usersDataLocal';
 import LogsCard from '../../LogsCard';
 import MessageList from './MessageList';
 import ChatList from './ChatList';
-// import PeopleList from './peopleList';
+
 
 
 export function CustomTabPanel(props) {
@@ -184,8 +184,8 @@ console.log(usersDataLocal);
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-
-          <ChatList/>
+          {/* <ChatList/> */}
+          <MessageList/>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
