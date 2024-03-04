@@ -13,8 +13,18 @@ export default function ChipsCustom(props) {
 
 
   return (
-
-    <Chip size={props.size === "large" ?"large":"small"}  label={props.label} sx={{m:0.2, borderRadius:2}} onClick={handleClick_chips}   />
+    <Chip
+      sx={{
+        height: "auto",
+        "& .MuiChip-label": {
+          display: "block",
+          whiteSpace: "normal",
+        },m: 0.2, py:0.6, borderRadius: 2
+      }}
+      size={props.size === "large" ? "large" : "small"}
+      label={props.label}
+      onClick={handleClick_chips}
+    />
 
     // <Chip onClick={handleClick_chips} sx={{m:0.5, color:"#555", fontSize:"14px", border:"1px solid rgba(0, 0, 0, 0.12)"}} label="SEO"/>
   );

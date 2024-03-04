@@ -1,13 +1,37 @@
-import { Avatar, AvatarGroup, Box, Button, IconButton, Typography } from "@mui/material";
-import PeopleCard from "./conent/rightMenu/PeopleCard";
+import { Avatar, AvatarGroup, Badge, Box, Button, IconButton } from "@mui/material";
+// import PeopleCard from "./conent/rightMenu/PeopleCard";
 import TranslateIcon from '@mui/icons-material/Translate';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 // import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 // import AccessAlarmsIcon from '@mui/icons-material/AccessAlarms';
 // import { UilLetterJapaneseA } from '@iconscout/react-unicons'
-
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import HistoryIcon from '@mui/icons-material/History';
 import { useTheme } from "@emotion/react";
+import styled from "@emotion/styled";
+import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
+import ChipsCustom from "./callCard/ChipsCustom";
+
+const BadgeAvatar = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    height:20,
+    width:20,
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    left: 5,
+    bottom: 10,
+    fontSize:"10px",
+    border: `3px solid ${theme.palette.background.paper}`,
+    backgroundColor:"#fff",
+    color:"tomato"
+    // padding: '0 4px',
+  },
+}));
+
+
+
+
 
 export default function LogsCard() {
 
@@ -25,16 +49,8 @@ export default function LogsCard() {
       width={"90%"}
       borderRadius={2}
     >
-
-
-
       <Box display={"flex"} flexDirection={"column"} padding={3}>
-
-
-
-
-
-        <Box>
+        <Box display={"flex"} width={1} justifyContent={"center"}>
           <Button
             style={{
               marginTop: 6,
@@ -44,17 +60,67 @@ export default function LogsCard() {
             }}
             color="warning"
           >
-            <HistoryIcon style={{ marginRight: 2.5, fontSize: "large" }} />4
-            days 12 hours 45 minutes left
+            <HistoryIcon style={{ marginRight: 3, fontSize: "large" }} />
+            {/* 4 days 12 hours   */}
+           4 Days 12 hours 55 minutes left.
           </Button>
         </Box>
 
-        <Box sx={{ width: "max-content", display: "flex", marginTop: 2 }}>
+        <Box display={"flex"} alignItems={"center"} marginTop={2}>
+          <Box
+            fontSize="smaller"
+            color={isDark ? "#f1f1f1" : "#777"}
+            display={"flex"}
+            alignItems={"center"}
+          >
+            <AccessTimeIcon sx={{ marginRight: 0.5 }} fontSize="smaller" />
+            1 hour - 10:45 AM - 10/12/2024
+          </Box>
+        </Box>
+
+        <Box display={"flex"} alignItems={"center"} flexWrap={"wrap"}>
+          <Box
+            fontSize="smaller"
+            color={isDark ? "#999" : "#777"}
+            display={"flex"}
+            alignItems={"center"}
+          >
+            <TranslateIcon sx={{ marginRight: 0.5 }} fontSize="smaller" />
+            English
+          </Box>
+
+          <Box>
+            <Button color="success" size="small">
+              $1.12
+            </Button>
+          </Box>
+
+          <Box>
+            <ChipsCustom label="Let's talk about Javascript Object and Arary"/>
+          </Box>
+
+
+        </Box>
+
+
+
+
+        <Box sx={{ width: 1, display: "flex", justifyContent:"center", marginTop: 2 }}>
           <AvatarGroup max={4}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-            />
+            <BadgeAvatar
+              // color="error"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              // color="error"
+              badgeContent={<StarsRoundedIcon/>}
+            >
+              <Avatar
+                alt="Remy Sharp"
+                src="https://i.pravatar.cc/300?img=10"
+              />
+            </BadgeAvatar>
             <Avatar
               alt="Travis Howard"
               src="https://lh3.googleusercontent.com/a/ACg8ocK386pzE7Z-bSFqbGXHYVxxKt5pYh_OAnMnkKWDOPhNabI"
@@ -70,76 +136,50 @@ export default function LogsCard() {
           </AvatarGroup>
         </Box>
 
-        <Box display={"flex"} alignItems={"center"} marginTop={2}>
-          <Box
-            fontSize="smaller"
-            color={"#777"}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <AccessTimeIcon sx={{ marginRight: 0.5 }} fontSize="smaller"/>
-            30 minutes - 10:45 AM - 10/12/2024
-          </Box>
-        </Box>
-
-        <Box display={"flex"} alignItems={"center"}>
-          <Box
-            fontSize="smaller"
-            color={"#777"}
-            display={"flex"}
-            alignItems={"center"}
-          >
-            <TranslateIcon sx={{ marginRight: 0.5 }} fontSize="smaller" />
-            English
-          </Box>
-
-          <Box>
-            <Button color="success" size="small">
-              $1.12
-            </Button>
-          </Box>
-        </Box>
 
 
-
-
-        <Typography style={{ padding: "10px", fontSize: "medium" }} variant="">
-          {`Let's discuss about Javascript`}
-        </Typography>
-
-
-
+        {/* <Typography style={{ padding: "20px 0", fontSize: "medium", color:"777" }} variant="">
+          {`Topic: Let's discuss about Javascript`}
+        </Typography> */}
 
         <Box
-          sx={{ display: "none", width: 1, mt: 3, justifyContent: "flex-end" }}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          marginTop={2}
         >
-          <Button
-            color="error"
-            size="small"
-            style={{ backgroundColor: "#FF000005" }}
+          <Box
+            sx={{
+              display: "none",
+              width: 1,
+              mt: 3,
+              justifyContent: "flex-end",
+            }}
           >
-            Reject
-          </Button>
-          <Box>
-            <Button size="small" style={{ backgroundColor: "#1976D210" }}>
-              Accept
-            </Button>
-          </Box>
-        </Box>
-
-
-        <Box textAlign={"end"}>
-          <Button
-              variant="contained"
+            <Button
+              color="error"
               size="small"
-              sx={{ borderRadius: 999, display:"" }}
+              style={{ backgroundColor: "#FF000005" }}
             >
-              Join
+              Reject
             </Button>
+            <Box>
+              <Button size="small" style={{ backgroundColor: "#1976D210" }}>
+                Accept
+              </Button>
+            </Box>
+          </Box>
+
+          <Box>
+            <IconButton>
+              <InfoOutlinedIcon />
+            </IconButton>
+          </Box>
+
+          <Button variant="contained" size="small" sx={{ borderRadius: 999 }}>
+            Join
+          </Button>
         </Box>
-
-
-
       </Box>
     </Box>
   );
