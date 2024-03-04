@@ -177,15 +177,15 @@ console.log(usersDataLocal);
                 // flag={item.flag}
                 avatar={1}
                 badge={1}
-                avatarSize={45}
+                avatarSize={47}
               />
             ))}
           </Box>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-          {/* <ChatList/> */}
-          <MessageList/>
+          <ChatList/>
+          {/* <MessageList/> */}
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>

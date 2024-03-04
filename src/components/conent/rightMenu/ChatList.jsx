@@ -38,6 +38,9 @@ const isDark = theme.palette.mode === "";
                 subTitle="Web deloper"
                 avatar={1}
                 badge={1}
+                avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"}
+                flag={"ph"}
+                isOnline={"online"}
               />
               <IconButton>
                 <MoreHorizIcon />
