@@ -23,6 +23,7 @@ PeopleCard.propTypes = {
   avatarUrl: PropTypes.string,
   isVarified: PropTypes.bool,
   isOnline: PropTypes.string,
+  avatarSize: PropTypes.number,
 };
 
 
@@ -35,7 +36,7 @@ export default function PeopleCard(props) {
   const isDark = theme.palette.mode === "dark";
   
   
-  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified, isOnline } = props;
+  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified, isOnline, avatarSize} = props;
 
   console.log(flag);
 
@@ -56,7 +57,7 @@ export default function PeopleCard(props) {
       >
         <PeopleStyledBadge
           sx={{ display: `${avatar ? "flex" : "none"}` }}
-          color={isOnline === "online" ? "info" : "warning"} 
+          color={isOnline === "online" ? "info" : "warning"}
           badgeContent={badge && isOnline ? 1 : 0}
           variant="dot"
           anchorOrigin={{
@@ -64,7 +65,23 @@ export default function PeopleCard(props) {
             horizontal: "right",
           }}
         >
-          <Avatar sx={{ width: 32, height: 32 }} alt={title} src={avatarUrl} />
+          <Avatar
+            sx={
+              isOnline
+                ? {
+                    width: avatarSize ? avatarSize : 32,
+                    height: avatarSize ? avatarSize : 32,
+                    borderRadius: "100px 100px 10px 100px",
+                  }
+                : {
+                    width: avatarSize ? avatarSize : 32,
+                    height: avatarSize ? avatarSize : 32,
+                    borderRadius: 9999,
+                  }
+            }
+            // alt={title}
+            src={avatarUrl}
+          />
         </PeopleStyledBadge>
       </CardActionArea>
 
@@ -88,7 +105,13 @@ export default function PeopleCard(props) {
           />
 
           <Tooltip title={country} placement="top">
-            <Box sx={flag ? { display: "flex", alignItems: "center", px: 1 } : {display:"none"}}>
+            <Box
+              sx={
+                flag
+                  ? { display: "flex", alignItems: "center", px: 1 }
+                  : { display: "none" }
+              }
+            >
               <img
                 style={{
                   borderRadius: 3,

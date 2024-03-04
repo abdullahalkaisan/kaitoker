@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LockIcon from '@mui/icons-material/Lock';
 
-export default function Schedule() {
+export default function Schedules() {
 
     const handleClick = () => {
         console.info('You clicked the Chip.');
@@ -22,7 +22,7 @@ export default function Schedule() {
 
 
   return (
-    <Box p={2} bgcolor={"#f1f1f1"}>
+    <Box p={2}>
 
             {/* <Stack m={5} direction="row" spacing={1}>
                 <Chip disabled icon={<LockIcon fontSize="16px" />} label="6:00 AM - 8:00 AM" onClick={handleClick} />

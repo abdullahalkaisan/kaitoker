@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import Schedule from './TabMenuProfile/Schedule';
+
 import AboutList from './TabMenuProfile/AboutList';
 import PostCardWrapper from './TabMenuProfile/PostCardWrapper';
 import CallCardLite from '../../components/callCard/CallCardLite';
+import Schedules from './TabMenuProfile/Schedules';
 // import { UilLock } from '@iconscout/react-unicons'
 // import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
@@ -86,7 +87,7 @@ export default function TabMenuProfile() {
           <PostCardWrapper/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <Schedule/>
+          <Schedules/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
           <AboutList/>
