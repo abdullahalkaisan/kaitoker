@@ -26,7 +26,11 @@ import LogsCard from '../../LogsCard';
 export function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
+
   return (
+    
+
+    
     <div
       style={{
         // width:"100%", 
@@ -74,6 +78,24 @@ function a11yProps(index) {
 export default function RightMenu_container() {
   const theme = useTheme();
   const themeUse = theme.palette.mode;
+
+
+  
+  // Custom sort function
+const sortUsers = (a, b) => {
+  const statusOrder = { online: 0, busy: 1, "": 2 }; // Define order for online statuses
+  // Access and compare status order values
+  const orderA = statusOrder[a.isOnline];
+  const orderB = statusOrder[b.isOnline];
+  return orderA - orderB;
+};
+
+// Sort the users array
+const sortedUsers = usersDataLocal.sort(sortUsers);
+console.log(sortedUsers[0]);
+console.log(usersDataLocal);
+
+
 
 
   const [value, setValue] = React.useState(0);
@@ -148,7 +170,7 @@ export default function RightMenu_container() {
             sx={{ flexGrow: 1 }}
             p={3}
           >
-            {usersDataLocal.map((item) => (
+            {sortedUsers.map((item) => (
               <PeopleList
                 key={item.id}
                 title={item.userName}
@@ -157,7 +179,7 @@ export default function RightMenu_container() {
                 isVarified={item.isVarified}
                 avatarUrl={item.avatar}
                 isOnline={item.isOnline}
-                // flag={item.flag}
+                flag={item.flag}
                 avatar={1}
                 badge={1}
               />

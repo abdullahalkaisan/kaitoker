@@ -46,7 +46,7 @@ import { useEffect } from 'react';
 export default function CallCardReel(props) {
 
   
-  let currentUser = 2;
+  let currentUser = 8;
 
   const {
     userName,
@@ -73,12 +73,32 @@ export default function CallCardReel(props) {
 
     const StyledBadge = styled(Badge)({
         '& .MuiBadge-badge': {
+
+    // curve style 
           height:"15px",
           width:"15px",
-          borderRadius:44,
-          right: 8,
-          bottom: 10,
+          right: 15,
+          bottom: 15,
           outline: `15px solid ${theme.palette.background.paper}`,
+
+
+
+
+          
+
+    // round style
+          // height:"12px",
+          // width:"12px",
+          // right: 20,
+          // bottom: 25,
+          // outline: `8px solid ${theme.palette.background.paper}`,
+
+
+
+
+
+
+          borderRadius:444,
           padding:"0"
         },
         });
@@ -99,7 +119,10 @@ export default function CallCardReel(props) {
           flexDirection={"column"}
           alignItems={"center"}
         >
-          <CardActionArea sx={{ width: 250, borderRadius: 6 }}>
+          <CardActionArea sx={{ width: 150, 
+            borderRadius:"100px 100px 10px 100px" 
+            // borderRadius: 666 
+            }}>
             <StyledBadge
               anchorOrigin={{
                 vertical: "bottom",
@@ -112,7 +135,10 @@ export default function CallCardReel(props) {
               <Avatar
                 alt={userName}
                 src={avatar}
-                sx={{ width: 250, height: 250, borderRadius: 6 }}
+                sx={{ width: 150, height: 150, 
+                  borderRadius:"100px 100px 60px 100px" 
+                  // borderRadius:999
+                }}
               />
             </StyledBadge>
           </CardActionArea>
@@ -123,7 +149,7 @@ export default function CallCardReel(props) {
                 </CardActionArea> */}
 
           {/* width: 280,  */}
-          <Box sx={{ width: 240, marginTop: 2 }}>
+          <Box sx={{ width: 240, marginTop: 5 }}>
             <AudioSlider_custom />
           </Box>
 
@@ -288,9 +314,9 @@ export default function CallCardReel(props) {
               <IconButton color="primary" size="large">
                 <UilCommentMessage />
               </IconButton>
-              {/* <IconButton color="primary" size="large">
+              <IconButton color="primary" size="large">
                 <UilVideo />
-              </IconButton> */}
+              </IconButton>
 
               <Box>
                 <Link to={"/callpage"}>

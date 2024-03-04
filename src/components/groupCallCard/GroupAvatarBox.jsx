@@ -268,7 +268,10 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
         <Avatar
           alt="Remy Sharp"
           src={avatarUrl}
-          sx={{ width: 70, height: 70, borderRadius:9999 }}
+          sx={{ width: 70, height: 70, 
+            // borderRadius:9999
+            borderRadius:"100px 100px 50px 100px"
+          }}
         />
       </StyledBadge>
     </BadgeFollowers>

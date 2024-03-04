@@ -113,16 +113,25 @@ const {
 
   const StyledBadge = styled(Badge)({
   '& .MuiBadge-badge': {
-    // height:"10px",
-    // width:"10px",
-    height:"8px",
-    width:"8px",
+
+
+// curved style
+      height:"10px",
+      width:"10px",
+      right: 8,
+      bottom: 8,
+      outline: `8px solid ${theme.palette.background.paper}`,
+
+
+// round shape 
+      // height:"8px",
+      // width:"8px",
+      // outline: `4px solid ${theme.palette.background.paper}`,
+      // right: 10,
+      // bottom: 10,
+
+
     borderRadius:999,
-    // right: 15,
-    // bottom: 15,
-    right: 10,
-    bottom: 10,
-    outline: `4px solid ${theme.palette.background.paper}`,
     padding:"0"
   },
   });
@@ -151,9 +160,7 @@ const {
             <Link to={"./profile"}>
               <IconButton aria-label="delete" size="small">
                 <StyledBadge
-                  color={
-                    isOnline === "online" ? "info" : "warning"
-                  }
+                  color={isOnline === "online" ? "info" : "warning"}
                   badgeContent={
                     isOnline === "online" || isOnline === "busy" ? 1 : 0
                   }
@@ -167,7 +174,11 @@ const {
                   <Avatar
                     alt="Remy Sharp"
                     src={avatar}
-                    sx={{ width: 70, height: 70 }}
+                    sx={
+                      isOnline === ""
+                        ? { width: 70, height: 70, borderRadius: 999  }
+                        : { width: 70, height: 70, borderRadius: "100px 100px 10px 90px" }
+                    }
                   />
                 </StyledBadge>
               </IconButton>
@@ -246,7 +257,6 @@ const {
             >
               <RoomIcon sx={{ fontSize: "medium" }} />
 
-
               {country}
 
               <Tooltip title={country} placement="top">
@@ -261,8 +271,6 @@ const {
                   />
                 </Box>
               </Tooltip>
-
-
             </Typography>
 
             <Typography
@@ -316,7 +324,7 @@ const {
           <SubDetails
             user_followers={new Intl.NumberFormat("en-US", {
               useGrouping: true,
-              notation: 'compact',
+              notation: "compact",
             }).format(followers)}
             user_rating={rating}
             user_language={gigLanguage}
@@ -359,7 +367,9 @@ const {
           }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
-          {skills.map((skill)=> <ChipsCustom hashTagStyle={true} label={skill} /> )}
+          {skills.map((skill) => (
+            <ChipsCustom hashTagStyle={true} label={skill} />
+          ))}
           {/* <ChipsCustom hashTagStyle={true} label="Javascript" />
           <ChipsCustom hashTagStyle={true} label="Node js" />
           <ChipsCustom hashTagStyle={true} label="React" />
@@ -388,7 +398,6 @@ const {
             <UilInfoCircle/>
           </IconButton> */}
 
-
           <IconButton color="primary">
             {/* <UilHeart/> */}
             {/* <UilStar/> */}
@@ -396,7 +405,6 @@ const {
             {/* <UilPlus/> */}
             <UilUserPlus />
           </IconButton>
-
 
           <AudioPlay_button />
 

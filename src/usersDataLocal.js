@@ -26,16 +26,6 @@ export const usersDataLocal = [
       "UX UI Design",
       "English",
     ],
-    posts: [
-      {
-        id: 0,
-        date: "1 month",
-        topic: "Javascript",
-        content: "Hey eveyone",
-        like: 145,
-        dislike: 24,
-      },
-    ],
   },
   {
     id: 2,
@@ -44,7 +34,7 @@ export const usersDataLocal = [
     avatar: `https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890`,
     hourRate: 3.5,
     isVarified: false,
-    isOnline: "online",
+    isOnline: "",
     followers: 50,
     rating: 85,
     totalCall: 100,

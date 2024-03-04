@@ -51,11 +51,15 @@ export default function PostCard(props) {
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box display={"flex"} alignContent={"center"}>
             <PeopleCard
+              avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
               title="Abdullah Al Kaisan"
               subTitle="Web developer"
               accountType="verified"
+              // flag={"bd"}
               avatar={1}
               badge={1}
+              isOnline="online"
+
             />
             <Typography variant="caption" color="#999">
               1 month
