@@ -2,7 +2,7 @@ import { Avatar, Badge, Box, CardActionArea, Tooltip, Typography } from '@mui/ma
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
 // import { useTheme } from '@emotion/react';
 
 // avatar={true}
@@ -15,6 +15,7 @@ import { useTheme } from '@emotion/react';
 PeopleCard.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
+  subTitleHighLight: PropTypes.string,
   accountType: PropTypes.string,
   flag: PropTypes.string,
   country: PropTypes.string,
@@ -24,6 +25,7 @@ PeopleCard.propTypes = {
   isVarified: PropTypes.bool,
   isOnline: PropTypes.string,
   avatarSize: PropTypes.number,
+  time: PropTypes.number,
 };
 
 
@@ -32,11 +34,24 @@ export default function PeopleCard(props) {
 
   
   
-  const theme = useTheme();
-  const isDark = theme.palette.mode === "dark";
+  // const theme = useTheme();
+  // const isDark = theme.palette.mode === "dark";
   
   
-  const {title, subTitle, avatar, avatarUrl,  badge , flag, country, isVarified, isOnline, avatarSize} = props;
+  const {
+    title,
+    subTitle,
+    avatar,
+    avatarUrl,
+    badge,
+    flag,
+    country,
+    time,
+    isVarified,
+    isOnline,
+    avatarSize,
+    subTitleHighLight
+  } = props;
 
   console.log(flag);
 
@@ -86,46 +101,60 @@ export default function PeopleCard(props) {
       </CardActionArea>
 
       <Box display={"flex"} flexDirection={"column"} mx={1}>
-        <Typography
-          display={"flex"}
-          alignItems={"center"}
-          variant="subtitle2"
-          component="h1"
-          sx={{ cursor: "pointer", fontWeight: "bold" }}
-        >
-          {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
+        <Box display={"flex"}>
+          <Typography
+            display={"flex"}
+            alignItems={"center"}
+            variant="subtitle2"
+            component="h1"
+            sx={{ cursor: "pointer", fontWeight: "bold" }}
+          >
+            {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
 
-          <VerifiedIcon
-            sx={{
-              display: `${isVarified ? "block" : "none"}`,
-              mx: 0.5,
-              fontSize: "medium",
-              color: "#1D9BF0",
-            }}
-          />
+            <VerifiedIcon
+              sx={{
+                display: `${isVarified ? "block" : "none"}`,
+                mx: 0.5,
+                fontSize: "medium",
+                color: "#1D9BF0",
+              }}
+            />
 
-          <Tooltip title={country} placement="top">
-            <Box
-              sx={
-                flag
-                  ? { display: "flex", alignItems: "center", px: 1 }
-                  : { display: "none" }
-              }
-            >
-              <img
-                style={{
-                  borderRadius: 3,
-                  border: "1px solid #77777750",
-                  boxShadow: "10px 10px 10px solid black",
-                }}
-                src={`https://flagcdn.com/w20/${flag}.png`}
-              />
-            </Box>
-          </Tooltip>
-        </Typography>
+            <Tooltip title={country} placement="top">
+              <Box
+                sx={
+                  flag
+                    ? { display: "flex", alignItems: "center", px: 1 }
+                    : { display: "none" }
+                }
+              >
+                <img
+                  style={{
+                    borderRadius: 3,
+                    border: "1px solid #77777750",
+                    boxShadow: "10px 10px 10px solid black",
+                  }}
+                  src={`https://flagcdn.com/w20/${flag}.png`}
+                />
+              </Box>
+            </Tooltip>
+          </Typography>
+
+          <Typography
+            display={time ? "block" : "none"}
+            style={{ margin: "0 5px", fontStyle: "italic" }}
+            variant="caption"
+            color="#999"
+          >
+            {time}
+          </Typography>
+        </Box>
+
         <Typography
           mt={-0.5}
-          color={isDark ? "#999" : "#777"}
+          // color={isDark ? "#999" : "#777"}
+          color={subTitleHighLight ? "" : "#777"}
+          fontWeight={subTitleHighLight ? "bold" : "normal"}
           variant="body2"
           component="h6"
         >
