@@ -17,8 +17,11 @@ import PeopleList from './PeopleList';
 import { usersDataLocal } from '../../../usersDataLocal';
 import LogsCard from '../../LogsCard';
 import MessageList from './MessageList';
-import ChatList from './ChatList';
+import ChatList from './ChatListBox';
 
+function chatOpen(clickedItem) {
+  console.log(clickedItem);
+}
 
 
 export function CustomTabPanel(props) {
@@ -185,7 +188,7 @@ console.log(usersDataLocal);
 
         <CustomTabPanel value={value} index={1}>
           <ChatList/>
-          {/* <MessageList/> */}
+          {/* <MessageList chatOpen={chatOpen()}/> */}
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>

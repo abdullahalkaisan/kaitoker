@@ -5,7 +5,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { Badge, Box, CardActionArea } from "@mui/material";
 
-export default function ChatList() {
+export default function MessageList(props) {
 
 // const theme = useTheme();
 // const isDark = theme.palette.mode === "";
@@ -16,7 +16,7 @@ export default function ChatList() {
     <>
 
     <Box p={3}>
-    <CardActionArea  sx={{padding:"10px 10px", marginBottom:"5px", borderRadius:3, backgroundColor:"#0288D110"}} >
+    <CardActionArea onClick={(i)=>{props.chatOpen(i)} }  sx={{padding:"10px 10px", marginBottom:"5px", borderRadius:3, backgroundColor:"#0288D110"}} >
             <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} width={1}>
                 <PeopleCard badge="1" isOnline={"online"} avatar="1"  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} subTitleHighLight={true} time={"5 minutes"} subTitle={"Hey whatspp?"}/>
                 {/* <DoneIcon fontSize="smaller" sx={{color:"#777"}}/> */}
@@ -34,14 +34,14 @@ export default function ChatList() {
         </CardActionArea>
         <CardActionArea mb={2} sx={{padding:"10px 10px", marginBottom:"5px", borderRadius:3}} >
             <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} width={1}>
-                <PeopleCard badge="1" isOnline={"online"} avatar="1"  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} subTitle={"You: Hey whatspp?"}/>
+                <PeopleCard badge="1" isOnline={"online"} avatar="1"  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} time={"5 minutes"} subTitle={"You: Hey whatspp?"}/>
                 <DoneIcon fontSize="small" sx={{color:"#777"}}/>
                 {/* <DoneAllIcon fontSize="smaller" color="primary" /> */}
             </Box>
         </CardActionArea>
         <CardActionArea mb={2} sx={{padding:"10px 10px", marginBottom:"5px", borderRadius:3}} >
             <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} width={1}>
-                <PeopleCard badge="1" isOnline={"online"} avatar="1"  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} subTitle={"You: Hey whatspp?"}/>
+                <PeopleCard badge="1" isOnline={"online"} avatar="1"  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} time={"5 minutes"} subTitle={"You: Hey whatspp?"}/>
                 {/* <DoneIcon fontSize="smaller" sx={{color:"#777"}}/> */}
                 <DoneAllIcon fontSize="small" color="primary" />
 

@@ -1,4 +1,4 @@
-import { Autocomplete, Box, Button, TextField } from "@mui/material";
+import { Autocomplete, Avatar, Box, Button, TextField } from "@mui/material";
 import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 // import { useTheme } from "@emotion/react";
 // import LanguageSelect from "./LanguageSelect";
@@ -12,6 +12,7 @@ import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 import CourseCard from "../CaurseCard.jsx/CourseCard";
 import CallCardReel from "../callCard/CallCardReel/CallCardReel";
 import { usersDataLocal } from "../../usersDataLocal";
+import CallCard_smallBox from "../CallCard_smallBox";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -154,6 +155,7 @@ export default function Center_container() {
         <CallCardLite/>
          */}
 
+
          
 
 <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
@@ -163,7 +165,21 @@ export default function Center_container() {
 
         <CallCardReel />
 
-   
+        
+{usersDataLocal.map((item)=> 
+  <CallCard_smallBox 
+      key={item.id}
+      item={item}
+  /> )}
+
+{usersDataLocal.map((item)=> 
+  <Avatar
+      src={item.avatar}
+      sx={{height:100, width:100, m:1, borderRadius:9}}
+      key={item.id}
+      item={item}
+  /> )}
+
 
     {/* {usersDataLocal[0]} */}
     {/* <CallCardReel/>

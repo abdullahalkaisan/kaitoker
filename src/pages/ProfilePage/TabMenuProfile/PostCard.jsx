@@ -56,14 +56,12 @@ export default function PostCard(props) {
               subTitle="Web developer"
               accountType="verified"
               // flag={"bd"}
+              time={"1 month"}
               avatar={1}
               badge={1}
               isOnline="online"
 
             />
-            <Typography variant="caption" color="#999">
-              1 month
-            </Typography>
           </Box>
 
           <IconButton aria-label="settings">
@@ -98,7 +96,7 @@ export default function PostCard(props) {
           </p>
         </CardContent>
 
-        {/* <Box
+        <Box
           sx={{
             width: "50px",
             height: "6px",
@@ -109,7 +107,7 @@ export default function PostCard(props) {
           }}
         >
           <Box sx={{ height: 1, width: "50%", backgroundColor: "tomato", borderRadius:999 }}></Box>
-        </Box> */}
+        </Box>
 
 
         <CardActions>

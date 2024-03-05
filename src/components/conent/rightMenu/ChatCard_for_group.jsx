@@ -1,0 +1,88 @@
+import { Box, IconButton, Typography } from "@mui/material";
+
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { useTheme } from "@emotion/react";
+import PeopleCard from "./PeopleCard";
+
+export default function ChatCard_for_group(props) {
+
+    const {avatarUrl, isVarified, title, subTitle} = props;
+
+    const theme = useTheme();
+    const isDark = theme.palette.mode === "";
+    
+    
+
+
+
+  return (
+    <>
+      <Box
+        display={"flex"}
+        justifyContent={"flex-start"}
+        width={"100%"}
+        my={0.5}
+      >
+        <Box
+          sx={{
+            p: 1,
+            borderRadius: 4,
+            display: "flex",
+            // width:"max-content"
+            minWidth: "auto",
+            maxWidth: "fit-content",
+            flexWrap: "wrap",
+            wordWrap: "break-word",
+            // border:"1px solid #99999920"
+          }}
+          bgcolor={`${isDark ? "#222" : "#f1f1f100"}`}
+        >
+          {/* <Avatar_small/> */}
+
+
+
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            width={1}
+          >
+
+
+
+
+
+              <PeopleCard
+                title={title}
+                // varified={1}
+                subTitle={subTitle}
+                avatar={true}
+                // flag={"ph"}
+                time={"12:34 AM (edited)"}
+                avatarUrl={avatarUrl}
+                isVarified={isVarified}
+              />
+
+
+
+
+
+            {/* <IconButton>
+              <MoreHorizIcon />
+            </IconButton> */}
+          </Box>
+
+          <Typography m={1} variant="p" gutterBottom>
+            hi
+          </Typography>
+
+          {/* <Box width={1} textAlign={"end"}>
+                    <Typography mx={1} variant="caption" gutterBottom>
+                      3:11 AM - 1/2/2024
+                    </Typography>
+                  </Box> */}
+        </Box>
+      </Box>
+    </>
+  );
+}
