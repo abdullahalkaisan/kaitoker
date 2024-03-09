@@ -91,7 +91,7 @@ export const usersDataLocal = [
     userName: "Maria Garcia",
     profession: "Translator",
     avatar:
-      "https://lh3.googleusercontent.com/a/ACg8ocKg4H0S4oUQl5TVLe72k5iueHshMcheBvx51rZ_jWm84s4",
+      "https://lh3.googleusercontent.com/a/ACg8ocJqZq5lRV_rRcVOzKMubQZ0x7e7TAkaRww7lH25T7yLVu4",
     hourRate: 20,
     isVarified: true,
     isOnline: "online",
@@ -173,7 +173,7 @@ export const usersDataLocal = [
     userName: "Chen Wei",
     profession: "Translator",
     avatar:
-      "https://lh3.googleusercontent.com/a/AAcHTtcQNc4_sXm9UE8VktRqjFBhJiFhif67r99UoKWk0qPzUk8",
+      "https://lh3.googleusercontent.com/a/ACg8ocLQzG1Xb2qvgjKuRdjjSOtMuYVwfy_j11F_5LerjnpOW34",
     hourRate: 30,
     isVarified: false,
     isOnline: "",
@@ -212,7 +212,7 @@ export const usersDataLocal = [
     userName: "Purno",
     profession: "Video Editor",
     avatar:
-      "https://lh3.googleusercontent.com/a/ACg8ocJJD54sQONqFJ2SdyfXr-VuaRK-In5C3kOpkuPrann2eGs",
+      "https://lh3.googleusercontent.com/a/ACg8ocKQrTrH5x3ricJ9X-BFKb-Df0H7Pjk3Rlp04bXz_vMdLVU",
     hourRate: 50,
     isVarified: false,
     isOnline: "online",
