@@ -2,7 +2,7 @@ export const usersDataLocal = [
   {
     id: 1,
     userName: "Abdullah Al Kaisan",
-    profession: "Web developer",
+    profession: "Founder of Kaitoker",
     avatar:
       "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg",
     hourRate: 2.24,

@@ -5,9 +5,13 @@ import SubDetails from '../SubDetails';
 import { usersDataLocal } from '../../../usersDataLocal';
 import RoomIcon from '@mui/icons-material/Room';
 import TranslateIcon from '@mui/icons-material/Translate';
-// import TagIcon from '@mui/icons-material/Tag';
+import TagIcon from '@mui/icons-material/Tag';
 
-export default function CallCardReel_details() {
+
+export default function CallCardReel_details(props) {
+
+
+
 
     const {
         followers,
@@ -16,12 +20,19 @@ export default function CallCardReel_details() {
         flag, 
         languages, 
         country, 
-        city, 
+        city,
         skills,
         id
-      } = usersDataLocal[0];
+      } = props.usersDataLocal[props.currentUser];
       
+    
+
+
+  
+
       
+      // setDisplayedSkills(skills.map((skill) => <ChipsCustom key={id} size={"large"} label={skill} />))
+      // setDisplayedSkills(displayedSkills.map((skill) => <ChipsCustom key={id} size={"large"} label={skill} />))
 
 
   return (
@@ -61,7 +72,7 @@ export default function CallCardReel_details() {
     p={0}
     gutterBottom
   >
-  {/* <TagIcon/> */}
+  <TagIcon sx={{ fontSize: "medium", mr:0.5 }}/>
   {id}
   </Typography>
 
@@ -133,8 +144,8 @@ export default function CallCardReel_details() {
     {/* <CallCardDynamic user_skills={user_skills}/> */}
 
 
-    {
-      skills.map((skill) => <ChipsCustom key={id} size={"large"} label={skill} />)
+    { 
+      skills.map((skill) =>  { return <ChipsCustom key={id} size={"large"} label={skill} />})
     }
 
   </Box>

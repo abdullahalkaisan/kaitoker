@@ -2,6 +2,8 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Avatar, Badge, Box, Button, Card, CardActionArea,  IconButton, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import VerifiedIcon from '@mui/icons-material/Verified';
+
 // import RoomIcon from '@mui/icons-material/Room';
 // import TranslateIcon from '@mui/icons-material/Translate';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -40,37 +42,50 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { usersDataLocal } from '../../../usersDataLocal';
 import CallCardReel_details from './CallCardReel_details';
 import CallCardReelTap from './CallCardReel_Tap';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 
 
 
 
 export default function CallCardReel() {
 
-  const [currentUser, setCurrentUser] = useState(0)
-  
+  const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * usersDataLocal.length) )
+
   const {
     userName,
     profession,
     avatar,
     hourRate,
-    languages, 
-    isOnline
+    isOnline,
+    skills,
+    isVarified
   } = usersDataLocal[currentUser];
   
-  console.log(usersDataLocal.length);
+  // Math.floor(Math.random() * usersDataLocal.length) 
 
-  {
-    if (currentUser >= usersDataLocal.length - 1) {
-      setCurrentUser(usersDataLocal.length - 1)
-    } else if (currentUser < 0 ){
-      setCurrentUser(0)
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 39) {
+        setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))
+      } else if (event.keyCode === 37) {
+        setCurrentUser(Math.max(0, currentUser - 1))
+      }
     }
 
-  }
+    // Attach event listener when the component mounts
+    window.addEventListener('keydown', handleKeyPress);
 
-  console.log(languages.join(", "));
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+
+  }, [currentUser]);
+
+
+
+
 
     const theme = useTheme();
 
@@ -78,10 +93,14 @@ export default function CallCardReel() {
         '& .MuiBadge-badge': {
 
     // curve style 
-          height:"15px",
-          width:"15px",
-          right: 15,
-          bottom: 15,
+          // height:"15px",
+          // width:"15px",
+          height:12,
+          width:12,
+          // right: 15,
+          // bottom: 15,
+          right: 22,
+          bottom: 22,
           outline: `10px solid ${theme.palette.background.paper}`,
 
 
@@ -117,7 +136,7 @@ export default function CallCardReel() {
             sx={ isOnline === "online" || isOnline === "busy" ?  {
               height:150,
               width: 150,
-              borderRadius: "100px 100px 50px 100px",
+              borderRadius: "100px 100px 100px 100px",
             } : {
               height:150,
               width: 150,
@@ -131,14 +150,15 @@ export default function CallCardReel() {
               }}
               variant="dot"
               badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
-              color={isOnline === "online" ? "primary" : "warning"}
+              color={isOnline === "online" ? "info" : "warning"}
             >
               <Avatar
                 src={avatar}
                 sx={ isOnline === "online" || isOnline === "busy" ?  {
                   height:150,
                   width: 150,
-                  borderRadius: "100px 100px 50px 100px",
+                  // borderRadius: "100px 100px 50px 100px",
+                  borderRadius: "100px 100px 100px 100px",
                 } : {
                   height:150,
                   width: 150,
@@ -172,13 +192,13 @@ export default function CallCardReel() {
               <UilPlusCircle />
             </IconButton> */}
 
-            <IconButton onClick={()=> setCurrentUser(currentUser - 1)} color="primary" size="large">
+            <IconButton onClick={() => setCurrentUser(Math.max(0, currentUser - 1))} color="primary" size="large">
               <ArrowBackIosIcon />
             </IconButton>
 
             <AudioPlay_button />
 
-            <IconButton onClick={()=> setCurrentUser(currentUser + 1)} variant="contained" color="primary" size="large">
+            <IconButton onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))} variant="contained" color="primary" size="large">
               <ArrowForwardIosIcon />
             </IconButton>
 
@@ -265,6 +285,13 @@ export default function CallCardReel() {
                 fontWeight={"bold"}
               >
                 {userName}
+                {isVarified && (
+                  <VerifiedIcon
+                    sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
+                  />
+                )}
+
+
               </Typography>
               <Typography
                 style={{ marginBottom: 5 }}
@@ -343,8 +370,13 @@ export default function CallCardReel() {
 
 
           <CallCardReelTap 
-          CallCardReel_details={<CallCardReel_details />}
-           />
+            CallCardReel_details={<CallCardReel_details 
+                                    usersDataLocal={usersDataLocal} 
+                                    currentUser={currentUser} />}
+            />
+
+
+
 
 
         </Box>
