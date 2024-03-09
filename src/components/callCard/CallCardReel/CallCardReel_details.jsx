@@ -5,7 +5,7 @@ import SubDetails from '../SubDetails';
 import { usersDataLocal } from '../../../usersDataLocal';
 import RoomIcon from '@mui/icons-material/Room';
 import TranslateIcon from '@mui/icons-material/Translate';
-
+// import TagIcon from '@mui/icons-material/Tag';
 
 export default function CallCardReel_details() {
 
@@ -48,6 +48,22 @@ export default function CallCardReel_details() {
     user_total_call={totalCall}
     // flag={flag}
   />
+
+  <Typography
+    sx={{
+      color: "#777",
+      display: "flex",
+      alignItems: "center",
+      width: 1,
+    }}
+    variant="subtitle1"
+    mt={0}
+    p={0}
+    gutterBottom
+  >
+  {/* <TagIcon/> */}
+  {id}
+  </Typography>
 
   <Typography
     sx={{

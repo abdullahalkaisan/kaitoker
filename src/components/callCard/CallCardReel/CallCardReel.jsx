@@ -56,6 +56,7 @@ export default function CallCardReel() {
     avatar,
     hourRate,
     languages, 
+    isOnline
   } = usersDataLocal[currentUser];
   
   console.log(usersDataLocal.length);
@@ -113,10 +114,14 @@ export default function CallCardReel() {
           alignItems={"center"}
         >
           <CardActionArea
-            sx={{
+            sx={ isOnline === "online" || isOnline === "busy" ?  {
+              height:150,
               width: 150,
-              borderRadius: "60px 60px 40px 60px",
-              // borderRadius: 666
+              borderRadius: "100px 100px 50px 100px",
+            } : {
+              height:150,
+              width: 150,
+              borderRadius: 999,
             }}
           >
             <StyledBadge
@@ -125,17 +130,19 @@ export default function CallCardReel() {
                 horizontal: "right",
               }}
               variant="dot"
-              badgeContent={1}
-              color="primary"
+              badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
+              color={isOnline === "online" ? "primary" : "warning"}
             >
               <Avatar
-                alt={userName}
                 src={avatar}
-                sx={{
+                sx={ isOnline === "online" || isOnline === "busy" ?  {
+                  height:150,
                   width: 150,
-                  height: 150,
-                  borderRadius: "60px 60px 40px 60px",
-                  // borderRadius:999
+                  borderRadius: "100px 100px 50px 100px",
+                } : {
+                  height:150,
+                  width: 150,
+                  borderRadius: 999,
                 }}
               />
             </StyledBadge>
@@ -337,7 +344,6 @@ export default function CallCardReel() {
 
           <CallCardReelTap 
           CallCardReel_details={<CallCardReel_details />}
-          
            />
 
 
