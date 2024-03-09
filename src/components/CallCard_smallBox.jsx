@@ -1,9 +1,41 @@
-import { Avatar, Badge, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { Avatar, Badge, Card, CardActionArea } from "@mui/material";
 import PeopleCard from "./conent/rightMenu/PeopleCard";
+import styled from "@emotion/styled";
+import { useTheme } from "@emotion/react";
+import { usersDataLocal } from "../usersDataLocal";
 
 export default function CallCard_smallBox(props) {
+
+  const theme = useTheme();
+
+  const StyledBadge = styled(Badge)({
+    '& .MuiBadge-badge': {
+
+// curve style 
+      height:"10px",
+      width:"10px",
+      right: 10,
+      bottom: 10,
+      outline: `8px solid ${theme.palette.background.paper}`,
+
+
+// round style
+      // height:"12px",
+      // width:"12px",
+      // right: 20,
+      // bottom: 25,
+      // outline: `8px solid ${theme.palette.background.paper}`,
+
+      // borderRadius:3,
+      borderRadius:30,
+      padding:"0"
+    },
+    });
+
+
+
     console.log(props);
-    const {flag, avatar, userName, profession, isVarified} = props.item;
+    // const {flag, avatar, userName, profession, isVarified} = props.item;
 
     // id: 11,
     // userName: "Purno",
@@ -24,53 +56,44 @@ export default function CallCard_smallBox(props) {
     // skills: ["Premere pro", "Video editor", "Photoshop", "Advisor"],
 
 
+
   return (
     <>
-    <CardActionArea style={{height:"max-content", width:"max-content", margin: 6, borderRadius:6}}>
-          <Card sx={{ padding: 2,  height: "max-content"}} variant="outlined">
-        {/* <Badge variant="dot" badgeContent={1} color="info" anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'right',
-  }}> */}
-            <Avatar 
-                src={avatar} 
-                sx={
-                    // { width: 200, height: 200 }
-                    { width: 160, height: 160, borderRadius:3}
-                } 
-                variant="rounded">
-            </Avatar>
-        {/* </Badge> */}
 
-            <div style={{marginTop:10}}>
-                <PeopleCard 
-                // flag={flag} 
-                title={userName} isVarified={isVarified} subTitle={profession}/>
-            </div>
 
-        </Card>
+      {usersDataLocal.map((item) =>
+
+        <CardActionArea
+          style={{height:"max-content", width:"max-content", borderRadius:"40px 40px 30px 40px", margin:8}}
+          key={item.id}
+        >
+          <StyledBadge
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            variant="dot"
+            color={item.isOnline === "online" ? "info" : "warning"}
+            badgeContent={
+              item.isOnline === "online" || item.isOnline === "busy" ? 1 : 0
+            }
+
+          >
+            <Avatar
+              src={item.avatar}
+              // sx={{ height: 100, width: 100, borderRadius: "40px 40px 30px 40px" }}
+              item={item}
+              sx={
+                item.isOnline === ""
+                  ? { height: 100, width: 100, borderRadius: "40px"  }
+                  : { height: 100, width: 100, borderRadius: "40px 40px 30px 40px" }
+              }
+
+            />
+          </StyledBadge>
         </CardActionArea>
 
-
-        <Card variant="outlined" sx={{ width: 180,margin: 1, borderRadius:2, display:"none", height:"max-content" }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={avatar}
-          alt="green iguana"
-        />
-        {/* <CardContent> */}
-                <div style={{margin:7}}>
-                    <PeopleCard 
-                    // flag={flag} 
-                    title={userName} isVarified={isVarified} subTitle={profession}/>
-                </div>
-        {/* </CardContent> */}
-      </CardActionArea>
-    </Card>
-
-
+      )}
 
     </>
   )

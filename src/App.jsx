@@ -55,6 +55,6 @@ export default App
 
 
 App.propTypes = {
-  darkModeToggle: PropTypes.func,
-  darkIcon:PropTypes.string,
+  darkModeToggle: PropTypes.any,
+  darkIcon:PropTypes.any,
 };

@@ -11,20 +11,20 @@ import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import StarsRoundedIcon from '@mui/icons-material/StarsRounded';
 import ChipsCustom from "./callCard/ChipsCustom";
-
+import ChairIcon from '@mui/icons-material/Chair';
 const BadgeAvatar = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    height:20,
-    width:20,
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center",
+    height: 20,
+    width: 20,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     left: 5,
     bottom: 10,
-    fontSize:"10px",
+    fontSize: "10px",
     border: `3px solid ${theme.palette.background.paper}`,
-    backgroundColor:"#fff",
-    color:"tomato"
+    backgroundColor: "#fff",
+    color: "tomato"
     // padding: '0 4px',
   },
 }));
@@ -44,27 +44,22 @@ export default function LogsCard() {
     <Box
       backgroundColor={isDark ? "#222" : "#fff"}
       height={"max-content"}
-      marginBottom={2}
+      // marginBottom={2}
+      margin={1}
       border={"1px solid #00000020"}
-      width={"90%"}
+      width={"320px"}
+
       borderRadius={2}
     >
       <Box display={"flex"} flexDirection={"column"} padding={3}>
-        <Box display={"flex"} width={1} justifyContent={"center"}>
-          <Button
-            style={{
-              marginTop: 6,
-              fontSize: "samll",
-              textTransform: "none",
-              backgroundColor: "#FFA50010",
-            }}
-            color="warning"
-          >
-            <HistoryIcon style={{ marginRight: 3, fontSize: "large" }} />
-            {/* 4 days 12 hours   */}
-           4 Days 12 hours 55 minutes left.
-          </Button>
-        </Box>
+        
+      <Box>
+            {/* <ChipsCustom label="Let's talk about Javascript Object and Arary" /> */}
+            <ChipsCustom label="Graphics desgin" />
+            {/* <ChipsCustom label="UX UI desgin" /> */}
+          </Box>
+
+      
 
         <Box display={"flex"} alignItems={"center"} marginTop={2}>
           <Box
@@ -90,22 +85,35 @@ export default function LogsCard() {
           </Box>
 
           <Box>
-            <Button color="success" size="small">
-              $1.12
+            <Button sx={{textTransform:"none"}} color="success" size="small">
+              $1.12/hr
             </Button>
           </Box>
 
-          <Box>
-            <ChipsCustom label="Let's talk about Javascript Object and Arary"/>
-          </Box>
+        </Box>
 
 
+        <Box display={"flex"} width={1} justifyContent={"center"}>
+          <Button
+            style={{
+              marginTop: 6,
+              fontSize: "samll",
+              textTransform: "none",
+              backgroundColor: "#FFA50010",
+            }}
+            color="warning"
+          >
+            <HistoryIcon style={{ marginRight: 3, fontSize: "large" }} />
+            {/* 4 days 12 hours   */}
+            4 Days 12 hours 55 minutes left.
+          </Button>
         </Box>
 
 
 
 
-        <Box sx={{ width: 1, display: "flex", justifyContent:"center", marginTop: 2 }}>
+
+        <Box sx={{ width: 1, display: "flex", justifyContent: "center", marginTop: 2 }}>
           <AvatarGroup max={4}>
             <BadgeAvatar
               // color="error"
@@ -114,7 +122,7 @@ export default function LogsCard() {
                 horizontal: "left",
               }}
               // color="error"
-              badgeContent={<StarsRoundedIcon/>}
+              badgeContent={<StarsRoundedIcon />}
             >
               <Avatar
                 alt="Remy Sharp"
@@ -125,15 +133,27 @@ export default function LogsCard() {
               alt="Travis Howard"
               src="https://lh3.googleusercontent.com/a/ACg8ocK386pzE7Z-bSFqbGXHYVxxKt5pYh_OAnMnkKWDOPhNabI"
             />
-            <Avatar
+            {/* <Avatar
               alt="Cindy Baker"
               src="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"
-            />
-            <Avatar
+            /> */}
+            {/* <Avatar
               alt="Agnes Walker"
               src="https://lh3.googleusercontent.com/a/ACg8ocKg4H0S4oUQl5TVLe72k5iueHshMcheBvx51rZ_jWm84s4"
-            />
+            /> */}
           </AvatarGroup>
+          
+          <Box sx={{display:"flex", alignItems:"center", ml:1}}>
+            <Avatar sx={{mr:1, cursor:"pointer"}}>
+              <ChairIcon />
+            </Avatar>
+            <Avatar sx={{mr:1, cursor:"pointer"}}>
+              <ChairIcon />
+            </Avatar>
+          </Box>
+
+
+
         </Box>
 
 
@@ -176,7 +196,7 @@ export default function LogsCard() {
             </IconButton>
           </Box>
 
-          <Button variant="contained" size="small" sx={{ borderRadius: 999 }}>
+          <Button color="error" variant="contained" size="small" sx={{ borderRadius: 999 }}>
             Join
           </Button>
         </Box>

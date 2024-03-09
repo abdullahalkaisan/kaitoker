@@ -83,7 +83,7 @@ export default function CallCard(props) {
 //     user_language
 // } = props;
 
-  
+
 const {
   userName,
   profession,
@@ -102,11 +102,6 @@ const {
   skills,
   id
 } = props.item;
-
-
-
-
-
 
 
 

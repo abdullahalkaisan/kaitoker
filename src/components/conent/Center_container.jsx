@@ -13,6 +13,8 @@ import CourseCard from "../CaurseCard.jsx/CourseCard";
 import CallCardReel from "../callCard/CallCardReel/CallCardReel";
 import { usersDataLocal } from "../../usersDataLocal";
 import CallCard_smallBox from "../CallCard_smallBox";
+import CallCard_cardBox from "../CallCard_cardBox";
+import LogsCard from "../LogsCard";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -164,9 +166,12 @@ export default function Center_container() {
     
 
         <CallCardReel />
-
+        {/* <CallCard_smallBox/> */}
+        {console.log()}
+        <CallCard_cardBox/> 
         
-{usersDataLocal.map((item)=> 
+
+{/* {usersDataLocal.map((item)=> 
   <CallCard_smallBox 
       key={item.id}
       item={item}
@@ -179,7 +184,7 @@ export default function Center_container() {
       key={item.id}
       item={item}
   /> )}
-
+ */}
 
     {/* {usersDataLocal[0]} */}
     {/* <CallCardReel/>
@@ -200,6 +205,11 @@ export default function Center_container() {
   <GroupCallCard/>
   <GroupCallCard/>
   <GroupCallCard/>
+
+  <LogsCard/>
+  <LogsCard/>
+  <LogsCard/>
+  <LogsCard/>
 
  
 

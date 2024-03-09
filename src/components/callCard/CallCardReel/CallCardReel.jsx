@@ -20,6 +20,7 @@ import {
     UilVideo,
     UilCommentMessage,
     UilUserPlus,
+    // UilMoneyBill
     // UilPlusCircle
   
   } from '@iconscout/react-unicons'
@@ -39,6 +40,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { usersDataLocal } from '../../../usersDataLocal';
 import CallCardReel_details from './CallCardReel_details';
 import CallCardReelTap from './CallCardReel_Tap';
+import { useState } from 'react';
 
 
 
@@ -46,9 +48,8 @@ import CallCardReelTap from './CallCardReel_Tap';
 
 export default function CallCardReel() {
 
+  const [currentUser, setCurrentUser] = useState(0)
   
-  let currentUser = 8;
-
   const {
     userName,
     profession,
@@ -57,7 +58,16 @@ export default function CallCardReel() {
     languages, 
   } = usersDataLocal[currentUser];
   
-  
+  console.log(usersDataLocal.length);
+
+  {
+    if (currentUser >= usersDataLocal.length - 1) {
+      setCurrentUser(usersDataLocal.length - 1)
+    } else if (currentUser < 0 ){
+      setCurrentUser(0)
+    }
+
+  }
 
   console.log(languages.join(", "));
 
@@ -71,7 +81,7 @@ export default function CallCardReel() {
           width:"15px",
           right: 15,
           bottom: 15,
-          outline: `15px solid ${theme.palette.background.paper}`,
+          outline: `10px solid ${theme.palette.background.paper}`,
 
 
     // round style
@@ -81,12 +91,7 @@ export default function CallCardReel() {
           // bottom: 25,
           // outline: `8px solid ${theme.palette.background.paper}`,
 
-
-
-
-
-
-          borderRadius:444,
+          borderRadius:"10px",
           padding:"0"
         },
         });
@@ -110,7 +115,7 @@ export default function CallCardReel() {
           <CardActionArea
             sx={{
               width: 150,
-              borderRadius: "100px 100px 70px 100px",
+              borderRadius: "60px 60px 40px 60px",
               // borderRadius: 666
             }}
           >
@@ -129,7 +134,7 @@ export default function CallCardReel() {
                 sx={{
                   width: 150,
                   height: 150,
-                  borderRadius: "100px 100px 70px 100px",
+                  borderRadius: "60px 60px 40px 60px",
                   // borderRadius:999
                 }}
               />
@@ -160,13 +165,13 @@ export default function CallCardReel() {
               <UilPlusCircle />
             </IconButton> */}
 
-            <IconButton color="primary" size="large">
+            <IconButton onClick={()=> setCurrentUser(currentUser - 1)} color="primary" size="large">
               <ArrowBackIosIcon />
             </IconButton>
 
             <AudioPlay_button />
 
-            <IconButton variant="contained" color="primary" size="large">
+            <IconButton onClick={()=> setCurrentUser(currentUser + 1)} variant="contained" color="primary" size="large">
               <ArrowForwardIosIcon />
             </IconButton>
 
@@ -307,6 +312,9 @@ export default function CallCardReel() {
               <IconButton color="primary" size="large">
                 <UilCommentMessage />
               </IconButton>
+              {/* <IconButton color="primary" size="large">
+                <UilMoneyBill />
+              </IconButton> */}
               <IconButton color="primary" size="large">
                 <UilVideo />
               </IconButton>
@@ -331,8 +339,6 @@ export default function CallCardReel() {
           CallCardReel_details={<CallCardReel_details />}
           
            />
-
-
 
 
         </Box>
