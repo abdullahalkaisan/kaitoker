@@ -8,8 +8,9 @@ export default function VideoUserBox(props) {
       position={"relative"}
       display={"flex"}
       width={"50%"}
+      height={"50%"}
       // minHeight={"50%"}
-      minHeight={"50%"}
+      // minHeight={"50%"}
       // height={"50%"}
       // sx={{flexGrow:1}}
     >

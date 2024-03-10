@@ -108,10 +108,10 @@ export default function CallChatNav() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab {...a11yProps(0)}  icon={<UilCommentLines />}/>
-          <Tab {...a11yProps(1)}  icon={<UilMessage />} />
-          <Tab {...a11yProps(2)}  icon={<UilApps />} />
-          <Tab {...a11yProps(3)}  icon={<UilSetting />} />
+          <Tab  {...a11yProps(0)}  icon={<UilCommentLines />}/>
+          <Tab  {...a11yProps(1)}  icon={<UilMessage />} />
+          <Tab  {...a11yProps(2)}  icon={<UilApps />} />
+          <Tab  {...a11yProps(3)}  icon={<UilSetting />} />
         </Tabs>
       </Box>
 

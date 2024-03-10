@@ -5,7 +5,18 @@ import VideocamOffIcon from '@mui/icons-material/VideocamOff';
 import PeopleCard from '../../components/conent/rightMenu/PeopleCard';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+
+import { useState } from 'react';
+import { Tune } from '@mui/icons-material';
 export default function VideoUserProPop(props) {
+
+    const [isNameShow, setIsNameShow] = useState(true);
+
+
+    console.log(isNameShow);
+
     return (
         <>
             <Box
@@ -43,31 +54,40 @@ export default function VideoUserProPop(props) {
                             outline:"4px solid #1976d200"
                         }}
                     >
-
+                        {isNameShow && 
                         <Box>
-                        <PeopleCard 
-                            isVarified="true" 
-                            flag={props.flag} 
-                            title={"Kaisan"} 
-                            subTitle={props.title} 
-                        />
+                            <PeopleCard 
+                                isVarified="true" 
+                                flag={props.flag} 
+                                title={"Kaisan"} 
+                                subTitle={props.title} 
+                            />
                         </Box>
+                        }
+                        
 
 
                     <Box sx={{ display: "flex", alignItems: "center",  }}>
                     <Box>
-                            <IconButton sx={{
+                            <IconButton onClick={()=>{setIsNameShow(!isNameShow)}} sx={{
                                 backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
                                 '&:hover': {
                                     backgroundColor: "#444",
                                 }
                             }} >
-                                <KeyboardArrowLeftIcon fontSize='small' />
+
+                                {
+                                    isNameShow ? 
+                                    <KeyboardArrowLeftIcon fontSize='small' /> : 
+                                    <KeyboardArrowRightIcon fontSize='small' />
+                                }
+                                
+
                             </IconButton>
                         </Box>
 
-                        <Box>
+                        {/* <Box>
                             <IconButton sx={{
                                 backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
@@ -77,7 +97,7 @@ export default function VideoUserProPop(props) {
                             }} >
                                 <VolumeOffIcon fontSize='small' />
                             </IconButton>
-                        </Box>
+                        </Box> */}
 
                         {/* <Box >
                             <IconButton sx={{

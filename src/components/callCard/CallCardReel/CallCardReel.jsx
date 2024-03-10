@@ -20,8 +20,10 @@ import {
     // UilPlus,
     // UilSkipForwardCircle,
     UilVideo,
-    UilCommentMessage,
+    // UilCommentMessage,
+    UilCommentLines,
     UilUserPlus,
+    UilFavorite
     // UilMoneyBill
     // UilPlusCircle
   
@@ -344,11 +346,11 @@ export default function CallCardReel() {
                 <UilUserPlus />
               </IconButton>
               <IconButton color="primary" size="large">
-                <UilCommentMessage />
+                <UilFavorite  />
               </IconButton>
-              {/* <IconButton color="primary" size="large">
-                <UilMoneyBill />
-              </IconButton> */}
+              <IconButton color="primary" size="large">
+                <UilCommentLines />
+              </IconButton>
               <IconButton color="primary" size="large">
                 <UilVideo />
               </IconButton>
@@ -357,7 +359,7 @@ export default function CallCardReel() {
                 <Link to={"/callpage"}>
                   <Button
                     size="small"
-                    sx={{ borderRadius: 2, textTransform: "none" }}
+                    sx={{ borderRadius: 2, textTransform: "none", marginLeft:2 }}
                     variant="contained"
                     color="primary"
                   >
