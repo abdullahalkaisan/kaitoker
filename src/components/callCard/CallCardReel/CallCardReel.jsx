@@ -23,7 +23,10 @@ import {
     // UilCommentMessage,
     UilCommentLines,
     UilUserPlus,
-    UilFavorite
+    UilFavorite,
+    UilCheck,
+    UilUsersAlt,
+    UilCheckCircle
     // UilMoneyBill
     // UilPlusCircle
   
@@ -52,6 +55,10 @@ import { useEffect, useState } from 'react';
 export default function CallCardReel() {
 
   const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * usersDataLocal.length) )
+  const [isFollowing, setIsFollowing] =  useState(false);
+  const [isFriend, setIsFriend] =  useState(false);
+  const [isFevorate, setIsFevorate] =  useState(false);
+
 
   const {
     userName,
@@ -342,10 +349,13 @@ export default function CallCardReel() {
               justifyContent={"space-evenly"}
               // justifyContent={"center"}
             >
-              <IconButton color="primary" size="large">
-                <UilUserPlus />
+              <IconButton onClick={()=>{ setIsFollowing(!isFollowing)}} color={isFriend ? "warning" : isFollowing ? "" : "primary"   } size="large">
+                {
+                  isFollowing ? < UilCheckCircle /> : <UilUserPlus />
+                }
+                {/* <UilUsersAlt /> */}
               </IconButton>
-              <IconButton color="primary" size="large">
+              <IconButton onClick={()=>{setIsFevorate(!isFevorate)}} color={isFevorate ? "warning" : "primary"} size="large">
                 <UilFavorite  />
               </IconButton>
               <IconButton color="primary" size="large">
