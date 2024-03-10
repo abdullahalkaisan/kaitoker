@@ -17,14 +17,14 @@ export const usersDataLocal = [
     country: "Bangladesh",
     city: "Jamalpur",
     skills: [
-      "Javascript",
-      "React",
-      "MongoDB",
-      "Photoshop",
-      "Premiere pro",
-      "Graphic design",
-      "UX UI Design",
-      "English",
+      { name: "Javascript", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "React", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "MongoDB", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "Photoshop", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "Premiere pro", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "Graphic design", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "UX UI Design", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { name: "English", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
     ],
   },
   {
@@ -43,7 +43,16 @@ export const usersDataLocal = [
     languages: ["English", "Spanish"],
     country: "United States",
     city: "New York",
-    skills: ["Java", "Spring Boot", "React", "MySQL", "Python", "Django"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // Add more users here...
   {
@@ -63,7 +72,16 @@ export const usersDataLocal = [
     languages: ["English", "French"],
     country: "United Kingdom",
     city: "London",
-    skills: ["Adobe Illustrator", "Photoshop", "InDesign", "Typography"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -83,7 +101,16 @@ export const usersDataLocal = [
     languages: ["Arabic", "English"],
     country: "Egypt",
     city: "Cairo",
-    skills: ["Scoring goals", "Dribbling", "Speed"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -103,7 +130,16 @@ export const usersDataLocal = [
     languages: ["Spanish", "English", "French"],
     country: "Indonesia",
     city: "Madrid",
-    skills: ["Translation", "Interpreting", "Proofreading"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -122,7 +158,16 @@ export const usersDataLocal = [
     languages: ["Japanese", "English"],
     country: "Japan",
     city: "Tokyo",
-    skills: ["Python", "Django", "React", "Flask", "Machine Learning"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -141,7 +186,16 @@ export const usersDataLocal = [
     languages: ["Russian", "English"],
     country: "Russia",
     city: "Moscow",
-    skills: ["Python", "R", "Machine Learning", "Statistics"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -161,10 +215,14 @@ export const usersDataLocal = [
     country: "Italy",
     city: "Rome",
     skills: [
-      "Italian Cuisine",
-      "French Cuisine",
-      "Japanese Cuisine",
-      "Food Presentation",
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
     ],
   },
   // More users...
@@ -185,7 +243,16 @@ export const usersDataLocal = [
     languages: ["Chinese", "English"],
     country: "Vietnam",
     city: "Beijing",
-    skills: ["Translation", "Interpreting", "Proofreading"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -204,7 +271,16 @@ export const usersDataLocal = [
     languages: ["German", "English"],
     country: "Germany",
     city: "Berlin",
-    skills: ["Portrait Photography", "Landscape Photography", "Photo Editing"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ],
   },
   // More users...
   {
@@ -224,7 +300,16 @@ export const usersDataLocal = [
     languages: ["Bengali"],
     country: "Bangladesh",
     city: "Jamalpur",
-    skills: ["Premere pro", "Video editor", "Photoshop", "Advisor"],
+    skills: [
+      { name: "Javascript", icon: "javascript-icon-url" },
+      { name: "React", icon: "react-icon-url" },
+      { name: "MongoDB", icon: "mongodb-icon-url" },
+      { name: "Photoshop", icon: "photoshop-icon-url" },
+      { name: "Premiere pro", icon: "premiere-pro-icon-url" },
+      { name: "Graphic design", icon: "graphic-design-icon-url" },
+      { name: "UX UI Design", icon: "ux-ui-design-icon-url" },
+      { name: "English", icon: "english-icon-url" },
+    ]
   },
 ];
   

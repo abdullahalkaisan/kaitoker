@@ -7,23 +7,35 @@ const handleClick_chips = () => {
 };
 
 
+
 export default function ChipsCustom(props) {
   // const theme  = useTheme();
   // const isDark = theme.palette.mode === "dark";
 
-
+console.log(props.icon);
   return (
     <Chip
-      sx={{
-        height: "auto",
-        "& .MuiChip-label": {
-          display: "block",
-          whiteSpace: "normal",
-        },m: 0.2, py:0.6, borderRadius: 2
-      }}
+      sx={props.size === "large" ?
+        {
+          height: "auto",
+          "& .MuiChip-label": {
+            display: "block",
+            whiteSpace: "normal",
+            fontSize:"",
+          }, m: 0.3, py: 1, borderRadius: 2
+        } : {
+          height: "auto",
+          "& .MuiChip-label": {
+            display: "block",
+            whiteSpace: "normal",
+          }, m: 0.2, py: 0.6, borderRadius: 2
+        } 
+      }
       size={props.size === "large" ? "large" : "small"}
-      label={props.label}
+      label={"" + props.label}
       onClick={handleClick_chips}
+      
+      // icon={props.size === "large" && <img width="24" height="24" src={props?.icon}/>} 
     />
 
     // <Chip onClick={handleClick_chips} sx={{m:0.5, color:"#555", fontSize:"14px", border:"1px solid rgba(0, 0, 0, 0.12)"}} label="SEO"/>

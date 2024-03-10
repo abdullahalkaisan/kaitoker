@@ -145,7 +145,8 @@ export default function CallCardReel_details(props) {
 
 
     { 
-      skills.map((skill) =>  { return <ChipsCustom key={id} size={"large"} label={skill} />})
+      skills.map((skill) =>   { return <ChipsCustom key={id} size={"large"} label={skill.name} />
+      })
     }
 
   </Box>
