@@ -2,10 +2,10 @@
 import ChipsCustom from '../ChipsCustom';
 import { Box, Tooltip, Typography } from '@mui/material';
 import SubDetails from '../SubDetails';
-import { usersDataLocal } from '../../../usersDataLocal';
+// import { usersDataLocal } from '../../../usersDataLocal';
 import RoomIcon from '@mui/icons-material/Room';
 import TranslateIcon from '@mui/icons-material/Translate';
-import TagIcon from '@mui/icons-material/Tag';
+// import TagIcon from '@mui/icons-material/Tag';
 
 
 export default function CallCardReel_details(props) {
@@ -60,7 +60,7 @@ export default function CallCardReel_details(props) {
     // flag={flag}
   />
 
-  <Typography
+  {/* <Typography
     sx={{
       color: "#777",
       display: "flex",
@@ -74,7 +74,7 @@ export default function CallCardReel_details(props) {
   >
   <TagIcon sx={{ fontSize: "medium", mr:0.5 }}/>
   {id}
-  </Typography>
+  </Typography> */}
 
   <Typography
     sx={{

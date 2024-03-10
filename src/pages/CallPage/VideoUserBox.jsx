@@ -22,7 +22,7 @@ export default function VideoUserBox(props) {
         autoPlay
         src={props.url}
       ></video>
-      <VideoUserProPop title="English Teacher" flag="us" />
+      <VideoUserProPop  title={props.profetion} flag={props.flag} />
     </Box>
   );
 }

@@ -166,7 +166,7 @@ export default function Center_container() {
     
 
         <CallCardReel />
-        {/* <CallCard_smallBox/> */}
+        <CallCard_smallBox/>
         {console.log()}
         <CallCard_cardBox/> 
         

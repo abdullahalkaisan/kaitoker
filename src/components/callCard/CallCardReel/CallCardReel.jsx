@@ -74,11 +74,11 @@ export default function CallCardReel() {
     }
 
     // Attach event listener when the component mounts
-    window.addEventListener('keydown', handleKeyPress);
+    window.addEventListener('keyup', handleKeyPress);
 
     // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      window.removeEventListener('keydown', handleKeyPress);
+      window.removeEventListener('keyup', handleKeyPress);
     };
 
   }, [currentUser]);

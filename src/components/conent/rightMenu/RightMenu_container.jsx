@@ -177,7 +177,7 @@ console.log(usersDataLocal);
                 isVarified={item.isVarified}
                 avatarUrl={item.avatar}
                 isOnline={item.isOnline}
-                // flag={item.flag}
+                flag={item.flag}
                 avatar={1}
                 badge={1}
                 avatarSize={47}

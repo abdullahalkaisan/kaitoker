@@ -167,7 +167,6 @@ const {
                 >
                   {/* 110  */}
                   <Avatar
-                    alt="Remy Sharp"
                     src={avatar}
                     sx={
                       isOnline === ""
@@ -363,7 +362,7 @@ const {
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
           {skills.map((skill) => (
-            <ChipsCustom hashTagStyle={true} label={skill} />
+            <ChipsCustom hashTagStyle={true} label={skill.name} />
           ))}
           {/* <ChipsCustom hashTagStyle={true} label="Javascript" />
           <ChipsCustom hashTagStyle={true} label="Node js" />
