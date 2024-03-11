@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography, IconButton } from "@mui/material";
 import PropTypes from 'prop-types';
 
 
@@ -6,13 +6,16 @@ import {
   UilCommentLines,
   UilSetting,
   UilMessage,
-  UilApps
+  UilApps,
+  UilPresentation,
+  UilPen
 
 } from '@iconscout/react-unicons'
 import React from "react";
 import TypeMessageBox from "../../components/TypeMessageBox";
 import PeopleCard from "../../components/conent/rightMenu/PeopleCard";
 import { useTheme } from "@emotion/react";
+import MessageList from "../../components/conent/rightMenu/MessageList";
 
 
 
@@ -179,11 +182,34 @@ export default function CallChatNav() {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={1}>
-asdfsdfsadf
+            <MessageList/>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
-asdfsdf
+          <Box display={"flex"} flexDirection={"column"}>
+
+            <Box>
+              <IconButton>
+                  <UilPresentation/>
+              </IconButton>
+              Share screen
+            </Box>
+            <Box>
+              <IconButton>
+                  <UilPen/>
+              </IconButton>
+              Drawing
+            </Box>
+
+            <Box>
+              <IconButton>
+              <img width="24" height="24" src="https://img.icons8.com/color/48/youtube-play.png" alt="youtube-play"/>
+              </IconButton>
+              Play Youtube
+            </Box>
+
+          </Box>
+
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={3}>

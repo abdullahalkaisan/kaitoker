@@ -5,6 +5,7 @@ import MunitesAndMoneyPop from '../../components/topbar/others/MunitesAndMoneyPo
 import VideoUserBox from './VideoUserBox';
 import Iframe from './Iframe';
 import { useTheme } from '@emotion/react';
+import { useState } from 'react';
 
 // import MicOffIcon from '@mui/icons-material/MicOff';
 // import VideocamOffOutlinedIcon from '@mui/icons-material/VideocamOffOutlined';
@@ -17,7 +18,7 @@ export default function CallHeader() {
 
   const isScreenSraring = 0;
 
-
+  const [isCameraOff, setIsCameraOff] = useState(false)
 
 
 
@@ -64,15 +65,16 @@ export default function CallHeader() {
           display:"flex",
           flexDirection:"row",
           width:1,
+          height:1,
           flexWrap: `${isScreenSraring ? "no-wrap" : "wrap"}`,
           overflow:"auto"
         }}
       >
 
-          <VideoUserBox flag={"gr"} profetion="Web developer"  url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
-          <VideoUserBox flag={"us"} profetion="English Teacher"  url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
-          <VideoUserBox flag={"in"} profetion="Graphics designer" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>
-          <VideoUserBox flag={"br"} profetion="Video editor" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
+          <VideoUserBox isHost={true} isCameraOff={true}  flag={"gr"} profetion="Web developer"  url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
+          <VideoUserBox isCameraOff={false} flag={"us"} profetion="English Teacher"  url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
+          <VideoUserBox isCameraOff={false} flag={"in"} profetion="Graphics designer" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>
+          <VideoUserBox isCameraOff={false} flag={"br"} profetion="Video editor" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
 
       </Box>
 

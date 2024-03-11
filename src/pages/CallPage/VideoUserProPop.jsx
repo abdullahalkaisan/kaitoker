@@ -34,6 +34,11 @@ export default function VideoUserProPop(props) {
                 }}
             >
 
+                <p style={{position:"absolute", fontSize:"small", maxWidth:"70%", left:17, bottom:50, backgroundColor:"#22222290", color:"#ffffff90", padding:10, borderRadius:"15px 15px 0 0"}}>
+                    BUSY 
+                </p>
+
+
 
 
 
@@ -64,8 +69,10 @@ export default function VideoUserProPop(props) {
                             />
                         </Box>
                         }
-                        
-
+                    {
+                        props.isHost && <span style={ {backgroundColor:"orangered", padding:2, marginRight:10, borderRadius:6}}>HOST</span>    
+                    }
+                    
 
                     <Box sx={{ display: "flex", alignItems: "center",  }}>
                     <Box>
@@ -99,7 +106,7 @@ export default function VideoUserProPop(props) {
                             </IconButton>
                         </Box> */}
 
-                        {/* <Box >
+                        <Box display={props.isCameraOff ? "flex" :"none"}>
                             <IconButton sx={{
                                 backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
@@ -109,9 +116,9 @@ export default function VideoUserProPop(props) {
                             }}>
                                 <VideocamOffIcon fontSize='small' />
                             </IconButton>
-                        </Box> */}
+                        </Box>
 
-
+  
 
 
                         <Box>
