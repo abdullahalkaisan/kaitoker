@@ -19,7 +19,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 2, height:"100%", display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column", flexGrow:1 }}>
           {children}
         </Box>
       )}
@@ -105,11 +105,13 @@ export default function RightMenu_friendListTab() {
 
         <Box
             display={"flex"}
+            // height={"520px"}
             height={"100%"}
             // width={"100%"}
             flexDirection={"column"}
             overflow={"auto"}
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1, overflow:"auto" }}
+
             // p={3}
           >
             {sortedUsers.map((item) => (

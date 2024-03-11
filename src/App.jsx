@@ -28,7 +28,7 @@ function App(props) {
 
       <TopBar/>
 
-      <Profession_filter/>
+      {/* <Profession_filter/>  */}
 
       <Box 
         display={"flex"} 

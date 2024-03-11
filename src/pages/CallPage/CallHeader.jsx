@@ -6,6 +6,7 @@ import VideoUserBox from './VideoUserBox';
 import Iframe from './Iframe';
 import { useTheme } from '@emotion/react';
 import { useState } from 'react';
+import VideoCardUser_small from './VideoCardUser_small';
 
 // import MicOffIcon from '@mui/icons-material/MicOff';
 // import VideocamOffOutlinedIcon from '@mui/icons-material/VideocamOffOutlined';
@@ -16,7 +17,7 @@ export default function CallHeader() {
   const theme = useTheme();
   const themeUse = theme.palette.mode;
 
-  const isScreenSraring = 0;
+  const isScreenSraring = false;
 
   const [isCameraOff, setIsCameraOff] = useState(false)
 
@@ -25,7 +26,7 @@ export default function CallHeader() {
   return (
     <Box
       display={"flex"}
-      bgcolor={`${themeUse === "dark"? "#222":"#f1f1f1"}`}
+      bgcolor={`${themeUse === "dark"? "#222":"#fff"}`}
       flexDirection={"column"}
       width={1}
       // height={1}
@@ -62,7 +63,7 @@ export default function CallHeader() {
 
       <Box
         sx={{
-          display:"flex",
+          display:`${isScreenSraring ? "none" : "flex"}`,
           flexDirection:"row",
           width:1,
           height:1,
@@ -77,6 +78,15 @@ export default function CallHeader() {
           <VideoUserBox isCameraOff={false} flag={"br"} profetion="Video editor" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
 
       </Box>
+
+      <Box  display={ isScreenSraring ? "flex" :"none"} sx={{padding:2}}>
+          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
+          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
+          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>
+          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
+      </Box>
+
+
 
     </Box>
   );

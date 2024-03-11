@@ -34,9 +34,9 @@ export default function VideoUserProPop(props) {
                 }}
             >
 
-                <p style={{position:"absolute", fontSize:"small", maxWidth:"70%", left:17, bottom:50, backgroundColor:"#22222290", color:"#ffffff90", padding:10, borderRadius:"15px 15px 0 0"}}>
+                {/* <p style={{position:"absolute", fontSize:"small", maxWidth:"70%", left:17, bottom:50, backgroundColor:"#22222290", color:"#ffffff90", padding:10, borderRadius:"15px 15px 0 0"}}>
                     BUSY 
-                </p>
+                </p> */}
 
 
 
@@ -59,24 +59,30 @@ export default function VideoUserProPop(props) {
                             outline:"4px solid #1976d200"
                         }}
                     >
+
                         {isNameShow && 
-                        <Box>
+                        <Box sx={{display:{md:"flex", xs:"none"}}}>
                             <PeopleCard 
                                 isVarified="true" 
                                 flag={props.flag} 
-                                title={"Kaisan"} 
+                                title={"Abdullah Al Kaisan"} 
                                 subTitle={props.title} 
                             />
                         </Box>
                         }
+
                     {
-                        props.isHost && <span style={ {backgroundColor:"orangered", padding:2, marginRight:10, borderRadius:6}}>HOST</span>    
+                        props.isHost && <span style={ {backgroundColor:"orangered", padding:2, marginRight:10, borderRadius:6, display:{md:"flex", xs:"none"}}}>HOST</span>    
                     }
                     
 
                     <Box sx={{ display: "flex", alignItems: "center",  }}>
-                    <Box>
-                            <IconButton onClick={()=>{setIsNameShow(!isNameShow)}} sx={{
+
+
+
+
+                    {/* <Box>
+                        <IconButton onClick={()=>{setIsNameShow(!isNameShow)}} sx={{
                                 backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
                                 '&:hover': {
@@ -92,9 +98,13 @@ export default function VideoUserProPop(props) {
                                 
 
                             </IconButton>
-                        </Box>
+                        </Box> */}
 
-                        {/* <Box>
+
+
+
+
+                        <Box>
                             <IconButton sx={{
                                 backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
@@ -104,7 +114,7 @@ export default function VideoUserProPop(props) {
                             }} >
                                 <VolumeOffIcon fontSize='small' />
                             </IconButton>
-                        </Box> */}
+                        </Box>
 
                         <Box display={props.isCameraOff ? "flex" :"none"}>
                             <IconButton sx={{
@@ -134,13 +144,6 @@ export default function VideoUserProPop(props) {
                         </Box>
                     </Box>
                     </Box>
-
-
-
-
-
-
-
 
 
                 </Box>

@@ -33,6 +33,8 @@ export default function VideoUserBox(props) {
             src={props.url}></video>
       }
 
+        
+
 
 
         <VideoUserProPop isHost={props.isHost} isCameraOff={props.isCameraOff} title={props.profetion} flag={props.flag} />

@@ -52,7 +52,8 @@ export function CustomTabPanel(props) {
           display:"flex", 
           flexDirection:"column", 
           overflowY:"auto",
-          width:"100%", 
+          // width:"100%",
+          flexGrow:1, 
           height:"100%"
           }}>
           {children}
@@ -140,10 +141,10 @@ export default function RightMenu_container() {
           <Box
             display={"flex"}
             height={"100%"}
-            // width={"100%"}
+            width={"100%"}
             flexDirection={"column"}
             overflow={"hidden"}
-            sx={{ flexGrow: 1 }}
+            // sx={{ flexGrow: 1 }}
             // p={3}
           >
 
