@@ -1,15 +1,8 @@
 import { Box, IconButton } from '@mui/material'
 import PropTypes from 'prop-types';
-import VolumeOffIcon from '@mui/icons-material/VolumeOff';
-import VideocamOffIcon from '@mui/icons-material/VideocamOff';
 import PeopleCard from '../../components/conent/rightMenu/PeopleCard';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-
-
 import { useState } from 'react';
-import { Tune } from '@mui/icons-material';
+import { MdMicOff, MdMoreHoriz, MdMoreVert, MdVideocamOff } from 'react-icons/md';
 export default function VideoUserProPop(props) {
 
     const [isNameShow, setIsNameShow] = useState(true);
@@ -49,14 +42,14 @@ export default function VideoUserProPop(props) {
                             alignItems: "center",
                             fontSize: "small",
                             borderRadius: "20px",
-                            bgcolor: "#222 ",
-                            backdropFilter: blur("200px"),
+                            bgcolor: "#00000090 ",
+                            backdropFilter: "blur(8888px)",
                             color: "#ffffff",
                             width: "max-content",
                             p: 1,
                             cursor: "pointer",
                             userSelect: "none",
-                            outline:"4px solid #1976d200"
+                            // outline:"4px solid #1976d200"
                         }}
                     >
 
@@ -76,7 +69,7 @@ export default function VideoUserProPop(props) {
                     }
                     
 
-                    <Box sx={{ display: "flex", alignItems: "center",  }}>
+                    <Box sx={{ display: "flex", alignItems: "center", }}>
 
 
 
@@ -100,48 +93,57 @@ export default function VideoUserProPop(props) {
                             </IconButton>
                         </Box> */}
 
+                        <IconButton style={{color:"#fff"}}>
+                            <MdMicOff fontSize='medium' />
+                        </IconButton>
+                        <IconButton style={{color:"#fff"}}>
+                            <MdVideocamOff fontSize='medium' />
+                        </IconButton>
+                        <IconButton style={{color:"#fff"}}>
+                            <MdMoreVert fontSize='medium' />
+                        </IconButton>
 
 
-
-
-                        <Box>
+                        {/* <Box>
                             <IconButton sx={{
-                                backgroundColor: "#333", 
+                                // backgroundColor: "#333", 
                                 color: "#fff", marginRight: 1,
-                                '&:hover': {
-                                    backgroundColor: "#444",
-                                }
+                                // '&:hover': {
+                                //     backgroundColor: "#444",
+                                // }
                             }} >
-                                <VolumeOffIcon fontSize='small' />
-                            </IconButton>
-                        </Box>
 
-                        <Box display={props.isCameraOff ? "flex" :"none"}>
-                            <IconButton sx={{
-                                backgroundColor: "#333", 
-                                color: "#fff", marginRight: 1,
-                                '&:hover': {
-                                    backgroundColor: "#444",
-                                }
-                            }}>
-                                <VideocamOffIcon fontSize='small' />
+
                             </IconButton>
-                        </Box>
+                        </Box> */}
+
+                        {/* <Box display={props.isCameraOff ? "flex" :"none"}>
+                            <IconButton sx={{
+                                // backgroundColor: "#333", 
+                                color: "#fff", marginRight: 1,
+                                // '&:hover': {
+                                //     backgroundColor: "#444",
+                                // }
+                            }}>
+                                <MdVideocamOff fontSize='medium' />
+                            </IconButton>
+                        </Box> */}
 
   
 
-
+{/* 
                         <Box>
                             <IconButton sx={{
-                                backgroundColor: "#333", 
+                                backgroundColor: "#",
+                                backdropFilter:"blur(0px)", 
                                 color: "#fff",
-                                '&:hover': {
-                                    backgroundColor: "#444",
-                                }
+                                // '&:hover': {
+                                //     backgroundColor: "#444",
+                                // }
                             }} >
-                                <MoreHorizIcon fontSize='small' />
+                                <MdMoreVert fontSize='medium' />
                             </IconButton>
-                        </Box>
+                        </Box> */}
                     </Box>
                     </Box>
 

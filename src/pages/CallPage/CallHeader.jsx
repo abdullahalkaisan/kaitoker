@@ -61,7 +61,7 @@ export default function CallHeader() {
           display: `${isScreenSharing ? "flex" : "none"}`,
         }}
       >
-        {isScreenSharing && <Iframe url="pfrO1uNz00I?si=WYYdWUuaOTNjH3Zw"/>} 
+        {isScreenSharing && <Iframe url="BpPEoZW5IiY?si=nDIzhtvxRlJ2QT2Q"/>} 
         {/* pfrO1uNz00I?si=WYYdWUuaOTNjH3Zw  */}
         {/* BpPEoZW5IiY?si=nDIzhtvxRlJ2QT2Q  */}
         {/* HD13eq_Pmp8?si=Av9RD4DbrAA_3eoE  */}
@@ -85,7 +85,7 @@ export default function CallHeader() {
 
       </Box>
 
-      <Box  display={ isScreenSharing ? "flex" :"none"} sx={{padding:2}}>
+      <Box  display={ isScreenSharing ? "flex" :"none"} sx={{padding:2, width:"100%", justifyContent:{md:"flex-start", xs:"center"}}}>
           <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
           <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
           <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>

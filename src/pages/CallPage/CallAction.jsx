@@ -1,5 +1,5 @@
 import { Box, IconButton } from '@mui/material'
-
+import { MdCallEnd, MdMicOff, MdOutlineScreenShare, MdOutlineStopScreenShare, MdOutlineVideocamOff } from "react-icons/md";
 import { 
     UilMicrophoneSlash,
     UilCameraSlash,
@@ -35,28 +35,28 @@ export default function CallAction(props) {
     <Box>
       <IconButton 
       onClick={()=>{setIsMuteAction(!isMuteAction)}}
-      style={isMuteAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f190"}`, color:"", marginRight:5} }
+      style={isMuteAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f130"}`, color:"", marginRight:5} }
       > 
-        <UilMicrophoneSlash/>
+        <MdMicOff/>
       </IconButton>
       <IconButton 
       onClick={()=>{setIsCameraOffAction(!isCameraOffAction)}}
-      style={isCameraOffAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f190"}`, color:"", marginRight:5} }
+      style={isCameraOffAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f130"}`, color:"", marginRight:5} }
       >
-        <UilVideoSlash/>
-        
+        <MdOutlineVideocamOff/>
+
       </IconButton>
 
       {/* <IconButton style={{marginRight:5}}>
           <UilCameraChange/>
       </IconButton> */}
       <IconButton 
-        style={isScreenSharing ? { backgroundColor: "#EA493C", color: "#fff", marginRight: 5, borderRadius:90 } : { backgroundColor: `${isDark ? "#f1f1f130" :"#f1f1f190"}`, color: "", marginRight: 5 }} 
+        style={isScreenSharing ? { backgroundColor: "#EA493C", color: "#fff", marginRight: 5, borderRadius:90 } : { backgroundColor: `${isDark ? "#f1f1f130" :"#f1f1f130"}`, color: "", marginRight: 5 }} 
         onClick={() => { setIsScreenSharing(!isScreenSharing) }}>
 
-        {isScreenSharing ? <UilTimesCircle /> : <UilPresentation />}  
+        {isScreenSharing ? <MdOutlineStopScreenShare /> : <MdOutlineScreenShare />}  
         {isScreenSharing && <p style={{fontSize:"medium", paddingLeft:2}}>Stop</p>}
-        
+        {/* <MdOutlineScreenShare /> */}
         
       </IconButton>
 
@@ -70,7 +70,7 @@ export default function CallAction(props) {
 
 
       <IconButton color='error'>
-          <UilMissedCall/>
+          <MdCallEnd/>
       </IconButton>
   </Box>
   )
