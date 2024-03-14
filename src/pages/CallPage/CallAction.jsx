@@ -10,30 +10,38 @@ import {
     UilVolumeMute,
     UilMissedCall,
     UilPresentation,
+    UilTimesSquare,
+    UilTimesCircle,
     UilVolumeUp
   
   
   } from '@iconscout/react-unicons'
 import { useState } from 'react';
+import { useTheme } from '@emotion/react';
 
 
-export default function CallAction() {
+export default function CallAction(props) {
+
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
 
   const [isMuteAction, setIsMuteAction] = useState(false);
   const [isCameraOffAction, setIsCameraOffAction] = useState(false);
 
+  const {setIsScreenSharing, isScreenSharing} = props;
 
   return (
     <Box>
       <IconButton 
       onClick={()=>{setIsMuteAction(!isMuteAction)}}
-      style={isMuteAction ? {backgroundColor:"#EA493C", color:"#fff", marginRight:5}:{backgroundColor:"", color:"", marginRight:5} }
+      style={isMuteAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f190"}`, color:"", marginRight:5} }
       > 
         <UilMicrophoneSlash/>
       </IconButton>
       <IconButton 
       onClick={()=>{setIsCameraOffAction(!isCameraOffAction)}}
-      style={isCameraOffAction ? {backgroundColor:"#EA493C", color:"#fff", marginRight:5}:{backgroundColor:"", color:"", marginRight:5} }
+      style={isCameraOffAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f190"}`, color:"", marginRight:5} }
       >
         <UilVideoSlash/>
         
@@ -42,8 +50,14 @@ export default function CallAction() {
       {/* <IconButton style={{marginRight:5}}>
           <UilCameraChange/>
       </IconButton> */}
-      <IconButton style={{marginRight:5}}>
-          <UilPresentation/>
+      <IconButton 
+        style={isScreenSharing ? { backgroundColor: "#EA493C", color: "#fff", marginRight: 5, borderRadius:90 } : { backgroundColor: `${isDark ? "#f1f1f130" :"#f1f1f190"}`, color: "", marginRight: 5 }} 
+        onClick={() => { setIsScreenSharing(!isScreenSharing) }}>
+
+        {isScreenSharing ? <UilTimesCircle /> : <UilPresentation />}  
+        {isScreenSharing && <p style={{fontSize:"medium", paddingLeft:2}}>Stop</p>}
+        
+        
       </IconButton>
 
       {/* <IconButton>

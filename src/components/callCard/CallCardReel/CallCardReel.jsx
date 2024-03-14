@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Avatar, Badge, Box, Button, Card, CardActionArea,  IconButton, Typography } from '@mui/material'
+import { Avatar, Badge, Box, Button, Card, CardActionArea,  IconButton, Skeleton, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import VerifiedIcon from '@mui/icons-material/Verified';
 
@@ -48,6 +48,7 @@ import { usersDataLocal } from '../../../usersDataLocal';
 import CallCardReel_details from './CallCardReel_details';
 import CallCardReelTap from './CallCardReel_Tap';
 import { useEffect, useState } from 'react';
+import { Tune } from '@mui/icons-material';
 
 
 
@@ -59,6 +60,7 @@ export default function CallCardReel() {
   const [isFriend, setIsFriend] =  useState(false);
   const [isFevorate, setIsFevorate] =  useState(false);
 
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     userName,
@@ -161,7 +163,9 @@ export default function CallCardReel() {
               badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
               color={isOnline === "online" ? "info" : "warning"}
             >
-              <Avatar
+              
+
+              {isLoading ? <Skeleton variant="circular" width={150} height={150} />  : <Avatar
                 src={avatar}
                 sx={ isOnline === "online" || isOnline === "busy" ?  {
                   height:150,
@@ -173,7 +177,8 @@ export default function CallCardReel() {
                   width: 150,
                   borderRadius: 999,
                 }}
-              />
+              />}
+              
             </StyledBadge>
           </CardActionArea>
           {/* <CardActionArea style={{marginTop:10}}>

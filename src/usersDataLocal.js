@@ -7,7 +7,7 @@ export const usersDataLocal = [
       "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg",
     hourRate: 2.24,
     isVarified: true,
-    isOnline: "",
+    isOnline: "online",
     followers: 3212,
     rating: 92,
     totalCall: 145,
