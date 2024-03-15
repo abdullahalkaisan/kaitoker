@@ -2,7 +2,8 @@
 // import { PauseRounded, PlayArrowRounded } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import React, { useState } from 'react'
-
+import { IoMdPlay } from "react-icons/io";
+import { IoMdPause } from "react-icons/io";
 import { 
     UilPlay,
     UilPause,
@@ -61,19 +62,24 @@ export default function AudioPlay_button() {
         onClick={() => setPaused(!paused)} 
         >
         {paused ? (
-        <UilPlay
-            sx={{ fontSize: '3rem' }}
-            // htmlColor={mainIconColor}
-        />
-
+        // <UilPlay
+        //     sx={{ fontSize: '3rem' }}
+        //     // htmlColor={mainIconColor}
+        // />
+        
+<IoMdPlay size={"40px"} />
           
 
 
         
         ) : (
-        <UilPause sx={{ fontSize: '3rem' }} 
-        // htmlColor={mainIconColor} 
-        />
+        // <UilPause sx={{ fontSize: '3rem' }} 
+        // // htmlColor={mainIconColor} 
+        // />
+
+<IoMdPause size={"40px"} />
+
+
         )}
     </IconButton>
     </>

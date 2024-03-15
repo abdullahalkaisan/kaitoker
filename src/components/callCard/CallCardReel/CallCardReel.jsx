@@ -49,6 +49,7 @@ import CallCardReel_details from './CallCardReel_details';
 import CallCardReelTap from './CallCardReel_Tap';
 import { useEffect, useState } from 'react';
 import { Tune } from '@mui/icons-material';
+import AudioControlBox from './AudioControlBox';
 
 
 
@@ -192,43 +193,10 @@ export default function CallCardReel() {
             <AudioSlider_custom />
           </Box>
 
-          <Box
-            display={"flex"}
-            bgcolor={"background.default"}
-            color={"text.primary"}
-            flexDirection={"row"}
-            width={300}
-            m={"10px 0"}
-            alignItems={"center"}
-            justifyContent={"space-evenly"}
-          >
-            {/* <IconButton color="primary" size="large">
-              <UilPlusCircle />
-            </IconButton> */}
+          <AudioControlBox width={300}/>
 
-            <IconButton onClick={() => setCurrentUser(Math.max(0, currentUser - 1))} color="primary" size="large">
-              <ArrowBackIosIcon />
-            </IconButton>
 
-            <AudioPlay_button />
 
-            <IconButton onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))} variant="contained" color="primary" size="large">
-              <ArrowForwardIosIcon />
-            </IconButton>
-
-            {/* <Box>
-              <Link to={"/callpage"}>
-                <Button
-                  size="small"
-                  sx={{ borderRadius: 2, textTransform: "none" }}
-                  variant="contained"
-                  color="primary"
-                >
-                  {`$${"2.24"}/hr`}
-                </Button>
-              </Link>
-            </Box> */}
-          </Box>
         </Box>
 
         <Box
