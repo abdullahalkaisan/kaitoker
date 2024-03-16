@@ -11,10 +11,16 @@ const handleClick_chips = () => {
 export default function ChipsCustom(props) {
   // const theme  = useTheme();
   // const isDark = theme.palette.mode === "dark";
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.');
+  };
 
 console.log(props.icon);
   return (
     <Chip
+
+      onDelete={props.onDelete &&  handleDelete}
+
       sx={props.size === "large" ?
         {
           height: "auto",

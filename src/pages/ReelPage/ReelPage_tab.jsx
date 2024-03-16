@@ -14,6 +14,7 @@ import { MdRoom } from 'react-icons/md';
 import SubDetails from '../../components/callCard/SubDetails';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
 import { usersDataLocal } from '../../usersDataLocal';
+import AboutList from '../ProfilePage/TabMenuProfile/AboutList';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -27,7 +28,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 0 }}>
+        <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -66,43 +67,34 @@ export default function ReelPage_tab() {
       </Box>
       <CustomTabPanel value={value} index={0}>
 
-      <Typography
-              sx={{ color: "#777", display: "flex", alignItems: "center" }}
-              // textAlign={"center"}
-              variant="subtitle1"
-              mt={-0.5}
-              p={0}
-              gutterBottom
-            >
-              <MdRoom sx={{ fontSize: "medium" }} />
+        {/* <Typography
+          sx={{ color: "#777", display: "flex", alignItems: "center" }}
+          // textAlign={"center"}
+          variant="subtitle1"
+          mt={-0.5}
+          p={0}
+          gutterBottom
+        >
+          <MdRoom sx={{ fontSize: "medium" }} />
 
-              {"Bangladesh"}
+          {"Bangladesh"}
 
-              <Tooltip title={"Bangladesh"} placement="top">
-                <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
-                  <img
-                    style={{
-                      borderRadius: 3,
-                      border: "1px solid #77777750",
-                      boxShadow: "10px 10px 10px solid black",
-                    }}
-                    src={`https://flagcdn.com/w20/${"bd"}.png`}
-                  />
-                </Box>
-              </Tooltip>
-            </Typography>
+          <Tooltip title={"Bangladesh"} placement="top">
+            <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
+              <img
+                style={{
+                  borderRadius: 3,
+                  border: "1px solid #77777750",
+                  boxShadow: "10px 10px 10px solid black",
+                }}
+                src={`https://flagcdn.com/w20/${"bd"}.png`}
+              />
+            </Box>
+          </Tooltip>
+        </Typography> */}
 
-            <SubDetails
-            user_followers={new Intl.NumberFormat("en-US", {
-              useGrouping: true,
-              notation: "compact",
-            }).format(145)}
-            user_rating={45}
-            // user_language={"gigLanguage"}
-            justifyContent={"flex-start"}
-            user_total_call={145}
-            // flag={flag}
-          />
+
+          <AboutList/>
 
 
       </CustomTabPanel>

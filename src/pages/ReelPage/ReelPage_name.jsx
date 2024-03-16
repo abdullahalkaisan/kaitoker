@@ -50,7 +50,17 @@ export default function ReelPage_name() {
         {"Web developer"}
       </Typography>
 
-
+      <SubDetails
+            user_followers={new Intl.NumberFormat("en-US", {
+              useGrouping: true,
+              notation: "compact",
+            }).format(145)}
+            user_rating={45}
+            // user_language={"gigLanguage"}
+            justifyContent={"flex-start"}
+            user_total_call={145}
+            flag={"bd"}
+          />
 
     </Box>
 

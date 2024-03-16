@@ -15,6 +15,9 @@ import ReelPage_tab from "./ReelPage_tab";
 import ReelPage_name from "./ReelPage_name";
 import ReelPage_action from "./ReelPage_action";
 import ReelPage_audioAction from "./ReelPage_audioAction";
+import { MdOutlineChat, MdOutlineHistory } from "react-icons/md";
+import { IoMdChatbubbles } from "react-icons/io";
+import ChipsCustom from "../../components/callCard/ChipsCustom";
 
 
 
@@ -40,7 +43,7 @@ export default function ReelPage() {
             </IconButton>
           </Link>
           {/* <Logo/> */}
-          <img height={28} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1" ></img>
+          {/* <img height={28} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1" ></img> */}
         </Box>
 
             <Box display={"flex"} alignItems={"center"}>
@@ -51,8 +54,12 @@ export default function ReelPage() {
                   <SearchIcon/>
               </IconButton>
               <IconButton>
-                  {/* <FiMessageCircle/> */}
+                  <IoMdChatbubbles />
               </IconButton>
+              <IconButton>
+                  <MdOutlineHistory />
+              </IconButton>
+
               <IconButton>
                   <TuneIcon/>
               </IconButton>
@@ -63,6 +70,10 @@ export default function ReelPage() {
 
         </Box>
 
+      {/* Showing "Web developer" */}
+      <Box sx={{px:3}}>
+        <ChipsCustom onDelete={true} color=""  size={"large"} label={`Showing "Web develoepr"`}/>
+      </Box>
 
 
         <Slider_filter/>
@@ -71,37 +82,6 @@ export default function ReelPage() {
         <ReelPage_action/>
           <ReelPage_tab/>
         <ReelPage_audioAction/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-        
 
 
 

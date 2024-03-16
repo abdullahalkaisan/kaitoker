@@ -22,20 +22,31 @@ export default function AboutList() {
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
         <List>
-          <ListItem disablePadding>
+          {/* <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <UilUser />
               </ListItemIcon>
               <ListItemText primary="abdullahalkaisan" />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <UilLocationPoint />
               </ListItemIcon>
               <ListItemText primary="Bangladesh" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <UilLetterJapaneseA  />
+              </ListItemIcon>
+              <Box >
+                <ListItemText primary="Bengali, Hindi, English" />
+              </Box>
             </ListItemButton>
           </ListItem>
 
@@ -59,16 +70,7 @@ export default function AboutList() {
             </ListItemButton>
           </ListItem>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <UilLetterJapaneseA  />
-              </ListItemIcon>
-              <Box >
-                <ListItemText primary="Bengali, Hindi, English" />
-              </Box>
-            </ListItemButton>
-          </ListItem>
+
 
           <ListItem disablePadding>
             <ListItemButton>
