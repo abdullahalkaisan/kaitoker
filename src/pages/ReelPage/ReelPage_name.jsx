@@ -1,8 +1,8 @@
-import { Avatar, Box, IconButton, Tooltip, Typography } from "@mui/material";
-import { IoMdMore } from "react-icons/io";
+import { Avatar, Box, Tooltip, Typography } from "@mui/material";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { MdRoom } from "react-icons/md";
+import { MdOutlineTranslate, MdRoom } from "react-icons/md";
 import SubDetails from "../../components/callCard/SubDetails";
+import RoomPage_country from "./RoomPage_country";
 export default function ReelPage_name() {
   return (
 
@@ -50,17 +50,9 @@ export default function ReelPage_name() {
         {"Web developer"}
       </Typography>
 
-      <SubDetails
-            user_followers={new Intl.NumberFormat("en-US", {
-              useGrouping: true,
-              notation: "compact",
-            }).format(145)}
-            user_rating={45}
-            // user_language={"gigLanguage"}
-            justifyContent={"flex-start"}
-            user_total_call={145}
-            flag={"bd"}
-          />
+<RoomPage_country/>
+
+
 
     </Box>
 

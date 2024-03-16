@@ -59,7 +59,7 @@ export default function ReelPage_tab() {
 
   return (
     <Box sx={{ width: '100%', height:"100%", display:"flex", flexDirection:"column", }}>
-      <Box sx={{ display:"flex", justifyContent:"center", borderBottom: 1, borderColor: 'divider' }}>
+      <Box sx={{ display:"flex", justifyContent:"", borderBottom: 1, borderColor: 'divider', margin:"0 30px" }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Details" {...a11yProps(0)} />
           <Tab label="Skills" {...a11yProps(1)} />
@@ -99,10 +99,14 @@ export default function ReelPage_tab() {
 
           <ReelPage_details/>
 
+          
+
+
+
 
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {usersDataLocal.map((item)=><ChipsCustom item={item} key={item.id}/>)}
+        {usersDataLocal.map((item)=> <ChipsCustom item={item} key={item.id}/>)}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         Item Three

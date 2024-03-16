@@ -34,9 +34,9 @@ export default function ReelPage_action() {
       <IconButton color="primary" size="large">
         <UilCommentLines />
       </IconButton>
-      <IconButton color="primary" size="large">
+      {/* <IconButton color="primary" size="large">
         <UilVideo />
-      </IconButton>
+      </IconButton> */}
 
       <Box>
         <Link to={"/callpage"}>
