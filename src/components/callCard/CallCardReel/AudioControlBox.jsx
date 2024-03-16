@@ -20,13 +20,13 @@ export default function AudioControlBox(props) {
           >
 
 {/* onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  */}
-            <IconButton  color="primary" size="large">
+            <IconButton  color="primary" size="">
             <MdOutlineArrowBackIos/>
             </IconButton>
 
             <AudioPlay_button />
 {/* onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  */}
-            <IconButton  variant="contained" color="primary" size="large">
+            <IconButton  variant="contained" color="primary" size="">
             <MdArrowForwardIos/>
             </IconButton>
 

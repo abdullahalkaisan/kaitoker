@@ -9,7 +9,11 @@ import AudioControlBox from '../../components/callCard/CallCardReel/AudioControl
 import ReelPage_name from './ReelPage_name';
 import ReelPage_action from './ReelPage_action';
 import ReelPage_audioAction from './ReelPage_audioAction';
-import { Avatar } from '@mui/material';
+import { Avatar, Tooltip } from '@mui/material';
+import { MdRoom } from 'react-icons/md';
+import SubDetails from '../../components/callCard/SubDetails';
+import ChipsCustom from '../../components/callCard/ChipsCustom';
+import { usersDataLocal } from '../../usersDataLocal';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,7 +56,7 @@ export default function ReelPage_tab() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', height:"100%", display:"flex", flexDirection:"column", }}>
       <Box sx={{ display:"flex", justifyContent:"center", borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Details" {...a11yProps(0)} />
@@ -61,20 +65,49 @@ export default function ReelPage_tab() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Box sx={{display:"flex", justifyContent:"center"}}>
-            <Avatar style={{height:70, width:70, 
-                // margin:"30px 0 0 30px"
-                marginTop:30,
-                }} src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" />
 
-        </Box>
-        
-        <ReelPage_name/>
-        <ReelPage_action/>
-        <ReelPage_audioAction/>
+      <Typography
+              sx={{ color: "#777", display: "flex", alignItems: "center" }}
+              // textAlign={"center"}
+              variant="subtitle1"
+              mt={-0.5}
+              p={0}
+              gutterBottom
+            >
+              <MdRoom sx={{ fontSize: "medium" }} />
+
+              {"Bangladesh"}
+
+              <Tooltip title={"Bangladesh"} placement="top">
+                <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
+                  <img
+                    style={{
+                      borderRadius: 3,
+                      border: "1px solid #77777750",
+                      boxShadow: "10px 10px 10px solid black",
+                    }}
+                    src={`https://flagcdn.com/w20/${"bd"}.png`}
+                  />
+                </Box>
+              </Tooltip>
+            </Typography>
+
+            <SubDetails
+            user_followers={new Intl.NumberFormat("en-US", {
+              useGrouping: true,
+              notation: "compact",
+            }).format(145)}
+            user_rating={45}
+            // user_language={"gigLanguage"}
+            justifyContent={"flex-start"}
+            user_total_call={145}
+            // flag={flag}
+          />
+
+
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        {usersDataLocal.map((item)=><ChipsCustom item={item} key={item.id}/>)}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         Item Three

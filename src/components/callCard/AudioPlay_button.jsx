@@ -62,22 +62,19 @@ export default function AudioPlay_button() {
         onClick={() => setPaused(!paused)} 
         >
         {paused ? (
-        // <UilPlay
-        //     sx={{ fontSize: '3rem' }}
-        //     // htmlColor={mainIconColor}
-        // />
+        <UilPlay
+            sx={{ fontSize: '3rem' }}
+            // htmlColor={mainIconColor}
+        />
         
-<IoMdPlay size={"40px"} />
-          
 
 
         
         ) : (
-        // <UilPause sx={{ fontSize: '3rem' }} 
-        // // htmlColor={mainIconColor} 
-        // />
+        <UilPause sx={{ fontSize: '3rem' }} 
+        // htmlColor={mainIconColor} 
+        />
 
-<IoMdPause size={"40px"} />
 
 
         )}
@@ -86,3 +83,8 @@ export default function AudioPlay_button() {
 
   )
 }
+
+
+{/* <IoMdPlay size={"40px"} /> */}
+{/* <IoMdPause size={"40px"} /> */}
+     
