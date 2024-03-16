@@ -1,4 +1,4 @@
-import { Box, IconButton, } from "@mui/material";
+import { Box, IconButton, MobileStepper, Tabs, } from "@mui/material";
 import LanguageSelect from "../../components/callCard/LanguageSelect";
 import Slider_filter from "../../components/filter/Profession_filter";
 // import Logo from "../../components/topbar/others/Logo";
@@ -15,9 +15,11 @@ import ReelPage_tab from "./ReelPage_tab";
 import ReelPage_name from "./ReelPage_name";
 import ReelPage_action from "./ReelPage_action";
 import ReelPage_audioAction from "./ReelPage_audioAction";
-import { MdOutlineChat, MdOutlineHistory } from "react-icons/md";
+import { MdChatBubbleOutline, MdOutlineChat, MdOutlineHistory } from "react-icons/md";
 import { IoMdChatbubbles } from "react-icons/io";
 import ChipsCustom from "../../components/callCard/ChipsCustom";
+import { useState } from "react";
+import { ViewCarousel } from "@mui/icons-material";
 
 
 
@@ -32,9 +34,20 @@ import ChipsCustom from "../../components/callCard/ChipsCustom";
 
 
 export default function ReelPage() {
+
+  const [chipValue, setChipValue] = useState(0);
+
+  const chipHandleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+
+
+
+
   return (
     <>
-        <Box sx={{display:"flex", alignItems:"center", justifyContent:"space-between", p:1}}>
+        <Box sx={{display:"flex", alignItems:"center", justifyContent:"space-between", p:"10px 10px 0 10px"}}>
             
         <Box display={"flex"} alignItems={"center"}>
           <Link to={"/"}>
@@ -47,41 +60,50 @@ export default function ReelPage() {
         </Box>
 
             <Box display={"flex"} alignItems={"center"}>
-              <Box sx={{display:{md:"flex", xs:"none"}}}>
+              {/* <Box sx={{display:{md:"flex", xs:"none"}}}>
                 <LanguageSelect/>
-              </Box>
-              <IconButton style={{marginLeft:30}} >
+              </Box> */}
+              <IconButton>
                   <SearchIcon/>
               </IconButton>
               <IconButton>
-                  <IoMdChatbubbles />
+                  <MdOutlineChat />
               </IconButton>
               <IconButton>
                   <MdOutlineHistory />
               </IconButton>
-
-              <IconButton>
+              {/* <IconButton>
                   <TuneIcon/>
-              </IconButton>
+              </IconButton> */}
               <IconButton>
                   <MoreVertIcon/>
               </IconButton>
             </Box>
-
         </Box>
-
-      {/* Showing "Web developer" */}
-      <Box sx={{px:3}}>
-        <ChipsCustom onDelete={true} color=""  size={"large"} label={`Showing "Web develoepr"`}/>
-      </Box>
-
 
         <Slider_filter/>
 
-        <ReelPage_name/>
-        <ReelPage_action/>
-          <ReelPage_tab/>
-        <ReelPage_audioAction/>
+
+              
+        <Tabs
+          value={chipValue}
+          onChange={chipHandleChange}
+          variant="scrollable"
+          // scrollButtons
+          // allowScrollButtonsMobile
+          indicatorColor
+          aria-label="scrollable force tabs example"
+          sx={{padding:" 15px"}}
+        >
+          <ChipsCustom whiteSpace={false} onDelete={true} color=""  size={"large"} label={`Search reasult:  "Web develoepr"`}/>
+          <ChipsCustom whiteSpace={false} onDelete={false} color=""  size={"large"} label={`Country: Any`}/>
+          <ChipsCustom whiteSpace={false} onDelete={false} color=""  size={"large"} label={`Language: Any`}/>
+        </Tabs>
+
+
+        <ReelPage_tab/>
+
+
 
 
 

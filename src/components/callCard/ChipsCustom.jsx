@@ -26,7 +26,7 @@ console.log(props.icon);
           height: "auto",
           "& .MuiChip-label": {
             display: "block",
-            whiteSpace: "normal",
+            whiteSpace: `${props.whiteSpace ? "normal" : ""}`,
             fontSize:"",
           }, m: 0.3, py: 1, borderRadius: 2
         } : {

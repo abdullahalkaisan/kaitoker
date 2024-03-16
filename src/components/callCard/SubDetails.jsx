@@ -109,7 +109,7 @@ export default function SubDetails({user_followers, user_rating , user_language,
         <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
           <img
             style={{
-              borderRadius: 3,
+              borderRadius: 4,
               border: "1px solid #77777750",
               boxShadow: "10px 10px 10px solid black",
             }}

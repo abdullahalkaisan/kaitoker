@@ -15,6 +15,7 @@ import SubDetails from '../../components/callCard/SubDetails';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
 import { usersDataLocal } from '../../usersDataLocal';
 import AboutList from '../ProfilePage/TabMenuProfile/AboutList';
+import ReelPage_details from './ReelPage_details';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -28,7 +29,7 @@ function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 0 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -94,7 +95,9 @@ export default function ReelPage_tab() {
         </Typography> */}
 
 
-          <AboutList/>
+          {/* <AboutList/> */}
+
+          <ReelPage_details/>
 
 
       </CustomTabPanel>

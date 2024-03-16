@@ -17,8 +17,9 @@ export default function ReelPage_action() {
       color={"text.primary"}
       flexDirection={"row"}
       width={"100%"}
-      mb={2}
-      mx={2}
+      // mb={2}
+      // mx={2}
+      m={2}
       alignItems={"center"}
       justifyContent={"space-evenly"}
     >
