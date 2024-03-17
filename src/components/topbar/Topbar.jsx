@@ -44,11 +44,10 @@ export default function TopBar() {
                 sx={{ width: 32, height: 32 }}
               />
             </IconButton>
-
-
-
-
             </Link>
+
+
+
           </Box>
         </Box>
       </Box>

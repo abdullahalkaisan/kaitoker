@@ -8,7 +8,7 @@ import LanguageSelect from "../callCard/LanguageSelect";
 import CallCard from "../callCard/CallCard";
 import GroupCallCard from "../groupCallCard/GroupCallCard";
 import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
-// import VideoCard from "../VideoCard/VideoCard";
+import VideoCard from "../VideoCard/VideoCard";
 import CourseCard from "../CaurseCard.jsx/CourseCard";
 import CallCardReel from "../callCard/CallCardReel/CallCardReel";
 import { usersDataLocal } from "../../usersDataLocal";
@@ -196,10 +196,10 @@ export default function Center_container() {
   <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More"/>
   <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/3749464_eaea.jpg" title="React and Typescript: Build a Portfolio Project"/>
 
-  {/* <VideoCard/>
   <VideoCard/>
   <VideoCard/>
-  <VideoCard/> */}
+  <VideoCard/>
+  <VideoCard/>
 
   <GroupCallCard/>
   <GroupCallCard/>

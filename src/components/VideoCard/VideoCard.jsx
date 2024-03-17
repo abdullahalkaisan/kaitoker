@@ -2,6 +2,7 @@ import {Box, Card, CardMedia, IconButton, Typography } from "@mui/material";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChipsCustom from "../callCard/ChipsCustom";
+import { MdOutlineRemoveRedEye, MdOutlineStar } from "react-icons/md";
 
 export default function VideoCard() {
 
@@ -27,7 +28,13 @@ export default function VideoCard() {
     >
 
         <Box display={"flex"} justifyContent={"space-between"}>
-            <PeopleCard badge="true" avatar="true" title={"Abdullah Al Kaisan"} subTitle="Web developer"/>
+            <PeopleCard 
+            time={"15 mins"} 
+            badge="true" 
+            avatar="true" 
+            avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
+            title={"Abdullah Al Kaisan"} 
+            subTitle="Web developer"/>
             <IconButton>
                 <MoreVertIcon/>
             </IconButton>
@@ -50,11 +57,14 @@ export default function VideoCard() {
       <Typography variant="h6" sx={{fontSize:"medium", fontWeight:"bold"}}> {videoTitle.length >= 40 ? videoTitle.slice(0, 40)+"..." : videoTitle }</Typography>
         <Typography variant="body2">
         <Box color={"#777"} display={"flex"} alignItems={"center"}>
-            465.46K views 
-            <Box sx={{color:"green", fontWeight:"bold", margin:"0 5px"}}>
+            <MdOutlineRemoveRedEye style={{marginRight:3}} />
+            465.46K
+            {/* views  */}
+            <Box sx={{display:"flex", alignItems:"center", color:"green", fontWeight:"bold", margin:"0 5px"}}>
+            <MdOutlineStar style={{marginRight:3}} />
                 56% 
             </Box>
-            15 mins ago
+            {/* 15 mins ago */}
         </Box>
 
 

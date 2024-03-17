@@ -4,17 +4,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import AudioSlider_custom from '../../components/callCard/AudioSlider_custom';
-import AudioControlBox from '../../components/callCard/CallCardReel/AudioControlBox';
-import ReelPage_name from './ReelPage_name';
-import ReelPage_action from './ReelPage_action';
-import ReelPage_audioAction from './ReelPage_audioAction';
-import { Avatar, Tooltip } from '@mui/material';
-import { MdRoom } from 'react-icons/md';
-import SubDetails from '../../components/callCard/SubDetails';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
 import { usersDataLocal } from '../../usersDataLocal';
-import AboutList from '../ProfilePage/TabMenuProfile/AboutList';
 import ReelPage_details from './ReelPage_details';
 
 function CustomTabPanel(props) {
@@ -59,8 +50,12 @@ export default function ReelPage_tab() {
 
   return (
     <Box sx={{ width: '100%', height:"100%", display:"flex", flexDirection:"column", }}>
-      <Box sx={{ display:"flex", justifyContent:"", borderBottom: 1, borderColor: 'divider', margin:"0 30px" }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+      <Box sx={{ display:"flex", 
+      justifyContent:"", 
+      borderBottom: 1, borderColor: 'divider', 
+      margin:"0 30px" 
+      }}>
+        <Tabs allowScrollButtonsMobile value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Details" {...a11yProps(0)} />
           <Tab label="Skills" {...a11yProps(1)} />
           <Tab label="Shidule" {...a11yProps(2)} />
