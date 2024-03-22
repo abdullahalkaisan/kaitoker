@@ -50,6 +50,7 @@ import CallCardReelTap from './CallCardReel_Tap';
 import { useEffect, useState } from 'react';
 import { Tune } from '@mui/icons-material';
 import AudioControlBox from './AudioControlBox';
+import { MdDone, MdFavorite, MdFavoriteBorder, MdOutlineMessage, MdOutlineVideocam, MdStar, MdStarBorder } from 'react-icons/md';
 
 
 
@@ -322,20 +323,41 @@ export default function CallCardReel() {
               justifyContent={"space-evenly"}
               // justifyContent={"center"}
             >
-              <IconButton onClick={()=>{ setIsFollowing(!isFollowing)}} color={isFriend ? "warning" : isFollowing ? "" : "primary"   } size="large">
+              <IconButton sx={isFollowing && {borderRadius:4, color:"#777", backgroundColor:"#f1f1f190" }} onClick={()=>{ setIsFollowing(!isFollowing)}} color={isFriend ? "warning" : isFollowing ? "" : "primary"   } size="large">
                 {
-                  isFollowing ? < UilCheckCircle /> : <UilUserPlus />
+                  isFollowing ? 
+                  <>
+                    {/* < UilCheckCircle />  */}
+                    <MdDone size="18"/>
+                    <Typography variant="body2" sx={{marginLeft:"5px"}} >
+                      Following
+                    </Typography> 
+                  </>
+                  : 
+                  <UilUserPlus />
+                  
                 }
                 {/* <UilUsersAlt /> */}
               </IconButton>
-              <IconButton onClick={()=>{setIsFevorate(!isFevorate)}} color={isFevorate ? "warning" : "primary"} size="large">
-                <UilFavorite  />
+              <IconButton onClick={()=>{setIsFevorate(!isFevorate)}} color={isFevorate ? "warning" : "primary"} size="">
+                {/* <UilFavorite  /> */}
+                {isFevorate ? 
+                <MdStar /> 
+                // <MdFavorite />
+                : 
+                // <MdFavoriteBorder />
+                <MdStarBorder />
+                }
+                
+                
               </IconButton>
-              <IconButton color="primary" size="large">
+              <IconButton color="primary" size="">
                 <UilCommentLines />
+                {/* <MdOutlineMessage /> */}
               </IconButton>
-              <IconButton color="primary" size="large">
+              <IconButton color="primary" size="">
                 <UilVideo />
+                {/* <MdOutlineVideocam /> */}
               </IconButton>
 
               <Box>

@@ -2,7 +2,7 @@
 // import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 
-import {  Box, Card, CardMedia, Checkbox, FormControlLabel, Typography,  } from '@mui/material';
+import { Box, Card, CardMedia, Checkbox, FormControlLabel, } from '@mui/material';
 
 // import InsertCommentOutlinedIcon from '@mui/icons-material/InsertCommentOutlined';
 // import InsertCommentIcon from '@mui/icons-material/InsertComment';
@@ -28,6 +28,7 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 // import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { MdOutlineInsertComment, MdOutlineShare } from 'react-icons/md';
 
 
 
@@ -35,19 +36,19 @@ export default function PostCard(props) {
 
 
   const like = props.likes;
-  const disLike = props.disLikes; 
+  const disLike = props.disLikes;
   const totalLikes = like + disLike;
   const getPercentage = like / totalLikes * 100;
 
 
- console.log(getPercentage);
+  console.log(getPercentage);
 
 
 
-  
+
   return (
     <>
-      <Card variant="none" sx={{ width: 500, m: 1, p: 2 }}>
+      <Card variant="" sx={{ width: 500, m: 1, p: 2, borderRadius:3, border:"1px solid #00000020" }}>
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box display={"flex"} alignContent={"center"}>
             <PeopleCard
@@ -69,6 +70,8 @@ export default function PostCard(props) {
           </IconButton>
         </Box>
 
+
+
         <Box display={""} m={1} mb={0}>
           <ChipsCustom label="Javascript" />
         </Box>
@@ -88,6 +91,8 @@ export default function PostCard(props) {
           alt="Paella dish"
         />
 
+
+
         <CardContent>
           <p style={{ fontSize: "large" }} color="text.default">
             {`
@@ -96,6 +101,32 @@ export default function PostCard(props) {
           </p>
         </CardContent>
 
+
+        <Box sx={{backgroundColor:"#f1f1f190", p:1, mx:3, mb:3, borderRadius:4}}>
+          <PeopleCard
+            title={"Luca"}
+            time={"6 month"}
+            subTitle={"Python developer"}
+            avatar
+            avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocK386pzE7Z-bSFqbGXHYVxxKt5pYh_OAnMnkKWDOPhNabI"}
+            avatarSize={24}
+          />
+
+          <CardContent>
+            <p style={{ fontSize: "medium" }} color="text.default">
+              {`
+              Anyone's want to learn array and object concept in javascript please call me 
+            `}
+            </p>
+          </CardContent>
+
+        </Box>
+
+
+
+
+
+
         <Box
           sx={{
             width: "50px",
@@ -103,10 +134,10 @@ export default function PostCard(props) {
             backgroundColor: "#00000015",
             overflow: "hidden",
             borderRadius: 999,
-            ml:2
+            ml: 2
           }}
         >
-          <Box sx={{ height: 1, width: "50%", backgroundColor: "tomato", borderRadius:999 }}></Box>
+          <Box sx={{ height: 1, width: "50%", backgroundColor: "tomato", borderRadius: 999 }}></Box>
         </Box>
 
 
@@ -121,7 +152,7 @@ export default function PostCard(props) {
                 checkedIcon={<FavoriteIcon />}
               />
             }
-            label={146}
+            label={"120.5K"}
           />
           <FormControlLabel
             control={
@@ -130,7 +161,7 @@ export default function PostCard(props) {
                 checkedIcon={<ThumbDownAltIcon />}
               />
             }
-            label={24}
+            label={"21.2K"}
           />
           {/* </IconButton> */}
 
@@ -141,6 +172,29 @@ export default function PostCard(props) {
           <IconButton aria-label="share">
             <ForumOutlinedIcon />
           </IconButton> */}
+
+          <FormControlLabel
+            control={
+              <IconButton>
+                <MdOutlineInsertComment />
+              </IconButton>
+            }
+            label={"4.1K"}
+          />
+
+          <FormControlLabel
+            control={
+              <IconButton>
+                <MdOutlineShare />
+              </IconButton>
+            }
+            label={"66.7K"}
+          />
+
+
+
+
+
         </CardActions>
       </Card>
     </>

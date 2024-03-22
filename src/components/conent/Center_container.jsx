@@ -15,6 +15,7 @@ import { usersDataLocal } from "../../usersDataLocal";
 import CallCard_smallBox from "../CallCard_smallBox";
 import CallCard_cardBox from "../CallCard_cardBox";
 import LogsCard from "../LogsCard";
+import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -103,6 +104,8 @@ export default function Center_container() {
       </Box>
 
 
+
+        {/* <ReelPage_searchResult/> */}
 
 
 

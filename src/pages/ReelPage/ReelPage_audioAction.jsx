@@ -4,7 +4,7 @@ import AudioControlBox from "../../components/callCard/CallCardReel/AudioControl
 
 export default function ReelPage_audioAction() {
   return (
-    <Box sx={{width:"100%", margin:"0% 0", display:"flex", flexDirection:"column", justifyContent:"center"}}>
+    <Box sx={{width:"100%", margin:"10% 0% 20% 0%", display:"flex", flexDirection:"column", justifyContent:"center"}}>
     <Box sx={{ width: "100", margin: "0px 10%" }}>
       <AudioSlider_custom />
       </Box>

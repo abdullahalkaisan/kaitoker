@@ -21,7 +21,7 @@ export default function ReelPage_searchResult() {
     // allowScrollButtonsMobile
     indicatorColor
     aria-label="scrollable force tabs example"
-    sx={{padding:" 15px"}}
+    // sx={{padding:"15px 15px 0 15px"}}
   >
 
     <ChipsCustom whiteSpace={false} onDelete={true}   size={"large"} label={`Search reasult:  "Web develoepr"`}/>

@@ -42,7 +42,8 @@ export default function VideoUserProPop(props) {
                             alignItems: "center",
                             fontSize: "small",
                             borderRadius: "20px",
-                            bgcolor: "#00000090 ",
+                            // bgcolor: "#00000090 ",
+                            bgcolor: "#000000 ",
                             backdropFilter: "blur(8888px)",
                             color: "#ffffff",
                             width: "max-content",
@@ -93,13 +94,13 @@ export default function VideoUserProPop(props) {
                             </IconButton>
                         </Box> */}
 
-                        <IconButton style={{color:"#fff"}}>
+                        <IconButton style={{color:"#fff", backgroundColor: "#333", margin:"0 3px" }}>
                             <MdMicOff fontSize='medium' />
                         </IconButton>
-                        <IconButton style={{color:"#fff"}}>
+                        <IconButton style={{color:"#fff", backgroundColor: "#333", margin:"0 3px"}}>
                             <MdVideocamOff fontSize='medium' />
                         </IconButton>
-                        <IconButton style={{color:"#fff"}}>
+                        <IconButton style={{color:"#fff",backgroundColor: "#333", margin:"0 3px"}}>
                             <MdMoreVert fontSize='medium' />
                         </IconButton>
 

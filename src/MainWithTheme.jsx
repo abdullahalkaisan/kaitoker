@@ -11,6 +11,7 @@ import {
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import CallPage from './pages/CallPage/CallPage';
 import ReelPage from './pages/ReelPage/ReelPage';
+import CreateAccount_page from './pages/CreateAccount_page';
 // import { useMediaQuery } from '@mui/material'
 
 
@@ -54,6 +55,7 @@ export default function MainWithTheme() {
                 <Route path="/profile" element={<ProfilePage/>} />
                 <Route path="/callpage" element={<CallPage/>} />
                 <Route path="/reel" element={<ReelPage/>} />
+                <Route path="/create-profile" element={<CreateAccount_page/>} />
             </Routes>
             </BrowserRouter>
         </ThemeProvider>

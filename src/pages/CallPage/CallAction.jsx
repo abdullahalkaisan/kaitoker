@@ -1,5 +1,5 @@
 import { Box, IconButton } from '@mui/material'
-import { MdCallEnd, MdMicOff, MdOutlineScreenShare, MdOutlineStopScreenShare, MdOutlineVideocamOff } from "react-icons/md";
+import { MdCallEnd, MdClose, MdMicOff, MdOutlineScreenShare, MdOutlineStopScreenShare, MdOutlineVideocamOff } from "react-icons/md";
 import { 
     UilMicrophoneSlash,
     UilCameraSlash,
@@ -54,7 +54,7 @@ export default function CallAction(props) {
         style={isScreenSharing ? { backgroundColor: "#EA493C", color: "#fff", marginRight: 5, borderRadius:90 } : { backgroundColor: `${isDark ? "#f1f1f130" :"#f1f1f130"}`, color: "", marginRight: 5 }} 
         onClick={() => { setIsScreenSharing(!isScreenSharing) }}>
 
-        {isScreenSharing ? <MdOutlineStopScreenShare /> : <MdOutlineScreenShare />}  
+        {isScreenSharing ? <MdClose /> : <MdOutlineScreenShare />}  
         {isScreenSharing && <p style={{fontSize:"medium", paddingLeft:2}}>Stop</p>}
         {/* <MdOutlineScreenShare /> */}
         

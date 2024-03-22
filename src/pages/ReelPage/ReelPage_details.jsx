@@ -6,21 +6,13 @@ import ReelPage_extraDetails from "./ReelPage_extraDetails";
 export default function ReelPage_details() {
   return (
     <>
-        <ReelPage_name/>
 
 
 
 
-
-
-
-
-
-        <ReelPage_action/>
 
         <ReelPage_extraDetails/>
 
-        <ReelPage_audioAction/>
     
     </>
   )

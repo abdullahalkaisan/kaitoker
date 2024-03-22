@@ -17,9 +17,9 @@ export default function ReelPage_name() {
   >
 
 
-    <Box sx={{display:"flex"}}>
+    <Box sx={{display:"flex" , flexDirection:"row"}}>
 
-    <Avatar style={{height:70, width:70, marginRight:15}} src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" />
+    <Avatar style={{height:65, width:65, marginRight:15}} src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" />
     <Box
       display={"flex"}
       flexGrow={1}
