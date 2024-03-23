@@ -1,4 +1,4 @@
-import { Autocomplete, Avatar, Box, Button, TextField } from "@mui/material";
+import { Autocomplete,  Box, Button, TextField } from "@mui/material";
 import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 // import { useTheme } from "@emotion/react";
 // import LanguageSelect from "./LanguageSelect";
@@ -15,7 +15,7 @@ import { usersDataLocal } from "../../usersDataLocal";
 import CallCard_smallBox from "../CallCard_smallBox";
 import CallCard_cardBox from "../CallCard_cardBox";
 import LogsCard from "../LogsCard";
-import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
+// import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
 import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
 import { useState } from "react";
 import PostContext from "../../PostContext";

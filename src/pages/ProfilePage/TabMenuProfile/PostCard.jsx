@@ -26,7 +26,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
 import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 // import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
+// import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { MdOutlineInsertComment, MdOutlineShare } from 'react-icons/md';
 import { useState } from 'react';
