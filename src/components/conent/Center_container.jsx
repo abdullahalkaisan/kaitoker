@@ -16,6 +16,9 @@ import CallCard_smallBox from "../CallCard_smallBox";
 import CallCard_cardBox from "../CallCard_cardBox";
 import LogsCard from "../LogsCard";
 import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
+import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
+import { useState } from "react";
+import PostContext from "../../PostContext";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -26,10 +29,21 @@ import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
 export default function Center_container() {
 
 
+  const [userPosts, setUserPosts] = useState([
+    { id: 1, content: "Hello" },
+    { id: 2, content: "What's up?" },
+  ])
+
+
+
+
+
   // const theme = useTheme();
   // const themeSelect = theme.palette.mode;
 
   return (
+
+
 
     <Box
       display={"flex"}
@@ -94,9 +108,9 @@ export default function Center_container() {
         </Button> */}
 
 
-        <Button variant="soft" color="info" size="small" sx={{m:1, borderRadius:999}}>
-        <AllInclusiveOutlinedIcon color="info" sx={{marginRight: 1}}/>
-            10.16K
+        <Button variant="soft" color="info" size="small" sx={{ m: 1, borderRadius: 999 }}>
+          <AllInclusiveOutlinedIcon color="info" sx={{ marginRight: 1 }} />
+          10.16K
         </Button>
 
 
@@ -104,8 +118,7 @@ export default function Center_container() {
       </Box>
 
 
-
-        {/* <ReelPage_searchResult/> */}
+      {/* <ReelPage_searchResult/> */}
 
 
 
@@ -114,20 +127,20 @@ export default function Center_container() {
         sx={{
           // bgcolor: `${themeSelect === "light" ? "#f1f1f1" : "#222"}`,
           // width: "100%",
-          flexGrow:1,
-          height:"100%",
+          flexGrow: 1,
+          height: "100%",
           // width:"100%",
           overflowY: "auto",
-          display:"flex", 
-          flexWrap:"wrap",
-          justifyContent:"center",
-          alignItems:"flex-start",
-          p:1,
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          p: 1,
 
         }
-      }
+        }
       >
-{/* 
+        {/* 
         <CallCardLite/>
         <CallCardLite/>
         <CallCardLite/>
@@ -161,20 +174,29 @@ export default function Center_container() {
          */}
 
 
-         
 
-<Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
+        <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
 
-    {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
-    
+          {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
 
-        <CallCardReel />
-        <CallCard_smallBox/>
-        {console.log()}
-        <CallCard_cardBox/> 
-        
 
-{/* {usersDataLocal.map((item)=> 
+          <PostContext.Provider value={{userPosts, setUserPosts}}>
+            <Box width={"90%"}><PostInput /></Box>
+              {userPosts.map((item) => <PostCard key={item.key} item={item} />)}
+          </PostContext.Provider>
+
+
+
+
+
+
+          <CallCardReel />
+          <CallCard_smallBox />
+          {console.log()}
+          <CallCard_cardBox />
+
+
+          {/* {usersDataLocal.map((item)=> 
   <CallCard_smallBox 
       key={item.id}
       item={item}
@@ -189,70 +211,37 @@ export default function Center_container() {
   /> )}
  */}
 
-    {/* {usersDataLocal[0]} */}
-    {/* <CallCardReel/>
+          {/* {usersDataLocal[0]} */}
+          {/* <CallCardReel/>
     <CallCardReel/>
     <CallCardReel/>
     <CallCardReel/> */}
 
 
-  <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More"/>
-  <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/3749464_eaea.jpg" title="React and Typescript: Build a Portfolio Project"/>
+          <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More" />
+          <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/3749464_eaea.jpg" title="React and Typescript: Build a Portfolio Project" />
 
-  <VideoCard/>
-  <VideoCard/>
-  <VideoCard/>
-  <VideoCard/>
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
 
-  <GroupCallCard/>
-  <GroupCallCard/>
-  <GroupCallCard/>
-  <GroupCallCard/>
+          <GroupCallCard />
+          <GroupCallCard />
+          <GroupCallCard />
+          <GroupCallCard />
 
-  <LogsCard/>
-  <LogsCard/>
-  <LogsCard/>
-  <LogsCard/>
-
- 
-
-          <PostCard
-            name="Moinuddin chisti"
-            profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-            profession="CEO at Kaitoker"
-            onlineStatus="success"
-            accountType="verified"
-            postContent="In today's fast-paced world, where technological advancements continue to shape our daily lives, it's crucial for businesses to adapt and evolve with the ever-changing digital landscape. In this post, we explore the importance of embracing change and provide insights on how to navigate the dynamic world of digital marketing, web development, and user experience."
-            topic="Update"
-            topicLogoUrl="https://img.icons8.com/?size=512&id=bDkQlpOV2TWB&format=png"
-            postTime="Just now"
-            likes={20}
-            disLikes={10}
-            comments={12}
-            shares={2}
-          />
-
-<PostCard
-            name="Moinuddin chisti"
-            profilePicture="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
-            profession="CEO at Kaitoker"
-            onlineStatus="success"
-            accountType="verified"
-            postContent="In today's fast-paced world, where technological advancements continue to shape our daily lives, it's crucial for businesses to adapt and evolve with the ever-changing digital landscape. In this post, we explore the importance of embracing change and provide insights on how to navigate the dynamic world of digital marketing, web development, and user experience."
-            topic="Update"
-            topicLogoUrl="https://img.icons8.com/?size=512&id=bDkQlpOV2TWB&format=png"
-            postTime="Just now"
-            likes={20}
-            disLikes={10}
-            comments={12}
-            shares={2}
-          />
+          <LogsCard />
+          <LogsCard />
+          <LogsCard />
+          <LogsCard />
 
 
-    {usersDataLocal.map((item)=> <CallCard key={item.id} item={item}/> )}
+
+          {usersDataLocal.map((item) => <CallCard key={item.id} item={item} />)}
 
 
-{/* 
+          {/* 
         <CallCard 
           user_name="Abullah Al Kaisan"
           user_profetion="Web developer"
@@ -350,7 +339,7 @@ export default function Center_container() {
           user_language="English"
         /> */}
 
-</Box>
+        </Box>
 
 
 

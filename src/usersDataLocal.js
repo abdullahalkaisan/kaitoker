@@ -16,6 +16,9 @@ export const usersDataLocal = [
     languages: ["English", "Bengali", "Hindi"],
     country: "Bangladesh",
     city: "Jamalpur",
+    posts:[{
+      textContent:"Hey there! it's my first content in Kaitoker."
+    }],
     skills: [
       { name: "Javascript", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
       { name: "React", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },

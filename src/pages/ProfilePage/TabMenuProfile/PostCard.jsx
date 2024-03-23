@@ -2,7 +2,7 @@
 // import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 
-import { Box, Card, CardMedia, Checkbox, FormControlLabel, } from '@mui/material';
+import { Box, Card, CardMedia, Checkbox, FormControlLabel, Tabs, } from '@mui/material';
 
 // import InsertCommentOutlinedIcon from '@mui/icons-material/InsertCommentOutlined';
 // import InsertCommentIcon from '@mui/icons-material/InsertComment';
@@ -29,26 +29,23 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { MdOutlineInsertComment, MdOutlineShare } from 'react-icons/md';
+import { useState } from 'react';
 
 
 
-export default function PostCard(props) {
+export default function PostCard({item}) {
 
-
-  const like = props.likes;
-  const disLike = props.disLikes;
-  const totalLikes = like + disLike;
-  const getPercentage = like / totalLikes * 100;
-
-
-  console.log(getPercentage);
-
+  const [postActionTab, setPostActionTab] = useState(0);
+  const handleChange_postAction = (event, newValue) => {
+    setPostActionTab(newValue);
+  };
 
 
 
   return (
-    <>
-      <Card variant="" sx={{ width: 500, m: 1, p: 2, borderRadius:3, border:"1px solid #00000020" }}>
+      <Card variant="" sx={{ width: 600, m: 1, p: 2, borderRadius:3, 
+      // border:"1px solid #00000020" 
+      }}>
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box display={"flex"} alignContent={"center"}>
             <PeopleCard
@@ -72,9 +69,10 @@ export default function PostCard(props) {
 
 
 
-        <Box display={""} m={1} mb={0}>
+        <Box display={"none"} m={1} mb={0}>
           <ChipsCustom label="Javascript" />
         </Box>
+
 
         <CardMedia
           component="img"
@@ -95,14 +93,14 @@ export default function PostCard(props) {
 
         <CardContent>
           <p style={{ fontSize: "large" }} color="text.default">
-            {`
-              Anyone's want to learn array and object concept in javascript please call me 
-            `}
+            {item.content}
           </p>
         </CardContent>
 
 
-        <Box sx={{backgroundColor:"#f1f1f190", p:1, mx:3, mb:3, borderRadius:4}}>
+
+
+        <Box sx={{display:"none", backgroundColor:`#f1f1f1`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
           <PeopleCard
             title={"Luca"}
             time={"6 month"}
@@ -119,7 +117,6 @@ export default function PostCard(props) {
             `}
             </p>
           </CardContent>
-
         </Box>
 
 
@@ -127,7 +124,7 @@ export default function PostCard(props) {
 
 
 
-        <Box
+        {/* <Box
           sx={{
             width: "50px",
             height: "6px",
@@ -138,13 +135,19 @@ export default function PostCard(props) {
           }}
         >
           <Box sx={{ height: 1, width: "50%", backgroundColor: "tomato", borderRadius: 999 }}></Box>
-        </Box>
+        </Box> */}
 
 
         <CardActions>
           {/* <IconButton color='' aria-label="add to favorites"> */}
           {/* <Checkbox label="214" icon={<FavoriteBorderOutlinedIcon />} checkedIcon={<FavoriteIcon />} /> */}
+          
+          <Tabs variant='scrollable' scrollButtons="false"  indicatorColor  value={postActionTab} onChange={handleChange_postAction} centered>
+
+
+
           <FormControlLabel
+           sx={{pl:1.5}}
             control={
               <Checkbox
                 color="error"
@@ -157,6 +160,8 @@ export default function PostCard(props) {
           <FormControlLabel
             control={
               <Checkbox
+                color="default"
+
                 icon={<ThumbDownAltOutlinedIcon />}
                 checkedIcon={<ThumbDownAltIcon />}
               />
@@ -192,12 +197,11 @@ export default function PostCard(props) {
           />
 
 
-
+        </Tabs>
 
 
         </CardActions>
       </Card>
-    </>
   );
 }
 
