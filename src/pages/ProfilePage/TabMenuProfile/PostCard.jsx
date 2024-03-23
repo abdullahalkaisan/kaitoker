@@ -43,8 +43,8 @@ export default function PostCard({item}) {
 
 
   return (
-      <Card variant="" sx={{ width: 600, m: 1, p: 2, borderRadius:3, 
-      // border:"1px solid #00000020" 
+      <Card variant="" sx={{ width: 500, m: 1, p: 2, borderRadius:3, 
+      border:"1px solid #00000020" 
       }}>
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box display={"flex"} alignContent={"center"}>
@@ -92,7 +92,7 @@ export default function PostCard({item}) {
 
 
         <CardContent>
-          <p style={{ fontSize: "large" }} color="text.default">
+          <p style={item.content.length <= 50 ?  { fontSize: "x-large" } : { fontSize: "large" } } color="text.default">
             {item.content}
           </p>
         </CardContent>
@@ -100,7 +100,7 @@ export default function PostCard({item}) {
 
 
 
-        <Box sx={{display:"none", backgroundColor:`#f1f1f1`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
+        <Box sx={{display:"", backgroundColor:`#f1f1f190`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
           <PeopleCard
             title={"Luca"}
             time={"6 month"}
