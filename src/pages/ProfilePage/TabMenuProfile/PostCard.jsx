@@ -54,7 +54,7 @@ export default function PostCard({item}) {
               subTitle="Web developer"
               accountType="verified"
               // flag={"bd"}
-              time={"1 month"}
+              time={"Just now"}
               avatar={1}
               badge={1}
               isOnline="online"

@@ -30,8 +30,8 @@ export default function Center_container() {
 
 
   const [userPosts, setUserPosts] = useState([
-    { id: 1, content: "Hello" },
-    { id: 2, content: "What's up?" },
+    // { id: 1, content: "Hello" },
+    // { id: 2, content: "What's up?" },
   ])
 
 
@@ -182,7 +182,10 @@ export default function Center_container() {
 
           <PostContext.Provider value={{userPosts, setUserPosts}}>
             <Box width={"90%"}><PostInput /></Box>
+            <Box sx={{display:"flex", width:"100%", alignItems:"center", flexDirection:"column-reverse"}}>
               {userPosts.map((item) => <PostCard key={item.key} item={item} />)}
+            </Box>
+          
           </PostContext.Provider>
 
 
