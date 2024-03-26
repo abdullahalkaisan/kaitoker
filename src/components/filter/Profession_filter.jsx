@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs, IconButton } from "@mui/material";
 import * as React from 'react';
 
+import { UilSlidersVAlt } from '@iconscout/react-unicons'
 
 export default function Slider_filter() {
 
@@ -22,13 +23,17 @@ export default function Slider_filter() {
     // borderBottom:"1px solid #f1f1f1" 
   return (
     <>
-        <Box bgcolor={"background.default"} color={"text.primary"} sx={{ maxWidth: 1, bgcolor: 'background.paper', }}>
+        <Box bgcolor={"background.default"} color={"text.primary"} sx={{ display:"flex", px:3, maxWidth: 1, bgcolor: 'background.paper', }}>
+        <IconButton>
+          <UilSlidersVAlt/>
+        </IconButton>
+        
         <Tabs
             value={sliderValue}
             onChange={handleChange_slider}
             variant="scrollable"
-            scrollButtons
-            allowScrollButtonsMobile
+            // scrollButtons
+            // allowScrollButtonsMobile
             aria-label="scrollable force tabs example"
         >
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/neurodiverse.png" />} label="All (564)" />

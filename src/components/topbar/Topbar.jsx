@@ -1,11 +1,19 @@
-import { Avatar, Box, IconButton } from "@mui/material";
+import { Avatar, Badge, Box, IconButton } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 import { Link } from 'react-router-dom';
 
-import { UilSearch, UilBars } from "@iconscout/react-unicons";
+import { 
+  UilSearch, 
+  // UilBars,
+  UilHistory, 
+  UilCommentLines ,
+  // UilSlidersVAlt
+ } from "@iconscout/react-unicons";
+
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
+
 
 export default function TopBar() {
   return (
@@ -17,24 +25,47 @@ export default function TopBar() {
         display={"flex"}
         flexDirection={"row"}
       >
-        <IconButton sx={{ mx: 1, display: { lg: "none", xs: "flex" } }}>
+        {/* <IconButton sx={{ 
+          mx: 1, 
+          display: { lg: "none", xs: "flex" } }}>
           <UilBars />
-        </IconButton>
+          <UilSlidersVAlt/>
+        </IconButton> */}
+      <Box sx={{ display: { md: "none" } }}>
+        <MunitesAndMoneyPop />
+      </Box>
 
         <Logo />
         <NavMenu />
 
         <Box display={"flex"}>
-          <Box>
+          <Box sx={{display:"flex", alignItems:"center"}}>
             {/* , bgcolor:"#F5FAFD"  */}
 
-            <MunitesAndMoneyPop />
 
             <IconButton sx={{ display: { md: "none" } }}>
               <UilSearch />
             </IconButton>
 
-            <Notification_section />
+            <Box sx={{display:{md:"flex", xs:"none"}}}>
+              <MunitesAndMoneyPop />
+            </Box>
+
+            {/* <Notification_section /> */}
+
+            <IconButton sx={{ display: { md: "none" } }}>
+              <Badge badgeContent={10} max={9} color="error">
+                <UilHistory  />
+              </Badge>
+            </IconButton>
+
+            <IconButton sx={{ display: { md: "none" } }}>
+            <Badge badgeContent={40} max={9} color="error">
+                <UilCommentLines  />
+              </Badge>
+            </IconButton>
+
+
 
             <Link to="/profile">
             <IconButton sx={{ m: "0 10px" }}>
