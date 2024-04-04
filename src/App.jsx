@@ -28,7 +28,6 @@ function App(props) {
       {/* <Box bgcolor={"gray"} overflow={"auto"}>
       </Box> */}
 
-      <LabelBottomNavigation/>
       <TopBar/>
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
@@ -48,7 +47,8 @@ function App(props) {
           <Center_container/>
           <RightMenu_container/>
       </Box>
-
+      
+      <LabelBottomNavigation/>
 
     </Box>
   )

@@ -134,15 +134,14 @@ const {
 
 
   return (
-    <Box>
+    <Box sx={{marginBottom:{md:0,xs:1}}}>
       <Card
-        variant="outlined"
+        variant=""
         sx={{
           width: { md: 340, xs: 1 },
           height: { md: "auto", xs: 1 },
-          borderRadius: { md: 2, xs: 0 },
+          borderRadius: { md: 2, xs: 2 },
           m: { md: 1, xs: 0 },
-          mb: { xs: 1 },
         }}
         borderRadius={1}
         m={2}
