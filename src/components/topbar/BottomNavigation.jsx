@@ -9,7 +9,8 @@ import {
     UilPresentationMinus,
     UilUsersAlt,
     UilUser,
-    UilHistory
+    UilHistory,
+    UilCommentLines
     // UilPlayCircle
 } from '@iconscout/react-unicons'
 import { Box } from '@mui/material';
@@ -70,7 +71,7 @@ export default function LabelBottomNavigation() {
 
                 label="Logs"
                 value="logs"
-                icon={<UilHistory />}
+                icon={<UilCommentLines />}
             />
         </BottomNavigation>
     );

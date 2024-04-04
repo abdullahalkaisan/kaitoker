@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { 
   UilSearch, 
   // UilBars,
-  // UilHistory, 
+  UilHistory, 
   UilBell,
   UilCommentLines ,
   // UilSlidersVAlt
@@ -62,7 +62,7 @@ export default function TopBar() {
 
             <IconButton sx={{ display: { md: "none" } }}>
             <Badge badgeContent={40} max={9} color="error">
-                <UilCommentLines  />
+                <UilHistory  />
               </Badge>
             </IconButton>
 
