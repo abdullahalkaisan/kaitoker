@@ -10,7 +10,7 @@ export default function MunitesAndMoneyPop() {
       color="info"
       sx={{
         fontSize: { md: "15px", xs: "medium" },
-        backgroundColor:"hsla(197, 71%, 73%, 0.080)",
+        backgroundColor:{md:"hsla(197, 71%, 73%, 0.080)", xs:"transparent"} ,
         fontWeight: "bold",
         border: { md: "0px solid #f1f1f1", xs: "none" },
         borderRadius: "999px",

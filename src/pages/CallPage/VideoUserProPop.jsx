@@ -41,9 +41,10 @@ export default function VideoUserProPop(props) {
                             display: "flex",
                             alignItems: "center",
                             fontSize: "small",
-                            borderRadius: "20px",
-                            // bgcolor: "#00000090 ",
-                            bgcolor: "#000000 ",
+                            // borderRadius: 20,
+                            borderRadius: 4,
+                            bgcolor: "#00000090 ",
+                            // bgcolor: "#000000 ",
                             backdropFilter: "blur(8888px)",
                             color: "#ffffff",
                             width: "max-content",
@@ -54,7 +55,7 @@ export default function VideoUserProPop(props) {
                         }}
                     >
 
-                        {isNameShow && 
+                        {isNameShow &&
                         <Box sx={{display:{md:"flex", xs:"none"}}}>
                             <PeopleCard 
                                 isVarified="true" 
@@ -66,11 +67,11 @@ export default function VideoUserProPop(props) {
                         }
 
                     {
-                        props.isHost && <span style={ {backgroundColor:"orangered", padding:2, marginRight:10, borderRadius:6, display:{md:"flex", xs:"none"}}}>HOST</span>    
+                        // props.isHost && <span style={ {backgroundColor:"orangered", padding:2, marginRight:10, borderRadius:6, display:{md:"flex", xs:"none"}}}>HOST</span>    
                     }
                     
 
-                    <Box sx={{ display: "flex", alignItems: "center", }}>
+                    <Box sx={{ display: "none", alignItems: "center", }}>
 
 
 
@@ -94,15 +95,19 @@ export default function VideoUserProPop(props) {
                             </IconButton>
                         </Box> */}
 
-                        <IconButton style={{color:"#fff", backgroundColor: "#333", margin:"0 3px" }}>
+                        <IconButton style={{color:"#fff", 
+                        // backgroundColor: "#333", 
+                        margin:"0 3px" }}>
                             <MdMicOff fontSize='medium' />
                         </IconButton>
-                        <IconButton style={{color:"#fff", backgroundColor: "#333", margin:"0 3px"}}>
+                        <IconButton style={{color:"#fff", 
+                        // backgroundColor: "#333", 
+                        margin:"0 3px"}}>
                             <MdVideocamOff fontSize='medium' />
                         </IconButton>
-                        <IconButton style={{color:"#fff",backgroundColor: "#333", margin:"0 3px"}}>
+                        {/* <IconButton style={{color:"#fff",backgroundColor: "#333", margin:"0 3px"}}>
                             <MdMoreVert fontSize='medium' />
-                        </IconButton>
+                        </IconButton> */}
 
 
                         {/* <Box>

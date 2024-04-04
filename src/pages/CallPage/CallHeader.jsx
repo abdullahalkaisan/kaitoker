@@ -78,18 +78,18 @@ export default function CallHeader() {
         }}
       >
 
-          <VideoUserBox isHost={true} isCameraOff={true}  flag={"gr"} profetion="Web developer"  url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
+          <VideoUserBox isHost={true} isCameraOff={true}  flag={"gr"} profetion="Web developer"  url="https://camblyavatars.s3.amazonaws.com/6109762cd8990f390c8ae294s200?h=149abe8a12a436bc2c2c25a5f746a5e5"/>
           <VideoUserBox isCameraOff={false} flag={"us"} profetion="English Teacher"  url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
           <VideoUserBox isCameraOff={false} flag={"in"} profetion="Graphics designer" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>
           <VideoUserBox isCameraOff={false} flag={"br"} profetion="Video editor" url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
 
       </Box>
 
-      <Box  display={ isScreenSharing ? "flex" :"none"} sx={{padding:0, width:"100%", justifyContent:{md:"", xs:"center"}}}>
+      <Box  display={ isScreenSharing ? "flex" :"none"} sx={{padding:{md:1,xs:0}, width:"100%", justifyContent:{md:"", xs:"center"}}}>
           <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b68a05/profile_video#t=0.99"/>
           <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/646a2e16a7123bd29c0d4d74/profile_video#t=0.99"/>
-          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/>
-          <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/>
+          {/* <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b69079/profile_video#t=0.99"/> */}
+          {/* <VideoCardUser_small url="https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b693ee/profile_video#t=0.99"/> */}
       </Box>
 
 

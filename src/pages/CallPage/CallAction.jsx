@@ -37,13 +37,13 @@ export default function CallAction(props) {
       onClick={()=>{setIsMuteAction(!isMuteAction)}}
       style={isMuteAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f130"}`, color:"", marginRight:5} }
       > 
-        <MdMicOff/>
+        <UilMicrophoneSlash/>
       </IconButton>
       <IconButton 
       onClick={()=>{setIsCameraOffAction(!isCameraOffAction)}}
       style={isCameraOffAction ? {backgroundColor:"#0288d1", color:"#fff", marginRight:5}:{backgroundColor:`${isDark ? "#f1f1f130" :"#f1f1f130"}`, color:"", marginRight:5} }
       >
-        <MdOutlineVideocamOff/>
+        <UilVideoSlash/>
 
       </IconButton>
 
@@ -54,7 +54,7 @@ export default function CallAction(props) {
         style={isScreenSharing ? { backgroundColor: "#EA493C", color: "#fff", marginRight: 5, borderRadius:90 } : { backgroundColor: `${isDark ? "#f1f1f130" :"#f1f1f130"}`, color: "", marginRight: 5 }} 
         onClick={() => { setIsScreenSharing(!isScreenSharing) }}>
 
-        {isScreenSharing ? <MdClose /> : <MdOutlineScreenShare />}  
+        {isScreenSharing ? <MdClose /> : <UilPresentation />}  
         {isScreenSharing && <p style={{fontSize:"medium", paddingLeft:2}}>Stop</p>}
         {/* <MdOutlineScreenShare /> */}
         
@@ -70,7 +70,7 @@ export default function CallAction(props) {
 
 
       <IconButton color='error'>
-          <MdCallEnd/>
+          <UilMissedCall/>
       </IconButton>
   </Box>
   )

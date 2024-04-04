@@ -100,7 +100,7 @@ export default function PostCard({item}) {
 
 
 
-        <Box sx={{display:"", backgroundColor:`#f1f1f190`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
+        <Box sx={{display:"none", backgroundColor:`#f1f1f190`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
           <PeopleCard
             title={"Luca"}
             time={"6 month"}
@@ -155,7 +155,7 @@ export default function PostCard({item}) {
                 checkedIcon={<FavoriteIcon />}
               />
             }
-            label={"120.5K"}
+            label={"6"}
           />
           <FormControlLabel
             control={
@@ -166,7 +166,7 @@ export default function PostCard({item}) {
                 checkedIcon={<ThumbDownAltIcon />}
               />
             }
-            label={"21.2K"}
+            label={"4"}
           />
           {/* </IconButton> */}
 
@@ -184,7 +184,7 @@ export default function PostCard({item}) {
                 <MdOutlineInsertComment />
               </IconButton>
             }
-            label={"4.1K"}
+            label={"7"}
           />
 
           <FormControlLabel
@@ -193,7 +193,7 @@ export default function PostCard({item}) {
                 <MdOutlineShare />
               </IconButton>
             }
-            label={"66.7K"}
+            label={ "1"}
           />
 
 

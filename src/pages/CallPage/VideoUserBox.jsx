@@ -20,13 +20,13 @@ export default function VideoUserBox(props) {
         props.isCameraOff ?
           <CardActionArea sx={{ height: "auto", width: "auto", borderRadius: 999 }}>
             <Avatar
-              src='https://lh3.googleusercontent.com/a/ACg8ocIdX4VmTF14S1BnsecZLZv5pUzhgMaH81aWXrRRO8dp0Jc'
+              src='https://camblyavatars.s3.amazonaws.com/6109762cd8990f390c8ae294s200?h=149abe8a12a436bc2c2c25a5f746a5e5'
               sx={{ height: 120, width: 120 }} />
           </CardActionArea>
           : <video
             height={"100%"}
             width={"100%"}
-            style={{ objectFit: "cover", display: "flex", }}
+            style={{ objectFit: "cover", display: "flex",}}
             muted
             loop
             autoPlay

@@ -29,7 +29,9 @@ export default function CourseCard({imgUrl, title}) {
       <Box display={"flex"} justifyContent={"space-between"}>
         <Box display={"flex"}>
           <PeopleCard
+
             badge="true"
+            avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
             avatar="true"
             title={"Abdullah Al Kaisan"}
             subTitle="Web developer"

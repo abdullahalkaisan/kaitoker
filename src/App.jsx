@@ -8,7 +8,7 @@ import LeftMenu_container from "./components/conent/LeftMenu_container"
 import Center_container from "./components/conent/Center_container"
 import PropTypes from 'prop-types';
 import TopBar_mobile from "./components/topbar/TopBar_mobile"
-import BottomNavigation from "./components/topbar/BottomNavigation"
+import LabelBottomNavigation from "./components/topbar/BottomNavigation"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
 
@@ -28,6 +28,7 @@ function App(props) {
       {/* <Box bgcolor={"gray"} overflow={"auto"}>
       </Box> */}
 
+      <LabelBottomNavigation/>
       <TopBar/>
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
