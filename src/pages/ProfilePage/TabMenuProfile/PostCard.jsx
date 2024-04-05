@@ -43,7 +43,7 @@ export default function PostCard({item}) {
 
 
   return (
-      <Card variant="" sx={{ width: 500, m: 1, p: 2, borderRadius:3, 
+      <Card variant="" sx={{ width: {md:500, xs:320}, m:{md:1, xs:1}, p: 2, borderRadius:3, 
       border:"1px solid #00000020" 
       }}>
         <Box display={"flex"} justifyContent={"space-between"}>

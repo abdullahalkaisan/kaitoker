@@ -8,7 +8,8 @@ import {
   UilMessage,
   UilApps,
   UilPresentation,
-  UilPen
+  UilPen,
+  UilVideo
 
 } from '@iconscout/react-unicons'
 import React from "react";
@@ -16,6 +17,7 @@ import TypeMessageBox from "../../components/TypeMessageBox";
 import PeopleCard from "../../components/conent/rightMenu/PeopleCard";
 import { useTheme } from "@emotion/react";
 import MessageList from "../../components/conent/rightMenu/MessageList";
+import CallHeader from "./CallHeader";
 
 
 
@@ -81,9 +83,9 @@ function CustomTabPanel(props) {
 
 
 
-export default function CallChatNav(props) {
+export default function CallChatNav_mobile() {
 
-  const {isNavBoxOpen} = props;
+//   const {isNavBoxOpen} = props;
 
 
     const theme = useTheme();
@@ -104,9 +106,8 @@ export default function CallChatNav(props) {
       color={"text.primary"}
       sx={{
         height: "100%",
-        width: "370px",
-        transition:"easy .5s",
-        display: { md:`${isNavBoxOpen ? "flex":"none"}`, xs: "none" },
+        width: "100%",
+        display: { md:`${"flex"}`, xs: "none" },
         flexDirection: "column",
       }}
     >
@@ -116,15 +117,23 @@ export default function CallChatNav(props) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab  {...a11yProps(0)}  icon={<UilCommentLines />}/>
-          <Tab  {...a11yProps(1)}  icon={<UilMessage />} />
-          <Tab  {...a11yProps(2)}  icon={<UilApps />} />
-          <Tab  {...a11yProps(3)}  icon={<UilSetting />} />
+          <Tab  {...a11yProps(0)}  icon={<UilVideo />}/>
+          <Tab  {...a11yProps(1)}  icon={<UilCommentLines />}/>
+          <Tab  {...a11yProps(2)}  icon={<UilMessage />} />
+          <Tab  {...a11yProps(3)}  icon={<UilApps />} />
+          <Tab  {...a11yProps(4)}  icon={<UilSetting />} />
         </Tabs>
       </Box>
 
       <Box height={"100%"} width={"100%"} display={"flex"} overflow={"auto"}>
-        <CustomTabPanel value={value} index={0}>
+
+
+      <CustomTabPanel value={value} index={0}>
+            <CallHeader/>
+        </CustomTabPanel>
+
+
+        <CustomTabPanel value={value} index={1}>
           <Box
             display={"flex"}
             height={"100%"}
@@ -186,6 +195,8 @@ export default function CallChatNav(props) {
           {/* <MessageList/> */}
         </CustomTabPanel>
 
+
+    
         <CustomTabPanel value={value} index={1}>
             <MessageList/>
         </CustomTabPanel>

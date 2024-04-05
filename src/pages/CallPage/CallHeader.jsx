@@ -1,4 +1,4 @@
-import { Box} from '@mui/material'
+import { Box, IconButton} from '@mui/material'
 import Logo from '../../components/topbar/others/Logo'
 import CallAction from './CallAction'
 import MunitesAndMoneyPop from '../../components/topbar/others/MunitesAndMoneyPop'
@@ -7,15 +7,26 @@ import Iframe from './Iframe';
 import { useTheme } from '@emotion/react';
 import { useState } from 'react';
 import VideoCardUser_small from './VideoCardUser_small';
-
+import { 
+  UilArrowResizeDiagonal,
+  UilExpandArrowsAlt, 
+  UilCompressAltLeft,
+  UilCompress,
+  UilExpandArrows, 
+  UilArrowsH 
+} from '@iconscout/react-unicons'
 // import MicOffIcon from '@mui/icons-material/MicOff';
 // import VideocamOffOutlinedIcon from '@mui/icons-material/VideocamOffOutlined';
 // import WifiOffOutlinedIcon from '@mui/icons-material/WifiOffOutlined';
 
-export default function CallHeader() {
+export default function CallHeader(props) {
+
+  const {isNavBoxOpen, setNavBoxOpen} = props;
 
   const theme = useTheme();
   const themeUse = theme.palette.mode;
+
+
 
   const isScreenSraring = false;
 
@@ -43,7 +54,26 @@ export default function CallHeader() {
       >
         <Logo />
         <CallAction isScreenSharing={isScreenSharing} setIsScreenSharing={setIsScreenSharing} />
-        <MunitesAndMoneyPop />
+        
+        <Box>
+          <MunitesAndMoneyPop />
+          <IconButton sx={{margin:"0 10px"}} onClick={()=>{setNavBoxOpen(!isNavBoxOpen)}}>
+            {/* <UilArrowResizeDiagonal/> */}
+            {/* <UilArrowsH/> */}
+            {/* < UilCompressAltLeft/> */}
+            {/* <UilExpandArrows/> 
+            < UilCompress/> */}
+            {
+              isNavBoxOpen 
+                ? <UilExpandArrows/> 
+                : < UilCompress/>
+            }
+            
+          </IconButton>
+
+        </Box>
+
+
       </Box>
 
 
@@ -61,7 +91,7 @@ export default function CallHeader() {
           display: `${isScreenSharing ? "flex" : "none"}`,
         }}
       >
-        {isScreenSharing && <Iframe url="BpPEoZW5IiY?si=nDIzhtvxRlJ2QT2Q"/>} 
+        {isScreenSharing && <Iframe url="pfrO1uNz00I?si=WYYdWUuaOTNjH3Zw"/>} 
         {/* pfrO1uNz00I?si=WYYdWUuaOTNjH3Zw  */}
         {/* BpPEoZW5IiY?si=nDIzhtvxRlJ2QT2Q  */}
         {/* HD13eq_Pmp8?si=Av9RD4DbrAA_3eoE  */}

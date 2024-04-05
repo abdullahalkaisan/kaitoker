@@ -26,7 +26,7 @@ export default function PostInput() {
         
         <Box component="form" onSubmit={inputSubmit} sx={{ p: 2, display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
 
-                <Box  sx={{ width: "100%", display: "flex", justifyContent: "" }}>
+                <Box  sx={{ width: "100%", display: "flex", justifyContent: "", alignItems:"flex-start" }}>
                     <PeopleCard
                         avatar
                         avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
@@ -36,9 +36,10 @@ export default function PostInput() {
                     <TextField
                         sx={{ width: "100%", borderRadius: "99px", outline: "none" }}
                         id="outlined-textarea"
-                        label="What's on your mind?"
+                        label="Share what are you thinking here"
                         placeholder="What's on your mind?"
                         multiline
+                        rows={3}
                         maxRows={8}
                         size=""
                         value={postInput}

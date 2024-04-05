@@ -2,6 +2,7 @@ import { Avatar, Badge, Box, CardActionArea, Tooltip, Typography } from '@mui/ma
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import { MdOutlineAccessTime } from 'react-icons/md';
 // import { useTheme } from '@emotion/react';
 // import { useTheme } from '@emotion/react';
 
@@ -160,6 +161,22 @@ export default function PeopleCard(props) {
         >
           {subTitle}
         </Typography>
+
+        {!isOnline && 
+          <Typography
+            mt={-0.5}
+            // color={isDark ? "#999" : "#777"}
+            color={subTitleHighLight ? "" : "#999"}
+            fontWeight={subTitleHighLight ? "bold" : "normal"}
+            variant="body2"
+            component="h6"
+            sx={{display:"flex", alignItems:"center"}}
+          >
+            <MdOutlineAccessTime style={{marginRight:2}} />
+            {"15 days ago"}
+          </Typography>
+        }
+
       </Box>
     </Box>
   );
