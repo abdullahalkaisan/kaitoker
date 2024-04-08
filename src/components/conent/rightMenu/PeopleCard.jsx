@@ -51,7 +51,8 @@ export default function PeopleCard(props) {
     isVarified,
     isOnline,
     avatarSize,
-    subTitleHighLight
+    subTitleHighLight,
+    lastSeen
   } = props;
 
   console.log(flag);
@@ -162,7 +163,7 @@ export default function PeopleCard(props) {
           {subTitle}
         </Typography>
 
-        {!isOnline && 
+        {!isOnline && lastSeen &&
           <Typography
             mt={-0.5}
             // color={isDark ? "#999" : "#777"}
