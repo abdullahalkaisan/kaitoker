@@ -50,7 +50,8 @@ import CallCardReelTap from './CallCardReel_Tap';
 import { useEffect, useState } from 'react';
 import { Tune } from '@mui/icons-material';
 import AudioControlBox from './AudioControlBox';
-import { MdDone, MdFavorite, MdFavoriteBorder, MdOutlineMessage, MdOutlineVideocam, MdStar, MdStarBorder } from 'react-icons/md';
+import { MdArrowForwardIos, MdDone, MdFavorite, MdFavoriteBorder, MdOutlineArrowBackIos, MdOutlineMessage, MdOutlineVideocam, MdStar, MdStarBorder } from 'react-icons/md';
+import PeopleCard from '../../conent/rightMenu/PeopleCard';
 
 
 
@@ -71,10 +72,12 @@ export default function CallCardReel() {
     hourRate,
     isOnline,
     skills,
-    isVarified
+    video_Cambly_Url,
+    isVarified,
+    
   } = usersDataLocal[currentUser];
   
-  // Math.floor(Math.random() * usersDataLocal.length) 
+  Math.floor(Math.random() * usersDataLocal.length) 
 
 
   useEffect(() => {
@@ -132,6 +135,8 @@ export default function CallCardReel() {
 
   return (
     <Card variant="none" sx={{ height: 1, width: 800, mb: 2, mt: 5 }}>
+      
+
       <Box
         width={1}
         display={"flex"}
@@ -149,10 +154,12 @@ export default function CallCardReel() {
             sx={ isOnline === "online" || isOnline === "busy" ?  {
               height:150,
               width: 150,
+              // display:"none",
               borderRadius: "100px 100px 100px 100px",
             } : {
               height:150,
               width: 150,
+              // display:"none",
               borderRadius: 999,
             }}
           >
@@ -183,18 +190,76 @@ export default function CallCardReel() {
               
             </StyledBadge>
           </CardActionArea>
+
+          {}
+          
+          <Box sx={{height:250, width:350, overflow:"hidden"}}>
+
+
+            <video loop autoPlay muted style={{height:"100%", width:"100%", borderRadius:10, objectFit:"cover"}} 
+            src={video_Cambly_Url}
+            ></video>
+          </Box>
+
+
+          {/* <iframe width="100%" height="250" src="https://www.youtube.com/embed/5wHdhh9_rzk" title="Learn English, Punjabi and Urdu with Tahira (Alexen) on italki"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
+
+          {/* 654d2ea08684dc5269d28d34  */}
+          {/* 602dacf0f5b3da0cf5b67f49  */}
+          {/* 64a5867e646ab098d7d1d1ea  */}
+          {/* 647e5565234b954a3c033ff9  */}
+
+
+
           {/* <CardActionArea style={{marginTop:10}}>
                     <Box>
                         <img style={{width:"400px", height:"150px", objectFit:"cover", borderRadius:"8px"}} src="https://cdn3.vectorstock.com/i/1000x1000/85/42/travel-social-media-add-banner-layout-vector-28638542.jpg" />
                     </Box>
                 </CardActionArea> */}
 
-          {/* width: 280,  */}
-          <Box sx={{ width: 240, marginTop: 5 }}>
+          {/* width: 280, 240  */}
+          <Box sx={{ width: 300, marginTop: 5 }}>
             <AudioSlider_custom />
           </Box>
 
-          <AudioControlBox width={300}/>
+          {/* <AudioControlBox width={300}/> */}
+
+
+
+
+
+
+
+
+{/* next prev button  */}
+          <Box
+            display={"flex"}
+            bgcolor={"background.default"}
+            color={"text.primary"}
+            flexDirection={"row"}
+            width={300}
+            m={"10px 0"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+{/* onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  */}
+            <IconButton onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  color="primary" size="">
+            <MdOutlineArrowBackIos/>
+            </IconButton>
+
+            <AudioPlay_button />
+{/* onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  */}
+            <IconButton onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  variant="contained" color="primary" size="">
+            <MdArrowForwardIos/>
+            </IconButton>
+          </Box>
+
+
+
+
+
+
+
 
 
 
@@ -254,6 +319,17 @@ export default function CallCardReel() {
             alignItems={"center"}
             justifyContent={"space-between"}
           >
+
+
+          <PeopleCard 
+            avatar
+            avatarSize={50}
+            isOnline={"online"}
+            badge
+            avatarUrl={avatar}
+            />
+{/* https://camblyavatars.s3.amazonaws.com/647e5565d5d44016c727fe61s200?h=6ed06a4b2357995565245f26ca402909  */}
+
             <Box
               display={"flex"}
               width={1}
@@ -262,8 +338,11 @@ export default function CallCardReel() {
               // alignItems={"center"}
               // ml={8}
             >
+
+
+              
               <Typography
-                style={{ marginTop: 25 }}
+                // style={{ marginTop: 25 }}
                 variant="h5"
                 fontWeight={"bold"}
               >

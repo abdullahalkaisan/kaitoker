@@ -179,6 +179,10 @@ export default function Center_container() {
 
           {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
 
+          <CallCardReel />
+
+          
+
 
           <PostContext.Provider value={{userPosts, setUserPosts}}>
             <Box width={"90%"}><PostInput /></Box>
@@ -193,7 +197,6 @@ export default function Center_container() {
 
 
 
-          <CallCardReel />
           <CallCard_smallBox />
           {console.log()}
           <CallCard_cardBox />

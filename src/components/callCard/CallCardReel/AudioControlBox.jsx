@@ -2,7 +2,7 @@ import { Box, IconButton } from '@mui/material'
 
 import AudioPlay_button from '../AudioPlay_button'
 import { MdArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md";
-// import { usersDataLocal } from '../../../usersDataLocal';
+import { usersDataLocal } from '../../../usersDataLocal';
 
 
 export default function AudioControlBox(props) {
@@ -20,13 +20,13 @@ export default function AudioControlBox(props) {
           >
 
 {/* onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  */}
-            <IconButton  color="primary" size="">
+            <IconButton onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  color="primary" size="">
             <MdOutlineArrowBackIos/>
             </IconButton>
 
             <AudioPlay_button />
 {/* onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  */}
-            <IconButton  variant="contained" color="primary" size="">
+            <IconButton onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  variant="contained" color="primary" size="">
             <MdArrowForwardIos/>
             </IconButton>
 

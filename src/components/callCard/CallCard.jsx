@@ -3,7 +3,6 @@ import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typograph
 import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
 
-
 import { 
   // UilInfoCircle,
   // UilPlay,
@@ -48,6 +47,7 @@ import AudioPlay_button from "./AudioPlay_button";
 import AudioSlider_custom from "./AudioSlider_custom";
 import ChipsCustom from "./ChipsCustom";
 import SubDetails from "./SubDetails";
+import { IoMdInfinite } from "react-icons/io";
 
 // import ChipsCustomDynamic from "./ChipsCustomDynamic";
 // import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -226,6 +226,9 @@ const {
                     sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
                   />
                 )}
+                <IoMdInfinite style={{marginLeft:2, color:"#33333350"}}/>
+                {/* <Badge sx={{mx:3}} color="primary" badgeContent="Pro"></Badge> */}
+
               </Typography>
             </Link>
 
