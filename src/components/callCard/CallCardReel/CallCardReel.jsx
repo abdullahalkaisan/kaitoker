@@ -154,12 +154,12 @@ export default function CallCardReel() {
             sx={ isOnline === "online" || isOnline === "busy" ?  {
               height:150,
               width: 150,
-              // display:"none",
+              display:"none",
               borderRadius: "100px 100px 100px 100px",
             } : {
               height:150,
               width: 150,
-              // display:"none",
+              display:"none",
               borderRadius: 999,
             }}
           >
@@ -193,9 +193,7 @@ export default function CallCardReel() {
 
           {}
           
-          <Box sx={{height:250, width:350, overflow:"hidden"}}>
-
-
+          <Box sx={{ height:250, width:350, overflow:"hidden"}}>
             <video loop autoPlay muted style={{height:"100%", width:"100%", borderRadius:10, objectFit:"cover"}} 
             src={video_Cambly_Url}
             ></video>
@@ -321,13 +319,14 @@ export default function CallCardReel() {
           >
 
 
-          <PeopleCard 
+          {/* <PeopleCard 
             avatar
             avatarSize={50}
             isOnline={"online"}
             badge
             avatarUrl={avatar}
-            />
+            /> */}
+
 {/* https://camblyavatars.s3.amazonaws.com/647e5565d5d44016c727fe61s200?h=6ed06a4b2357995565245f26ca402909  */}
 
             <Box

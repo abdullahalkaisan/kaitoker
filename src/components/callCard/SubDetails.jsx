@@ -7,6 +7,8 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import RoomIcon from '@mui/icons-material/Room';
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
+import { MdCalendarMonth } from 'react-icons/md';
+import PeopleCard from '../conent/rightMenu/PeopleCard';
 SubDetails.propTypes = {
   user_followers: PropTypes.number.isRequired,
   user_rating: PropTypes.number.isRequired,
@@ -14,7 +16,7 @@ SubDetails.propTypes = {
   user_total_call: PropTypes.number.isRequired,
 };
 
-export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent, flag }) {
+export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent, flag, sinceTime }) {
   
 
   // const [isBadge, setIsBadge] = useState(false);
@@ -40,7 +42,7 @@ export default function SubDetails({user_followers, user_rating , user_language,
       flexDirection={"row"}
       justifyContent={justifyContent === "flex-start" ? "flex-start" : "center"}
       flexWrap={"wrap"}
-      pt={2}
+      // pt={2}
       // pb={1}
       alignItems={"center"}
     >
@@ -134,6 +136,24 @@ export default function SubDetails({user_followers, user_rating , user_language,
         {user_language}
         {/* {" ক क ص 항 あ"} */}
       </Box>
+
+
+      <Box
+        sx={ {
+                display: "flex",
+                alignItems: "center",
+                pr: 1,
+                fontSize: "medium",
+              }
+        }
+      >
+        <MdCalendarMonth sx={{ fontSize: "medium" }} />
+
+        {sinceTime}
+      </Box>
+
+
+
     </Box>
   );
 }

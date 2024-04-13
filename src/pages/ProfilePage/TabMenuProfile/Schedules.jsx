@@ -54,13 +54,14 @@ export default function Schedules() {
           <Typography>
           {/* spacing={1}  */}
           <Stack flexWrap={"wrap"} direction="row" >
-                <Chip sx={{m:0.5}} disabled icon={<LockIcon fontSize="16px" />} label="6:00 AM - 8:00 AM" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
-                <Chip sx={{m:0.5}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+
+                <Chip sx={{m:0.5, borderRadius:3}} disabled icon={<LockIcon fontSize="16px" />} label="6:00 AM - 8:00 AM" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
+                <Chip sx={{m:0.5, borderRadius:3}} color="primary" label="6:00 AM - 8:00 AM" variant="outlined" onClick={handleClick} />
             </Stack>
           </Typography>
         </AccordionDetails>

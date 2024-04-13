@@ -2,7 +2,8 @@ import { Avatar, Badge, Box, CardActionArea, Tooltip, Typography } from '@mui/ma
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { MdOutlineAccessTime } from 'react-icons/md';
+import { MdLocationPin, MdOutlineAccessTime, MdOutlineTranslate } from 'react-icons/md';
+import { IoMdInfinite } from 'react-icons/io';
 // import { useTheme } from '@emotion/react';
 // import { useTheme } from '@emotion/react';
 
@@ -33,12 +34,12 @@ PeopleCard.propTypes = {
 
 export default function PeopleCard(props) {
 
-  
-  
+
+
   // const theme = useTheme();
   // const isDark = theme.palette.mode === "dark";
-  
-  
+
+
   const {
     title,
     subTitle,
@@ -52,7 +53,11 @@ export default function PeopleCard(props) {
     isOnline,
     avatarSize,
     subTitleHighLight,
-    lastSeen
+    lastSeen,
+    languages,
+    titleSize,
+    subTitleSize,
+    pro
   } = props;
 
   console.log(flag);
@@ -60,9 +65,9 @@ export default function PeopleCard(props) {
   const PeopleStyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       outline: `3px solid ${theme.palette.background.paper}`,
-      right:4,
-      bottom:5,
-      borderRadius:9999
+      right: 4,
+      bottom: 5,
+      borderRadius: 9999
     },
   }));
 
@@ -86,15 +91,15 @@ export default function PeopleCard(props) {
             sx={
               isOnline
                 ? {
-                    width: avatarSize ? avatarSize : 32,
-                    height: avatarSize ? avatarSize : 32,
-                    borderRadius: "100px 100px 10px 100px",
-                  }
+                  width: avatarSize ? avatarSize : 32,
+                  height: avatarSize ? avatarSize : 32,
+                  borderRadius: "100px 100px 10px 100px",
+                }
                 : {
-                    width: avatarSize ? avatarSize : 32,
-                    height: avatarSize ? avatarSize : 32,
-                    borderRadius: 9999,
-                  }
+                  width: avatarSize ? avatarSize : 32,
+                  height: avatarSize ? avatarSize : 32,
+                  borderRadius: 9999,
+                }
             }
             // alt={title}
             src={avatarUrl}
@@ -109,7 +114,7 @@ export default function PeopleCard(props) {
             alignItems={"center"}
             variant="subtitle2"
             component="h1"
-            sx={{ cursor: "pointer", fontWeight: "bold" }}
+            sx={{ cursor: "pointer", fontWeight: "bold", fontSize: titleSize && titleSize}}
           >
             {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
 
@@ -121,6 +126,12 @@ export default function PeopleCard(props) {
                 color: "#1D9BF0",
               }}
             />
+          {pro && 
+            <IoMdInfinite style={{marginLeft:2, color:"#33333350", fontSize:18}}/>
+          }
+
+
+
 
             <Tooltip title={country} placement="top">
               <Box
@@ -159,6 +170,7 @@ export default function PeopleCard(props) {
           fontWeight={subTitleHighLight ? "bold" : "normal"}
           variant="body2"
           component="h6"
+          fontSize={subTitleSize && subTitleSize}
         >
           {subTitle}
         </Typography>
@@ -171,12 +183,50 @@ export default function PeopleCard(props) {
             fontWeight={subTitleHighLight ? "bold" : "normal"}
             variant="body2"
             component="h6"
-            sx={{display:"flex", alignItems:"center"}}
+            sx={{ display: "flex", alignItems: "center" }}
           >
-            <MdOutlineAccessTime style={{marginRight:2}} />
-            {"15 days ago"}
+            <MdOutlineAccessTime style={{ marginRight: 2 }} />
+            {lastSeen}
           </Typography>
         }
+
+
+
+        {country &&
+          <Typography
+            mt={-0.5}
+            // color={isDark ? "#999" : "#777"}
+            color={subTitleHighLight ? "" : "#999"}
+            fontWeight={subTitleHighLight ? "bold" : "normal"}
+            variant="body2"
+            component="h6"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <MdLocationPin style={{ marginRight: 2 }} />
+            {country}
+          </Typography>
+        }
+
+
+
+        {languages &&
+          <Typography
+            mt={-0.5}
+            // color={isDark ? "#999" : "#777"}
+            color={subTitleHighLight ? "" : "#999"}
+            fontWeight={subTitleHighLight ? "bold" : "normal"}
+            variant="body2"
+            component="h6"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <MdOutlineTranslate style={{ marginRight: 2 }} />
+            {languages}
+          </Typography>
+        }
+
+
+
+
 
       </Box>
     </Box>

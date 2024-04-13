@@ -48,6 +48,7 @@ import AudioSlider_custom from "./AudioSlider_custom";
 import ChipsCustom from "./ChipsCustom";
 import SubDetails from "./SubDetails";
 import { IoMdInfinite } from "react-icons/io";
+import PeopleCard from "../conent/rightMenu/PeopleCard";
 
 // import ChipsCustomDynamic from "./ChipsCustomDynamic";
 // import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -132,21 +133,31 @@ const {
   });
 
 
+  const avatarSize = 100;
 
   return (
-    <Box sx={{marginBottom:{md:0,xs:1}}}>
+    <Box 
+    // bgcolor={"yellow"} 
+    sx={{marginBottom:{md:0,xs:1}}}>
       <Card
         variant=""
+
         sx={{
-          width: { md: 340, xs: 1 },
+          // width: { md: 340, xs: 1 },
+          width:"auto",
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
-          m: { md: 1, xs: 0 },
+          m: { md:2, xs: 0 },
+          p:2
         }}
         borderRadius={1}
         m={2}
       >
-        <Box display={"flex"} flexDirection={"row"}>
+        <Box display={"flex"} 
+        flexDirection={"column"} 
+        // alignItems={"flex-start"}
+
+        >
           <Box
             bgcolor={"background.default"}
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
@@ -169,8 +180,8 @@ const {
                     src={avatar}
                     sx={
                       isOnline === ""
-                        ? { width: 70, height: 70, borderRadius: 999  }
-                        : { width: 70, height: 70, borderRadius: "100px 100px 10px 90px" }
+                        ? { width: avatarSize, height: avatarSize, borderRadius: 999  }
+                        : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
                     }
                   />
                 </StyledBadge>
@@ -190,6 +201,10 @@ const {
               pl: 1,
             }}
           >
+
+
+
+            
             <Link
               style={{
                 textDecoration: "none",
@@ -269,6 +284,8 @@ const {
               </Tooltip>
             </Typography>
 
+
+
             <Typography
               sx={{ color: "#777", display: "flex", alignItems: "center" }}
               // textAlign={"center"}
@@ -316,18 +333,33 @@ const {
           </Box>
         </Box>
 
-        <Box>
+        <Box display={"none"} p={1} pl={3} justifyContent={""}>
+          <PeopleCard
+            languages="English, Bengali, Hindi"
+          />
+        </Box>
+
+
+        <Box display="none" pl={4}>
           <SubDetails
             user_followers={new Intl.NumberFormat("en-US", {
               useGrouping: true,
               notation: "compact",
             }).format(followers)}
             user_rating={rating}
-            user_language={gigLanguage}
-            user_total_call={totalCall}
+            // user_language={gigLanguage}
+            sinceTime="1.2y"
+            justifyContent={"flex-start"}
+            user_total_call={new Intl.NumberFormat("en-US", {
+              useGrouping: true,
+              notation: "compact",
+            }).format(totalCall)}
             // flag={flag}
           />
         </Box>
+
+
+
 
         {/* <Box display={"none"}>
           <Typography
@@ -347,6 +379,7 @@ const {
         </Box> */}
 
         <Box
+          display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
@@ -377,12 +410,12 @@ const {
           <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
-        <Box sx={{ px: 4 }}>
+        <Box sx={{ px: 4, display:"none" }}>
           <AudioSlider_custom />
         </Box>
 
         <Stack
-          sx={{ display: "" }}
+          sx={{ display: "none" }}
           bgcolor={"background.default"}
           color={"text.primary"}
           flexDirection={"row"}
@@ -421,7 +454,8 @@ const {
                 {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
                 {/* Hire  */}
                 {/* $120 Month */}
-                {`$${hourRate}/hr`}
+                {/* {`$${hourRate}/hr`} */}
+                Call
               </Button>
             </Link>
           </Box>

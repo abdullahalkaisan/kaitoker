@@ -19,6 +19,7 @@ import LogsCard from "../LogsCard";
 import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
 import { useState } from "react";
 import PostContext from "../../PostContext";
+import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -181,6 +182,7 @@ export default function Center_container() {
 
           <CallCardReel />
 
+
           
 
 
@@ -195,9 +197,20 @@ export default function Center_container() {
 
 
 
+          <CallCard_SmallCard/>
+          <CallCard_SmallCard/>
+          <CallCard_SmallCard/>
+          <CallCard_SmallCard/>
+          <CallCard_SmallCard/>
+          <CallCard_SmallCard/>
+
+
 
 
           <CallCard_smallBox />
+
+
+
           {console.log()}
           <CallCard_cardBox />
 
