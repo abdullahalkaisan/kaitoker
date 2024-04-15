@@ -133,7 +133,7 @@ const {
   });
 
 
-  const avatarSize = 100;
+  const avatarSize = 70;
 
   return (
     <Box 
@@ -143,8 +143,8 @@ const {
         variant=""
 
         sx={{
-          // width: { md: 340, xs: 1 },
-          width:"auto",
+          width: { md: 340, xs: 1 },
+          // width:"auto",
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
           m: { md:2, xs: 0 },
@@ -154,7 +154,7 @@ const {
         m={2}
       >
         <Box display={"flex"} 
-        flexDirection={"column"} 
+        flexDirection={"row"} 
         // alignItems={"flex-start"}
 
         >
@@ -196,7 +196,9 @@ const {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              // text position 
               // alignItems: "center",
+              
               width: "100%",
               pl: 1,
             }}
@@ -333,21 +335,25 @@ const {
           </Box>
         </Box>
 
-        <Box display={"none"} p={1} pl={3} justifyContent={""}>
+        <Box 
+        display={"none"} 
+        p={1} pl={3} justifyContent={""}>
           <PeopleCard
             languages="English, Bengali, Hindi"
           />
         </Box>
 
 
-        <Box display="none" pl={4}>
+        <Box 
+        // display="none"
+         pl={4}>
           <SubDetails
             user_followers={new Intl.NumberFormat("en-US", {
               useGrouping: true,
               notation: "compact",
             }).format(followers)}
             user_rating={rating}
-            // user_language={gigLanguage}
+            user_language={"En"}
             sinceTime="1.2y"
             justifyContent={"flex-start"}
             user_total_call={new Intl.NumberFormat("en-US", {
@@ -410,12 +416,14 @@ const {
           <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
-        <Box sx={{ px: 4, display:"none" }}>
+        <Box sx={{ px: 4, 
+          // display:"none" 
+          }}>
           <AudioSlider_custom />
         </Box>
 
         <Stack
-          sx={{ display: "none" }}
+          // sx={{ display: "none" }}
           bgcolor={"background.default"}
           color={"text.primary"}
           flexDirection={"row"}
