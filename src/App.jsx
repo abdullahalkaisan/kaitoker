@@ -38,7 +38,8 @@ function App(props) {
         display={"flex"} 
         bgcolor={"red"} 
         height={"100%"}
-        overflow={"auto"}
+        width={"100%"}
+        overflow={"hidden"}
         >
           <LeftMenu_container 
             darkModeToggle={props.darkModeToggle}

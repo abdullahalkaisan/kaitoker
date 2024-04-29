@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { MdLocationPin, MdOutlineAccessTime, MdOutlineTranslate } from 'react-icons/md';
 import { IoMdInfinite } from 'react-icons/io';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 // import { useTheme } from '@emotion/react';
 // import { useTheme } from '@emotion/react';
 
@@ -192,7 +193,7 @@ export default function PeopleCard(props) {
 
 
 
-        {country &&
+        {country && isOnline &&
           <Typography
             mt={-0.5}
             // color={isDark ? "#999" : "#777"}
@@ -203,6 +204,7 @@ export default function PeopleCard(props) {
             sx={{ display: "flex", alignItems: "center" }}
           >
             <MdLocationPin style={{ marginRight: 2 }} />
+            {/* <HiOutlineLocationMarker style={{ marginRight: 2, fontWeight:"bold" }} /> */}
             {country}
           </Typography>
         }

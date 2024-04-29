@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { Badge,  TextField} from '@mui/material';
+import { Badge, TextField } from '@mui/material';
 // import PeopleList from './peopleList';
 
-import { 
+import {
   UilUser,
   UilCommentLines,
   UilUsdCircle,
-  UilHistory, 
+  UilHistory,
 } from '@iconscout/react-unicons'
 
 import PeopleList from './PeopleList';
@@ -18,11 +18,8 @@ import { usersDataLocal } from '../../../usersDataLocal';
 import LogsCard from '../../LogsCard';
 import MessageList from './MessageList';
 import ChatList from './ChatListBox';
-import RightMenu_friendListTab from './RightMenu_friendListTab';
+import RightMenu_friendListTab from './RightMenu_friendTab/RightMenu_friendListTab';
 
-function chatOpen(clickedItem) {
-  console.log(clickedItem);
-}
 
 
 export function CustomTabPanel(props) {
@@ -30,15 +27,9 @@ export function CustomTabPanel(props) {
 
 
   return (
-    
 
-    
     <div
-      style={{
-        // width:"100%", 
-        flexGrow:1,
-        height:"100%"
-      }}
+      style={{height:"100%", width:"100%"}}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -46,15 +37,10 @@ export function CustomTabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box   
-        sx={{ 
-          // p: 3, 
-          display:"flex", 
-          flexDirection:"column", 
-          overflowY:"auto",
-          // width:"100%",
-          flexGrow:1, 
-          height:"100%"
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
           }}>
           {children}
         </Box>
@@ -80,7 +66,7 @@ function a11yProps(index) {
 
 export default function RightMenu_container() {
 
-  
+
 
 
   const [value, setValue] = React.useState(0);
@@ -94,13 +80,18 @@ export default function RightMenu_container() {
       bgcolor={"background.default"}
       color={"text.primary"}
       sx={{
+        display: { md: "flex", xs: "none" },
         height: "100%",
         width: "370px",
-        display: { md: "flex", xs: "none" },
         flexDirection: "column",
       }}
     >
-      <Box sx={{ borderBottom: 1, borderColor: "divider", paddingTop: 1 }}>
+      <Box
+        sx={{
+          borderBottom: 1,
+          // paddingTop: 1,
+          borderColor: "divider",
+        }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -135,47 +126,27 @@ export default function RightMenu_container() {
         </Tabs>
       </Box>
 
-      <Box height={"100%"} width={"100%"} display={"flex"} overflow={"auto"}>
-        <CustomTabPanel value={value} index={0}>
-
-          <Box
-            display={"flex"}
-            height={"100%"}
-            width={"100%"}
-            flexDirection={"column"}
-            overflow={"hidden"}
-            // sx={{ flexGrow: 1 }}
-            // p={3}
-          >
-
-            <RightMenu_friendListTab/>
+      <Box sx={{
+          display:"flex",
+          height:"100%",
+          width:"100%",
+          overflow: "hidden"
+        }}>
 
 
+          <CustomTabPanel value={value} index={0}>
+            {/* <Box sx={{height:"100%", width:"100%", overflow:"auto"}}>
+            </Box> */}
+              <RightMenu_friendListTab/>
+          </CustomTabPanel>
 
-            {/* {sortedUsers.map((item) => (
-              <PeopleList
-                key={item.id}
-                title={item.userName}
-                subTitle={item.profession}
-                country={item.country}
-                isVarified={item.isVarified}
-                avatarUrl={item.avatar}
-                isOnline={item.isOnline}
-                flag={item.flag}
-                avatar={1}
-                badge={1}
-                avatarSize={47}
-              />
-            ))} */}
-
-
-
-          </Box>
+        {/* <CustomTabPanel value={value} index={0}>
         </CustomTabPanel>
 
+
         <CustomTabPanel value={value} index={1}>
-          <ChatList/>
-          {/* <MessageList chatOpen={chatOpen()}/> */}
+          <ChatList />
+          <MessageList/>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
@@ -183,30 +154,16 @@ export default function RightMenu_container() {
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
           <Box display={"flex"} flexWrap={"wrap"} width={1} height={1} justifyContent={"center"} pt={2}>
-            <LogsCard/>
-            <LogsCard/>
-            <LogsCard/>
-            <LogsCard/>
+            <LogsCard />
+            <LogsCard />
+            <LogsCard />
+            <LogsCard />
           </Box>
-        </CustomTabPanel>
+        </CustomTabPanel> */}
+
+
       </Box>
 
-      {/* <Box bgcolor={"gray"} display={"flex"} flex={1}>
-
-        <CustomTabPanel value={value} index={0}>
-              <PeopleList/>
-        </CustomTabPanel>
-
-        <CustomTabPanel value={value} index={1}>
-          Item Two
-        </CustomTabPanel>
-
-
-        <CustomTabPanel value={value} index={2}>
-          Item Three
-        </CustomTabPanel>
-
-      </Box> */}
     </Box>
   );
 }
