@@ -73,7 +73,7 @@ export default function RightMenu_friendListTab() {
     <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
 
-      <Box sx={{ display: "flex", justifyContent: "center", borderBottom: 0, borderColor: 'divider', width: "350px" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", borderBottom: 0, py:1, borderColor: 'divider', width: "350px" }}>
         <Tabs
           value={value}
           onChange={handleChange}

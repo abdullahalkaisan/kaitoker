@@ -54,8 +54,8 @@ export default function ChatList() {
         <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
 
-          <Box sx={{ overflow: "auto" }}>
-            <Box px={2}>
+          <Box sx={{ height:"100%", width:"100%", overflow: "auto", display:"flex", flexDirection:"column-reverse"}}>
+            <Box px={2} >
                 <ChatCard type="me" content="Hi" />
                 <ChatCard content="heyhowareyouiseverythingioodifnothencallmeI'mhereasdfasdf:)" />
                 <ChatCard type="me" content="I'm here forever for you what the " />
@@ -64,6 +64,7 @@ export default function ChatList() {
                 <ChatCard type="me" content="Hi last" />
                 <ChatCard_for_group title="Abdullah Al Kaisan" subTitle="Founder of Kaitoker" isVarified="1" avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" />
                 <ChatCard_for_group title="Jhon Doe" subTitle="Software Engineer" avatarUrl="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890" />
+                <ChatCard type="me" content="Hi last" />
               </Box>
           </Box>
 
@@ -87,6 +88,9 @@ export default function ChatList() {
               <Box sx={{marginLeft:-1}}>
                 <ChatBubble/>
               </Box>
+
+
+              {/* When User spy in chatbox the avatar will appiear and when use will type : chat bubble animation will appiar */}
 
 
             </Typography>
