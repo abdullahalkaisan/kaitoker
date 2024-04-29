@@ -115,7 +115,7 @@ export default function RightMenu_friendListTab() {
             <Box sx={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflow: "hidden" }}>
 
 
-              <Box sx={{ display: "flex", justifyContent: "space-between", p: 1 }}>
+              <Box sx={{ display: "flex", justifyContent: "space-between", px: 2, pb:1, pt:1 }}>
                 <TextField
                   fullWidth
                   id="filled-search"
@@ -123,6 +123,7 @@ export default function RightMenu_friendListTab() {
                   type="search"
                   size="small"
                   variant="outlined"
+                  // variant="standard"
                 />
                 <IconButton sx={{marginLeft:1}}>
                   <TuneIcon />

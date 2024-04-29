@@ -7,7 +7,7 @@ export default function TypeMessageBox() {
     <Box
       px={3}
       display={"flex"}
-      mt={2}
+      // mt={2}
       alignItems={"center"}
       justifyContent={"space-between"}
     >
