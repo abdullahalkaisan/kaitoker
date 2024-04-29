@@ -73,7 +73,7 @@ export default function RightMenu_friendListTab() {
     <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
 
-      <Box sx={{ display: "flex", justifyContent: "center", borderBottom: 1, borderColor: 'divider', width: "350px" }}>
+      <Box sx={{ display: "flex", justifyContent: "center", borderBottom: 0, borderColor: 'divider', width: "350px" }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -115,15 +115,16 @@ export default function RightMenu_friendListTab() {
             <Box sx={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflow: "hidden" }}>
 
 
-              <Box sx={{ display: "flex", justifyContent: "space-around", p: 1 }}>
+              <Box sx={{ display: "flex", justifyContent: "space-between", p: 1 }}>
                 <TextField
+                  fullWidth
                   id="filled-search"
                   label="Search"
                   type="search"
                   size="small"
                   variant="outlined"
                 />
-                <IconButton>
+                <IconButton sx={{marginLeft:1}}>
                   <TuneIcon />
                 </IconButton>
               </Box>
