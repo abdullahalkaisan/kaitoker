@@ -1,11 +1,11 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import PeopleCard from "./PeopleCard";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+// import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TypeMessageBox from '../../TypeMessageBox';
 import ChatCard from "./ChatCard";
 import ChatCard_for_group from "./ChatCard_for_group";
-import { UilVideo, UilEllipsisH, UilArrowLeft } from '@iconscout/react-unicons'
+import { UilEllipsisH} from '@iconscout/react-unicons'
 import ChatBubble from "./ChatBubble/ChatBubble";
 
 
@@ -69,25 +69,39 @@ export default function ChatList() {
           </Box>
 
           <Box sx={{ marginY: 2 }}>
+
+
             <Typography
               variant="caption"
               sx={{
                 margin: "0px 30px 15px 30px",
                 display: "flex",
-                alignItems: "center"
+                alignItems: "center",
+                justifyContent:"space-between"
               }} >
-              <PeopleCard 
-                avatar 
-                avatarSize={20} 
-                avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} 
-              />
 
-              {/* <Box>
-                Typing...
-              </Box> */}
-              <Box sx={{marginLeft:-1}}>
-                <ChatBubble/>
+              <Box sx={{display:"flex", alignItems:"center"}}>
+                <PeopleCard 
+                  avatar 
+                  avatarSize={20} 
+                  avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} 
+                />
+
+                {/* <Box>
+                  Typing...
+                </Box> */}
+                <Box sx={{marginLeft:-1, display:"flex"}}>
+                  <ChatBubble/>
+                </Box>
+
               </Box>
+
+              <Box>
+                {/* Seen at 12:46AM */}
+                {/* Delivered at <strong>11:01AM </strong> <i>April 30, 2024</i>  */}
+                Seen at <strong>11:01AM </strong> <i>April 30, 2024</i> 
+              </Box>
+
 
 
               {/* When User spy in chatbox the avatar will appiear and when use will type : chat bubble animation will appiar */}
