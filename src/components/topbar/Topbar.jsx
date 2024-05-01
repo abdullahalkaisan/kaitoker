@@ -56,6 +56,8 @@ export default function TopBar() {
             <Box sx={{ display: { md: "flex", xs: "none" } }}>
               <MunitesAndMoneyPop />
             </Box>
+ 
+
 
             <Notification_section />
 

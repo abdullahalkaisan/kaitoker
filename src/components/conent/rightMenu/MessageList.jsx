@@ -58,7 +58,8 @@ export default function MessageList() {
                     <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} width={1}>
                         <PeopleCard badge="1" isOnline={"online"} avatar="1" avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"} title={"Abdullah Al Kaisan"} time={"5 minutes"} subTitle={"You: Hey whatspp?"} />
                         {/* <DoneIcon fontSize="smaller" sx={{color:"#777"}}/> */}
-                        <DoneAllIcon fontSize="small" color="primary" />
+                        {/* <DoneAllIcon fontSize="small" color="primary" /> */}
+                        <PeopleCard avatarSize={15} avatar avatarUrl={"https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"}  />
 
                     </Box>
                 </CardActionArea>

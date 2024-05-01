@@ -33,7 +33,7 @@ export default function ChatList() {
               </IconButton>
             </Box>
             <PeopleCard
-              title="Abdullah Al Kaisan"
+              title="John Doe"
               subTitle="Web deloper"
               avatar={1}
               badge={1}
