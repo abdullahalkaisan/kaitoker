@@ -12,6 +12,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import CallPage from './pages/CallPage/CallPage';
 import ReelPage from './pages/ReelPage/ReelPage';
 import CreateAccount_page from './pages/CreateAccount_page';
+import LoginPage from './pages/LoginPage/LoginPage';
 // import { useMediaQuery } from '@mui/material'
 
 
@@ -40,7 +41,6 @@ export default function MainWithTheme() {
 //   const [isDarkMode, setIsDarkMode] = useState(false);
   const icon = isDarkMode ? <UilSun /> : <UilMoon /> ;
 
-
 //   const darkModeToggleFunc = ()=>{
 //       setIsDarkMode(!isDarkMode)
 //   }
@@ -54,6 +54,7 @@ export default function MainWithTheme() {
                 <Route path="/" element={<App darkIcon={icon} darkModeToggle={toggleTheme} />} />
                 <Route path="/profile" element={<ProfilePage/>} />
                 <Route path="/callpage" element={<CallPage/>} />
+                <Route path="/login" element={<LoginPage/>} />
                 <Route path="/reel" element={<ReelPage/>} />
                 <Route path="/create-profile" element={<CreateAccount_page/>} />
             </Routes>

@@ -83,7 +83,19 @@ export default function TabMenuProfile() {
 
       <Box height={"100%"} overflow={"auto"}>
 
-        <CustomTabPanel value={value} index={0}>
+      <CustomTabPanel value={value} index={0}>
+          {/* <PostCardWrapper/> */}
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+          <Box>
+            <Schedules/>
+          </Box>
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={2}>
+          <AboutList/>
+        </CustomTabPanel>
+
+        {/* <CustomTabPanel value={value} index={0}>
           <PostCardWrapper/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
@@ -114,7 +126,7 @@ export default function TabMenuProfile() {
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
           <AboutList/>
-        </CustomTabPanel>
+        </CustomTabPanel> */}
       </Box>
 
 

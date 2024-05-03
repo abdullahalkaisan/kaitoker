@@ -1,5 +1,5 @@
 import { Avatar, Box,  Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { 
     UilSetting,
@@ -13,9 +13,26 @@ import {
 
 
 import PeopleCard from "../conent/rightMenu/PeopleCard";
-import { Link } from "react-router-dom";
+import LoadingWithLogo from "../LoadingWithLogo";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 export default function Topbar_mobile_sideNav() {
+
+    const [state, setState] = useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,});
+
+        
+
+    const {user, loading} = useContext(AuthContext);
+
+    if(loading){
+      return <LoadingWithLogo/>
+    }
+  
+
 
 
     const sideItems = [
@@ -45,12 +62,7 @@ export default function Topbar_mobile_sideNav() {
 
 
 
-    const [state, setState] = useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
-    });
+
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -76,7 +88,7 @@ export default function Topbar_mobile_sideNav() {
                             title={"Abdullah Al Kaisan"}
                             subTitle={"CEO at kaitoker"}
                             avatar
-                            avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
+                            avatarUrl={user.photoURL}
                             />
                     </ListItemButton>
 
@@ -131,8 +143,7 @@ export default function Topbar_mobile_sideNav() {
 
             <IconButton onClick={toggleDrawer("right", true)} sx={{ m: "0 10px", display: { md: "none", xs: "flex" } }}>
                 <Avatar
-                    alt="Remy Sharp"
-                    src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+                    src={user.photoURL}
                     sx={{ width: 32, height: 32 }}
                 />
             </IconButton>

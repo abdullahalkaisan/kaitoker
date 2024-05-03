@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Avatar, Badge, Box, IconButton} from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 import { Link } from 'react-router-dom';
@@ -7,19 +7,30 @@ import {
   UilSearch,
   // UilBars,
   UilHistory,
-  UilBell,
-  UilCommentLines,
+  // UilBell,
+  // UilCommentLines,
   // UilSlidersVAlt
 } from "@iconscout/react-unicons";
 
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
-import React, { useState } from "react";
+import { useContext } from "react";
 import Topbar_mobile_sideNav from "./Topbar_mobile_sideNav";
-
+// import { BiUser } from "react-icons/bi";
+// import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../Providers/AuthProvider";
+import LoadingWithLogo from "../LoadingWithLogo";
 
 
 export default function TopBar() {
+
+  const {user, loading} = useContext(AuthContext);
+
+  if(loading){
+    return <LoadingWithLogo/>
+  }
+
+
 
 
   return (
@@ -74,18 +85,20 @@ export default function TopBar() {
             </IconButton>
 
 
-
-
-
             <Link to="/profile">
               <IconButton sx={{ m: "0 10px", display:{md:"flex", xs:"none"} }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+                  src={user.photoURL}
                   sx={{ width: 32, height: 32 }}
                 />
               </IconButton>
             </Link>
+
+            {/* <Button  size="small"  sx={{mx:2}} variant="contained">
+              Login
+            </Button> */}
+
 
           <Topbar_mobile_sideNav />
 

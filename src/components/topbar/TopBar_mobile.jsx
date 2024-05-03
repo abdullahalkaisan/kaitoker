@@ -4,8 +4,21 @@ import { MdNewspaper, MdOutlineGroups, MdOutlineHistory, MdOutlineHome, MdOutlin
 import { Link } from "react-router-dom";
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Logo from "./others/Logo";
+import LoadingWithLogo from "../LoadingWithLogo";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 // import { FaBarsStaggered } from "react-icons/fa6";
 export default function TopBar_mobile() {
+
+
+    const {user, loading} = useContext(AuthContext);
+
+    if(loading){
+      return <LoadingWithLogo/>
+    }
+  
+
+
     return (
 
         <AppBar position="static" style={{ backgroundColor: "#333" }} >
@@ -76,7 +89,7 @@ export default function TopBar_mobile() {
 
                             <Avatar
                                 alt="Remy Sharp"
-                                src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+                                src={user.photoURL}
                                 sx={{ width: 24, height: 24 }}
                             />
                         </Link>
