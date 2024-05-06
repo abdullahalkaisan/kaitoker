@@ -46,8 +46,8 @@ function App() {
             // darkModeToggle={props.darkModeToggle}
             // darkIcon={props.darkIcon}
           />
-          <Center_container/>
-          <RightMenu_container/>
+          {/* <Center_container/> */}
+          {/* <RightMenu_container/> */}
       </Box>
       
       <LabelBottomNavigation/>

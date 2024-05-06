@@ -20,6 +20,7 @@ import {
 
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import Logout_option from "./Logout_option";
 export default function LeftMenu_container(props) {
 
 
@@ -243,6 +244,13 @@ export default function LeftMenu_container(props) {
           <UilSignout />
         </IconButton>
       </Tooltip>
+
+
+      <Logout_option/>
+
+
+
+
 
 
     </Box>
