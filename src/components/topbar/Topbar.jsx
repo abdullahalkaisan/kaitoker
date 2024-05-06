@@ -88,7 +88,6 @@ export default function TopBar() {
             <Link to="/profile">
               <IconButton sx={{ m: "0 10px", display:{md:"flex", xs:"none"} }}>
                 <Avatar
-                  alt="Remy Sharp"
                   src={user.photoURL}
                   sx={{ width: 32, height: 32 }}
                 />

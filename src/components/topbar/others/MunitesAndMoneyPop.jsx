@@ -20,7 +20,7 @@ export default function MunitesAndMoneyPop() {
       sx={{
         fontSize: { md: "15px", xs: "medium" },
         backgroundColor: { 
-          // md:"hsla(197, 71%, 73%, 0.080)", 
+          md:"hsla(197, 71%, 73%, 0.080)", 
           xs: "transparent" },
         fontWeight: "bold",
         border: { md: "0px solid #f1f1f1", xs: "none" },
@@ -34,7 +34,7 @@ export default function MunitesAndMoneyPop() {
 
 
       <Box sx={{ marginLeft: "5px" }}>234</Box>
-      <Box sx={{ marginLeft: "5px", color:"#ED6C02" }}>2</Box>
+      {/* <Box sx={{ marginLeft: "5px", color:"#ED6C02" }}>2</Box> */}
       <Box
         sx={{
           marginLeft: { md: "5px", xs: "5px" },

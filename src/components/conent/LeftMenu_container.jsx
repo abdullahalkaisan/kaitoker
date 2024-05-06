@@ -202,9 +202,9 @@ export default function LeftMenu_container(props) {
 
 
 
-      <Tooltip sx={{ m: 1 }} title="Theme" placement="right">
+      {/* <Tooltip sx={{ m: 1 }} title="Theme" placement="right">
         <IconButton onClick={darkModeToggle}>{darkIcon}</IconButton>
-      </Tooltip>
+      </Tooltip> */}
 
 
       <Tooltip sx={{ m: 1 }} title="Gift" placement="right">

@@ -180,39 +180,32 @@ export default function Center_container() {
 
           {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
 
-          <CallCardReel />
+          {/* <CallCardReel /> */}
 
 
           
 
 
-          <PostContext.Provider value={{userPosts, setUserPosts}}>
+          {/* <PostContext.Provider value={{userPosts, setUserPosts}}>
             <Box width={"90%"}><PostInput /></Box>
             <Box sx={{display:"flex", width:"100%", alignItems:"center", flexDirection:"column-reverse"}}>
               {userPosts.map((item) => <PostCard key={item.key} item={item} />)}
             </Box>
           
-          </PostContext.Provider>
+          </PostContext.Provider> */}
 
 
 
 
+          {/* <CallCard_SmallCard/>
           <CallCard_SmallCard/>
           <CallCard_SmallCard/>
           <CallCard_SmallCard/>
           <CallCard_SmallCard/>
           <CallCard_SmallCard/>
-          <CallCard_SmallCard/>
+          <CallCard_smallBox /> */}
 
-
-
-
-          <CallCard_smallBox />
-
-
-
-          {console.log()}
-          <CallCard_cardBox />
+          {/* <CallCard_cardBox /> */}
 
 
           {/* {usersDataLocal.map((item)=> 
@@ -237,27 +230,27 @@ export default function Center_container() {
     <CallCardReel/> */}
 
 
-          <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More" />
-          <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/3749464_eaea.jpg" title="React and Typescript: Build a Portfolio Project" />
+          {/* <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg" title="The Ultimate React Course 2024: React, Redux & More" />
+          <CourseCard imgUrl="https://img-b.udemycdn.com/course/240x135/3749464_eaea.jpg" title="React and Typescript: Build a Portfolio Project" /> */}
 
+          {/* <VideoCard />
           <VideoCard />
           <VideoCard />
-          <VideoCard />
-          <VideoCard />
+          <VideoCard /> */}
 
+          {/* <GroupCallCard />
           <GroupCallCard />
           <GroupCallCard />
-          <GroupCallCard />
-          <GroupCallCard />
+          <GroupCallCard /> */}
 
+          {/* <LogsCard />
           <LogsCard />
           <LogsCard />
-          <LogsCard />
-          <LogsCard />
+          <LogsCard /> */}
 
 
 
-          {usersDataLocal.map((item) => <CallCard key={item.id} item={item} />)}
+          {/* {usersDataLocal.map((item) => <CallCard key={item.id} item={item} />)} */}
 
 
           {/* 
