@@ -3,28 +3,28 @@ import { Badge, Box, Button, CircularProgress, Dialog,  DialogContent,  IconButt
 import { 
   UilSlidersVAlt,
   UilAnalysis,
-  UilSignout,
+  // UilSignout,
   UilArrowCircleUp,
   UilSetting,
   UilQuestionCircle,
-  UilMobileAndroid,
-  UilAndroidAlt,
-  UilAndroid,
+  // UilMobileAndroid,
+  // UilAndroidAlt,
+  // UilAndroid,
   UilCloudDownload,
   UilDownloadAlt,
   UilWebGrid,
   UilGift,
-  UilBell
+  // UilBell
 
 } from '@iconscout/react-unicons'
 
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Logout_option from "./Logout_option";
-export default function LeftMenu_container(props) {
+export default function LeftMenu_container() {
 
 
-  const {darkModeToggle, darkIcon} = props;
+  // const {darkModeToggle, darkIcon} = props;
 
   const [open, setOpen] = React.useState(false);
 
@@ -239,11 +239,11 @@ export default function LeftMenu_container(props) {
         </IconButton>
       </Tooltip>
 
-      <Tooltip sx={{ m: 1 }} title="Log out" placement="right">
+      {/* <Tooltip sx={{ m: 1 }} title="Log out" placement="right">
         <IconButton>
           <UilSignout />
         </IconButton>
-      </Tooltip>
+      </Tooltip> */}
 
 
       <Logout_option/>

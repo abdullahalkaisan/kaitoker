@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
 import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -8,7 +7,6 @@ import { AuthContext } from '../../Providers/AuthProvider';
 // import { usersDataLocal } from '../../usersDataLocal';
 // import CallCard from '../../components/callCard/CallCard';
 // import CreateAccount_page from '../CreateAccount_page';
-import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -18,18 +16,6 @@ export default function LoginPage() {
 
   // console.log(user.displayName);
 
-  if(loading){
-    return <Box 
-              sx={{
-                height:"100vh", 
-                width:"100vw", 
-                display:"flex", 
-                flexDirection:"column",
-                justifyContent:"center", 
-                alignItems:"center"}}>
-              <CircularProgress  />
-              <Typography variant="body1" sx={{margin:"20px"}} >Please wait!</Typography>
-          </Box>}
 
 
 
@@ -38,11 +24,11 @@ export default function LoginPage() {
   // email 
   // displayName 
 
-  const {displayName, photoURL} = user;
+  // const {displayName, photoURL} = user;
 
 
 
-  console.log(user.photoURL);
+  // console.log(user.photoURL);
 
 
 
@@ -65,15 +51,18 @@ export default function LoginPage() {
 
         <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", width:"50%", height:"50%"}}>
 
+        {loading ? <h1>loading....</h1>
+        :
           <Box>
               <img style={{height:80, width:"auto"}} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1" />
-              <img style={{height:80, width:"auto", borderRadius:999, margin:"0 20px"}} src={photoURL} />
+              {/* <img style={{height:80, width:"auto", borderRadius:999, margin:"0 20px"}} src={photoURL} /> */}
           </Box>
+        }
 
 
-          <Typography variant="h5" fontFamily={"arial"} color={"#333"}>
+          {/* <Typography variant="h5" fontFamily={"arial"} color={"#333"}>
               Welcome to Kaitker {displayName}
-          </Typography>
+          </Typography> */}
 
 
 

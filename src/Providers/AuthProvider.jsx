@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from "react"
 import { auth } from "../firebase/firebase.config";
 import { 
-  signInWithPopup, 
+  // signInWithPopup, 
   signInWithRedirect, 
   onAuthStateChanged, 
-  GoogleAuthProvider 
+  GoogleAuthProvider, 
+  signOut
 } from "firebase/auth";
-import { Unsubscribe } from "@mui/icons-material";
+
 
 export const AuthContext = createContext(null);
 
@@ -30,6 +31,12 @@ export default function AuthProvider({children}) {
       return signInWithRedirect(auth, GoogleProvider)
     }
 
+    const signOut_google = ()=>{
+      setLoading(true)
+      return signOut(auth)
+    }
+
+
     
 
     useEffect(()=>{
@@ -49,8 +56,9 @@ export default function AuthProvider({children}) {
 
     const authInfo = {
         user,
+        loading,
         signIn_google,
-        loading
+        signOut_google
     }
 
   return (

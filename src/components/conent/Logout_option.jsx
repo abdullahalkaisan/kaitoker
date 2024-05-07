@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -11,16 +11,38 @@ import Tooltip from '@mui/material/Tooltip';
 
 import { 
     UilSignout,
+    UilRepeat
   } from '@iconscout/react-unicons'
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import { FcGoogle } from 'react-icons/fc';
+// import { Navigate, useNavigate } from 'react-router-dom';
 
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 function Logout_dialog(props) {
 
-    
-
+  // const navigate = useNavigate();
   const { onClose, selectedValue, open } = props;
+
+  const {signOut_google,signIn_google,user, loading} = useContext(AuthContext);
+    
+  const loginHandle = ()=>{
+    signIn_google()
+      .then((result)=> console.log(result))
+      .catch((error)=> console.log(error))
+  }
+
+
+  const signOutHandle = ()=>{
+    signOut_google()
+    .then()
+    .catch(error => console.log(error))
+    // onClose(selectedValue);
+    // navigate("/login");
+  }
+
+
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -33,17 +55,45 @@ function Logout_dialog(props) {
   return (
     <Dialog  onClose={handleClose} open={open}>
 
-        <Box textAlign={"center"} mt={5}>
+        <Box display={"flex"} alignItems={"center"} justifyContent={"space-evenly"}  textAlign={"center"} mt={5} mx={10}>
             <img style={{height:50, margin:"0 10px"}} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1"  />
-            <img style={{height:50, margin:"0 10px"}} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1"  />
+            
+            {user &&
+              <>
+                <span style={{opacity:"50%"}}>
+                  <UilRepeat/>
+                </span>
+                <img style={{height:50, margin:"0 10px", borderRadius:999}} src={user.photoURL}  />
+              </>
+            }
         </Box>
-      <DialogTitle textAlign={"center"}>Log out of Kaitoker?</DialogTitle>
+      <DialogTitle textAlign={"center"}>
+        {user ?
+          <>Log out of Kaitoker?</>
+        : <>Welcome to Kaitoker</>}
+        </DialogTitle>
 
       <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", width:300, m:3}}>
-        <Button variant="contained" color="error" sx={{textTransform:"none", m:1, borderRadius:999}}>
-            Log out
-        </Button>
-        <Button  sx={{textTransform:"none", m:1, color:"#777"}}>
+        
+        {user ?
+          <Button onClick={signOutHandle} variant="contained" color="error" sx={{textTransform:"none", m:1, borderRadius:999}}>
+              Log out
+          </Button>
+            : 
+
+              <Button onClick={loginHandle} sx={{ display:"flex", alignItems:"center", justifyContent:'center', m:1, borderRadius:3, bgcolor:"#f1f1f1",}}  >
+              <FcGoogle fontSize={30} style={{margin:"0 10px 0 0"}} />
+              <Box sx={{margin:"0 10px 0 0"}}>
+              Sign in With google
+              </Box>
+              {/* with Google */}
+              </Button>
+
+
+      }
+        
+
+        <Button onClick={handleListItemClick}  sx={{textTransform:"none", m:1, color:"#777"}}>
             Cancel
         </Button>
       </Box>
@@ -59,16 +109,14 @@ Logout_dialog.propTypes = {
 };
 
 export default function Logout_option() {
-  const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (value) => {
+  const handleClose = () => {
     setOpen(false);
-    setSelectedValue(value);
   };
 
   return (
@@ -83,7 +131,6 @@ export default function Logout_option() {
 
 
       <Logout_dialog
-        selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
       />
