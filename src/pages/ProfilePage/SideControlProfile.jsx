@@ -26,7 +26,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     width:"10px",
     height:"10px",
-    outline: `4px solid ${theme.palette.background.paper}`,
+    // outline: `4px solid ${theme.palette.background.paper}`,
     padding: '0 0px',
   },
 }));
@@ -37,7 +37,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function SideControlProfile() {
   const theme = useTheme();
 
-  const useMyTheme = theme.palette.mode;
+  // const useMyTheme = theme.palette.mode;
 
   return (
     <Box>
@@ -76,9 +76,9 @@ export default function SideControlProfile() {
             <VerifiedIcon color='primary' fontSize='small' sx={{mx:0.5}}/>
           </Typography>
           <Typography variant="" fontSize={"16px"}
-            sx={{
-              color: `${useMyTheme==="dark"? "#999": "#777"}`,
-            }}
+            // sx={{
+            //   color: `${useMyTheme==="dark"? "#999": "#777"}`,
+            // }}
 
           >
             Web developer

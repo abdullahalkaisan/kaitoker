@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 import App from './App'
 // import ProfilePage from './pages/ProfilePage/ProfilePage'
 import { darkTheme, theme } from './theme'
@@ -13,6 +13,8 @@ import CallPage from './pages/CallPage/CallPage';
 import ReelPage from './pages/ReelPage/ReelPage';
 import CreateAccount_page from './pages/CreateAccount_page';
 import LoginPage from './pages/LoginPage/LoginPage';
+import AuthProvider from './Providers/AuthProvider';
+import { router } from './Routes/Routes';
 // import { useMediaQuery } from '@mui/material'
 
 
@@ -38,27 +40,20 @@ export default function MainWithTheme() {
 
 
     
-//   const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
   const icon = isDarkMode ? <UilSun /> : <UilMoon /> ;
 
-//   const darkModeToggleFunc = ()=>{
-//       setIsDarkMode(!isDarkMode)
-//   }
+  const darkModeToggleFunc = ()=>{
+      setIsDarkMode(!isDarkMode)
+  }
 
 
 
   return (
         <ThemeProvider theme={ isDarkMode ? darkTheme : theme} >
-            <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App darkIcon={icon} darkModeToggle={toggleTheme} />} />
-                <Route path="/profile" element={<ProfilePage/>} />
-                <Route path="/callpage" element={<CallPage/>} />
-                <Route path="/login" element={<LoginPage/>} />
-                <Route path="/reel" element={<ReelPage/>} />
-                <Route path="/create-profile" element={<CreateAccount_page/>} />
-            </Routes>
-            </BrowserRouter>
+          <AuthProvider>
+            <RouterProvider router={router}></RouterProvider>
+          </AuthProvider>
         </ThemeProvider>
   )
 }

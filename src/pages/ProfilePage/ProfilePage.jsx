@@ -26,11 +26,12 @@ export default function ProfilePage() {
           borderRight: "1px solid rgba(0,0,0,0.12)",
         }}
       >
-        <SideControlProfile_tab />
-        <SideControlProfile />
+        {/* <SideControlProfile_tab /> */}
+        {/* <SideControlProfile /> */}
       </Box>
 
-      <TabMenuProfile />
+      {/* <TabMenuProfile /> */}
+      Hi this is abdullah Al Kaisan profile page
 
     </Box>
   );

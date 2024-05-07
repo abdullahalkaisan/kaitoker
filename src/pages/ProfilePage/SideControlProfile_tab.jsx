@@ -19,9 +19,9 @@ export default function SideControlProfile_tab() {
       <IconButton
         sx={{
           m: 2,
-          bgcolor: `${
-            theme.palette.mode === "light" ? "#f1f1f1" : "#222"
-          }`,
+          // bgcolor: `${
+          //   theme.palette.mode === "light" ? "#f1f1f1" : "#222"
+          // }`,
         }}
       >
         <ArrowBackIcon />

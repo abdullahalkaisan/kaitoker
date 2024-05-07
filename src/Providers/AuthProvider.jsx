@@ -5,7 +5,8 @@ import {
   signInWithRedirect, 
   onAuthStateChanged, 
   GoogleAuthProvider, 
-  signOut
+  signOut,
+  getRedirectResult
 } from "firebase/auth";
 
 
@@ -30,6 +31,12 @@ export default function AuthProvider({children}) {
       setLoading(true)
       return signInWithRedirect(auth, GoogleProvider)
     }
+
+    const signIn_google_redirectResult = ()=>{
+      setLoading(true)
+      return getRedirectResult(auth)
+    }
+
 
     const signOut_google = ()=>{
       setLoading(true)
@@ -58,7 +65,8 @@ export default function AuthProvider({children}) {
         user,
         loading,
         signIn_google,
-        signOut_google
+        signOut_google,
+        signIn_google_redirectResult
     }
 
   return (

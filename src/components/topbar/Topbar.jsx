@@ -24,7 +24,7 @@ import LoadingWithLogo from "../LoadingWithLogo";
 
 export default function TopBar() {
 
-  const { user, loading, signIn_google } = useContext(AuthContext);
+  const { user, loading, signIn_google, signIn_google_redirectResult } = useContext(AuthContext);
 
   if (loading) {
     return <LoadingWithLogo />
@@ -35,7 +35,6 @@ export default function TopBar() {
       .then((result)=> console.log(result))
       .catch((error)=> console.log(error))
   }
-
 
 
 

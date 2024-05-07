@@ -12,7 +12,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 export default function LoginPage() {
 
-  const {signIn_google, user, loading} = useContext(AuthContext);
+  const {signIn_google,signIn_google_redirectResult, user, loading} = useContext(AuthContext);
 
   // console.log(user.displayName);
 
@@ -33,6 +33,7 @@ export default function LoginPage() {
 
 
   const loginHandle = ()=>{
+    // signIn_google()
     signIn_google()
       .then((result)=> console.log(result))
       .catch((error)=> console.log(error))

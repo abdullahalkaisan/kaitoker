@@ -110,16 +110,23 @@ Logout_dialog.propTypes = {
 
 export default function Logout_option() {
   const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (value) => {
     setOpen(false);
+    setSelectedValue(value)
   };
 
   return (
+
+    
+
+
     <>
 
       <Tooltip sx={{ m: 1 }} title="Log out" placement="right">
@@ -131,6 +138,7 @@ export default function Logout_option() {
 
 
       <Logout_dialog
+        selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
       />
