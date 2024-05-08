@@ -5,6 +5,7 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import CallCardReel from "../components/callCard/CallCardReel/CallCardReel";
 import GroupCallCard from "../components/groupCallCard/GroupCallCard";
 import CallPage from "../pages/CallPage/CallPage";
+import CourseCard from "../components/CaurseCard.jsx/CourseCard";
 
 
   export  const router = createBrowserRouter([
@@ -30,7 +31,7 @@ import CallPage from "../pages/CallPage/CallPage";
         },
         {
           path: "/class",
-          element: <h1>This is Class</h1>,
+          element: <CourseCard/>,
         },
       ],
     },

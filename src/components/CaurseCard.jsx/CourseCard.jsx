@@ -6,7 +6,7 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import StarIcon from '@mui/icons-material/Star';
 import TranslateIcon from '@mui/icons-material/Translate';
-export default function CourseCard({imgUrl, title}) {
+export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg", title="The Ultimate React Course 2024: React, Redux & More"}) {
 
     const videoTitle = title;
 

@@ -50,7 +50,7 @@ function App() {
             // darkIcon={props.darkIcon}
           />
           <Center_container/>
-          {/* <RightMenu_container/> */}
+          <RightMenu_container/>
       </Box>
       
       <LabelBottomNavigation/>
