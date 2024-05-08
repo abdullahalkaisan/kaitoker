@@ -6,13 +6,14 @@ import CallCardReel from "../components/callCard/CallCardReel/CallCardReel";
 import GroupCallCard from "../components/groupCallCard/GroupCallCard";
 import CallPage from "../pages/CallPage/CallPage";
 import CourseCard from "../components/CaurseCard.jsx/CourseCard";
+import Error_page from "../pages/Error_page/Error_page";
 
 
   export  const router = createBrowserRouter([
     {
       path: "/",
       element: <App/>,
-      errorElement: <div>no page</div>,
+      errorElement: <Error_page/>,
       children: [
         {
           path: "/",
