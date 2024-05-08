@@ -178,6 +178,7 @@ export default function Center_container() {
 
 
         <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
+          
           <Outlet/>
           
           {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}

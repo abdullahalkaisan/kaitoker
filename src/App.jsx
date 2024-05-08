@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 // import TopBar_mobile from "./components/topbar/TopBar_mobile"
 import LabelBottomNavigation from "./components/topbar/BottomNavigation"
 import TopBar from "./components/topbar/Topbar"
+import LoadingWithLogo from "./components/LoadingWithLogo"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
 
@@ -29,6 +30,8 @@ function App() {
       </Box> */}
 
       <TopBar/>
+
+      {/* <LoadingWithLogo/> */}
 
 
       {/* <TopBar_mobile/> */}

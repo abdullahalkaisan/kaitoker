@@ -319,13 +319,13 @@ export default function CallCardReel() {
           >
 
 
-          {/* <PeopleCard 
+          <PeopleCard 
             avatar
             avatarSize={50}
             isOnline={"online"}
             badge
             avatarUrl={avatar}
-            /> */}
+            />
 
 {/* https://camblyavatars.s3.amazonaws.com/647e5565d5d44016c727fe61s200?h=6ed06a4b2357995565245f26ca402909  */}
 
