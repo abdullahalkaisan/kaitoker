@@ -20,6 +20,7 @@ import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
 import { useState } from "react";
 import PostContext from "../../PostContext";
 import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
+import { Outlet } from "react-router-dom";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -177,11 +178,11 @@ export default function Center_container() {
 
 
         <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
-
+          <Outlet/>
+          
           {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}
 
           {/* <CallCardReel /> */}
-
 
           
 

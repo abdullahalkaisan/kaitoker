@@ -10,10 +10,22 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
       element: <App/>,
       errorElement: <div>no page</div>,
       children: [
-        // {
-        //   path: "/profile",
-        //   element: <ProfilePage />,
-        // },
+        {
+          path: "/",
+          element:<h1>this is home</h1>,
+        },
+        {
+          path: "/group",
+          element: <h1>this is group</h1>,
+        },
+        {
+          path: "/news",
+          element: <h1>this is News</h1>,
+        },
+        {
+          path: "/class",
+          element: <h1>this is Class</h1>,
+        },
       ],
     },
     {
