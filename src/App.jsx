@@ -11,10 +11,14 @@ import PropTypes from 'prop-types';
 import LabelBottomNavigation from "./components/topbar/BottomNavigation"
 import TopBar from "./components/topbar/Topbar"
 import LoadingWithLogo from "./components/LoadingWithLogo"
+import { useContext } from "react"
+import { AuthContext } from "./Providers/AuthProvider"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
 
 function App() {
+
+  const {user} = useContext(AuthContext);
 
   return (
     <Box 
@@ -50,7 +54,10 @@ function App() {
             // darkIcon={props.darkIcon}
           />
           <Center_container/>
-          <RightMenu_container/>
+          { 
+          user &&
+            <RightMenu_container/>
+          }
       </Box>
       
       <LabelBottomNavigation/>

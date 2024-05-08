@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Badge, Box, Button, CircularProgress, Dialog,  DialogContent,  IconButton,  Stack, Tooltip, Typography } from "@mui/material";
 import { 
   UilSlidersVAlt,
@@ -21,7 +21,10 @@ import {
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Logout_option from "./Logout_option";
+import { AuthContext } from "../../Providers/AuthProvider";
 export default function LeftMenu_container() {
+
+  const {user} = useContext(AuthContext)
 
 
   // const {darkModeToggle, darkIcon} = props;
@@ -207,20 +210,24 @@ export default function LeftMenu_container() {
         <IconButton onClick={darkModeToggle}>{darkIcon}</IconButton>
       </Tooltip> */}
 
+      
+      {user &&
+        <Tooltip sx={{ m: 1 }} title="Gift" placement="right">
+          <IconButton
+            color="primary"
+          >
+            <Badge color="primary" badgeContent={"10"}>
+              <UilGift />
+            </Badge>
+          </IconButton>
+        </Tooltip>
 
-      <Tooltip sx={{ m: 1 }} title="Gift" placement="right">
-        <IconButton
-          color="primary"
-        >
-          <Badge color="primary" badgeContent={"10"}>
-            <UilGift />
-          </Badge>
-        </IconButton>
-      </Tooltip>
+        
+      }
 
 
 
-
+      {user &&
       <Tooltip sx={{ m: 1 }} title="Pro User" placement="right">
         <IconButton >
           <Badge color="error" variant="dot" badgeContent={1}>
@@ -228,16 +235,15 @@ export default function LeftMenu_container() {
           </Badge>
         </IconButton>
       </Tooltip>
+      }
 
-
-
-
-
+      {user &&
       <Tooltip sx={{ m: 1 }} title="Setting" placement="right">
         <IconButton>
           <UilSetting />
         </IconButton>
       </Tooltip>
+      }
 
       {/* <Tooltip sx={{ m: 1 }} title="Log out" placement="right">
         <IconButton>
@@ -245,8 +251,9 @@ export default function LeftMenu_container() {
         </IconButton>
       </Tooltip> */}
 
-
+      {user &&
       <Logout_option/>
+      }
 
 
 

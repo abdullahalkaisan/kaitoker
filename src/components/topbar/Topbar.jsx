@@ -20,6 +20,9 @@ import { useContext } from "react";
 // import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import LoadingWithLogo from "../LoadingWithLogo";
+import { MdOutlineLogin } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
+import SignInWithGoogle_Btn from "./SignInWithGoogle_Btn";
 
 
 export default function TopBar() {
@@ -69,13 +72,19 @@ export default function TopBar() {
               <UilSearch />
             </IconButton>
 
+
+          {
+            user &&
             <Box sx={{ display: { md: "flex", xs: "none" } }}>
               <MunitesAndMoneyPop />
             </Box>
+          }
 
 
-
-            <Notification_section />
+            {
+              user &&
+              <Notification_section />
+            }
 
             {/* <IconButton sx={{ display: { md: "" } }}>
               <Badge badgeContent={10} max={9} color="error">
@@ -83,11 +92,14 @@ export default function TopBar() {
               </Badge>
             </IconButton> */}
 
-            <IconButton sx={{ display: { md: "none" } }}>
-              <Badge badgeContent={40} max={9} color="error">
-                <UilHistory />
-              </Badge>
-            </IconButton>
+            {
+              user &&
+              <IconButton sx={{ display: { md: "none" } }}>
+                <Badge badgeContent={40} max={9} color="error">
+                  <UilHistory />
+                </Badge>
+              </IconButton>
+            }
 
 
             {user ?
@@ -101,9 +113,23 @@ export default function TopBar() {
               </Link>
               : 
               
-                <Button onClick={loginHandle} size="small" sx={{ mx: 2 }} variant="contained">
-                  Login
+                // <Button onClick={loginHandle} sx={{ mx: 2, borderRadius:3, textTransform:"none", bgcolor:"#333", "&:hover":{bgcolor:"#444"} }} color="info" variant="contained" >
+                //   <MdOutlineLogin size={"18px"} />
+                //   <span style={{marginLeft:5}}>
+                //       Login
+                //   </span>
+                // </Button>
+
+                <Button onClick={loginHandle} sx={{ display:"flex", alignItems:"center", justifyContent:'center', m:1, borderRadius:3, bgcolor:"#1976D210",}}  >
+                  <FcGoogle fontSize={24} style={{margin:"0 10px 0 0"}} />
+                  <Box sx={{margin:"0 10px 0 0"}}>
+                  Sign in With google
+                  </Box>
+                  {/* with Google */}
                 </Button>
+
+                // <SignInWithGoogle_Btn/>
+
 
             }
 

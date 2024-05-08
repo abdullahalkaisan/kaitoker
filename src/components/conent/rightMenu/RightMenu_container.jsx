@@ -68,7 +68,7 @@ export default function RightMenu_container() {
 
 
 
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -142,8 +142,8 @@ export default function RightMenu_container() {
 
 
         <CustomTabPanel value={value} index={1}>
-          {/* <ChatList /> */}
-          <MessageList/>
+          <ChatList />
+          {/* <MessageList/> */}
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
