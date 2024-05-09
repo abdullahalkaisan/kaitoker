@@ -15,6 +15,7 @@ import {
   UilExpandArrows, 
   UilArrowsH 
 } from '@iconscout/react-unicons'
+import { IoTicketOutline } from 'react-icons/io5';
 // import MicOffIcon from '@mui/icons-material/MicOff';
 // import VideocamOffOutlinedIcon from '@mui/icons-material/VideocamOffOutlined';
 // import WifiOffOutlinedIcon from '@mui/icons-material/WifiOffOutlined';
@@ -55,7 +56,13 @@ export default function CallHeader(props) {
         <Logo />
         <CallAction isScreenSharing={isScreenSharing} setIsScreenSharing={setIsScreenSharing} />
         
-        <Box>
+        <Box display={"flex"} alignItems={"center"}>
+        <Box sx={{backgroundColor:"#f1f1f1", borderRadius:999, p:1, display:"flex", alignItems:"center"}}>
+          <IoTicketOutline />
+          <span style={{margin:"0 5px"}}>
+            3
+          </span>
+        </Box>
           <MunitesAndMoneyPop />
           <IconButton sx={{margin:"0 10px"}} onClick={()=>{setNavBoxOpen(!isNavBoxOpen)}}>
             {/* <UilArrowResizeDiagonal/> */}

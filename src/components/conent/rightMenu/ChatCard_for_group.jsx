@@ -6,7 +6,13 @@ import PeopleCard from "./PeopleCard";
 
 export default function ChatCard_for_group(props) {
 
-    const {avatarUrl, isVarified, title, subTitle} = props;
+    const {
+      avatarUrl, 
+      isVarified, 
+      title, 
+      subTitle,
+      isEdited
+    } = props;
 
     const theme = useTheme();
     const isDark = theme.palette.mode === "";
@@ -39,10 +45,10 @@ export default function ChatCard_for_group(props) {
             transition:"all",
             transitionTimingFunction:"ease",
             transitionDuration:"2s",
-            cursor:"pointer",
+            // cursor:"pointer",
             // border:"1px solid #99999920",
             // bgcolor:"#f1f1f190",
-            "&:hover":{bgcolor:"#f1f1f1", transition:"easy 3s"}
+            // "&:hover":{bgcolor:"#f1f1f190", transition:"easy 3s"}
           }}
           bgcolor={`${isDark ? "#222" : "#f1f1f100"}`}
         >
@@ -62,7 +68,7 @@ export default function ChatCard_for_group(props) {
                 avatar={true}
                 // flag={"ph"}
                 avatarSize={24}
-                time={"12:34 AM (edited)"}
+                time={`12:34 AM ${isEdited?"(edited)":""}`}
                 avatarUrl={avatarUrl}
                 isVarified={isVarified}
               />
