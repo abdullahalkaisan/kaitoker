@@ -16,6 +16,7 @@ import TypeMessageBox from "../../components/TypeMessageBox";
 import PeopleCard from "../../components/conent/rightMenu/PeopleCard";
 import { useTheme } from "@emotion/react";
 import MessageList from "../../components/conent/rightMenu/MessageList";
+import ChatCard_for_group from "../../components/conent/rightMenu/ChatCard_for_group";
 
 
 
@@ -148,7 +149,25 @@ export default function CallChatNav(props) {
                 overflowY: "auto",
               }}
             >
-              <Box
+
+              <ChatCard_for_group 
+              title="Lisa" 
+              subTitle="Good Afternoon" 
+              isVarified="1" 
+              avatarUrl="https://camblyavatars.s3.amazonaws.com/6109762cd8990f390c8ae294s200?h=149abe8a12a436bc2c2c25a5f746a5e5"/>
+              <ChatCard_for_group 
+              title="Abdullah Al Kaisan" 
+              subTitle="Hey there.. can you hear me?" 
+              isVarified="1" 
+              avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"/>
+              <ChatCard_for_group 
+              title="Abdullah Al Kaisan" 
+              subTitle="Hey guys how are you!!! " 
+              isVarified="1" 
+              avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"/>
+
+
+              {/* <Box
                 display={"flex"}
                 justifyContent={"flex-start"}
                 width={"100%"}
@@ -159,7 +178,6 @@ export default function CallChatNav(props) {
                     p: 1,
                     borderRadius: 4,
                     display: "flex",
-                    // width:"max-content"
                     minWidth: "auto",
                     maxWidth: "fit-content",
                     flexWrap: "wrap",
@@ -168,7 +186,6 @@ export default function CallChatNav(props) {
                   }}
                   bgcolor={`${themeUse === "dark" ? "#222" : "#f1f1f1"}`}
                 >
-                  {/* <Avatar_small/> */}
                   <PeopleCard />
                   <Typography m={1} variant="p" gutterBottom>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -176,7 +193,11 @@ export default function CallChatNav(props) {
                     ad perspiciatis veritatis voluptatum tenetur!
                   </Typography>
                 </Box>
-              </Box>
+              </Box> */}
+
+
+
+
 
             </Box>
 

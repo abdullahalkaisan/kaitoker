@@ -58,7 +58,8 @@ export default function PeopleCard(props) {
     languages,
     titleSize,
     subTitleSize,
-    pro
+    pro,
+    alignItems
   } = props;
 
   console.log(flag);
@@ -74,7 +75,7 @@ export default function PeopleCard(props) {
 
 
   return (
-    <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
+    <Box display={"flex"} flexDirection={"row"} alignItems={`${alignItems?alignItems:"center"}`}>
       <CardActionArea
         sx={{ height: "auto", width: "auto", borderRadius: "999px" }}
       >

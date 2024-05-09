@@ -23,6 +23,9 @@ export default function ChatCard_for_group(props) {
         width={"100%"}
         my={0.5}
       >
+
+        
+
         <Box
           sx={{
             p: 1,
@@ -33,48 +36,42 @@ export default function ChatCard_for_group(props) {
             maxWidth: "fit-content",
             flexWrap: "wrap",
             wordWrap: "break-word",
-            // border:"1px solid #99999920"
+            transition:"easy 3s",
+            border:"1px solid #99999920",
+            bgcolor:"#f1f1f190",
+            "&:hover":{bgcolor:"#f1f1f1", transition:"easy 3s"}
           }}
           bgcolor={`${isDark ? "#222" : "#f1f1f100"}`}
         >
           {/* <Avatar_small/> */}
-
-
-
           <Box
             display={"flex"}
             justifyContent={"space-between"}
             alignItems={"center"}
             width={1}
           >
-
-
-
-
-
               <PeopleCard
                 title={title}
+                alignItems="start"
                 // varified={1}
                 subTitle={subTitle}
+                subTitleSize={16}
                 avatar={true}
                 // flag={"ph"}
+                avatarSize={24}
                 time={"12:34 AM (edited)"}
                 avatarUrl={avatarUrl}
                 isVarified={isVarified}
               />
-
-
-
-
 
             {/* <IconButton>
               <MoreHorizIcon />
             </IconButton> */}
           </Box>
 
-          <Typography m={1} variant="p" gutterBottom>
+          {/* <Typography m={1} variant="p" gutterBottom>
             hi
-          </Typography>
+          </Typography> */}
 
           {/* <Box width={1} textAlign={"end"}>
                     <Typography mx={1} variant="caption" gutterBottom>
@@ -82,6 +79,14 @@ export default function ChatCard_for_group(props) {
                     </Typography>
                   </Box> */}
         </Box>
+
+
+
+
+
+
+
+        
       </Box>
     </>
   );

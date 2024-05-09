@@ -60,11 +60,11 @@ export default function LeftMenu_container() {
         <UilSlidersVAlt />
       </IconButton>
     
-    <Link to={"/reel"}>
+    {/* <Link to={"/reel"}>
       <IconButton sx={{ m: 1 }}>
         <UilWebGrid />
       </IconButton>
-    </Link>
+    </Link> */}
 
       <IconButton sx={{ m: 1 }}>
         <UilAnalysis />
