@@ -268,7 +268,7 @@ export default function CallCardReel() {
 
             <AudioPlay_button />
 {/* onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  */}
-            <IconButton onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  variant="contained" color="primary" size="">
+            <IconButton onClick={() => setCurrentUser(Math.min(userData.length - 1, currentUser + 1))}  variant="contained" color="primary" size="">
             <MdArrowForwardIos/>
             </IconButton>
           </Box>
