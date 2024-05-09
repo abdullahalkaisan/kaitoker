@@ -1,0 +1,62 @@
+
+[
+  {
+    "id": 1,
+    "userName": "Abdullah Al Kaisan",
+    "profession": "Founder of Kaitoker",
+    "avatar": "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg",
+    "hourRate": 2.24,
+    "isVarified": true,
+    "isOnline": "",
+    "followers": 3212,
+    "rating": 92,
+    "totalCall": 145,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/647e5565234b954a3c033ff9/profile_video#t=0.99",
+    "flag": "bd",
+    "gigLanguage": "English",
+    "languages": ["English", "Bengali", "Hindi"],
+    "country": "Bangladesh",
+    "city": "Jamalpur",
+    "posts": [{
+      "textContent": "Hey there! it's my first content in Kaitoker."
+    }],
+    "skills": [
+      { "name": "Javascript", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "React", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "Photoshop", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "Premiere pro", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "Graphic design", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "UX UI Design", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+      { "name": "English", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "John Doe",
+    "profession": "Software Engineer",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890",
+    "hourRate": 3.5,
+    "isVarified": false,
+    "isOnline": "",
+    "followers": 50,
+    "rating": 85,
+    "totalCall": 100,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b67f49/profile_video#t=0.99",
+    "flag": "us",
+    "gigLanguage": "English",
+    "languages": ["English", "Spanish"],
+    "country": "United States",
+    "city": "New York",
+    "skills": [
+      { "name": "Javascript", "icon": "javascript-icon-url" },
+      { "name": "React", "icon": "react-icon-url" },
+      { "name": "MongoDB", "icon": "mongodb-icon-url" },
+      { "name": "Photoshop", "icon": "photoshop-icon-url" },
+      { "name": "Premiere pro", "icon": "premiere-pro-icon-url" },
+      { "name": "Graphic design", "icon": "graphic-design-icon-url" },
+      { "name": "UX UI Design", "icon": "ux-ui-design-icon-url" },
+      { "name": "English", "icon": "english-icon-url" }
+    ]
+  }
+]

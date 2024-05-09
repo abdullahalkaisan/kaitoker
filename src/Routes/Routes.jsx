@@ -29,6 +29,7 @@ import Error_page from "../pages/Error_page/Error_page";
         },{
           path: "/hire",
           element: <CallCardReel/>,
+          loader: ()=> fetch("userDataLocal.json")
         },
         {
           path: "/class",

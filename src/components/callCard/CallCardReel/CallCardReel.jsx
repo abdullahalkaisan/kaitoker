@@ -1,7 +1,7 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Avatar, Badge, Box, Button, Card, CardActionArea,  IconButton, Skeleton, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import VerifiedIcon from '@mui/icons-material/Verified';
 
 // import RoomIcon from '@mui/icons-material/Room';
@@ -58,7 +58,19 @@ import PeopleCard from '../../conent/rightMenu/PeopleCard';
 
 export default function CallCardReel() {
 
-  const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * usersDataLocal.length) )
+  const [videoLoading, setVideoLoading] = useState(true);
+  const handleVideoLoad = () => {
+    setVideoLoading(false);
+  };
+  const handleVideoError = () => {
+    setVideoLoading(false);
+    // Handle error if needed
+  };
+
+  const userData = useLoaderData()
+  console.log(userData);
+  
+  const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * userData.length) )
   const [isFollowing, setIsFollowing] =  useState(false);
   const [isFriend, setIsFriend] =  useState(false);
   const [isFevorate, setIsFevorate] =  useState(false);
@@ -75,29 +87,29 @@ export default function CallCardReel() {
     video_Cambly_Url,
     isVarified,
     
-  } = usersDataLocal[currentUser];
+  } = userData[currentUser];
   
-  Math.floor(Math.random() * usersDataLocal.length) 
+  // Math.floor(Math.random() * usersDataLocal.length) 
 
 
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.keyCode === 39) {
-        setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))
-      } else if (event.keyCode === 37) {
-        setCurrentUser(Math.max(0, currentUser - 1))
-      }
-    }
+  // useEffect(() => {
+  //   const handleKeyPress = (event) => {
+  //     if (event.keyCode === 39) {
+  //       setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))
+  //     } else if (event.keyCode === 37) {
+  //       setCurrentUser(Math.max(0, currentUser - 1))
+  //     }
+  //   }
 
-    // Attach event listener when the component mounts
-    window.addEventListener('keyup', handleKeyPress);
+  //   // Attach event listener when the component mounts
+  //   window.addEventListener('keyup', handleKeyPress);
 
-    // Cleanup function to remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('keyup', handleKeyPress);
-    };
+  //   // Cleanup function to remove the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener('keyup', handleKeyPress);
+  //   };
 
-  }, [currentUser]);
+  // }, [currentUser]);
 
 
 
@@ -191,13 +203,22 @@ export default function CallCardReel() {
             </StyledBadge>
           </CardActionArea>
 
-          {}
+
+          {videoLoading && <Skeleton  animation="wave" variant="rounded" width={350} height={250}/>}
+
+          {
+              <Box sx={{ display:`${videoLoading?"none":"flex"}`, height:250, width:350, overflow:"hidden"}}>
+              <video 
+              onLoadedData={handleVideoLoad}
+              onError={handleVideoError} 
+              loop autoPlay muted 
+              style={{height:"100%", width:"100%", borderRadius:10, objectFit:"cover"}} 
+              src={video_Cambly_Url}
+              ></video>
+            </Box>
+          }
           
-          <Box sx={{ height:250, width:350, overflow:"hidden"}}>
-            <video loop autoPlay muted style={{height:"100%", width:"100%", borderRadius:10, objectFit:"cover"}} 
-            src={video_Cambly_Url}
-            ></video>
-          </Box>
+
 
 
           {/* <iframe width="100%" height="250" src="https://www.youtube.com/embed/5wHdhh9_rzk" title="Learn English, Punjabi and Urdu with Tahira (Alexen) on italki"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
