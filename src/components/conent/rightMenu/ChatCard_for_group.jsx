@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, CardActionArea, IconButton, Typography } from "@mui/material";
 
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useTheme } from "@emotion/react";
@@ -24,7 +24,7 @@ export default function ChatCard_for_group(props) {
         my={0.5}
       >
 
-        
+        <CardActionArea sx={{borderRadius:4, maxWidth:"fit-content", minWidth:"auto"}}>
 
         <Box
           sx={{
@@ -36,7 +36,10 @@ export default function ChatCard_for_group(props) {
             maxWidth: "fit-content",
             flexWrap: "wrap",
             wordWrap: "break-word",
-            transition:"easy 3s",
+            transition:"all",
+            transitionTimingFunction:"ease",
+            transitionDuration:"2s",
+            cursor:"pointer",
             // border:"1px solid #99999920",
             // bgcolor:"#f1f1f190",
             "&:hover":{bgcolor:"#f1f1f1", transition:"easy 3s"}
@@ -53,13 +56,13 @@ export default function ChatCard_for_group(props) {
               <PeopleCard
                 title={title}
                 alignItems="start"
-                // varified={1}
+                varified={1}
                 subTitle={subTitle}
                 subTitleSize={16}
                 avatar={true}
                 // flag={"ph"}
                 avatarSize={24}
-                // time={"12:34 AM (edited)"}
+                time={"12:34 AM (edited)"}
                 avatarUrl={avatarUrl}
                 isVarified={isVarified}
               />
@@ -82,7 +85,7 @@ export default function ChatCard_for_group(props) {
 
 
 
-
+        </CardActionArea>
 
 
 
