@@ -151,19 +151,20 @@ export default function CallChatNav(props) {
             >
 
               <ChatCard_for_group 
-              title="Lisa" 
+              // title="Lisa" 
               subTitle="Good Afternoon" 
-              isVarified="1" 
+              // isVarified="1" 
               avatarUrl="https://camblyavatars.s3.amazonaws.com/6109762cd8990f390c8ae294s200?h=149abe8a12a436bc2c2c25a5f746a5e5"/>
+              
               <ChatCard_for_group 
-              title="Abdullah Al Kaisan" 
+              // title="Abdullah Al Kaisan" 
               subTitle="Hey there.. can you hear me?" 
-              isVarified="1" 
+              // isVarified="1" 
               avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"/>
               <ChatCard_for_group 
-              title="Abdullah Al Kaisan" 
+              // title="Abdullah Al Kaisan" 
               subTitle="Hey guys how are you!!! " 
-              isVarified="1" 
+              // isVarified="1" 
               avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"/>
 
 

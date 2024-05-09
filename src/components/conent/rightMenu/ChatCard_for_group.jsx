@@ -37,8 +37,8 @@ export default function ChatCard_for_group(props) {
             flexWrap: "wrap",
             wordWrap: "break-word",
             transition:"easy 3s",
-            border:"1px solid #99999920",
-            bgcolor:"#f1f1f190",
+            // border:"1px solid #99999920",
+            // bgcolor:"#f1f1f190",
             "&:hover":{bgcolor:"#f1f1f1", transition:"easy 3s"}
           }}
           bgcolor={`${isDark ? "#222" : "#f1f1f100"}`}
@@ -59,7 +59,7 @@ export default function ChatCard_for_group(props) {
                 avatar={true}
                 // flag={"ph"}
                 avatarSize={24}
-                time={"12:34 AM (edited)"}
+                // time={"12:34 AM (edited)"}
                 avatarUrl={avatarUrl}
                 isVarified={isVarified}
               />
