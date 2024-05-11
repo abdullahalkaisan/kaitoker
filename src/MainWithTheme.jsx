@@ -15,13 +15,16 @@ import CreateAccount_page from './pages/CreateAccount_page';
 import LoginPage from './pages/LoginPage/LoginPage';
 import AuthProvider from './Providers/AuthProvider';
 import { router } from './Routes/Routes';
+import styled from 'styled-components';
+
 // import { useMediaQuery } from '@mui/material'
-
-
 export default function MainWithTheme() {
 
 
     // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    // function styled_default() {
+    //   // Function logic...
+    // }
 
 
     const [isDarkMode, setIsDarkMode] = useState(

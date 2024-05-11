@@ -16,6 +16,7 @@ import {
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
+import { Avatar } from '@mui/material';
 // import { Navigate, useNavigate } from 'react-router-dom';
 
 
@@ -63,7 +64,8 @@ function Logout_dialog(props) {
                 <span style={{opacity:"50%"}}>
                   <UilRepeat/>
                 </span>
-                <img style={{height:50, margin:"0 10px", borderRadius:999}} src={user.photoURL}  />
+                <Avatar src={user.photoURL}  sx={{height:50, width:50, margin:"0 10px", borderRadius:999}}/>
+                {/* <img style={{height:50, margin:"0 10px", borderRadius:999}} src={user.photoURL}  /> */}
               </>
             }
         </Box>
