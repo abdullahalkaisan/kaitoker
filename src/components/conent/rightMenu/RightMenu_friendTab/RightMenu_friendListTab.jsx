@@ -7,6 +7,7 @@ import { IconButton, TextField } from '@mui/material';
 import { usersDataLocal } from '../../../../usersDataLocal';
 import PeopleList from '../PeopleList';
 import TuneIcon from '@mui/icons-material/Tune';
+import FriendsList_chat from './FriendsList_chat';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -112,9 +113,10 @@ export default function RightMenu_friendListTab() {
 
         <Box sx={{ display: "flex", height: "100%", width: "100%" }}>
           <CustomTabPanel value={value} index={0}>
+
+
+
             <Box sx={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflow: "hidden" }}>
-
-
               <Box sx={{ display: "flex", justifyContent: "space-between", px: 2, pb:1, pt:1 }}>
                 <TextField
                   fullWidth
@@ -129,9 +131,7 @@ export default function RightMenu_friendListTab() {
                   <TuneIcon />
                 </IconButton>
               </Box>
-
               <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:"column",  overflow: "auto" }}>
-                
                 <Box sx={{p:2}}>
                   {sortedUsers.map((item) => (
                     <PeopleList
@@ -149,13 +149,8 @@ export default function RightMenu_friendListTab() {
                       avatarSize={47}
                     />
                   ))}
-
                 </Box>
-
-
               </Box>
-
-
             </Box>
 
 
@@ -191,13 +186,13 @@ export default function RightMenu_friendListTab() {
 
 
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            <FriendsList_chat/>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            Item Three
+            <FriendsList_chat/>
           </CustomTabPanel>
           <CustomTabPanel value={value} index={3}>
-            Item Three
+            <FriendsList_chat/>
           </CustomTabPanel>
 
         </Box>

@@ -6,6 +6,7 @@ import PeopleCard from "./PeopleCard";
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { MdContentCopy, MdDeleteOutline, MdEdit, MdMoreHoriz, MdMoreVert, MdOutlineAddReaction, MdReply } from "react-icons/md";
 import { useState } from "react";
+import ChipsCustom from "../../callCard/ChipsCustom";
 
 function MouseHover(event) {
   event.target.style.background = "flex";
@@ -158,9 +159,17 @@ export default function ChatCard(props) {
               </Box>
             </Box>
 
-
-
           </CardActionArea>
+
+
+          {/* <Box sx={{maxWidth:"70%"}}>
+                  <ChipsCustom 
+                    color="primary" 
+                    size="large" 
+                    whiteSpace
+                    label="How are you? is everything is okay? I haven't seen you a long time"
+                  />
+              </Box> */}
 
           <Typography variant="caption" sx={{ display: `${isChatBubleClicked ? "" : "none"}`, 
           // p: 2, 

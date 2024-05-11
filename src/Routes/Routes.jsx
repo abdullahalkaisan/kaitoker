@@ -7,6 +7,8 @@ import GroupCallCard from "../components/groupCallCard/GroupCallCard";
 import CallPage from "../pages/CallPage/CallPage";
 import CourseCard from "../components/CaurseCard.jsx/CourseCard";
 import Error_page from "../pages/Error_page/Error_page";
+import GroupCallCard_wrapper from "../components/GroupCallCard_wrapper";
+import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper";
 
 
   export  const router = createBrowserRouter([
@@ -21,7 +23,7 @@ import Error_page from "../pages/Error_page/Error_page";
         },
         {
           path: "/group",
-          element: <GroupCallCard/>,
+          element: <GroupCallCard_wrapper/>,
         },
         {
           path: "/news",
@@ -33,7 +35,7 @@ import Error_page from "../pages/Error_page/Error_page";
         },
         {
           path: "/class",
-          element: <CourseCard/>,
+          element: <CourseCard_wrapper/>,
         },
       ],
     },

@@ -15,7 +15,7 @@ import {
 
 
 import LogsCard from '../../LogsCard';
-import MessageList from './MessageList';
+// import MessageList from './MessageList';
 import ChatList from './ChatListBox';
 import RightMenu_friendListTab from './RightMenu_friendTab/RightMenu_friendListTab';
 
@@ -64,8 +64,6 @@ function a11yProps(index) {
 
 
 export default function RightMenu_container() {
-
-
 
 
   const [value, setValue] = React.useState(0);

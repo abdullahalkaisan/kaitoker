@@ -60,19 +60,18 @@ export default function ChatList() {
 
 
           <Box sx={{ height: "100%", width: "100%", overflow: "auto", display: "flex", flexDirection: "column-reverse" }}>
-            
-            <Box>
-              <Box sx={{maxWidth:"70%"}}>
+{/*             
+            <Box sx={{display:"flex", width:"97%"}}>
+              <Bo x sx={{maxWidth:"70%"}}>
                   <ChipsCustom 
-                    color="error" 
-                    variant="outlined"
+                    color="primary" 
                     size="large" 
                     whiteSpace
                     label="How are you?"
                   />
-              </Box>
-
-            </Box>
+              </Bo>
+    
+            </Box> */}
 
             
             <Box px={2} >
