@@ -4,7 +4,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useTheme } from "@emotion/react";
 import PeopleCard from "./PeopleCard";
 import DoneAllIcon from '@mui/icons-material/DoneAll';
-import { MdDeleteOutline, MdEdit, MdMoreHoriz, MdMoreVert, MdOutlineAddReaction, MdReply } from "react-icons/md";
+import { MdContentCopy, MdDeleteOutline, MdEdit, MdMoreHoriz, MdMoreVert, MdOutlineAddReaction, MdReply } from "react-icons/md";
 import { useState } from "react";
 
 function MouseHover(event) {
@@ -185,6 +185,9 @@ export default function ChatCard(props) {
               {/* <IconButton onClick={()=>{setIsReactEmojiClicked(!isReactEmojiClicked)}}>
                 <MdOutlineAddReaction />
               </IconButton> */}
+              <IconButton sx={{bgcolor:`${isDark ? "#222" :"#f1f1f1"}`, mx:0.5}}  size="small">
+                <MdContentCopy />
+              </IconButton>
               <IconButton sx={{bgcolor:`${isDark ? "#222" :"#f1f1f1"}`, mx:0.5}}  size="small">
                 <MdDeleteOutline />
               </IconButton>

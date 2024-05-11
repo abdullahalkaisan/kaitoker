@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Chip, IconButton, Typography } from "@mui/material";
 import PeopleCard from "./PeopleCard";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -10,6 +10,7 @@ import ChatBubble from "./ChatBubble/ChatBubble";
 import { IoMdClose } from "react-icons/io";
 import { MdClose, MdReply } from "react-icons/md";
 import { useTheme } from "@emotion/react";
+import ChipsCustom from "../../callCard/ChipsCustom";
 
 
 export default function ChatList() {
@@ -59,6 +60,21 @@ export default function ChatList() {
 
 
           <Box sx={{ height: "100%", width: "100%", overflow: "auto", display: "flex", flexDirection: "column-reverse" }}>
+            
+            <Box>
+              <Box sx={{maxWidth:"70%"}}>
+                  <ChipsCustom 
+                    color="error" 
+                    variant="outlined"
+                    size="large" 
+                    whiteSpace
+                    label="How are you?"
+                  />
+              </Box>
+
+            </Box>
+
+            
             <Box px={2} >
               <ChatCard type="me" content="Hi" />
               <ChatCard content="heyhowareyouiseverythingioodifnothencallmeI'mhereasdfasdf:)" />

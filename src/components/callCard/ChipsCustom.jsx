@@ -20,7 +20,7 @@ console.log(props.icon);
     <Chip
 
       onDelete={props.onDelete &&  handleDelete}
-
+      color={props.color && props.color}
       sx={props.size === "large" ?
         {
           height: "auto",
@@ -40,6 +40,7 @@ console.log(props.icon);
       size={props.size === "large" ? "large" : "small"}
       label={"" + props.label}
       onClick={handleClick_chips}
+      variant={props.variant && props.variant}
       
       // icon={props.size === "large" && <img width="24" height="24" src={props?.icon}/>} 
     />
