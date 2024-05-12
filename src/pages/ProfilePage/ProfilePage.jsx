@@ -6,11 +6,15 @@ import SideControlProfile_tab from "./SideControlProfile_tab";
 
 import { Box } from "@mui/material";
 import { useLoaderData, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 
 
 export default function ProfilePage() {
+
+
 
   const {id} = useParams();
   const getId = parseInt(id);

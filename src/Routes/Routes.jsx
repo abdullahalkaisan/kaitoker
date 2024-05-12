@@ -22,7 +22,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
         {
           path: "/",
           element: <CallCardWrapper/>,
-          loader: ()=> fetch("userDataLocal.json")
+          loader: ()=> fetch("/userDataLocal.json")
         },
         {
           path: "/group",
@@ -34,7 +34,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
         },{
           path: "/hire",
           element: <CallCardReel/>,
-          loader: ()=> fetch("userDataLocal.json")
+          loader: ()=> fetch("/userDataLocal.json")
         },
         {
           path: "/class",
