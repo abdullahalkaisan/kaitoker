@@ -1,12 +1,11 @@
 import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
 import { Link } from 'react-router-dom'
 // import { IoMdArrowRoundBack } from "react-icons/io";
 export default function Error_page() {
 
   return (
 
-    <Box sx={{height:"100vh", width:"100vw", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+    <Box sx={{height:"100vh", width:"100vw", backgroundColor:"background.default", color:"text.primary", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
       <Typography variant="h1" gutterBottom>
           404
       </Typography>

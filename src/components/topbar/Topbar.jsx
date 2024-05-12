@@ -69,7 +69,7 @@ export default function TopBar() {
         <Box display={"flex"}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {/* , bgcolor:"#F5FAFD"  */}
-            
+
             <TicketPop/>
 
             <IconButton sx={{ display: { md: "none" } }}>
@@ -107,7 +107,7 @@ export default function TopBar() {
 
 
             {user ?
-              <Link to="/profile">
+              <Link to="/profile/1">
                 <IconButton sx={{ m: "0 10px", display: { md: "flex", xs: "none" } }}>
                   <Avatar
                     src={user.photoURL}

@@ -1,11 +1,11 @@
 // import { Box } from "@mui/material";
-// import TabMenuProfile from "./TabMenuProfile";
+import TabMenuProfile from "./TabMenuProfile";
 // import Error_page from "../Error_page/Error_page";
 import SideControlProfile from "./SideControlProfile";
 import SideControlProfile_tab from "./SideControlProfile_tab";
 
 import { Box } from "@mui/material";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 
 
@@ -42,7 +42,7 @@ export default function ProfilePage() {
         <SideControlProfile getProfile={getProfile}/>
       </Box>
 
-      {/* <TabMenuProfile /> */}
+      <TabMenuProfile />
 
     </Box>
   );

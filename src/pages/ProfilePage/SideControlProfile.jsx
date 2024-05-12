@@ -14,7 +14,7 @@ import {
  } from '@iconscout/react-unicons'
 
 
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
 import AudioSlider_custom from '../../components/callCard/AudioSlider_custom';
 import AudioPlay_button from '../../components/callCard/AudioPlay_button';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
@@ -193,11 +193,12 @@ export default function SideControlProfile(props) {
 
         <Stack display={""} bgcolor={"background.default"} color={"text.primary"} direction="row" justifyContent={"center"} flexWrap={"wrap"} px={2}>
             
-            <ChipsCustom label={"Full-stack Web developer (MERN)"}/>
-            <ChipsCustom label={"SEO"}/>
-            <ChipsCustom label={"Photoshop"}/>
-            <ChipsCustom label={"UX UI design"}/>
-            <ChipsCustom label={"English"}/>
+            <ChipsCustom size={"large"} label={"Full-stack Web developer (MERN)"}/>
+            <ChipsCustom size={"large"} label={"SEO"}/>
+            <ChipsCustom size={"large"} label={"SEO"}/>
+            <ChipsCustom size={"large"} label={"Photoshop"}/>
+            <ChipsCustom size={"large"} label={"UX UI design"}/>
+            <ChipsCustom size={"large"} label={"English"}/>
 
           </Stack>
 
