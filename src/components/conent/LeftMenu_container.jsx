@@ -22,9 +22,11 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import Logout_option from "./Logout_option";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ThemeCustomContext } from "../../Providers/ThemeCustomProvider";
 export default function LeftMenu_container() {
 
   const {user} = useContext(AuthContext)
+  const {icon, darkModeToggleFunc} = useContext(ThemeCustomContext)
 
 
   // const {darkModeToggle, darkIcon} = props;
@@ -206,9 +208,10 @@ export default function LeftMenu_container() {
 
 
 
-      {/* <Tooltip sx={{ m: 1 }} title="Theme" placement="right">
-        <IconButton onClick={darkModeToggle}>{darkIcon}</IconButton>
-      </Tooltip> */}
+      <Tooltip sx={{ m: 1 }} title="Theme" placement="right">
+        {/* <IconButton onClick={darkModeToggle}>{darkIcon}</IconButton> */}
+        <IconButton onClick={darkModeToggleFunc}>{icon}</IconButton>
+      </Tooltip>
 
       
       {user &&

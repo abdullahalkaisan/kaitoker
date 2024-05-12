@@ -2,7 +2,7 @@ import { ThemeProvider } from '@emotion/react'
 import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 import App from './App'
 // import ProfilePage from './pages/ProfilePage/ProfilePage'
-import { darkTheme, theme } from './theme'
+import { darkTheme, lightTheme } from './theme'
 import { useState } from 'react';
 import {
   UilMoon,
@@ -37,12 +37,6 @@ export default function MainWithTheme() {
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     };
 
-
-
-
-
-
-    
   // const [isDarkMode, setIsDarkMode] = useState(false);
   const icon = isDarkMode ? <UilSun /> : <UilMoon /> ;
 
