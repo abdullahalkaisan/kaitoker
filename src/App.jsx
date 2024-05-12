@@ -49,10 +49,7 @@ function App() {
         width={"100%"}
         overflow={"hidden"}
         >
-          <LeftMenu_container 
-            // darkModeToggle={props.darkModeToggle}
-            // darkIcon={props.darkIcon}
-          />
+          <LeftMenu_container/>
           <Center_container/>
           { 
           user &&

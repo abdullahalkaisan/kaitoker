@@ -17,9 +17,10 @@ export default function ThemeCustomProvider({children}) {
       
         const toggleTheme = () => {
           setIsDarkMode((prevTheme) => !prevTheme);
-          localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+          // localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         };
-    
+
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
       // const [isDarkMode, setIsDarkMode] = useState(false);
       const icon = isDarkMode ? <UilSun /> : <UilMoon /> ;
     

@@ -9,7 +9,7 @@ export default function LoadingWithLogo() {
                 height: "100vh",
                 width: "100vw",
                 display: "flex",
-                backgroundColor:"#fff",
+                backgroundColor:"background.default",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",

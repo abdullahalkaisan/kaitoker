@@ -66,8 +66,8 @@ export default function PeopleCard(props) {
 
   const PeopleStyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-      // outline: `3px solid ${theme.palette.background.paper}`,
-      outline: `3px solid #fff`,
+      outline: `3px solid ${theme.palette.background.paper}`,
+      // outline: `3px solid #fff`,
       right: 4,
       bottom: 5,
       borderRadius: 9999
