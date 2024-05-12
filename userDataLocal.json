@@ -28,36 +28,44 @@
     ],
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Leadership",
+        "icon": "leadership-icon-url"
       },
       {
-        "name": "React",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Startup Management",
+        "icon": "startup-management-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Product Development",
+        "icon": "product-development-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Marketing Strategy",
+        "icon": "marketing-strategy-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Public Speaking",
+        "icon": "public-speaking-icon-url"
       },
       {
-        "name": "Graphic design",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Leadership",
+        "icon": "leadership-icon-url"
       },
       {
-        "name": "UX UI Design",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Startup Management",
+        "icon": "startup-management-icon-url"
       },
       {
-        "name": "English",
-        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+        "name": "Product Development",
+        "icon": "product-development-icon-url"
+      },
+      {
+        "name": "Marketing Strategy",
+        "icon": "marketing-strategy-icon-url"
+      },
+      {
+        "name": "Public Speaking",
+        "icon": "public-speaking-icon-url"
       }
     ]
   },
@@ -84,7 +92,7 @@
     "city": "New York",
     "skills": [
       {
-        "name": "Javascript",
+        "name": "JavaScript",
         "icon": "javascript-icon-url"
       },
       {
@@ -92,28 +100,16 @@
         "icon": "react-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Node.js",
+        "icon": "nodejs-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "SQL",
+        "icon": "sql-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "API Development",
+        "icon": "api-development-icon-url"
       }
     ]
   },
@@ -140,36 +136,24 @@
     "city": "London",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Typography",
+        "icon": "typography-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Illustration",
+        "icon": "illustration-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Color Theory",
+        "icon": "color-theory-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Logo Design",
+        "icon": "logo-design-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Layout Design",
+        "icon": "layout-design-icon-url"
       }
     ]
   },
@@ -196,36 +180,24 @@
     "city": "Cairo",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Football",
+        "icon": "football-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Physical Fitness",
+        "icon": "physical-fitness-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Teamwork",
+        "icon": "teamwork-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Leadership",
+        "icon": "leadership-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Endorsements",
+        "icon": "endorsements-icon-url"
       }
     ]
   },
@@ -253,36 +225,24 @@
     "city": "Madrid",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Translation",
+        "icon": "translation-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Interpreting",
+        "icon": "interpreting-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Language Proficiency",
+        "icon": "language-proficiency-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Localization",
+        "icon": "localization-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Proofreading",
+        "icon": "proofreading-icon-url"
       }
     ]
   },
@@ -309,36 +269,24 @@
     "city": "Tokyo",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Web Development",
+        "icon": "web-development-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Mobile Development",
+        "icon": "mobile-development-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Database Management",
+        "icon": "database-management-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Algorithm Design",
+        "icon": "algorithm-design-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Debugging",
+        "icon": "debugging-icon-url"
       }
     ]
   },
@@ -365,36 +313,24 @@
     "city": "Moscow",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Data Analysis",
+        "icon": "data-analysis-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Machine Learning",
+        "icon": "machine-learning-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Statistical Modeling",
+        "icon": "statistical-modeling-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Data Visualization",
+        "icon": "data-visualization-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Big Data",
+        "icon": "big-data-icon-url"
       }
     ]
   },
@@ -421,36 +357,24 @@
     "city": "Rome",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Culinary Arts",
+        "icon": "culinary-arts-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Food Presentation",
+        "icon": "food-presentation-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Menu Planning",
+        "icon": "menu-planning-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Ingredient Selection",
+        "icon": "ingredient-selection-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Food Safety",
+        "icon": "food-safety-icon-url"
       }
     ]
   },
@@ -477,36 +401,24 @@
     "city": "Beijing",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Translation",
+        "icon": "translation-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Interpreting",
+        "icon": "interpreting-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Language Proficiency",
+        "icon": "language-proficiency-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Localization",
+        "icon": "localization-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Proofreading",
+        "icon": "proofreading-icon-url"
       }
     ]
   },
@@ -533,36 +445,24 @@
     "city": "Berlin",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
+        "name": "Portrait Photography",
+        "icon": "portrait-photography-icon-url"
       },
       {
-        "name": "React",
-        "icon": "react-icon-url"
+        "name": "Landscape Photography",
+        "icon": "landscape-photography-icon-url"
       },
       {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
+        "name": "Event Photography",
+        "icon": "event-photography-icon-url"
       },
       {
-        "name": "Photoshop",
-        "icon": "photoshop-icon-url"
+        "name": "Product Photography",
+        "icon": "product-photography-icon-url"
       },
       {
-        "name": "Premiere pro",
-        "icon": "premiere-pro-icon-url"
-      },
-      {
-        "name": "Graphic design",
-        "icon": "graphic-design-icon-url"
-      },
-      {
-        "name": "UX UI Design",
-        "icon": "ux-ui-design-icon-url"
-      },
-      {
-        "name": "English",
-        "icon": "english-icon-url"
+        "name": "Editing",
+        "icon": "editing-icon-url"
       }
     ]
   },

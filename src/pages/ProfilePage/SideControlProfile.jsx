@@ -36,7 +36,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function SideControlProfile(props) {
 
-  const {avatar, userName, profession} = props.getProfile;
+  const {avatar, userName, profession, skills} = props.getProfile;
 
   // const theme = useTheme();
 
@@ -192,13 +192,13 @@ export default function SideControlProfile(props) {
 
 
         <Stack display={""} bgcolor={"background.default"} color={"text.primary"} direction="row" justifyContent={"center"} flexWrap={"wrap"} px={2}>
-            
-            <ChipsCustom size={"large"} label={"Full-stack Web developer (MERN)"}/>
+            {skills.map((item, index)=> <ChipsCustom key={index} size={"large"} label={item.name}/>)}
+            {/* <ChipsCustom size={"large"} label={"Full-stack Web developer (MERN)"}/>
             <ChipsCustom size={"large"} label={"SEO"}/>
             <ChipsCustom size={"large"} label={"SEO"}/>
             <ChipsCustom size={"large"} label={"Photoshop"}/>
             <ChipsCustom size={"large"} label={"UX UI design"}/>
-            <ChipsCustom size={"large"} label={"English"}/>
+            <ChipsCustom size={"large"} label={"English"}/> */}
 
           </Stack>
 

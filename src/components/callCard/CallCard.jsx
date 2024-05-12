@@ -387,8 +387,17 @@ export default function CallCard(props) {
           </Typography>
         </Box> */}
 
+
+
+
+{/* 
+pro user functonality 
+user can add 5 skills 
+pro user can add 10 skills
+
+*/}
         <Box
-          display={"none"}
+          // display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
@@ -399,10 +408,10 @@ export default function CallCard(props) {
           overflow={"auto"}
           // fontWeight={"bold"}
           textAlign={"center"}
-          sx={{
-            maxHeight: { md: "56px", xs: "56px" },
-            minHeight: { md: "56px", xs: "auto" },
-          }}
+          // sx={{
+          //   maxHeight: { md: "56px", xs: "56px" },
+          //   minHeight: { md: "56px", xs: "auto" },
+          // }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
           {skills.map((skill, index) => (
