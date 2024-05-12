@@ -40,7 +40,7 @@ import styled from "@emotion/styled";
 // import DoneIcon from '@mui/icons-material/Done';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 // import CableIcon from '@mui/icons-material/Cable';
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 // import CallCardDynamic from "./CallCardDynamic";
 import AudioPlay_button from "./AudioPlay_button";
@@ -102,7 +102,7 @@ const {
   city, 
   skills,
   id
-} = props.item;
+} = props.item ;
 
 
 

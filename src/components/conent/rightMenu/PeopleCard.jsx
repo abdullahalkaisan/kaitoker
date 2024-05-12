@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { MdLocationPin, MdOutlineAccessTime, MdOutlineTranslate } from 'react-icons/md';
 import { IoMdInfinite } from 'react-icons/io';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
+// import { HiOutlineLocationMarker } from 'react-icons/hi';
 // import { useTheme } from '@emotion/react';
 // import { useTheme } from '@emotion/react';
 
@@ -29,6 +29,12 @@ PeopleCard.propTypes = {
   isOnline: PropTypes.string,
   avatarSize: PropTypes.number,
   time: PropTypes.number,
+  lastSeen:PropTypes.string,
+  languages:PropTypes.string,
+  titleSize:PropTypes.number,
+  subTitleSize:PropTypes.number,
+  pro:PropTypes.string,
+  alignItems:PropTypes.string,
 };
 
 

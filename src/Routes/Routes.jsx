@@ -9,6 +9,8 @@ import CourseCard from "../components/CaurseCard.jsx/CourseCard";
 import Error_page from "../pages/Error_page/Error_page";
 import GroupCallCard_wrapper from "../components/GroupCallCard_wrapper";
 import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper";
+import CallCard from "../components/callCard/CallCard";
+import CallCardWrapper from "../components/callCard/CallCardWrapper";
 
 
   export  const router = createBrowserRouter([
@@ -19,7 +21,9 @@ import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper"
       children: [
         {
           path: "/",
-          element:<h1>This is Home</h1>,
+          element: <p>home</p>
+          // element: <CallCardWrapper/>,
+          // loader: ()=> fetch("userDataLocal.json")
         },
         {
           path: "/group",

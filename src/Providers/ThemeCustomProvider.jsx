@@ -5,6 +5,7 @@ import {
     UilSun,
   } from '@iconscout/react-unicons'
 import { darkTheme, lightTheme } from '../theme';
+import PropTypes from 'prop-types';
   
   export const ThemeCustomContext = createContext(null);
 export default function ThemeCustomProvider({children}) {
@@ -45,3 +46,9 @@ export default function ThemeCustomProvider({children}) {
     </ThemeCustomContext.Provider>
   )
 }
+
+
+
+ThemeCustomProvider.propTypes = {
+  children: PropTypes.node,
+};
