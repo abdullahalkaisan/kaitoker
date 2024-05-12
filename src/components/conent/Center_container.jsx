@@ -5,21 +5,21 @@ import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 // import CallCardDynamic from "../callCard/CallCardDynamic";
 import LanguageSelect from "../callCard/LanguageSelect";
 // import CallCardDynamic from "../callCard/CallCardDynamic";
-import CallCard from "../callCard/CallCard";
-import GroupCallCard from "../groupCallCard/GroupCallCard";
-import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
-import VideoCard from "../VideoCard/VideoCard";
-import CourseCard from "../CaurseCard.jsx/CourseCard";
-import CallCardReel from "../callCard/CallCardReel/CallCardReel";
-import { usersDataLocal } from "../../usersDataLocal";
-import CallCard_smallBox from "../CallCard_smallBox";
-import CallCard_cardBox from "../CallCard_cardBox";
-import LogsCard from "../LogsCard";
+// import CallCard from "../callCard/CallCard";
+// import GroupCallCard from "../groupCallCard/GroupCallCard";
+// import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
+// import VideoCard from "../VideoCard/VideoCard";
+// import CourseCard from "../CaurseCard.jsx/CourseCard";
+// import CallCardReel from "../callCard/CallCardReel/CallCardReel";
+// import { usersDataLocal } from "../../usersDataLocal";
+// import CallCard_smallBox from "../CallCard_smallBox";
+// import CallCard_cardBox from "../CallCard_cardBox";
+// import LogsCard from "../LogsCard";
 // import ReelPage_searchResult from "../../pages/ReelPage/ReelPage_searchResult";
-import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
-import { useState } from "react";
-import PostContext from "../../PostContext";
-import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
+// import PostInput from "../../pages/ProfilePage/TabMenuProfile/PostInput";
+// import { useState } from "react";
+// import PostContext from "../../PostContext";
+// import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
 import { Outlet } from "react-router-dom";
 // import { useEffect } from "react";
 
@@ -31,10 +31,10 @@ import { Outlet } from "react-router-dom";
 export default function Center_container() {
 
 
-  const [userPosts, setUserPosts] = useState([
-    // { id: 1, content: "Hello" },
-    // { id: 2, content: "What's up?" },
-  ])
+  // const [userPosts, setUserPosts] = useState([
+  //   // { id: 1, content: "Hello" },
+  //   // { id: 2, content: "What's up?" },
+  // ])
 
 
 
@@ -252,7 +252,7 @@ export default function Center_container() {
 
 
 
-          {usersDataLocal.map((item) => <CallCard key={item.id} item={item} />)}
+          {/* {usersDataLocal.map((item) => <CallCard key={item.id} item={item} />)} */}
 
 
           {/* 

@@ -3,13 +3,13 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import App from "../App";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import CallCardReel from "../components/callCard/CallCardReel/CallCardReel";
-import GroupCallCard from "../components/groupCallCard/GroupCallCard";
+// import GroupCallCard from "../components/groupCallCard/GroupCallCard";
 import CallPage from "../pages/CallPage/CallPage";
-import CourseCard from "../components/CaurseCard.jsx/CourseCard";
+// import CourseCard from "../components/CaurseCard.jsx/CourseCard";
 import Error_page from "../pages/Error_page/Error_page";
 import GroupCallCard_wrapper from "../components/GroupCallCard_wrapper";
 import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper";
-import CallCard from "../components/callCard/CallCard";
+// import CallCard from "../components/callCard/CallCard";
 import CallCardWrapper from "../components/callCard/CallCardWrapper";
 
 
@@ -21,9 +21,8 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
       children: [
         {
           path: "/",
-          element: <p>home</p>
-          // element: <CallCardWrapper/>,
-          // loader: ()=> fetch("userDataLocal.json")
+          element: <CallCardWrapper/>,
+          loader: ()=> fetch("userDataLocal.json")
         },
         {
           path: "/group",

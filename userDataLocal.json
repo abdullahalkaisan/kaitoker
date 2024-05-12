@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -14,21 +13,51 @@
     "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/647e5565234b954a3c033ff9/profile_video#t=0.99",
     "flag": "bd",
     "gigLanguage": "English",
-    "languages": ["English", "Bengali", "Hindi"],
+    "languages": [
+      "English",
+      "Bengali",
+      "Hindi"
+    ],
     "country": "Bangladesh",
     "city": "Jamalpur",
-    "posts": [{
-      "textContent": "Hey there! it's my first content in Kaitoker."
-    }],
+    "posts": [
+      {
+        "textContent": "Hey there! it's my first content in Kaitoker."
+      }
+    ],
     "skills": [
-      { "name": "Javascript", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "React", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "Photoshop", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "Premiere pro", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "Graphic design", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "UX UI Design", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
-      { "name": "English", "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" }
+      {
+        "name": "Javascript",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "React",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      },
+      {
+        "name": "English",
+        "icon": "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png"
+      }
     ]
   },
   {
@@ -45,18 +74,540 @@
     "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b67f49/profile_video#t=0.99",
     "flag": "us",
     "gigLanguage": "English",
-    "languages": ["English", "Spanish"],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
     "country": "United States",
     "city": "New York",
     "skills": [
-      { "name": "Javascript", "icon": "javascript-icon-url" },
-      { "name": "React", "icon": "react-icon-url" },
-      { "name": "MongoDB", "icon": "mongodb-icon-url" },
-      { "name": "Photoshop", "icon": "photoshop-icon-url" },
-      { "name": "Premiere pro", "icon": "premiere-pro-icon-url" },
-      { "name": "Graphic design", "icon": "graphic-design-icon-url" },
-      { "name": "UX UI Design", "icon": "ux-ui-design-icon-url" },
-      { "name": "English", "icon": "english-icon-url" }
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "Alice Johnson",
+    "profession": "Graphic Designer",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK386pzE7Z-bSFqbGXHYVxxKt5pYh_OAnMnkKWDOPhNabI",
+    "hourRate": 4.75,
+    "isVarified": true,
+    "isOnline": "busy",
+    "followers": 80,
+    "rating": 95,
+    "totalCall": 200,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/64a5867e646ab098d7d1d1ea/profile_video#t=0.99",
+    "flag": "gb",
+    "gigLanguage": "English",
+    "languages": [
+      "English",
+      "French"
+    ],
+    "country": "United Kingdom",
+    "city": "London",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userName": "Mohamed Salah",
+    "profession": "Football Player",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIdaEDJG7PYFEkpmgPOICdwll5qySj_Q7-PmLwtxHQMroA",
+    "hourRate": 500,
+    "isVarified": true,
+    "isOnline": "",
+    "followers": 11060600,
+    "rating": 99,
+    "totalCall": 5000,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/61075ff3b4e6aa480bfe16ce/profile_video#t=0.99",
+    "flag": "eg",
+    "gigLanguage": "Arabic",
+    "languages": [
+      "Arabic",
+      "English"
+    ],
+    "country": "Egypt",
+    "city": "Cairo",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userName": "Maria Garcia",
+    "profession": "Translator",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJqZq5lRV_rRcVOzKMubQZ0x7e7TAkaRww7lH25T7yLVu4",
+    "hourRate": 20,
+    "isVarified": true,
+    "isOnline": "",
+    "followers": 200,
+    "rating": 88,
+    "totalCall": 300,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/648bd6c2646ab098d7d93ed2/profile_video#t=0.99",
+    "flag": "id",
+    "gigLanguage": "Spanish",
+    "languages": [
+      "Spanish",
+      "English",
+      "French"
+    ],
+    "country": "Indonesia",
+    "city": "Madrid",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "userName": "Yuki Tanaka",
+    "profession": "Software Developer",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJtYzW14Y0D7PwkgiwSPw7bDe8gJC_FoQFE7A8mP71PRiI",
+    "hourRate": 2500,
+    "isVarified": true,
+    "isOnline": "online",
+    "followers": 150,
+    "rating": 90,
+    "totalCall": 400,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/657725d4d937aa650b879e2e/profile_video#t=0.99",
+    "flag": "jp",
+    "gigLanguage": "Japanese",
+    "languages": [
+      "Japanese",
+      "English"
+    ],
+    "country": "Japan",
+    "city": "Tokyo",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "userName": "Elena Petrova",
+    "profession": "Data Scientist",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL1a-xNIqHHXT9L8DLw8U0OHXt4Gwc7erfvuod3d1V-gjw",
+    "hourRate": 150,
+    "isVarified": true,
+    "isOnline": "busy",
+    "followers": 300,
+    "rating": 93,
+    "totalCall": 700,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/6446caa3a1b7f49042149c7b/profile_video#t=0.99",
+    "flag": "ru",
+    "gigLanguage": "Russian",
+    "languages": [
+      "Russian",
+      "English"
+    ],
+    "country": "Russia",
+    "city": "Moscow",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "userName": "Luca Rossi",
+    "profession": "Chef",
+    "avatar": "https://pbs.twimg.com/profile_images/1771091617119649792/1WK8yB_C_400x400.jpg",
+    "hourRate": 100,
+    "isVarified": false,
+    "isOnline": "online",
+    "followers": 80,
+    "rating": 87,
+    "totalCall": 200,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/602dacf6f5b3da0cf5b891b3/profile_video#t=0.99",
+    "flag": "it",
+    "gigLanguage": "Italian",
+    "languages": [
+      "Italian",
+      "English"
+    ],
+    "country": "Italy",
+    "city": "Rome",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "userName": "Chen Wei",
+    "profession": "Translator",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLQzG1Xb2qvgjKuRdjjSOtMuYVwfy_j11F_5LerjnpOW34",
+    "hourRate": 30,
+    "isVarified": false,
+    "isOnline": "",
+    "followers": 120,
+    "rating": 85,
+    "totalCall": 250,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/65c0e218ecf03a97538e49a7/profile_video#t=0.99",
+    "flag": "vn",
+    "gigLanguage": "Chinese",
+    "languages": [
+      "Chinese",
+      "English"
+    ],
+    "country": "Vietnam",
+    "city": "Beijing",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "userName": "Anna Müller",
+    "profession": "Photographer",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJNAjeGBRG_M8eEYVTbBrWw_P3o3SKDcc6uoOiX-SWM8UE",
+    "hourRate": 50,
+    "isVarified": false,
+    "isOnline": "busy",
+    "followers": 50,
+    "rating": 80,
+    "totalCall": 150,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/602dacf0f5b3da0cf5b685cc/profile_video#t=0.99",
+    "flag": "de",
+    "gigLanguage": "German",
+    "languages": [
+      "German",
+      "English"
+    ],
+    "country": "Germany",
+    "city": "Berlin",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "userName": "Purno",
+    "profession": "Video Editor",
+    "avatar": "https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg",
+    "hourRate": 50,
+    "isVarified": true,
+    "isOnline": "online",
+    "followers": 50,
+    "rating": 80,
+    "totalCall": 150,
+    "video_Cambly_Url": "https://www.cambly.com/api/tutor_profiles/638663338ef8a52de5a03faa/profile_video#t=0.99",
+    "flag": "bd",
+    "gigLanguage": "Bengali",
+    "languages": [
+      "Bengali"
+    ],
+    "country": "Bangladesh",
+    "city": "Jamalpur",
+    "skills": [
+      {
+        "name": "Javascript",
+        "icon": "javascript-icon-url"
+      },
+      {
+        "name": "React",
+        "icon": "react-icon-url"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb-icon-url"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "photoshop-icon-url"
+      },
+      {
+        "name": "Premiere pro",
+        "icon": "premiere-pro-icon-url"
+      },
+      {
+        "name": "Graphic design",
+        "icon": "graphic-design-icon-url"
+      },
+      {
+        "name": "UX UI Design",
+        "icon": "ux-ui-design-icon-url"
+      },
+      {
+        "name": "English",
+        "icon": "english-icon-url"
+      }
     ]
   }
 ]

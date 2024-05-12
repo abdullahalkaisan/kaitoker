@@ -3,12 +3,12 @@ import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typograph
 import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
 
-import { 
+import {
   // UilInfoCircle,
   // UilPlay,
-  UilLocationPoint,
+  // UilLocationPoint,
   UilUserPlus,
-  UilVideo,
+  // UilVideo,
   // UilEllipsisH
   // UilRssAlt,
   // UilHeart,
@@ -16,7 +16,7 @@ import {
   // UilLetterJapaneseA,
   // UilUserPlus,
   // UilPlus,
-  UilPlusCircle
+  // UilPlusCircle
 
 } from '@iconscout/react-unicons'
 
@@ -32,15 +32,15 @@ import {
 // import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 import VerifiedIcon from '@mui/icons-material/Verified';
-import TranslateIcon from '@mui/icons-material/Translate';
+// import TranslateIcon from '@mui/icons-material/Translate';
 // import RssFeedIcon from '@mui/icons-material/RssFeed';
 import styled from "@emotion/styled";
 // import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
 // import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 // import DoneIcon from '@mui/icons-material/Done';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+// import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 // import CableIcon from '@mui/icons-material/Cable';
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 // import CallCardDynamic from "./CallCardDynamic";
 import AudioPlay_button from "./AudioPlay_button";
@@ -67,59 +67,59 @@ export default function CallCard(props) {
 
 
 
-//   const {
-//     // id, 
-//     user_name, 
-//     user_profetion, 
-//     user_profilePicture, 
-//     user_country, 
-//     user_country_flag, 
-//     user_followers, 
-//     user_accoutType, 
-//     user_about, 
-//     user_rating, 
-//     user_total_call, 
-//     user_perHourCost, 
-//     // user_skills, 
-//     user_language
-// } = props;
+  //   const {
+  //     // id, 
+  //     user_name, 
+  //     user_profetion, 
+  //     user_profilePicture, 
+  //     user_country, 
+  //     user_country_flag, 
+  //     user_followers, 
+  //     user_accoutType, 
+  //     user_about, 
+  //     user_rating, 
+  //     user_total_call, 
+  //     user_perHourCost, 
+  //     // user_skills, 
+  //     user_language
+  // } = props;
 
 
-const {
-  userName,
-  profession,
-  avatar,
-  hourRate,
-  followers,
-  rating,
-  totalCall,
-  flag, 
-  gigLanguage,
-  isVarified,
-  isOnline, 
-  languages, 
-  country, 
-  city, 
-  skills,
-  id
-} = props.item ;
+  const {
+    userName,
+    profession,
+    avatar,
+    // hourRate,
+    followers,
+    rating,
+    totalCall,
+    flag,
+    // gigLanguage,
+    isVarified,
+    isOnline,
+    // languages, 
+    country,
+    // city, 
+    skills,
+    // id
+  } = props.item;
 
 
 
 
   const StyledBadge = styled(Badge)({
-  '& .MuiBadge-badge': {
+    '& .MuiBadge-badge': {
 
 
-// curved style
-      height:"10px",
-      width:"10px",
+      // curved style
+      height: "10px",
+      width: "10px",
       right: 8,
       bottom: 8,
       outline: `8px solid ${theme.palette.background.paper}`,
 
 
-// round shape 
+      // round shape 
       // height:"8px",
       // width:"8px",
       // outline: `4px solid ${theme.palette.background.paper}`,
@@ -127,18 +127,18 @@ const {
       // bottom: 10,
 
 
-    borderRadius:999,
-    padding:"0"
-  },
+      borderRadius: 999,
+      padding: "0"
+    },
   });
 
 
   const avatarSize = 70;
 
   return (
-    <Box 
-    // bgcolor={"yellow"} 
-    sx={{marginBottom:{md:0,xs:1}}}>
+    <Box
+      // bgcolor={"yellow"} 
+      sx={{ marginBottom: { md: 0, xs: 1 } }}>
       <Card
         variant=""
 
@@ -147,14 +147,14 @@ const {
           // width:"auto",
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
-          m: { md:2, xs: 0 },
-          p:2
+          m: { md: 2, xs: 0 },
+          p: 2
         }}
         borderRadius={1}
         m={2}
       >
-        <Box display={"flex"} 
-        flexDirection={"row"} 
+        <Box display={"flex"}
+          flexDirection={"row"}
         // alignItems={"flex-start"}
 
         >
@@ -180,7 +180,7 @@ const {
                     src={avatar}
                     sx={
                       isOnline === ""
-                        ? { width: avatarSize, height: avatarSize, borderRadius: 999  }
+                        ? { width: avatarSize, height: avatarSize, borderRadius: 999 }
                         : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
                     }
                   />
@@ -198,7 +198,7 @@ const {
               justifyContent: "center",
               // text position 
               // alignItems: "center",
-              
+
               width: "100%",
               pl: 1,
             }}
@@ -206,7 +206,7 @@ const {
 
 
 
-            
+
             <Link
               style={{
                 textDecoration: "none",
@@ -243,7 +243,7 @@ const {
                     sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
                   />
                 )}
-                <IoMdInfinite style={{marginLeft:2, color:"#33333350"}}/>
+                <IoMdInfinite style={{ marginLeft: 2, color: "#33333350" }} />
                 {/* <Badge sx={{mx:3}} color="primary" badgeContent="Pro"></Badge> */}
 
               </Typography>
@@ -335,18 +335,18 @@ const {
           </Box>
         </Box>
 
-        <Box 
-        display={"none"} 
-        p={1} pl={3} justifyContent={""}>
+        <Box
+          display={"none"}
+          p={1} pl={3} justifyContent={""}>
           <PeopleCard
             languages="English, Bengali, Hindi"
           />
         </Box>
 
 
-        <Box 
-        // display="none"
-         pl={4}>
+        <Box
+          // display="none"
+          pl={4}>
           <SubDetails
             user_followers={new Intl.NumberFormat("en-US", {
               useGrouping: true,
@@ -360,7 +360,7 @@ const {
               useGrouping: true,
               notation: "compact",
             }).format(totalCall)}
-            // flag={flag}
+          // flag={flag}
           />
         </Box>
 
@@ -402,8 +402,8 @@ const {
           }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
-          {skills.map((skill) => (
-            <ChipsCustom hashTagStyle={true} label={skill.name} />
+          {skills.map((skill, index) => (
+            <ChipsCustom key={index} hashTagStyle={true} label={skill.name} />
           ))}
           {/* <ChipsCustom hashTagStyle={true} label="Javascript" />
           <ChipsCustom hashTagStyle={true} label="Node js" />
@@ -416,9 +416,10 @@ const {
           <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
-        <Box sx={{ px: 4, 
+        <Box sx={{
+          px: 4,
           // display:"none" 
-          }}>
+        }}>
           <AudioSlider_custom />
         </Box>
 
@@ -491,7 +492,7 @@ CallCard.propTypes = {
   user_about: PropTypes.string,
   user_rating: PropTypes.string,
   user_total_call: PropTypes.string,
-  user_perHourCost : PropTypes.string,
+  user_perHourCost: PropTypes.string,
   user_skills: PropTypes.string,
   user_language: PropTypes.string,
   key: PropTypes.string,

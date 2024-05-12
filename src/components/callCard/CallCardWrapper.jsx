@@ -7,8 +7,10 @@ export default function CallCardWrapper() {
     console.log(userData);
 
   return (
+        <>
+        {userData.map((item)=> <CallCard key={item.id} item={item} />)}
+        </>
     // {userData.map((item) => <CallCard key={item.id} item={item} />)}
-    <p>hello</p>
     // <CallCard key={userData.id} item={userData} />
   )
 }
