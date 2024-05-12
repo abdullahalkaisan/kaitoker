@@ -34,6 +34,8 @@ export default function NavMenu() {
         setValue_mainMenu(4)
       }else if (location_pathName === "/hire"){
         setValue_mainMenu(1)
+      }else if (location_pathName === "/home"){
+        setValue_mainMenu(0)
       }
     },[location])
 

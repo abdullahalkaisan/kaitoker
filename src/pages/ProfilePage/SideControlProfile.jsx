@@ -26,7 +26,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     width:"10px",
     height:"10px",
-    // outline: `4px solid ${theme.palette.background.paper}`,
+    outline: `4px solid ${theme.palette.background.paper}`,
     padding: '0 0px',
   },
 }));
@@ -34,8 +34,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 
-export default function SideControlProfile() {
-  const theme = useTheme();
+export default function SideControlProfile(props) {
+
+  const {avatar, userName, profession} = props.getProfile;
+
+  // const theme = useTheme();
 
   // const useMyTheme = theme.palette.mode;
 
@@ -60,7 +63,7 @@ export default function SideControlProfile() {
           
             <Avatar
                   alt="Remy Sharp"
-                  src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
+                  src={avatar}
                   sx={{ width: 120, height: 120 }}
               />
           
@@ -72,7 +75,7 @@ export default function SideControlProfile() {
 
         <Box my={2}>
           <Typography display={"flex"} alignItems={"center"} variant="h1" fontWeight={"bold"} fontSize={"24px"} bgcolor={"background.default"} color={"text.primary"}>
-            Abdullah Al Kaisan
+            {userName}
             <VerifiedIcon color='primary' fontSize='small' sx={{mx:0.5}}/>
           </Typography>
           <Typography variant="" fontSize={"16px"}
@@ -81,7 +84,7 @@ export default function SideControlProfile() {
             // }}
 
           >
-            Web developer
+           {profession}
           </Typography>
 
 

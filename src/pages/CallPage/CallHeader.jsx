@@ -8,12 +8,12 @@ import { useTheme } from '@emotion/react';
 import { useState } from 'react';
 import VideoCardUser_small from './VideoCardUser_small';
 import { 
-  UilArrowResizeDiagonal,
-  UilExpandArrowsAlt, 
-  UilCompressAltLeft,
+  // UilArrowResizeDiagonal,
+  // UilExpandArrowsAlt, 
+  // UilCompressAltLeft,
   UilCompress,
   UilExpandArrows, 
-  UilArrowsH 
+  // UilArrowsH 
 } from '@iconscout/react-unicons'
 import { IoTicketOutline } from 'react-icons/io5';
 // import MicOffIcon from '@mui/icons-material/MicOff';
@@ -25,20 +25,20 @@ export default function CallHeader(props) {
   const {isNavBoxOpen, setNavBoxOpen} = props;
 
   const theme = useTheme();
-  const themeUse = theme.palette.mode;
+  const isDark = theme.palette.mode === "dark";
 
 
 
-  const isScreenSraring = false;
+  // const isScreenSraring = false;
 
-  const [isCameraOff, setIsCameraOff] = useState(false)
+  // const [isCameraOff, setIsCameraOff] = useState(false)
 
   const [isScreenSharing, setIsScreenSharing] = useState(false)
 
   return (
     <Box
       display={"flex"}
-      bgcolor={`${themeUse === "dark"? "#222":"#fff"}`}
+      bgcolor={`${isDark ? "#222":"#fff"}`}
       flexDirection={"column"}
       width={1}
       // height={1}
@@ -57,7 +57,14 @@ export default function CallHeader(props) {
         <CallAction isScreenSharing={isScreenSharing} setIsScreenSharing={setIsScreenSharing} />
         
         <Box display={"flex"} alignItems={"center"}>
-        <Box sx={{backgroundColor:"#f1f1f1", borderRadius:999, p:1, display:"flex", alignItems:"center"}}>
+        <Box sx={{
+          backgroundColor:`${isDark?"#222":"#f1f1f1"}`, 
+          color:`${isDark?"#f1f1f1":"#333"}`,
+          borderRadius:999, 
+          p:1, 
+          display:"flex", 
+          alignItems:"center"
+          }}>
           <IoTicketOutline />
           <span style={{margin:"0 5px"}}>
             3

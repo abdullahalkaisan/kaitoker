@@ -1,14 +1,23 @@
 // import { Box } from "@mui/material";
 // import TabMenuProfile from "./TabMenuProfile";
-// import SideControlProfile from "./SideControlProfile";
-// import SideControlProfile_tab from "./SideControlProfile_tab";
+// import Error_page from "../Error_page/Error_page";
+import SideControlProfile from "./SideControlProfile";
+import SideControlProfile_tab from "./SideControlProfile_tab";
 
 import { Box } from "@mui/material";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 
 
 
 export default function ProfilePage() {
+
+  const {id} = useParams();
+  const getId = parseInt(id);
+  const userData = useLoaderData()
+  const getProfile = userData.find((item)=> item.id === getId)
+
+
   return (
 
     <Box
@@ -29,12 +38,11 @@ export default function ProfilePage() {
           borderRight: "1px solid rgba(0,0,0,0.12)",
         }}
       >
-        {/* <SideControlProfile_tab /> */}
-        {/* <SideControlProfile /> */}
+        <SideControlProfile_tab />
+        <SideControlProfile getProfile={getProfile}/>
       </Box>
 
       {/* <TabMenuProfile /> */}
-      Hi this is abdullah Al Kaisan profile page
 
     </Box>
   );

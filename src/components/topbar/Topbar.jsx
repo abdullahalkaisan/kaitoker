@@ -20,14 +20,17 @@ import { useContext } from "react";
 // import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import LoadingWithLogo from "../LoadingWithLogo";
-import { MdOutlineLogin } from "react-icons/md";
+// import { MdOutlineLogin } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-import SignInWithGoogle_Btn from "./SignInWithGoogle_Btn";
+import TicketPop from "../TicketPop";
+// import SignInWithGoogle_Btn from "./SignInWithGoogle_Btn";
 
 
 export default function TopBar() {
 
-  const { user, loading, signIn_google, signIn_google_redirectResult } = useContext(AuthContext);
+  const { user, loading, signIn_google, 
+    // signIn_google_redirectResult
+   } = useContext(AuthContext);
 
   if (loading) {
     return <LoadingWithLogo />
@@ -66,7 +69,8 @@ export default function TopBar() {
         <Box display={"flex"}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {/* , bgcolor:"#F5FAFD"  */}
-
+            
+            <TicketPop/>
 
             <IconButton sx={{ display: { md: "none" } }}>
               <UilSearch />

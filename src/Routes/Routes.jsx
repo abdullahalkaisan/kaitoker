@@ -47,8 +47,10 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
       element: <LoginPage />,
     },
     {
-      path: "/profile",
+      path: "/profile/:id",
       element: <ProfilePage />,
+      loader: ()=> fetch("/userDataLocal.json")
+
     },
     {
       path: "/callpage",
