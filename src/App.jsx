@@ -1,6 +1,6 @@
 
-import Profession_filter from "./components/filter/Profession_filter"
 import { Box } from "@mui/material"
+import Profession_filter from "./components/filter/Profession_filter"
 // import LeftMenu_container from "./components/conent/LeftMenu_container"
 // import Center_container from "./components/conent/Center_container"
 import RightMenu_container from "./components/conent/rightMenu/RightMenu_container"

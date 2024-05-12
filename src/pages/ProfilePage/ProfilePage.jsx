@@ -1,13 +1,16 @@
+// import { Box } from "@mui/material";
+// import TabMenuProfile from "./TabMenuProfile";
+// import SideControlProfile from "./SideControlProfile";
+// import SideControlProfile_tab from "./SideControlProfile_tab";
+
 import { Box } from "@mui/material";
-import TabMenuProfile from "./TabMenuProfile";
-import SideControlProfile from "./SideControlProfile";
-import SideControlProfile_tab from "./SideControlProfile_tab";
 
 
 
 
 export default function ProfilePage() {
   return (
+
     <Box
       display={"flex"}
       flexDirection={"row"}
