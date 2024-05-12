@@ -2,6 +2,7 @@
   {
     "id": 1,
     "userName": "Abdullah Al Kaisan",
+    "unique_username":"abdullahalkaisan",
     "profession": "Founder of Kaitoker",
     "avatar": "https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg",
     "hourRate": 2.24,
@@ -63,6 +64,7 @@
   {
     "id": 2,
     "userName": "John Doe",
+    "unique_username":"JohnDoe",
     "profession": "Software Engineer",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890",
     "hourRate": 3.5,
@@ -118,6 +120,7 @@
   {
     "id": 3,
     "userName": "Alice Johnson",
+    "unique_username":"AliceJohnson",
     "profession": "Graphic Designer",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK386pzE7Z-bSFqbGXHYVxxKt5pYh_OAnMnkKWDOPhNabI",
     "hourRate": 4.75,
@@ -173,6 +176,7 @@
   {
     "id": 4,
     "userName": "Mohamed Salah",
+    "unique_username":"MohamedSalah",
     "profession": "Football Player",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIdaEDJG7PYFEkpmgPOICdwll5qySj_Q7-PmLwtxHQMroA",
     "hourRate": 500,
@@ -228,6 +232,7 @@
   {
     "id": 5,
     "userName": "Maria Garcia",
+    "unique_username":"MariaGarcia",
     "profession": "Translator",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJqZq5lRV_rRcVOzKMubQZ0x7e7TAkaRww7lH25T7yLVu4",
     "hourRate": 20,
@@ -284,6 +289,7 @@
   {
     "id": 6,
     "userName": "Yuki Tanaka",
+    "unique_username":"YukiTanaka",
     "profession": "Software Developer",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJtYzW14Y0D7PwkgiwSPw7bDe8gJC_FoQFE7A8mP71PRiI",
     "hourRate": 2500,
@@ -339,6 +345,7 @@
   {
     "id": 7,
     "userName": "Elena Petrova",
+    "unique_username":"ElenaPetrova",
     "profession": "Data Scientist",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL1a-xNIqHHXT9L8DLw8U0OHXt4Gwc7erfvuod3d1V-gjw",
     "hourRate": 150,
@@ -394,6 +401,7 @@
   {
     "id": 8,
     "userName": "Luca Rossi",
+    "unique_username":"LucaRossi",
     "profession": "Chef",
     "avatar": "https://pbs.twimg.com/profile_images/1771091617119649792/1WK8yB_C_400x400.jpg",
     "hourRate": 100,
@@ -449,6 +457,7 @@
   {
     "id": 9,
     "userName": "Chen Wei",
+    "unique_username":"ChenWei",
     "profession": "Translator",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLQzG1Xb2qvgjKuRdjjSOtMuYVwfy_j11F_5LerjnpOW34",
     "hourRate": 30,
@@ -504,6 +513,7 @@
   {
     "id": 10,
     "userName": "Anna Müller",
+    "unique_username":"AnnaMuller",
     "profession": "Photographer",
     "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJNAjeGBRG_M8eEYVTbBrWw_P3o3SKDcc6uoOiX-SWM8UE",
     "hourRate": 50,
@@ -559,6 +569,7 @@
   {
     "id": 11,
     "userName": "Purno",
+    "unique_username":"Purno",
     "profession": "Video Editor",
     "avatar": "https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg",
     "hourRate": 50,
@@ -577,18 +588,6 @@
     "city": "Jamalpur",
     "skills": [
       {
-        "name": "Javascript",
-        "icon": "javascript-icon-url"
-      },
-      {
-        "name": "React",
-        "icon": "react-icon-url"
-      },
-      {
-        "name": "MongoDB",
-        "icon": "mongodb-icon-url"
-      },
-      {
         "name": "Photoshop",
         "icon": "photoshop-icon-url"
       },
@@ -605,7 +604,7 @@
         "icon": "ux-ui-design-icon-url"
       },
       {
-        "name": "English",
+        "name": "Bengali",
         "icon": "english-icon-url"
       }
     ]

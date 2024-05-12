@@ -47,7 +47,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
       element: <LoginPage />,
     },
     {
-      path: "/profile/:id",
+      path: "/:unique_username_id",
       element: <ProfilePage />,
       loader: ()=> fetch("/userDataLocal.json")
 

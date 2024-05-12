@@ -88,6 +88,7 @@ export default function CallCard(props) {
 
   const {
     userName,
+    unique_username,
     profession,
     avatar,
     // hourRate,
@@ -102,7 +103,7 @@ export default function CallCard(props) {
     country,
     // city, 
     skills,
-    id
+    // id
   } = props.item;
 
 
@@ -163,7 +164,7 @@ export default function CallCard(props) {
             bgcolor={"background.default"}
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
-            <Link to={`/profile/${id}`}>
+            <Link to={`/${unique_username}`}>
               <IconButton aria-label="delete" size="small">
                 <StyledBadge
                   color={isOnline === "online" ? "info" : "warning"}
@@ -216,7 +217,7 @@ export default function CallCard(props) {
                   color: `${isDark? "#fff" : "#333"}`,
                 },
               }}
-              to={`/profile/${id}`}
+              to={`/${unique_username}`}
             >
               <Typography
                 sx={{

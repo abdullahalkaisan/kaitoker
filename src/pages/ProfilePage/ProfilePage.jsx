@@ -16,10 +16,11 @@ export default function ProfilePage() {
 
 
 
-  const {id} = useParams();
-  const getId = parseInt(id);
+  const {unique_username_id} = useParams();
+  // const getId = parseInt(id);
+
   const userData = useLoaderData()
-  const getProfile = userData.find((item)=> item.id === getId)
+  const getProfile = userData.find((item)=> item.unique_username.toLowerCase() === unique_username_id.toLowerCase())
 
 
   return (
