@@ -1,4 +1,4 @@
-import { Box, Chip, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import PeopleCard from "./PeopleCard";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -7,10 +7,11 @@ import ChatCard from "./ChatCard";
 import ChatCard_for_group from "./ChatCard_for_group";
 import { UilEllipsisH } from '@iconscout/react-unicons'
 import ChatBubble from "./ChatBubble/ChatBubble";
-import { IoMdClose } from "react-icons/io";
+// import { IoMdClose } from "react-icons/io";
 import { MdClose, MdReply } from "react-icons/md";
 import { useTheme } from "@emotion/react";
-import ChipsCustom from "../../callCard/ChipsCustom";
+import ChatAlertMessage from "../../ChatAlertMessage";
+// import ChipsCustom from "../../callCard/ChipsCustom";
 
 
 export default function ChatList() {
@@ -72,7 +73,7 @@ export default function ChatList() {
               </Bo>
     
             </Box> */}
-
+            <ChatAlertMessage/>
             
             <Box px={2} >
               <ChatCard type="me" content="Hi" />

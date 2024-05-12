@@ -15,8 +15,7 @@ export default function FriendsList_chat() {
 
   // Sort the users array
   const sortedUsers = usersDataLocal.sort(sortUsers);
-  console.log(sortedUsers[0]);
-  console.log(usersDataLocal);
+
 
     
   return (

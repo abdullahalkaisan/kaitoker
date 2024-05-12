@@ -55,8 +55,7 @@ export default function RightMenu_friendListTab() {
 
   // Sort the users array
   const sortedUsers = usersDataLocal.sort(sortUsers);
-  console.log(sortedUsers[0]);
-  console.log(usersDataLocal);
+
 
 
 

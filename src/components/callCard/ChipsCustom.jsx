@@ -15,7 +15,6 @@ export default function ChipsCustom(props) {
     console.info('You clicked the delete icon.');
   };
 
-console.log(props.icon);
   return (
     <Chip
 

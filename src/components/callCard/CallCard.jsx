@@ -61,6 +61,7 @@ import PeopleCard from "../conent/rightMenu/PeopleCard";
 export default function CallCard(props) {
 
   const theme = useTheme();
+  const isDark = theme.palette.mode==="dark";
 
   // const PropKeys = Object.keys(props).join();
   // console.log(typeof PropKeys);
@@ -210,9 +211,9 @@ export default function CallCard(props) {
             <Link
               style={{
                 textDecoration: "none",
-                color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
+                color: `${isDark? "#fff" : "#333"}`,
                 "&:visited": {
-                  color: `${theme.palette.mode === "light" ? "#333" : "#fff"}`,
+                  color: `${isDark? "#fff" : "#333"}`,
                 },
               }}
               to={`/profile/${id}`}
@@ -223,6 +224,7 @@ export default function CallCard(props) {
                   alignItems: "center",
                   justifyContent: "center",
                   cursor: "pointer",
+                  color: `${isDark ? "#fff" : "#333"}`,
                   width: "max-content",
                   textDecoration: "none",
                   "&:hover": { textDecoration: "underline" },

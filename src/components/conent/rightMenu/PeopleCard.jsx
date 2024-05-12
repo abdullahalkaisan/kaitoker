@@ -50,6 +50,11 @@ export default function PeopleCard(props) {
   const {
     title,
     subTitle,
+    subTitleSize,
+    subTitle2,
+    subTitleSize2,
+    subTitleColor2,
+    subTitleWeight2,
     avatar,
     avatarUrl,
     badge,
@@ -63,12 +68,10 @@ export default function PeopleCard(props) {
     lastSeen,
     languages,
     titleSize,
-    subTitleSize,
     pro,
     alignItems
   } = props;
 
-  console.log(flag);
 
   const PeopleStyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -183,6 +186,24 @@ export default function PeopleCard(props) {
         >
           {subTitle}
         </Typography>
+
+        {/* subtitle2 */}
+        {
+          subTitle2 && 
+          <Typography
+          mt={-0.5}
+          // color={isDark ? "#999" : "#777"}
+          // color={subTitleHighLight ? "" : "#777"}
+          color={subTitleColor2 && subTitleColor2}
+          fontWeight={subTitleWeight2 && subTitleWeight2}
+          variant="body2"
+          component="h6"
+          fontSize={subTitleSize2 && subTitleSize2}
+        >
+          {subTitle2}
+        </Typography>
+        }
+        
 
         {!isOnline && lastSeen &&
           <Typography

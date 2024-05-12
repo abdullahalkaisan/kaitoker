@@ -68,7 +68,7 @@ export default function CallCardReel() {
   };
 
   const userData = useLoaderData()
-  console.log(userData);
+
   
   const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * userData.length) )
   const [isFollowing, setIsFollowing] =  useState(false);

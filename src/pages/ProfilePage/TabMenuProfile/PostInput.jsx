@@ -13,7 +13,6 @@ export default function PostInput() {
 
     function inputSubmit(e) {
         e.preventDefault()
-        console.log(e);
         const randomID = new Date();
         setUserPosts([...userPosts, { id: randomID, content:postInput }  ])
         setPostInput("");

@@ -8,8 +8,6 @@ export default function VideoUserProPop(props) {
     const [isNameShow, setIsNameShow] = useState(true);
 
 
-    console.log(isNameShow);
-
     return (
         <>
             <Box

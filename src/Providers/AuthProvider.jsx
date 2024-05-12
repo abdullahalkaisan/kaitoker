@@ -56,10 +56,6 @@ export default function AuthProvider({children}) {
       } 
     },[])
 
-    {console.log("user state", user)}
-
-
-
 
     const authInfo = {
         user,

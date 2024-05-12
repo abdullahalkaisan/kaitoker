@@ -10,6 +10,7 @@ import {
     UilBell
   } from '@iconscout/react-unicons'
 import Notificatioin_message from './Notificatioin_message';
+import ChatAlertMessage from '../../ChatAlertMessage';
 
   
 
@@ -90,124 +91,31 @@ export default function Notification_section() {
       >
 
 
-        <Notificatioin_message />
+        {/* <Notificatioin_message /> */}
 
-        <MenuItem  onClick={handleClose}>
-            <Box whiteSpace={"wrap"}>
-                Abdullah Al Kaisan followed you
-                Abdullah Al Kaisan followed you
-                Abdullah Al Kaisan followed you
-                Abdullah Al Kaisan followed you
-                Abdullah Al Kaisan followed you
-            </Box>
 
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
-        <MenuItem onClick={handleClose}>
-            Abdullah Al Kaisan followed you
-        </MenuItem>
-        <Divider />
-
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        <ChatAlertMessage/>
+        
 
 
       </Menu>
