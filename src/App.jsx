@@ -13,6 +13,7 @@ import TopBar from "./components/topbar/Topbar"
 // import LoadingWithLogo from "./components/LoadingWithLogo"
 import { useContext } from "react"
 import { AuthContext } from "./Providers/AuthProvider"
+// import { Helmet } from "react-helmet"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
 
@@ -21,6 +22,11 @@ function App() {
   const {user} = useContext(AuthContext);
 
   return (
+
+    <>
+    {/* <Helmet>
+      <title>{`Kaitoker`}</title>
+    </Helmet> */}
     <Box 
       display={"flex"} 
       flexDirection={"column"} 
@@ -60,6 +66,7 @@ function App() {
       <LabelBottomNavigation/>
 
     </Box>
+    </>
   )
 }
 

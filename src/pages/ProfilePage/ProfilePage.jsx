@@ -3,9 +3,9 @@ import TabMenuProfile from "./TabMenuProfile";
 // import Error_page from "../Error_page/Error_page";
 import SideControlProfile from "./SideControlProfile";
 import SideControlProfile_tab from "./SideControlProfile_tab";
-
 import { Box } from "@mui/material";
 import { useLoaderData, useParams } from "react-router-dom";
+// import { Helmet } from "react-helmet";
 // import { useContext } from "react";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -24,7 +24,10 @@ export default function ProfilePage() {
 
 
   return (
-
+    <>
+    {/* <Helmet>
+      <title>{`Kaitoker | ${getProfile.userName}`}</title>
+    </Helmet> */}
     <Box
       display={"flex"}
       flexDirection={"row"}
@@ -34,6 +37,9 @@ export default function ProfilePage() {
       width={"100%"}
       overflow={"hidden"}
     >
+      {/* <Helmet>
+        <title>{getProfile.unique_username}</title>
+      </Helmet> */}
       <Box
         sx={{
           display: { md: "block", xs: "none" },
@@ -50,5 +56,6 @@ export default function ProfilePage() {
       <TabMenuProfile />
 
     </Box>
+    </>
   );
 }

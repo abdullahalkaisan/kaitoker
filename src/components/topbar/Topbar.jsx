@@ -70,7 +70,7 @@ export default function TopBar() {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {/* , bgcolor:"#F5FAFD"  */}
 
-            <TicketPop/>
+            {user && <TicketPop/>}
 
             <IconButton sx={{ display: { md: "none" } }}>
               <UilSearch />
