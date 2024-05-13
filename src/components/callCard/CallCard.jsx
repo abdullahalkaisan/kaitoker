@@ -108,14 +108,14 @@ export default function CallCard(props) {
 
   // last online is only abilable for pro user
   const isUserPro = 1;
-
+  const isOnline_isActive = isOnline === "online" || isOnline === "busy";
 
   const StyledBadge = styled(Badge)({
     '& .MuiBadge-badge': {
       // curved style
       height: "10px",
-      width: isUserPro ? "auto":"10px",
-      right: isUserPro ? 10 : 8,
+      width: isUserPro  ? "auto":"10px",
+      right: isUserPro  ? 10 : 8,
       bottom:isUserPro ? 10 : 8,
       outline: `8px solid ${theme.palette.background.paper}`,
       backgroundColor:`${isUserPro && theme.palette.background.paper}`,
@@ -125,7 +125,7 @@ export default function CallCard(props) {
       // outline: `4px solid ${theme.palette.background.paper}`,
       // right: 10,
       // bottom: 10,
-      borderRadius: `${isUserPro?"9px 0 0 9px":999}`,
+      borderRadius: `${isUserPro && isOnline_isActive ?"9px 0 0 9px":999}`,
       padding: "0"
     },
   });
@@ -173,12 +173,13 @@ export default function CallCard(props) {
               <IconButton aria-label="delete" size="small">
                 
                 <StyledBadge
-                  color={!isUserPro ? isOnline === "online" ? "info" : "warning" : "default"}
-                  badgeContent={
-                    !isUserPro ? isOnline === "online" || isOnline === "busy" ? 1 : 0 : "13m"
-                    
+                  color={ 
+                    !isUserPro || isUserPro && isOnline_isActive ? isOnline === "online"  ? "info" : "warning" : "default"
                   }
-                  variant={!isUserPro ? "dot" : "string"}
+                  badgeContent={
+                    !isUserPro || isUserPro  && isOnline_isActive ? isOnline_isActive ? 1 : 0 : "13m"
+                  }
+                  variant={!isUserPro || isUserPro && isOnline_isActive  ? "dot" : "string"  }
                   anchorOrigin={{
                     vertical: "bottom",
                     horizontal: "right",
@@ -404,7 +405,7 @@ pro user can add 10 skills
 
 */}
         <Box
-          // display={"none"}
+          display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
