@@ -106,33 +106,38 @@ export default function CallCard(props) {
     // id
   } = props.item;
 
-
+  // last online is only abilable for pro user
+  const isUserPro = 1;
 
 
   const StyledBadge = styled(Badge)({
     '& .MuiBadge-badge': {
-
-
       // curved style
       height: "10px",
-      width: "10px",
-      right: 8,
-      bottom: 8,
+      width: isUserPro ? "auto":"10px",
+      right: isUserPro ? 10 : 8,
+      bottom:isUserPro ? 10 : 8,
       outline: `8px solid ${theme.palette.background.paper}`,
-
-
+      backgroundColor:`${isUserPro && theme.palette.background.paper}`,
       // round shape 
       // height:"8px",
       // width:"8px",
       // outline: `4px solid ${theme.palette.background.paper}`,
       // right: 10,
       // bottom: 10,
-
-
-      borderRadius: 999,
+      borderRadius: `${isUserPro?"9px 0 0 9px":999}`,
       padding: "0"
     },
   });
+
+  // height: "10px",
+  // width: "auto",
+  // right: 12,
+  // bottom: 10,
+  // borderRadius: "9px 0 0 9px",
+
+
+
 
 
   const avatarSize = 70;
@@ -166,12 +171,14 @@ export default function CallCard(props) {
           >
             <Link to={`/${unique_username}`}>
               <IconButton aria-label="delete" size="small">
+                
                 <StyledBadge
-                  color={isOnline === "online" ? "info" : "warning"}
+                  color={!isUserPro ? isOnline === "online" ? "info" : "warning" : "default"}
                   badgeContent={
-                    isOnline === "online" || isOnline === "busy" ? 1 : 0
+                    !isUserPro ? isOnline === "online" || isOnline === "busy" ? 1 : 0 : "13m"
+                    
                   }
-                  variant="dot"
+                  variant={!isUserPro ? "dot" : "string"}
                   anchorOrigin={{
                     vertical: "bottom",
                     horizontal: "right",

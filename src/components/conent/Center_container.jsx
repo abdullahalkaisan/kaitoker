@@ -1,4 +1,4 @@
-import { Autocomplete,  Box, Button, TextField } from "@mui/material";
+import { Autocomplete,  Box, Button, FormControlLabel, Switch, TextField } from "@mui/material";
 import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 // import { useTheme } from "@emotion/react";
 // import LanguageSelect from "./LanguageSelect";
@@ -20,7 +20,8 @@ import LanguageSelect from "../callCard/LanguageSelect";
 // import { useState } from "react";
 // import PostContext from "../../PostContext";
 // import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -29,7 +30,15 @@ import { Outlet } from "react-router-dom";
 
 
 export default function Center_container() {
+  
 
+  // useEffect(()=>{
+  //   if(location==="/"){
+  //     setIsSkillSwitch(true)
+  //   }else{
+  //     setIsSkillSwitch(false)
+  //   }
+  // },[])
 
   // const [userPosts, setUserPosts] = useState([
   //   // { id: 1, content: "Hello" },
@@ -108,6 +117,15 @@ export default function Center_container() {
             />
           534
         </Button> */}
+
+          <FormControlLabel
+            sx={{marginLeft:2}}
+            value="start"
+            control={<Switch color="primary" />}
+            label="Skills"
+            labelPlacement="Skills"
+          />
+
 
 
         <Button variant="soft" color="info" size="small" sx={{ m: 1, borderRadius: 999 }}>
