@@ -63,13 +63,14 @@ export default function UpdateAccount_dialog() {
       )}
 
       <Dialog
+        
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle sx={{display:"flex", justifyContent:"space-between", alignItems:"center"}} id="alert-dialog-title">
-          {"Update your Kaitoker Account"}
+          {"Update your account"}
           <IconButton sx={{marginLeft:3}} onClick={handleClose}>
                 <IoMdClose />
             </IconButton>
@@ -96,6 +97,24 @@ export default function UpdateAccount_dialog() {
                         <img width="24" height="24" src="https://img.icons8.com/fluency/48/verified-badge--v1.png" alt="verified-badge--v1"/>
                     </ListItemIcon>
                     <ListItemText primary="Get Varified mark" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/48/delivery-time--v1.png" alt="delivery-time--v1"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Able to see last online seen" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                    <img width="24" height="24" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-skills-relationship-flaticons-flat-flat-icons-2.png" />
+                    </ListItemIcon>
+                    <ListItemText primary="Upto 10 skils" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                    <img width="24" height="24" src="https://img.icons8.com/color/48/microphone.png" />
+                    </ListItemIcon>
+                    <ListItemText primary="Group call" />
                 </ListItem>
             </List>
 
