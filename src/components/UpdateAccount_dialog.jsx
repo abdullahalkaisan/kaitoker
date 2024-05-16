@@ -1,13 +1,35 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import {
+  Badge,
+  Box,
+  Divider,
+  FormControl,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import { UilArrowCircleUp } from "@iconscout/react-unicons";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useContext, useState } from "react";
 
 export default function UpdateAccount_dialog() {
-  const [open, setOpen] = React.useState(false);
+  const [timeLength, setTimeLength] = useState(1);
+
+  const handleChange = (event) => {
+    setTimeLength(event.target.value);
+  };
+
+  const { user } = useContext(AuthContext);
+
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,13 +40,20 @@ export default function UpdateAccount_dialog() {
   };
 
   return (
-    <React.Fragment>
-
-
-      <Button variant="outlined" onClick={handleClickOpen}>
+    <>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open alert dialog
-      </Button>
+      </Button> */}
 
+      {user && (
+        <Tooltip sx={{ m: 1 }} title="Pro User" placement="right">
+          <IconButton onClick={handleClickOpen}>
+            <Badge color="error" variant="dot" badgeContent={1}>
+              <UilArrowCircleUp />
+            </Badge>
+          </IconButton>
+        </Tooltip>
+      )}
 
       <Dialog
         open={open}
@@ -33,21 +62,100 @@ export default function UpdateAccount_dialog() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+          {"Update your Kaitoker Account"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
+            1 Month $5 1 Year $30 (Best price) $2.5/m (50% off) 134 Days left
+            Update my friends account
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
-          </Button>
+
+        <Divider/>
+        <DialogActions sx={{ margin: 2 }}>
+          <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"} width={1}>
+            <Box display={"flex"} alignItems={"center"}>
+              <Box sx={{ minWidth: "120px" }}>
+                <FormControl fullWidth size="small">
+                  <InputLabel id="demo-simple-select-label">Duration</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={timeLength}
+                    label="Duration"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={1}>
+                      30 Days
+                      {/* <Typography color={"green"} fontWeight={"bold"} variant="caption" display="block" gutterBottom>
+                    $5/m
+                </Typography>  */}
+                    </MenuItem>
+                    <MenuItem value={2}>
+                      365 Days
+                      <Typography
+                        color={"error"}
+                        fontWeight={"bold"}
+                        variant="caption"
+                        display="block"
+                        gutterBottom
+                      >
+                        -50% ($2.5/m)
+                      </Typography>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Box mx={2}>
+                <Typography
+                  variant="body1"
+                  fontWeight={"bold"}
+                  color={"#008000"}
+                  bgcolor={"#00800020"}
+                  padding={"3px 10px"}
+                  borderRadius={999}
+                >
+                  $5.00
+                </Typography>
+              </Box>
+            </Box>
+
+
+
+            <Box >
+                <Button onClick={handleClose} sx={{mx:2}} >Cancel</Button>
+                <Button
+                size="small"
+                variant="contained"
+                sx={{ borderRadius: 3 }}
+                onClick={handleClose}
+                autoFocus
+                >
+                Update
+                </Button>
+            </Box>
+
+
+
+
+          </Box>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </>
   );
+}
+
+{
+  /* <Box>
+<Button onClick={handleClose}>Cancel</Button>
+<Button
+  size="small"
+  variant="contained"
+  sx={{ borderRadius: 3 }}
+  onClick={handleClose}
+  autoFocus
+>
+  Update
+</Button>
+</Box> */
 }

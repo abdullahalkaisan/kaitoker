@@ -4,7 +4,7 @@ import {
   UilSlidersVAlt,
   UilAnalysis,
   // UilSignout,
-  UilArrowCircleUp,
+  // UilArrowCircleUp,
   UilSetting,
   UilQuestionCircle,
   // UilMobileAndroid,
@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import Logout_option from "./Logout_option";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ThemeCustomContext } from "../../Providers/ThemeCustomProvider";
+import UpdateAccount_dialog from "../UpdateAccount_dialog";
 export default function LeftMenu_container() {
 
   const {user} = useContext(AuthContext)
@@ -230,7 +231,7 @@ export default function LeftMenu_container() {
 
 
 
-      {user &&
+      {/* {user &&
       <Tooltip sx={{ m: 1 }} title="Pro User" placement="right">
         <IconButton >
           <Badge color="error" variant="dot" badgeContent={1}>
@@ -238,7 +239,13 @@ export default function LeftMenu_container() {
           </Badge>
         </IconButton>
       </Tooltip>
-      }
+      } */}
+
+
+
+        <UpdateAccount_dialog/>
+
+
 
       {user &&
       <Tooltip sx={{ m: 1 }} title="Setting" placement="right">
@@ -257,6 +264,8 @@ export default function LeftMenu_container() {
       {user &&
       <Logout_option/>
       }
+
+
 
 
 
