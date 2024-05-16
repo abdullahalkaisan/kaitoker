@@ -5,12 +5,18 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import {
+    // Avatar,
   Badge,
   Box,
   Divider,
   FormControl,
   IconButton,
   InputLabel,
+  List,
+  ListItem,
+//   ListItemAvatar,
+  ListItemIcon,
+  ListItemText,
   MenuItem,
   Select,
   Tooltip,
@@ -19,6 +25,7 @@ import {
 import { UilArrowCircleUp } from "@iconscout/react-unicons";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useContext, useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
 export default function UpdateAccount_dialog() {
   const [timeLength, setTimeLength] = useState(1);
@@ -61,13 +68,39 @@ export default function UpdateAccount_dialog() {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle sx={{display:"flex", justifyContent:"space-between", alignItems:"center"}} id="alert-dialog-title">
           {"Update your Kaitoker Account"}
+          <IconButton sx={{marginLeft:3}} onClick={handleClose}>
+                <IoMdClose />
+            </IconButton>
         </DialogTitle>
+
+        <Divider/>
+
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            1 Month $5 1 Year $30 (Best price) $2.5/m (50% off) 134 Days left
-            Update my friends account
+            {/* 1 Month $5 1 Year $30 (Best price) 
+            $2.5/m (50% off) 134 Days left
+            Update my friends account */}
+            {/* Unlimited Minutes and Tickets
+            Group Room */}
+            <List sx={{ width: '100%', maxWidth: 360,  }}>
+                <ListItem>
+                    <ListItemIcon>
+                        <img width="24" height="24" src="https://img.icons8.com/color/48/infinity-large.png" alt="infinity-large"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Unlimited Minutes and Tickets"  />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/48/verified-badge--v1.png" alt="verified-badge--v1"/>
+                    </ListItemIcon>
+                    <ListItemText primary="Get Varified mark" />
+                </ListItem>
+            </List>
+
+
+            
           </DialogContentText>
         </DialogContent>
 
@@ -100,7 +133,8 @@ export default function UpdateAccount_dialog() {
                         display="block"
                         gutterBottom
                       >
-                        -50% ($2.5/m)
+                        -50% off
+                        {/* ($2.5/m) */}
                       </Typography>
                     </MenuItem>
                   </Select>
@@ -123,7 +157,7 @@ export default function UpdateAccount_dialog() {
 
 
             <Box >
-                <Button onClick={handleClose} sx={{mx:2}} >Cancel</Button>
+                {/* <Button onClick={handleClose} sx={{mx:2}} >Cancel</Button> */}
                 <Button
                 size="small"
                 variant="contained"
