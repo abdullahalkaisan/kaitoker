@@ -11,6 +11,7 @@ import GroupCallCard_wrapper from "../components/GroupCallCard_wrapper";
 import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper";
 // import CallCard from "../components/callCard/CallCard";
 import CallCardWrapper from "../components/callCard/CallCardWrapper";
+import NewsContainer from "../components/NewsContainer";
 
 
   export  const router = createBrowserRouter([
@@ -30,7 +31,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
         },
         {
           path: "/news",
-          element: <h1>This is News</h1>,
+          element: <NewsContainer />,
         },{
           path: "/hire",
           element: <CallCardReel/>,
@@ -55,7 +56,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
     {
       path: "/callpage",
       element: <CallPage />,
-    },
+    }
 
 
   ]);

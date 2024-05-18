@@ -22,6 +22,7 @@ import LanguageSelect from "../callCard/LanguageSelect";
 // import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+// import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 // import { useEffect } from "react";
 
 // import CallCardLite from "../callCard/CallCardLite";
@@ -46,8 +47,24 @@ export default function Center_container() {
   // ])
 
 
+  const location = useLocation()
+  const [isNewsRoute, setIsNewsRoute] = useState(false);
 
 
+
+
+    useEffect(() => {
+
+      if(location.pathname === "/news"){
+        setIsNewsRoute(true)
+      }else{
+        setIsNewsRoute(false)
+      }
+      console.log(location);
+
+
+    }, [location])
+    
 
   // const theme = useTheme();
   // const themeSelect = theme.palette.mode;
@@ -81,7 +98,7 @@ export default function Center_container() {
         color={"text.primary"}
         sx={{
           width: "100%",
-          display: { md: "flex", xs: "none" },
+          display: { md: `${isNewsRoute?"none":"flex"}`, xs: "none" },
           alignItems: "center",
           justifyContent: "space-betwee",
         }}

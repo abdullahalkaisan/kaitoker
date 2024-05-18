@@ -148,7 +148,6 @@ export default function CallCard(props) {
       sx={{ marginBottom: { md: 0, xs: 1 } }}>
       <Card
         variant=""
-
         sx={{
           width: { md: 340, xs: 1 },
           // width:"auto",
@@ -225,7 +224,7 @@ export default function CallCard(props) {
                   color: `${isDark? "#fff" : "#333"}`,
                 },
               }}
-              to={`/${unique_username}`}
+              to={`/${unique_username.toLowerCase()}`}
             >
               <Typography
                 sx={{
