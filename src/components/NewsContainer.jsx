@@ -3,6 +3,7 @@ import PostCard from "../pages/ProfilePage/TabMenuProfile/PostCard";
 import PostInput from "../pages/ProfilePage/TabMenuProfile/PostInput";
 import PostContext from "../PostContext";
 import { useState } from "react";
+import { analytics } from "../firebase/firebase.config";
 
 
 export default function NewsContainer() {
@@ -21,7 +22,7 @@ export default function NewsContainer() {
 
   return (
     <PostContext.Provider value={{userPosts, setUserPosts}}>
-            <Box width={"90%"}><PostInput /></Box>
+            <Box width={"100%"}><PostInput /></Box>
             <Box sx={{
                 display:"flex",
                 width:"100%", 
@@ -29,8 +30,9 @@ export default function NewsContainer() {
                 // flexWrap:"wrap-reverse",
                 // justifyContent:"center"
 
-                alignItems:"center", 
-                flexDirection:"column-reverse"
+                alignItems:"flex-start", 
+                flexDirection:"column-reverse",
+                px:6
                 }}>
               {userPosts.map((item) => <PostCard key={item.key} item={item} />)}
             </Box>
@@ -39,3 +41,23 @@ export default function NewsContainer() {
 
   )
 }
+
+
+
+
+
+
+
+// analytics 
+
+// top country user 
+// top followers 
+// Total User regestered 
+// User active now. 
+// Total Pro user now.
+
+// top talk count  
+// top profile viewed 
+// top withdraw
+// top fan based 
+

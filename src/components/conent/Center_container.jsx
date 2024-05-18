@@ -140,7 +140,7 @@ export default function Center_container() {
             value="start"
             control={<Switch color="primary" />}
             label="Skills"
-            labelPlacement="Skills"
+            // labelPlacement=""
           />
 
 

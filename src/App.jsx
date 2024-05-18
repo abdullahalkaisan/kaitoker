@@ -11,8 +11,9 @@ import PropTypes from 'prop-types';
 import LabelBottomNavigation from "./components/topbar/BottomNavigation"
 import TopBar from "./components/topbar/Topbar"
 // import LoadingWithLogo from "./components/LoadingWithLogo"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "./Providers/AuthProvider"
+import { useLocation } from "react-router-dom"
 // import { Helmet } from "react-helmet"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
@@ -21,7 +22,28 @@ function App() {
 
   const {user} = useContext(AuthContext);
 
+
+  const location = useLocation()
+  const [isFilterProfetionShow, setIsFilterProfetionShow] = useState(true);
+  
+  useEffect(()=>{
+    if(location.pathname === "/news"){
+      setIsFilterProfetionShow(false)
+    }else if (location.pathname === "/group"){
+      setIsFilterProfetionShow(false)
+    }
+    
+    else{
+      setIsFilterProfetionShow(true)
+    }
+  },[location])
+
+
   return (
+
+
+
+
 
     <>
     {/* <Helmet>
@@ -46,8 +68,9 @@ function App() {
 
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
-
-      <Profession_filter/> 
+      {isFilterProfetionShow && 
+        <Profession_filter/> 
+      }
 
       <Box 
         display={"flex"} 

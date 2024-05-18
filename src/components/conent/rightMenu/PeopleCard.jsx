@@ -1,7 +1,7 @@
 import { Avatar, Badge, Box, CardActionArea, Tooltip, Typography } from '@mui/material'
 import VerifiedIcon from '@mui/icons-material/Verified';
 import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { MdLocationPin, MdOutlineAccessTime, MdOutlineTranslate } from 'react-icons/md';
 import { IoMdInfinite } from 'react-icons/io';
 // import { HiOutlineLocationMarker } from 'react-icons/hi';
@@ -15,27 +15,27 @@ import { IoMdInfinite } from 'react-icons/io';
 // accountType={"varified"}
 
 
-PeopleCard.propTypes = {
-  title: PropTypes.string,
-  subTitle: PropTypes.string,
-  subTitleHighLight: PropTypes.string,
-  accountType: PropTypes.string,
-  flag: PropTypes.string,
-  country: PropTypes.string,
-  avatar: PropTypes.bool,
-  badge: PropTypes.bool,
-  avatarUrl: PropTypes.string,
-  isVarified: PropTypes.bool,
-  isOnline: PropTypes.string,
-  avatarSize: PropTypes.number,
-  time: PropTypes.number,
-  lastSeen:PropTypes.string,
-  languages:PropTypes.string,
-  titleSize:PropTypes.number,
-  subTitleSize:PropTypes.number,
-  pro:PropTypes.string,
-  alignItems:PropTypes.string,
-};
+// PeopleCard.propTypes = {
+//   title: PropTypes.string,
+//   subTitle: PropTypes.string,
+//   subTitleHighLight: PropTypes.string,
+//   accountType: PropTypes.string,
+//   flag: PropTypes.string,
+//   country: PropTypes.string,
+//   avatar: PropTypes.bool,
+//   badge: PropTypes.bool,
+//   avatarUrl: PropTypes.string,
+//   isVarified: PropTypes.bool,
+//   isOnline: PropTypes.string,
+//   avatarSize: PropTypes.number,
+//   time: PropTypes.number,
+//   lastSeen:PropTypes.string,
+//   languages:PropTypes.string,
+//   titleSize:PropTypes.number,
+//   subTitleSize:PropTypes.number,
+//   pro:PropTypes.string,
+//   alignItems:PropTypes.string,
+// };
 
 
 

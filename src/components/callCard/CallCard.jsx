@@ -1,6 +1,6 @@
 // import styled from "@emotion/styled";
 import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typography } from "@mui/material";
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
 
 import {
@@ -125,7 +125,7 @@ export default function CallCard(props) {
       // outline: `4px solid ${theme.palette.background.paper}`,
       // right: 10,
       // bottom: 10,
-      borderRadius: `${isUserPro && isOnline_isActive ?"9px 0 0 9px":999}`,
+      borderRadius: `${isUserPro  ? "9px 0 0 9px" :999}`,
       padding: "0"
     },
   });
@@ -139,8 +139,8 @@ export default function CallCard(props) {
 
 
 
-
-  const avatarSize = 70;
+// 70 
+  const avatarSize = 100;
 
   return (
     <Box
@@ -189,7 +189,7 @@ export default function CallCard(props) {
                     src={avatar}
                     sx={
                       isOnline === ""
-                        ? { width: avatarSize, height: avatarSize, borderRadius: 999 }
+                        ? { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
                         : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
                     }
                   />
@@ -358,18 +358,20 @@ export default function CallCard(props) {
           // display="none"
           pl={4}>
           <SubDetails
-            user_followers={new Intl.NumberFormat("en-US", {
-              useGrouping: true,
-              notation: "compact",
-            }).format(followers)}
+            // user_followers={new Intl.NumberFormat("en-US", {
+            //   useGrouping: true,
+            //   notation: "compact",
+            // }).format(followers)}
+            user_followers={followers}
             user_rating={rating}
             user_language={"En"}
             sinceTime="1.2y"
             justifyContent={"flex-start"}
-            user_total_call={new Intl.NumberFormat("en-US", {
-              useGrouping: true,
-              notation: "compact",
-            }).format(totalCall)}
+            // user_total_call={new Intl.NumberFormat("en-US", {
+            //   useGrouping: true,
+            //   notation: "compact",
+            // }).format(totalCall)}
+            user_total_call={totalCall}
           // flag={flag}
           />
         </Box>
@@ -500,22 +502,22 @@ pro user can add 10 skills
 
 
 
-CallCard.propTypes = {
-  user_name: PropTypes.string,
-  user_profetion: PropTypes.string,
-  user_profilePicture: PropTypes.string,
-  user_country: PropTypes.string,
-  user_country_flag: PropTypes.string,
-  user_followers: PropTypes.string,
-  user_accoutType: PropTypes.string,
-  user_about: PropTypes.string,
-  user_rating: PropTypes.string,
-  user_total_call: PropTypes.string,
-  user_perHourCost: PropTypes.string,
-  user_skills: PropTypes.string,
-  user_language: PropTypes.string,
-  key: PropTypes.string,
-};
+// CallCard.propTypes = {
+//   user_name: PropTypes.string,
+//   user_profetion: PropTypes.string,
+//   user_profilePicture: PropTypes.string,
+//   user_country: PropTypes.string,
+//   user_country_flag: PropTypes.string,
+//   user_followers: PropTypes.string,
+//   user_accoutType: PropTypes.string,
+//   user_about: PropTypes.string,
+//   user_rating: PropTypes.string,
+//   user_total_call: PropTypes.string,
+//   user_perHourCost: PropTypes.string,
+//   user_skills: PropTypes.string,
+//   user_language: PropTypes.string,
+//   key: PropTypes.string,
+// };
 
 
 
