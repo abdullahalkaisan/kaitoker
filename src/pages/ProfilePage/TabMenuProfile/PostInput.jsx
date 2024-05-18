@@ -25,7 +25,7 @@ export default function PostInput() {
     return (
 
         
-        <Box component="form" onSubmit={inputSubmit} sx={{ p: {md:4, sx:1}, pt:{md:0,xs:4},   display: "flex", flexDirection: "column", alignItems: "center",  }}>
+        <Box component="form" onSubmit={inputSubmit} sx={{ p: {md:4, sx:1}, pt:{md:4,xs:4},   display: "flex", flexDirection: "column", alignItems: "center",  }}>
                 <Box sx={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center"}}>
                     <Box  sx={{ width:{md:620, xs:1 }, display: "flex",  alignItems:"flex-start", }}>
                         <PeopleCard
