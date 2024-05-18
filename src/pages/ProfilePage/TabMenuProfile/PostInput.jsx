@@ -35,15 +35,16 @@ export default function PostInput() {
 
 
                         <TextField
-                            sx={{ width: "100%", borderRadius: "99px", outline: "none" }}
+                            sx={{ height:"auto", width: "100%", borderRadius: "99px", outline: "none" }}
                             id="outlined-textarea"
                             label="Share what are you thinking here"
                             placeholder="What's on your mind?"
                             multiline
                             // rows={3}
-                            rows={2}
+                            // rows={4}
+                            minRows={2}
                             maxRows={8}
-                            size=""
+                            // size=""
                             value={postInput}
                             onChange={(e) => { setPostInput(e.target.value) }}
                         />
