@@ -40,7 +40,8 @@ export default function PostInput() {
                             label="Share what are you thinking here"
                             placeholder="What's on your mind?"
                             multiline
-                            rows={3}
+                            // rows={3}
+                            rows={2}
                             maxRows={8}
                             size=""
                             value={postInput}
