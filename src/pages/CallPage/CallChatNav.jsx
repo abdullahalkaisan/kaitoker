@@ -55,11 +55,11 @@ function CustomTabPanel(props) {
     );
   }
   
-  CustomTabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-  };
+  // CustomTabPanel.propTypes = {
+  //   children: PropTypes.node,
+  //   index: PropTypes.number.isRequired,
+  //   value: PropTypes.number.isRequired,
+  // };
   
   function a11yProps(index) {
     return {

@@ -46,7 +46,7 @@ export default function CallHeader(props) {
 
 
       <Box
-        display={"flex"}
+        display={"none"}
         width={1}
         bgcolor={"background.default"}
         py={1}
@@ -118,7 +118,7 @@ export default function CallHeader(props) {
           width:1,
           height:1,
           flexWrap: `${isScreenSharing ? "no-wrap" : "wrap"}`,
-          overflow:"auto"
+          overflow:"auto",
         }}
       >
 

@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, CardActionArea } from '@mui/material'
+import { Avatar, Box, CardActionArea } from '@mui/material'
 import VideoUserProPop from './VideoUserProPop'
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ export default function VideoUserBox(props) {
       display={"flex"}
       width={"50%"}
       height={"50%"}
-      sx={{backgroundColor:"#333", justifyContent:"center", alignItems:"center"}}
+      sx={{backgroundColor:"#222", justifyContent:"center", alignItems:"center"}}
       // minHeight={"50%"}
       // minHeight={"50%"}
       // height={"50%"}
@@ -26,6 +26,7 @@ export default function VideoUserBox(props) {
           : <video
             height={"100%"}
             width={"100%"}
+            
             style={{ objectFit: "cover", display: "flex",}}
             muted
             loop

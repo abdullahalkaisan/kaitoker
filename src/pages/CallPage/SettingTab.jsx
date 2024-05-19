@@ -10,10 +10,15 @@ import { useContext, useEffect, useState } from 'react';
 import { ThemeCustomContext } from '../../Providers/ThemeCustomProvider';
 import IOS_Switch from '../../components/IOS_Switch';
 import { useTheme } from '@emotion/react';
+import CallAction from './CallAction';
+import { Box } from '@mui/material';
+import Logo from '../../components/topbar/others/Logo';
+import MunitesAndMoneyPop from '../../components/topbar/others/MunitesAndMoneyPop';
 export default function SettingTab() {
-  const [checked, setChecked] = useState(['']);
 
-  const theme = useTheme()
+    const [checked, setChecked] = useState(['']);
+
+    const theme = useTheme()
     const darkTheme = theme.palette.mode=== "dark";
 
     useEffect(()=>{
@@ -47,6 +52,17 @@ export default function SettingTab() {
   };
 
   return (
+    <>
+
+<Box sx={{display:"flex", alignItems:"center", justifyContent:"space-around", mt:3}}>
+    <Logo />
+    <MunitesAndMoneyPop />
+</Box>
+
+    <Box sx={{margin:"30px auto", bgcolor:`${darkTheme ? "#222":"#7773"}`, p:"5px", borderRadius:3}}>
+        <CallAction  />
+    </Box>
+
     <List
       sx={{ width: '100%', maxWidth: 320, margin:"10px auto", bgcolor: 'background.paper' }}
       subheader={<ListSubheader>Settings</ListSubheader>}
@@ -56,15 +72,6 @@ export default function SettingTab() {
         <UilMoon />
         </ListItemIcon>
         <ListItemText id="switch-list-label-darkmode" primary="Dark mode" />
-        {/* <Switch
-          edge="end"
-          onChange={handleToggle('darkmode')}
-          checked={checked.indexOf('darkmode') !== -1}
-          inputProps={{
-            'aria-labelledby': 'switch-list-label-darkmode',
-          }}
-        /> */}
-
         <IOS_Switch 
             edge="end"
             onChange={handleToggle('darkmode')}
@@ -73,9 +80,13 @@ export default function SettingTab() {
             'aria-labelledby': 'switch-list-label-darkmode',
             }}
         />
-
-
       </ListItem>
+
+
+
+
+
     </List>
+    </>
   );
 }
