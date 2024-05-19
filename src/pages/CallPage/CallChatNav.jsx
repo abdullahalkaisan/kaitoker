@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, Typography, IconButton } from "@mui/material";
+import { Box, Tab, Tabs, IconButton } from "@mui/material";
 import PropTypes from 'prop-types';
 
 
@@ -13,10 +13,11 @@ import {
 } from '@iconscout/react-unicons'
 import React from "react";
 import TypeMessageBox from "../../components/TypeMessageBox";
-import PeopleCard from "../../components/conent/rightMenu/PeopleCard";
-import { useTheme } from "@emotion/react";
+// import PeopleCard from "../../components/conent/rightMenu/PeopleCard";
+// import { useTheme } from "@emotion/react";
 import MessageList from "../../components/conent/rightMenu/MessageList";
 import ChatCard_for_group from "../../components/conent/rightMenu/ChatCard_for_group";
+import SettingTab from "./SettingTab";
 
 
 
@@ -87,8 +88,8 @@ export default function CallChatNav(props) {
   const {isNavBoxOpen} = props;
 
 
-    const theme = useTheme();
-    const themeUse = theme.palette.mode;
+    // const theme = useTheme();
+    // const themeUse = theme.palette.mode;
 
     const [value, setValue] = React.useState(0);
 
@@ -241,7 +242,7 @@ export default function CallChatNav(props) {
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={3}>
-afsdfsdf
+              <SettingTab/>
         </CustomTabPanel>
 
 

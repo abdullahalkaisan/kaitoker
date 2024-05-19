@@ -3,7 +3,6 @@ import PostCard from "../pages/ProfilePage/TabMenuProfile/PostCard";
 import PostInput from "../pages/ProfilePage/TabMenuProfile/PostInput";
 import PostContext from "../PostContext";
 import { useState } from "react";
-import { analytics } from "../firebase/firebase.config";
 
 
 export default function NewsContainer() {
