@@ -437,7 +437,7 @@ pro user can add 10 skills
 
 */}
         <Box
-          display={"none"}
+          // display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"

@@ -107,7 +107,7 @@ export default function TopBar() {
 
 
             {user ?
-              <Link to="/profile/1">
+              <Link to="/abdullahalkaisan">
                 <IconButton sx={{ m: "0 10px", display: { md: "flex", xs: "none" } }}>
                   <Avatar
                     src={user.photoURL}

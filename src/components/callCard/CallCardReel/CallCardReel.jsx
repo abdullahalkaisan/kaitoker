@@ -55,8 +55,11 @@ import PeopleCard from '../../conent/rightMenu/PeopleCard';
 
 
 
-
 export default function CallCardReel() {
+
+
+
+  
 
   const [videoLoading, setVideoLoading] = useState(true);
   const handleVideoLoad = () => {
@@ -116,6 +119,7 @@ export default function CallCardReel() {
 
 
     const theme = useTheme();
+    const isDark = theme.palette.mode === "dark";
 
     const StyledBadge = styled(Badge)({
         '& .MuiBadge-badge': {
@@ -463,7 +467,13 @@ export default function CallCardReel() {
                 <Link to={"/callpage"}>
                   <Button
                     size="small"
-                    sx={{ borderRadius: 2, textTransform: "none", marginLeft:2 }}
+                    sx={{ 
+                      borderRadius: 2, 
+                      textTransform: "none", 
+                      marginLeft:2,
+                      backgroundColor:`${isDark ? "skyblue":"#333"}`,
+                      "&:hover":{backgroundColor:`${isDark ? "#90CAF9":"#222"}`}
+                    }}
                     variant="contained"
                     color="primary"
                   >
