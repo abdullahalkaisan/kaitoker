@@ -11,11 +11,11 @@ export default function DonateCard() {
 
   return (
     <Box
-      sx={{ cursor: "pointer", width: "max-content" }}
+      sx={{ cursor: "pointer", width: "max-content", borderRadius:999 }}
       my={1}
       border={`1px solid ${themeSelect === "dark" ? "#333" : "#f1f1f1"}`}
       padding={1}
-      borderRadius={999}
+      // borderRadius={999}
       display={"flex"}
       flexDirection={"row"}
       alignItems={"center"}

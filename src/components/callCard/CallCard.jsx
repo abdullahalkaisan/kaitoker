@@ -61,7 +61,7 @@ import PeopleCard from "../conent/rightMenu/PeopleCard";
 export default function CallCard(props) {
 
   const theme = useTheme();
-  const isDark = theme.palette.mode==="dark";
+  const isDark = theme.palette.mode === "dark";
 
   // const PropKeys = Object.keys(props).join();
   // console.log(typeof PropKeys);
@@ -103,32 +103,46 @@ export default function CallCard(props) {
     country,
     // city, 
     skills,
+    isUserPro
     // id
   } = props.item;
 
   // last online is only abilable for pro user
-  const isUserPro = 1;
   const isOnline_isActive = isOnline === "online" || isOnline === "busy";
+
+  const isTheUserPro = true;
 
   const StyledBadge = styled(Badge)({
     '& .MuiBadge-badge': {
-      // curved style
       height: "10px",
-      width: isUserPro  ? "auto":"10px",
-      right: isUserPro  ? 10 : 8,
-      bottom:isUserPro ? 10 : 8,
+      width: "10px",
       outline: `8px solid ${theme.palette.background.paper}`,
-      backgroundColor:`${isUserPro && theme.palette.background.paper}`,
-      // round shape 
-      // height:"8px",
-      // width:"8px",
-      // outline: `4px solid ${theme.palette.background.paper}`,
-      // right: 10,
-      // bottom: 10,
-      borderRadius: `${isUserPro  ? "9px 0 0 9px" :999}`,
-      padding: "0"
+      right: 8,
+      bottom: 8,
+      borderRadius: 999,
+      padding: "0",
     },
   });
+
+
+
+  const StyledBadge2 = styled(Badge)({
+    '& .MuiBadge-badge': {
+      height: "10px",
+      width: "auto",
+      outline: `8px solid ${theme.palette.background.paper}`,
+      backgroundColor: `${theme.palette.background.paper}`,
+      right: 10,
+      bottom: 10,
+      borderRadius: "9px 0 0 9px",
+      padding: 0,
+    },
+  });
+
+
+
+
+
 
   // height: "10px",
   // width: "auto",
@@ -139,8 +153,8 @@ export default function CallCard(props) {
 
 
 
-// 70 
-  const avatarSize = 100;
+  // 70 
+  const avatarSize = 70;
 
   return (
     <Box
@@ -156,7 +170,7 @@ export default function CallCard(props) {
           m: { md: 2, xs: 0 },
           p: 2
         }}
-        borderRadius={1}
+        // borderRadius={1}
         m={2}
       >
         <Box display={"flex"}
@@ -170,30 +184,56 @@ export default function CallCard(props) {
           >
             <Link to={`/${unique_username}`}>
               <IconButton aria-label="delete" size="small">
-                
-                <StyledBadge
-                  color={ 
-                    !isUserPro || isUserPro && isOnline_isActive ? isOnline === "online"  ? "info" : "warning" : "default"
-                  }
-                  badgeContent={
-                    !isUserPro || isUserPro  && isOnline_isActive ? isOnline_isActive ? 1 : 0 : "13m"
-                  }
-                  variant={!isUserPro || isUserPro && isOnline_isActive  ? "dot" : "string"  }
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "right",
-                  }}
-                >
-                  {/* 110  */}
-                  <Avatar
-                    src={avatar}
-                    sx={
-                      isOnline === ""
-                        ? { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
-                        : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
-                    }
-                  />
-                </StyledBadge>
+
+
+
+                {isOnline === "" && isTheUserPro ?
+                  <StyledBadge2
+                    badgeContent={"12m"}
+                    variant="string"
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "right",
+                    }}
+                  >
+                    <Avatar
+                      src={avatar}
+                      sx={{ width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }}
+                    />
+                  </StyledBadge2>
+                  :
+                  <StyledBadge
+                    color={isOnline === "online" ? "info" : "warning"}
+                    badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
+                    variant={"dot"}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "right",
+                    }}
+                  >
+                    <Avatar
+                      src={avatar}
+                      sx={
+                        isOnline === ""
+                          ? { width: avatarSize, height: avatarSize, borderRadius: 999 }
+                          : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
+                      }
+                    />
+                  </StyledBadge>
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
               </IconButton>
             </Link>
           </Box>
@@ -219,9 +259,9 @@ export default function CallCard(props) {
             <Link
               style={{
                 textDecoration: "none",
-                color: `${isDark? "#fff" : "#333"}`,
+                color: `${isDark ? "#fff" : "#333"}`,
                 "&:visited": {
-                  color: `${isDark? "#fff" : "#333"}`,
+                  color: `${isDark ? "#fff" : "#333"}`,
                 },
               }}
               to={`/${unique_username.toLowerCase()}`}
@@ -399,7 +439,7 @@ export default function CallCard(props) {
 
 
 
-{/* 
+        {/* 
 pro user functonality 
 user can add 5 skills 
 pro user can add 10 skills
@@ -417,10 +457,10 @@ pro user can add 10 skills
           overflow={"auto"}
           // fontWeight={"bold"}
           textAlign={"center"}
-          // sx={{
-          //   maxHeight: { md: "56px", xs: "56px" },
-          //   minHeight: { md: "56px", xs: "auto" },
-          // }}
+        // sx={{
+        //   maxHeight: { md: "56px", xs: "56px" },
+        //   minHeight: { md: "56px", xs: "auto" },
+        // }}
         >
           {/* <CallCardDynamic user_skills={user_skills}/> */}
           {skills.map((skill, index) => (
@@ -477,7 +517,7 @@ pro user can add 10 skills
             <Link to={"/callpage"}>
               <Button
                 size="small"
-                sx={{ borderRadius: 2, textTransform: "none" }}
+                sx={{ borderRadius: 999, textTransform: "uppercase" }}
                 variant="contained"
                 color="primary"
               >

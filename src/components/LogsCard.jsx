@@ -49,7 +49,8 @@ export default function LogsCard() {
       border={"1px solid #00000020"}
       width={"320px"}
 
-      borderRadius={2}
+      // borderRadius={2}
+      sx={{borderRadius:2}}
     >
       <Box display={"flex"} flexDirection={"column"} padding={3}>
         

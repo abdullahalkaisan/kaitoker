@@ -143,8 +143,8 @@ export default function RightMenu_friendListTab() {
                       avatarUrl={item.avatar}
                       isOnline={item.isOnline}
                       flag={item.flag}
-                      avatar={1}
-                      badge={1}
+                      avatar={true}
+                      badge={true}
                       avatarSize={47}
                     />
                   ))}

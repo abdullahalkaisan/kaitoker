@@ -166,7 +166,8 @@ export default function UpdateAccount_dialog() {
                   color={"#008000"}
                   bgcolor={"#00800020"}
                   padding={"3px 10px"}
-                  borderRadius={999}
+                  // borderRadius={999}
+                  sx={{borderRadius:999}}
                 >
                   $5.00
                 </Typography>

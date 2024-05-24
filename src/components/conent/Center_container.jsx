@@ -60,7 +60,7 @@ export default function Center_container() {
       }else{
         setIsNewsRoute(false)
       }
-      console.log(location);
+      // console.log(location);
 
 
     }, [location])

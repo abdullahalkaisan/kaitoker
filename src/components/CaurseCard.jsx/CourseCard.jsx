@@ -22,7 +22,7 @@ export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/24
         mb: { xs: 1 },
         p: 2,
       }}
-      borderRadius={1}
+      // borderRadius={1}
       m={2}
       variant="outlined"
     >

@@ -12,7 +12,7 @@ export default function TeacherInfoCard(props) {
   return (
     <Stack direction={"row"} alignItems={"center"} position={"absolute"} bottom={0} left={0} m={2} bgcolor={"#00000099"} sx={{backdropFilter:"blur(20px)"}} color={"#fff"} p={1} borderRadius={4}>
 
-    <Box mr={1} display={"flex"} borderRadius={1} overflow={"hidden"} height={"16px"}>
+    <Box mr={1} display={"flex"} sx={{borderRadius:1}} overflow={"hidden"} height={"16px"}>
       <img height={"100%"} width={"100%"} style={{objectFit:"cover", bgColor:"#333", outline:"2px solid #333"}} src={`https://flagcdn.com/${flag}.svg`}/>
     </Box>
 

@@ -104,7 +104,11 @@ export default function CallCardReelTap(props) {
           bgcolor={"#00847710"}
           p={2}
           m={2}
-          borderRadius={3} >
+          // borderRadius={3}
+          sx={{borderRadius:3}}
+
+          
+          >
             <PeopleCard 
             title={"Abdullah Al Kaisan"} 
             subTitle={"CEO At Kaitoker"} 
@@ -124,7 +128,10 @@ export default function CallCardReelTap(props) {
           bgcolor={"#ED6C0210"}
            p={2} 
            m={2}
-           borderRadius={3} >
+          //  borderRadius={3}
+           sx={{borderRadius:3}}
+           
+           >
             <PeopleCard 
             title={"Abdullah Al Kaisan"} 
             subTitle={"CEO At Kaitoker"} 

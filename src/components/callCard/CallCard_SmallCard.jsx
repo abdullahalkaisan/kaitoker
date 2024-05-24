@@ -6,7 +6,11 @@ export default function CallCard_SmallCard() {
   return (
     <Box 
     // border={"1px solid #33333320"} 
-    margin={0.5} padding={1} borderRadius={1}>
+    margin={0.5} padding={1} 
+    // borderRadius={1}
+    sx={{borderRadius:1}}
+
+    >
       <PeopleCard 
         title={"Abdullah Al Kaisan"}
         subTitle={"CEO At Kaitoker"}
