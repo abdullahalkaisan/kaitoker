@@ -103,12 +103,12 @@ export default function CallCard(props) {
     country,
     // city, 
     skills,
-    isUserPro
+    // isUserPro
     // id
   } = props.item;
 
   // last online is only abilable for pro user
-  const isOnline_isActive = isOnline === "online" || isOnline === "busy";
+  // const isOnline_isActive = isOnline === "online" || isOnline === "busy";
 
   const isTheUserPro = true;
 
@@ -132,7 +132,9 @@ export default function CallCard(props) {
       width: "auto",
       outline: `8px solid ${theme.palette.background.paper}`,
       backgroundColor: `${theme.palette.background.paper}`,
-      right: 10,
+      color:"#777",
+      // right: 10, 
+      right: 15,
       bottom: 10,
       borderRadius: "9px 0 0 9px",
       padding: 0,
@@ -183,7 +185,7 @@ export default function CallCard(props) {
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
             <Link to={`/${unique_username}`}>
-              <IconButton aria-label="delete" size="small">
+              <IconButton  size="small">
 
 
 
@@ -220,18 +222,7 @@ export default function CallCard(props) {
                       }
                     />
                   </StyledBadge>
-
-
                 }
-
-
-
-
-
-
-
-
-
 
 
               </IconButton>

@@ -84,39 +84,99 @@ export default function PeopleCard(props) {
   }));
 
 
+  const PeopleOfflineStyledBadge = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+      border: `3px solid ${theme.palette.background.paper}`,
+      background: theme.palette.background.paper,
+      // background: "red",
+      color: "#777",
+      // outline: `3px solid #fff`,
+      borderRadius: "10px  0 0 10px",
+      height: "auto",
+      width: "auto",
+      right: 15,
+      bottom: 5,
+      paddingLeft: "5px",
+      margin: 0,
+    },
+  }));
+
+
+
   return (
-    <Box display={"flex"} flexDirection={"row"} alignItems={`${alignItems?alignItems:"center"}`}>
+    <Box display={"flex"} flexDirection={"row"} alignItems={`${alignItems ? alignItems : "center"}`}>
       <CardActionArea
         sx={{ height: "auto", width: "auto", borderRadius: "999px" }}
       >
-        <PeopleStyledBadge
-          sx={{ display: `${avatar ? "flex" : "none"}` }}
-          color={isOnline === "online" ? "info" : "warning"}
-          badgeContent={badge && isOnline ? 1 : 0}
-          variant="dot"
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "right",
-          }}
-        >
-          <Avatar
-            sx={
-              isOnline
-                ? {
-                  width: avatarSize ? avatarSize : 32,
-                  height: avatarSize ? avatarSize : 32,
-                  borderRadius: "100px 100px 10px 100px",
-                }
-                : {
-                  width: avatarSize ? avatarSize : 32,
-                  height: avatarSize ? avatarSize : 32,
-                  borderRadius: 9999,
-                }
-            }
-            // alt={title}
-            src={avatarUrl}
-          />
-        </PeopleStyledBadge>
+
+        {isOnline ?
+          <PeopleStyledBadge
+            sx={{ display: `${avatar ? "flex" : "none"}` }}
+            color={isOnline === "online" ? "info" : "warning"}
+            badgeContent={badge && isOnline ? 1 : 0}
+            variant="dot"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
+            <Avatar
+              sx={
+                isOnline
+                  ? {
+                    width: avatarSize ? avatarSize : 32,
+                    height: avatarSize ? avatarSize : 32,
+                    borderRadius: "100px 100px 10px 100px",
+                  }
+                  : {
+                    width: avatarSize ? avatarSize : 32,
+                    height: avatarSize ? avatarSize : 32,
+                    borderRadius: 9999,
+                  }
+              }
+              // alt={title}
+              src={avatarUrl}
+            />
+          </PeopleStyledBadge>
+
+          :
+
+          <PeopleOfflineStyledBadge
+            badgeContent={lastSeen}
+            variant="string"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+          >
+            <Avatar
+              sx={{
+                width: avatarSize ? avatarSize : 32,
+                height: avatarSize ? avatarSize : 32,
+                borderRadius: "100px 100px 10px 100px",
+              }
+              }
+              // alt={title}
+              src={avatarUrl}
+            />
+          </PeopleOfflineStyledBadge>
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </CardActionArea>
 
       <Box display={"flex"} flexDirection={"column"} mx={1}>
@@ -126,7 +186,7 @@ export default function PeopleCard(props) {
             alignItems={"center"}
             variant="subtitle2"
             component="h1"
-            sx={{ cursor: "pointer", fontWeight: "bold", fontSize: titleSize && titleSize}}
+            sx={{ cursor: "pointer", fontWeight: "bold", fontSize: titleSize && titleSize }}
           >
             {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
 
@@ -138,9 +198,9 @@ export default function PeopleCard(props) {
                 color: "#1D9BF0",
               }}
             />
-          {pro && 
-            <IoMdInfinite style={{marginLeft:2, color:"#33333350", fontSize:18}}/>
-          }
+            {pro &&
+              <IoMdInfinite style={{ marginLeft: 2, color: "#33333350", fontSize: 18 }} />
+            }
 
 
 
@@ -189,23 +249,23 @@ export default function PeopleCard(props) {
 
         {/* subtitle2 */}
         {
-          subTitle2 && 
+          subTitle2 &&
           <Typography
-          mt={-0.5}
-          // color={isDark ? "#999" : "#777"}
-          // color={subTitleHighLight ? "" : "#777"}
-          color={subTitleColor2 && subTitleColor2}
-          fontWeight={subTitleWeight2 && subTitleWeight2}
-          variant="body2"
-          component="h6"
-          fontSize={subTitleSize2 && subTitleSize2}
-        >
-          {subTitle2}
-        </Typography>
+            mt={-0.5}
+            // color={isDark ? "#999" : "#777"}
+            // color={subTitleHighLight ? "" : "#777"}
+            color={subTitleColor2 && subTitleColor2}
+            fontWeight={subTitleWeight2 && subTitleWeight2}
+            variant="body2"
+            component="h6"
+            fontSize={subTitleSize2 && subTitleSize2}
+          >
+            {subTitle2}
+          </Typography>
         }
-        
 
-        {!isOnline && lastSeen &&
+
+        {/* {!isOnline && lastSeen &&
           <Typography
             mt={-0.5}
             // color={isDark ? "#999" : "#777"}
@@ -218,11 +278,11 @@ export default function PeopleCard(props) {
             <MdOutlineAccessTime style={{ marginRight: 2 }} />
             {lastSeen}
           </Typography>
-        }
+        } */}
 
 
 
-        {country && isOnline &&
+        {country &&
           <Typography
             mt={-0.5}
             // color={isDark ? "#999" : "#777"}

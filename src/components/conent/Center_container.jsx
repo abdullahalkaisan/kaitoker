@@ -22,6 +22,8 @@ import LanguageSelect from "../callCard/LanguageSelect";
 // import CallCard_SmallCard from "../callCard/CallCard_SmallCard";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import IOS_Switch from "../IOS_Switch";
+import AntSwitch_custom from "../AntSwitch_custom";
 // import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 // import { useEffect } from "react";
 
@@ -135,14 +137,26 @@ export default function Center_container() {
           534
         </Button> */}
 
+
+          {/* <FormControlLabel
+            sx={{marginLeft:2}}
+            value="start"
+            control={<Switch  color="primary" />}
+            label="Online"
+            // labelPlacement=""
+          /> */}
+
+
+
           <FormControlLabel
             sx={{marginLeft:2}}
             value="start"
-            control={<Switch color="primary" />}
+            control={<Switch  color="primary" />}
             label="Skills"
             // labelPlacement=""
           />
 
+ 
 
 
         <Button variant="soft" color="info" size="small" sx={{ m: 1, borderRadius: 999 }}>

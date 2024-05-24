@@ -41,7 +41,7 @@ export default function FriendsList_chat() {
             key={item.id}
             title={item.userName}
             subTitle={item.profession}
-            lastSeen={"26 minutes ago"}
+            lastSeen={"26m"}
             country={item.country}
             isVarified={item.isVarified}
             avatarUrl={item.avatar}

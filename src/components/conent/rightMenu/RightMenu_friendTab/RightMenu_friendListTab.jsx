@@ -137,7 +137,7 @@ export default function RightMenu_friendListTab() {
                       key={item.id}
                       title={item.userName}
                       subTitle={item.profession}
-                      lastSeen={"26 minutes ago"}
+                      lastSeen={"11m"}
                       country={item.country}
                       isVarified={item.isVarified}
                       avatarUrl={item.avatar}
