@@ -156,7 +156,7 @@ export default function CallCard(props) {
 
 
   // 70 || 100
-  const avatarSize = 70;
+  const avatarSize = 100;
 
   return (
     <Box
@@ -185,8 +185,12 @@ export default function CallCard(props) {
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
             <Link to={`/${unique_username}`}>
-              <IconButton sx={{borderLeft:"3px solid #1976D270", borderTop:"3px solid #1976D270", borderRadius: "100px 100px 10px 90px"}}  size="small">
+              <IconButton sx={{borderLeft:"3px solid #1976D270", borderTop:"3px solid #1976D270 ", borderRadius: "100px 100px 10px 90px"}}  size="small">
 
+
+              {/* ED6C02  orange*/}
+              {/* 1976D2  blue*/}
+              {/* 50 || 70  opacity */}
 
                 {isOnline === "" && isTheUserPro ?
                   <StyledBadge2
