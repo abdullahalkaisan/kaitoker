@@ -18,6 +18,7 @@ dist-ssr
 .idea
 .DS_Store
 *.suo
+*.mp3
 *.ntvs*
 *.njsproj
 *.sln

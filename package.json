@@ -15,6 +15,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@flaticon/flaticon-uicons": "^3.1.0",
+    "@hugeicons/react-pro": "^0.3.2",
     "@iconscout/react-unicons": "^2.0.2",
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.17",

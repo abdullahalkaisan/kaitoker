@@ -11,6 +11,7 @@ import React, { useEffect, useState } from 'react'
     // UilPlayCircle
 } from '@iconscout/react-unicons'
 import { Link, useLocation } from 'react-router-dom';
+import { Home01Icon } from '@hugeicons/react-pro';
 
 
 
@@ -53,8 +54,11 @@ export default function NavMenu() {
             
 
             <Tooltip title="Home" enterDelay={1000} placement="bottom-end">
-                <Tab to="/" component={Link} sx={{minWidth:70}} icon={<UilEstate />} aria-label="phone" />
+                <Tab to="/" component={Link} sx={{minWidth:70}} icon={<UilEstate/>} aria-label="phone" />
             </Tooltip>
+
+            
+
             <Tooltip title="Hire" enterDelay={1000} placement="bottom-end">
                 <Tab to="/hire" component={Link} sx={{minWidth:70}} icon={<UilBill />} aria-label="phone" />
             </Tooltip>
@@ -67,6 +71,8 @@ export default function NavMenu() {
             <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilPresentationMinus />} aria-label="person" />
             </Tooltip>
+
+
             {/* <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab sx={{minWidth:70}} icon={<UilPlayCircle />} aria-label="person" />
             </Tooltip> */}

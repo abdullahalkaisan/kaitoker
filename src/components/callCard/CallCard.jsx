@@ -155,7 +155,7 @@ export default function CallCard(props) {
 
 
 
-  // 70 
+  // 70 || 100
   const avatarSize = 70;
 
   return (
@@ -185,8 +185,7 @@ export default function CallCard(props) {
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
             <Link to={`/${unique_username}`}>
-              <IconButton  size="small">
-
+              <IconButton sx={{borderLeft:"3px solid #1976D270", borderTop:"3px solid #1976D270", borderRadius: "100px 100px 10px 90px"}}  size="small">
 
 
                 {isOnline === "" && isTheUserPro ?
@@ -437,7 +436,7 @@ pro user can add 10 skills
 
 */}
         <Box
-          // display={"none"}
+          display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
@@ -497,6 +496,9 @@ pro user can add 10 skills
           </IconButton>
 
           <AudioPlay_button />
+
+
+
 
           {/* <IconButton color="primary" size="large">
               <UilVideo />

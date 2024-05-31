@@ -1,17 +1,15 @@
 // import { useTheme } from '@emotion/react';
 // import { PauseRounded, PlayArrowRounded } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
-import React, { useState } from 'react'
-import { IoMdPlay } from "react-icons/io";
-import { IoMdPause } from "react-icons/io";
+import React, { useEffect, useRef } from 'react'
+// import { IoMdPlay } from "react-icons/io";
+// import { IoMdPause } from "react-icons/io";
 import { 
     UilPlay,
     UilPause,
   
   } from '@iconscout/react-unicons'
   
-
-  import AudioPlayer from 'react-audio-player';
 
 
 
@@ -24,47 +22,43 @@ import {
 export default function AudioPlay_button() {
 
 
-  const [audioSrc, setAudioSrc] = useState('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
-  const [isPlaying, setIsPlaying] = useState(false);
+  const audioPlayerRef = useRef(null);
+  const [paused, setPaused] = React.useState(true);
 
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleAudioEnded = () => {
-    setIsPlaying(false);
-  };
+  // const [audioSrc, setAudioSrc] = useState('./src/portfuio_4.mp3');
+  const audioSrc = './src/portfuio_4.mp3';
 
 
-    // const theme = useTheme();
+    useEffect(() => {
+      if (!paused) {
+        audioPlayerRef.current.play()
+      }else{
+        audioPlayerRef.current.pause();
+      }
+    }, [paused, audioPlayerRef]);
 
-    const [paused, setPaused] = React.useState(true);
-    // const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
+
+
 
 
   return (
     <>
 
-      {/* <AudioPlayer
-        src={audioSrc}
-        autoPlay={false}
-        controls
-        loop={false}
-        onPlay={handlePlayPause}
-        onPause={handlePlayPause}
-        onEnded={handleAudioEnded}
-      /> */}
+      <audio 
+        // controls 
+        onEnded={()=> setPaused(true)} 
+        src={audioSrc} 
+        ref={audioPlayerRef} 
+      ></audio>
 
         <IconButton
-        onPlay={handlePlayPause}
         color="primary"
         aria-label={paused ? 'play' : 'pause'}
-        onClick={() => setPaused(!paused)} 
+        onClick={() => {setPaused(!paused);} } 
         >
         {paused ? (
         <UilPlay
             sx={{ fontSize: '3rem' }}
-            // htmlColor={mainIconColor}
         />
         
 
@@ -72,7 +66,6 @@ export default function AudioPlay_button() {
         
         ) : (
         <UilPause sx={{ fontSize: '3rem' }} 
-        // htmlColor={mainIconColor} 
         />
 
 
