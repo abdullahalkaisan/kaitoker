@@ -1,17 +1,20 @@
 import { useLoaderData } from "react-router-dom";
 import CallCard from "./CallCard";
-import React from "react";
+import React from 'react'
+import {  } from "module";
+import CallCardProvider from "../../Providers/CallCardProvider";
 
 export default function CallCardWrapper() {
 
   const userData = useLoaderData()
 
-
   return (
     <>
       {userData.map((item, index) => (
         <React.Fragment key={index}>
-          <CallCard item={item} />
+          <CallCardProvider>
+            <CallCard item={item} />
+          </CallCardProvider>
         </React.Fragment>
       ))
       }

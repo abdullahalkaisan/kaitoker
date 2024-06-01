@@ -49,6 +49,8 @@ import ChipsCustom from "./ChipsCustom";
 import SubDetails from "./SubDetails";
 import { IoMdInfinite } from "react-icons/io";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
+import { useContext } from "react";
+import { CallCardContext } from "../../Providers/CallCardProvider";
 
 // import ChipsCustomDynamic from "./ChipsCustomDynamic";
 // import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -59,6 +61,14 @@ import PeopleCard from "../conent/rightMenu/PeopleCard";
 
 
 export default function CallCard(props) {
+
+  const {
+    isPaused, 
+    setIsPaused,
+  } = useContext(CallCardContext)
+
+
+
 
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
@@ -170,9 +180,12 @@ export default function CallCard(props) {
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
           m: { md: 2, xs: 0 },
-          p: 2
+          p: 2, 
+          // outline:`20px solid #333333${isPaused ? "00" :"50"}`, 
+          // boxShadow:`0px 0px 10px #333333${isPaused ? "00" :"95"}`
         }}
         // borderRadius={1}
+        // 1976D2 
         m={2}
       >
         <Box display={"flex"}
@@ -184,8 +197,11 @@ export default function CallCard(props) {
             bgcolor={"background.default"}
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
-            <Link to={`/${unique_username}`}>
-              <IconButton sx={{borderLeft:"3px solid #1976D270", borderTop:"3px solid #1976D270 ", borderRadius: "100px 100px 10px 90px"}}  size="small">
+            {/* <Link to={`/${unique_username}`}> */}
+              <IconButton 
+              onClick={()=> setIsPaused(!isPaused)}
+              sx={{borderLeft:`3px solid #1976D2${isPaused ? "00" :"70"}`, borderTop:`3px solid #1976D2${isPaused ? "00" :"70"}`, borderRadius: "100px 100px 10px 90px"}}  
+              size="small">
 
 
               {/* ED6C02  orange*/}
@@ -229,7 +245,7 @@ export default function CallCard(props) {
 
 
               </IconButton>
-            </Link>
+            {/* </Link> */}
           </Box>
 
           <Box
@@ -491,7 +507,7 @@ pro user can add 10 skills
             <UilInfoCircle/>
           </IconButton> */}
 
-          <IconButton color="primary">
+          <IconButton  color="primary">
             {/* <UilHeart/> */}
             {/* <UilStar/> */}
             {/* <UilUserPlus/> */}
@@ -514,7 +530,10 @@ pro user can add 10 skills
             <Link to={"/callpage"}>
               <Button
                 size="small"
-                sx={{ borderRadius: 999, textTransform: "uppercase" }}
+                sx={{ borderRadius: 999, textTransform: "uppercase", 
+
+                // outline:`2px solid #1D9BF0${isPaused ? "00":"70"}`, outlineOffset:"4px" 
+              }}
                 variant="contained"
                 color="primary"
               >

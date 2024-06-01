@@ -20,6 +20,7 @@ import ThemeCustomProvider from './Providers/ThemeCustomProvider.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeCustomProvider>
+      
       <AuthProvider>
           <RouterProvider router={router}></RouterProvider>
       </AuthProvider>
