@@ -60,9 +60,9 @@ export default function AudioPlay_button() {
       ></audio>
 
         <IconButton
-        // sx={{ backgroundColor:`${isPaused ? "transparent":"#1565C030"}`, "&:hover":{backgroundColor:`${isPaused ? "transparent":"#1565C030"}`}, 
-        // // p:2
-        // }}
+        sx={{ backgroundColor:`${isPaused ? "transparent":"#1565C030"}`, "&:hover":{backgroundColor:`${isPaused ? "transparent":"#1565C030"}`}, 
+        // p:2
+        }}
         color="primary"
         aria-label={isPaused ? 'play' : 'pause'}
         onClick={() => {setIsPaused(!isPaused);} } 

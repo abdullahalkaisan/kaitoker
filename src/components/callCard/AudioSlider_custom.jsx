@@ -1,7 +1,9 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Box, Slider, Typography } from '@mui/material'
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { CallCardContext } from '../../Providers/CallCardProvider';
+import { useEffect } from 'react';
 
 
 
@@ -11,6 +13,13 @@ import React from 'react'
 
 
 export default function AudioSlider_custom() {
+
+  const {audioPlayerRef, isPaused} = useContext(CallCardContext);
+  const [duration, setDuration] = useState(0);
+  const [position, setPosition] = useState(0);
+
+
+
 
   const theme = useTheme();
   const TinyText = styled(Typography)({
@@ -23,7 +32,7 @@ export default function AudioSlider_custom() {
 
 
     const sliderStyle = {
-      color: theme.palette.mode === 'dark' ? '#fff' : '#1565C0',
+      color: theme.palette.mode === 'dark' ? `#1565C0${isPaused?"30":""}` : `#1565C0${isPaused?"30":""}`,
       height: 4,
       '& .MuiSlider-thumb': {
           width: 8,
@@ -47,13 +56,43 @@ export default function AudioSlider_custom() {
       '& .MuiSlider-rail': {
           opacity: 0.28,
       },}
+
+
+
+
+    useEffect(()=>{
+
+      const audioElement = audioPlayerRef.current;
+
+      const handleLoadedMetadata = () => {
+        setDuration(parseInt(audioElement.duration));
+      };
+
+      const handleTimeUpdate = () => {
+        setPosition(parseInt(audioElement.currentTime));
+
+
+      };
+
+      if (audioElement) {
+        audioElement.addEventListener('loadedmetadata', handleLoadedMetadata);
+        audioElement.addEventListener('timeupdate', handleTimeUpdate);
+      }
+
+
+ // Clean up the event listener
+      return () => {
+        if (audioElement) {
+          audioElement.removeEventListener('loadedmetadata', handleLoadedMetadata);
+          audioElement.removeEventListener('timeupdate', handleTimeUpdate);
+        }
+      };
+
+            
+      }, [duration, audioPlayerRef])
+
+
     
-
-
-
-
-    const [position, setPosition] = React.useState(0);
-    const duration = 25; 
     function formatDuration(value) {
         const minute = Math.floor(value / 60);
         const secondLeft = value - minute * 60;
@@ -62,6 +101,7 @@ export default function AudioSlider_custom() {
 
 
     //   rgba(0,0,0,0.87)
+
 
 
   return (
@@ -73,12 +113,9 @@ export default function AudioSlider_custom() {
         min={0}
         step={1}
         max={duration}
-        onChange={(_, value) => setPosition(value)}
-
-
- 
-      // style={sliderStyle}
-
+        // onChange={(_, value) => setPosition(value)}
+        onChange={(e) => setPosition(e.target.value)}
+        style={sliderStyle}
 
 
         />
