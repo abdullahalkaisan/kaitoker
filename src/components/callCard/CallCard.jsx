@@ -200,13 +200,13 @@ export default function CallCard(props) {
             {/* <Link to={`/${unique_username}`}> */}
               <IconButton 
               onClick={()=> setIsPaused(!isPaused)}
-              sx={{borderLeft:`3px solid #1976D2${isPaused ? "00" :"70"}`, borderTop:`3px solid #1976D2${isPaused ? "00" :"70"}`, borderRadius: "100px 100px 10px 90px"}}  
+              sx={{borderLeft:`3px solid #1976D2${isPaused ? "00" :"90"}`, borderTop:`3px solid #1976D2${isPaused ? "00" :"90"}`, borderRadius: "100px 100px 10px 90px"}}  
               size="small">
 
 
               {/* ED6C02  orange*/}
               {/* 1976D2  blue*/}
-              {/* 50 || 70  opacity */}
+              {/* 50 || 70 || 90  opacity */}
 
                 {isOnline === "" && isTheUserPro ?
                   <StyledBadge2
