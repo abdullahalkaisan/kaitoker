@@ -56,7 +56,6 @@ export default function AudioPlay_button() {
     <>
 
       <audio 
-        // controls 
         onEnded={()=> setIsPaused(true)} 
         src={audioSrc} 
         ref={audioPlayerRef} 

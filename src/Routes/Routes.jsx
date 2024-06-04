@@ -12,6 +12,7 @@ import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper"
 // import CallCard from "../components/callCard/CallCard";
 import CallCardWrapper from "../components/callCard/CallCardWrapper";
 import NewsContainer from "../components/NewsContainer";
+import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
 
 
   export  const router = createBrowserRouter([
@@ -46,6 +47,10 @@ import NewsContainer from "../components/NewsContainer";
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path: "/profile/edit",
+      element: <ProfileEdit />,
     },
     {
       path: "/:unique_username_id",
