@@ -1,7 +1,7 @@
 import { Avatar, Badge, Box, Button, CardActionArea, Chip, Divider, FormControlLabel, IconButton, Switch, TextField, Typography } from "@mui/material";
 import TopBar from "../../components/topbar/Topbar";
 import Logo from "../../components/topbar/others/Logo";
-import { MdEditSquare, MdFileUpload, MdOutlineTranslate } from "react-icons/md";
+import { MdDelete, MdEditSquare, MdFileUpload, MdOutlineTranslate } from "react-icons/md";
 import styled from "styled-components";
 
 const VisuallyHiddenInput = styled('input')({
@@ -44,12 +44,18 @@ export default function ProfileEdit() {
                 component="label"
                 role={undefined}
                 tabIndex={-1}
-                sx={{mx:4, borderRadius:3}} 
+                sx={{ml:4, borderRadius:3}} 
                 variant="outlined" 
                 startIcon={<MdFileUpload />}>
                 <VisuallyHiddenInput type="file" />
                     UPLOAD
                 </Button>
+
+                {/* <IconButton 
+                    sx={{ml:2, borderRadius:3}} 
+                >
+                    <MdDelete />
+                </IconButton> */}
 
 
                 </Box>
@@ -61,27 +67,30 @@ export default function ProfileEdit() {
                     <TextField required fullWidth sx={{mb:2}} id="outlined-basic" size="small" label="Country" variant="outlined" />
                     <TextField rows={3} multiline maxRows={3} fullWidth sx={{mb:2}} id="outlined-basic" size="small" label="About" variant="outlined" />
                     
-                    <Divider>Language</Divider>
 
+
+
+
+                    <Divider>Language</Divider>
                     <Box sx={{display:"flex", flexWrap:"wrap", width:{md:1, xs:1}, mt:3, mb:2}}>
                         <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
                         <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
                         <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
                         <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
                     </Box>
-                    <Typography sx={{color:"#777", mb:40}} variant="caption" >
+                    <Typography sx={{color:"red", mb:40}} variant="caption" >
                         You can add upto 4 Language
                     </Typography>
-
                     <Box sx={{display:"flex"}}>
                         <TextField required rows={3}  maxRows={3} fullWidth sx={{mb:2}} id="outlined-basic" size="small" label="Languages" variant="outlined" />
                     </Box>
-
                     <FormControlLabel  sx={{mb:4, color:"#777",}} control={<Switch  />} labelPlacement="start" label="Do you know English?" />
 
 
-                    <Divider>Skills</Divider>
 
+
+
+                    <Divider>Skills</Divider>
                     <Box sx={{display:"flex", flexWrap:"wrap", mt:3, mb:2, width:{md:1, xs:1}}}>
                         <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="Web development" />
                         <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="Node.js" />
@@ -89,12 +98,23 @@ export default function ProfileEdit() {
                         <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="UX UI Designer" />
                         <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="English" />
                     </Box>
-                    <Typography sx={{color:"#777", mb:40}} variant="caption" >
+                    <Typography sx={{color:"red", mb:40}} variant="caption" >
                         You can add upto 5 Skills
                     </Typography>
 
                     <TextField required rows={3}  maxRows={3} fullWidth sx={{mb:2}} id="outlined-basic" size="small" label="Skills" variant="outlined" />
+                
+                    <Box fullWidth>
+                        <Box sx={{width:200, display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <Button fullWidth sx={{borderRadius:3, mt:0, py:1}} variant="contained">
+                                SAVE
+                            </Button>
+                        </Box>
+                    </Box>
+
                 </Box>
+
+
 
 
         </Box>
