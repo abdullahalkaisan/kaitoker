@@ -33,8 +33,11 @@ export default function AudioPlay_button() {
     audioSrc
   } = useContext(CallCardContext);
 
+  console.log(audioPlayerRef);
+
   // const { audioPlayerRef, paused, setPaused,audioSrc} = audioData;
   // console.log(audioData);
+ 
 
 
     useEffect(() => {
@@ -60,9 +63,7 @@ export default function AudioPlay_button() {
       ></audio>
 
         <IconButton
-        sx={{ backgroundColor:`${isPaused ? "transparent":"#1565C030"}`, "&:hover":{backgroundColor:`${isPaused ? "transparent":"#1565C030"}`}, 
-        // p:2
-        }}
+        // sx={{ backgroundColor:`${isPaused ? "transparent":"#1565C030"}`, "&:hover":{backgroundColor:`${isPaused ? "transparent":"#1565C030"}`},p:0 }}
         color="primary"
         aria-label={isPaused ? 'play' : 'pause'}
         onClick={() => {setIsPaused(!isPaused);} } 

@@ -9,6 +9,7 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './Routes/Routes.jsx'
 import AuthProvider from './Providers/AuthProvider.jsx'
 import ThemeCustomProvider from './Providers/ThemeCustomProvider.jsx'
+import CallCardProvider from './Providers/CallCardProvider.jsx';
 
 // import ProfilePage from './pages/ProfilePage/ProfilePage';
 
@@ -19,12 +20,13 @@ import ThemeCustomProvider from './Providers/ThemeCustomProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeCustomProvider>
-      
-      <AuthProvider>
-          <RouterProvider router={router}></RouterProvider>
-      </AuthProvider>
-    </ThemeCustomProvider>
+    <CallCardProvider>
+        <ThemeCustomProvider>
+          <AuthProvider>
+              <RouterProvider router={router}></RouterProvider>
+          </AuthProvider>
+        </ThemeCustomProvider>
+    </CallCardProvider>
   </React.StrictMode>,
 
 )

@@ -23,10 +23,10 @@ import {
     // UilCommentMessage,
     UilCommentLines,
     UilUserPlus,
-    UilFavorite,
-    UilCheck,
-    UilUsersAlt,
-    UilCheckCircle
+    // UilFavorite,
+    // UilCheck,
+    // UilUsersAlt,
+    // UilCheckCircle
     // UilMoneyBill
     // UilPlusCircle
   
@@ -67,10 +67,16 @@ export default function CallCardReel() {
   };
   const handleVideoError = () => {
     setVideoLoading(false);
-    // Handle error if needed
   };
 
+
   const userData = useLoaderData()
+
+  useEffect(()=>{
+    console.log("loading");
+  },[userData])
+
+
 
   
   const [currentUser, setCurrentUser] = useState(Math.floor(Math.random() * userData.length) )
@@ -95,24 +101,24 @@ export default function CallCardReel() {
   // Math.floor(Math.random() * usersDataLocal.length) 
 
 
-  // useEffect(() => {
-  //   const handleKeyPress = (event) => {
-  //     if (event.keyCode === 39) {
-  //       setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))
-  //     } else if (event.keyCode === 37) {
-  //       setCurrentUser(Math.max(0, currentUser - 1))
-  //     }
-  //   }
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 39) {
+        setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))
+      } else if (event.keyCode === 37) {
+        setCurrentUser(Math.max(0, currentUser - 1))
+      }
+    }
 
-  //   // Attach event listener when the component mounts
-  //   window.addEventListener('keyup', handleKeyPress);
+    // Attach event listener when the component mounts
+    window.addEventListener('keyup', handleKeyPress);
 
-  //   // Cleanup function to remove the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('keyup', handleKeyPress);
-  //   };
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keyup', handleKeyPress);
+    };
 
-  // }, [currentUser]);
+  }, [currentUser]);
 
 
 
@@ -234,11 +240,13 @@ export default function CallCardReel() {
 
 
 
-          {/* <CardActionArea style={{marginTop:10}}>
+          {/* 
+            <CardActionArea style={{marginTop:10}}>
                     <Box>
                         <img style={{width:"400px", height:"150px", objectFit:"cover", borderRadius:"8px"}} src="https://cdn3.vectorstock.com/i/1000x1000/85/42/travel-social-media-add-banner-layout-vector-28638542.jpg" />
                     </Box>
-                </CardActionArea> */}
+            </CardActionArea> 
+          */}
 
           {/* width: 280, 240  */}
           <Box sx={{ width: 300, marginTop: 5 }}>
@@ -426,7 +434,12 @@ export default function CallCardReel() {
               justifyContent={"space-evenly"}
               // justifyContent={"center"}
             >
-              <IconButton sx={isFollowing && {borderRadius:4, color:"#777", backgroundColor:"#f1f1f190" }} onClick={()=>{ setIsFollowing(!isFollowing)}} color={isFriend ? "warning" : isFollowing ? "" : "primary"   } size="large">
+              <IconButton 
+              // sx={isFollowing && {borderRadius:4, color:"#777", backgroundColor:"#f1f1f190" }} 
+              onClick={()=>{ setIsFollowing(!isFollowing)}} 
+              color={isFriend ? "warning" : isFollowing ? "" : "primary"   } 
+              size="large"
+              >
                 {
                   isFollowing ? 
                   <>

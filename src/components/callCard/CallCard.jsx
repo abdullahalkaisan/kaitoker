@@ -8,6 +8,7 @@ import {
   // UilPlay,
   // UilLocationPoint,
   UilUserPlus,
+  UilStar
   // UilVideo,
   // UilEllipsisH
   // UilRssAlt,
@@ -171,8 +172,11 @@ export default function CallCard(props) {
   return (
     <Box
       // bgcolor={"yellow"} 
-      sx={{ marginBottom: { md: 0, xs: 1 } }}>
+      
+      
+      sx={{marginBottom: { md: 0, xs: 1 } }}>
       <Card
+
         variant=""
         sx={{
           width: { md: 340, xs: 1 },
@@ -503,9 +507,9 @@ pro user can add 10 skills
           alignItems={"center"}
           justifyContent={"space-evenly"}
         >
-          {/* <IconButton color="info">
-            <UilInfoCircle/>
-          </IconButton> */}
+          <IconButton color="info">
+            <UilStar/>
+          </IconButton>
 
           <IconButton  color="primary">
             {/* <UilHeart/> */}
@@ -526,13 +530,15 @@ pro user can add 10 skills
 
           <Box>
             {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}
-
+            {/* #ED6C02  */}
+            {/* #1D9BF0  */}
             <Link to={"/callpage"}>
               <Button
                 size="small"
-                sx={{ borderRadius: 999, textTransform: "uppercase", 
-
-                // outline:`2px solid #1D9BF0${isPaused ? "00":"70"}`, outlineOffset:"4px" 
+                sx={{ borderRadius: 3, textTransform: "none", 
+                // outline :2px || 3px|| 4px 
+                // opacity : 70 || 80 || 90
+                outline:`3px solid #1D9BF0${isPaused ? "00":"90"}`, outlineOffset:"4px" 
               }}
                 variant="contained"
                 color="primary"
@@ -540,8 +546,8 @@ pro user can add 10 skills
                 {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
                 {/* Hire  */}
                 {/* $120 Month */}
-                {/* {`$${hourRate}/hr`} */}
-                Call
+                {/* {`$2.00/hr`} */}
+                Free
               </Button>
             </Link>
           </Box>

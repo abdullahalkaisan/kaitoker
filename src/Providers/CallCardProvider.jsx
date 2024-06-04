@@ -5,7 +5,7 @@ export const CallCardContext = createContext()
 
 export default function CallCardProvider({children}) {
 
-    const audioPlayerRef = useRef(null);
+    const audioPlayerRef = useRef();
     const [isPaused, setIsPaused] = useState(true);
     const audioSrc = './src/portfuio_4.mp3';
 
@@ -17,9 +17,6 @@ export default function CallCardProvider({children}) {
     setIsPaused,
     audioSrc
     }
-
-    console.log(audioData.isPaused);
-
 
 
   return (

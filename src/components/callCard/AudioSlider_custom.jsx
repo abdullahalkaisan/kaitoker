@@ -15,21 +15,19 @@ import { useEffect } from 'react';
 export default function AudioSlider_custom() {
 
   const {audioPlayerRef, isPaused} = useContext(CallCardContext);
+
+  
   const [duration, setDuration] = useState(0);
   const [position, setPosition] = useState(0);
-
-
-
-
   const theme = useTheme();
+
+
   const TinyText = styled(Typography)({
     fontSize: '0.75rem',
     opacity: 0.38,
     fontWeight: 500,
     letterSpacing: 0.2,
   });
-
-
 
     const sliderStyle = {
       color: theme.palette.mode === 'dark' ? `#1565C0${isPaused?"30":""}` : `#1565C0${isPaused?"30":""}`,
