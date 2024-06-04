@@ -25,11 +25,9 @@ export default function NewsContainer() {
             <Box sx={{
                 display:"flex",
                 width:"100%", 
-
                 // flexWrap:"wrap-reverse",
-                // justifyContent:"center"
-
-                alignItems:"flex-start", 
+                justifyContent:"center",
+                alignItems:"center", 
                 flexDirection:"column-reverse",
                 px:6
                 }}>

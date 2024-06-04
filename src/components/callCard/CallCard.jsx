@@ -64,7 +64,7 @@ import { CallCardContext } from "../../Providers/CallCardProvider";
 export default function CallCard(props) {
 
   const {
-    isPaused, 
+    isPaused,
     setIsPaused,
   } = useContext(CallCardContext)
 
@@ -121,7 +121,39 @@ export default function CallCard(props) {
   // last online is only abilable for pro user
   // const isOnline_isActive = isOnline === "online" || isOnline === "busy";
 
+
+  {/* "20px 20px 10px 20px"  */ }
+  {/* "100px 100px 10px 90px"  */ }
   const isTheUserPro = true;
+
+  // const avatarRadious_circle = "100px 100px 10px 90px";
+  // const avatarRadious_square= "30px 30px 30px 30px";
+
+
+
+  
+  // 70 || 100
+  const avatarSiseList = {
+    small: 70,
+    large: 100
+  }
+  // avatar readious 
+  const avatarRadiousList = {
+    circle: "100px 100px 10px 90px",
+    square: "40px 40px 20px 40px"
+  }
+
+
+  const avatarRadious = avatarRadiousList.square;
+  const avatarSize = avatarSiseList.large;
+
+
+  
+
+
+
+
+
 
   const StyledBadge = styled(Badge)({
     '& .MuiBadge-badge': {
@@ -143,7 +175,7 @@ export default function CallCard(props) {
       width: "auto",
       outline: `8px solid ${theme.palette.background.paper}`,
       backgroundColor: `${theme.palette.background.paper}`,
-      color:"#777",
+      color: "#777",
       // right: 10, 
       right: 15,
       bottom: 10,
@@ -166,15 +198,15 @@ export default function CallCard(props) {
 
 
 
-  // 70 || 100
-  const avatarSize = 100;
+
+
 
   return (
     <Box
       // bgcolor={"yellow"} 
-      
-      
-      sx={{marginBottom: { md: 0, xs: 1 } }}>
+
+
+      sx={{ marginBottom: { md: 0, xs: 1 } }}>
       <Card
 
         variant=""
@@ -184,7 +216,7 @@ export default function CallCard(props) {
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
           m: { md: 2, xs: 0 },
-          p: 2, 
+          p: 2,
           // outline:`20px solid #333333${isPaused ? "00" :"50"}`, 
           // boxShadow:`0px 0px 10px #333333${isPaused ? "00" :"95"}`
         }}
@@ -202,9 +234,9 @@ export default function CallCard(props) {
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
             {/* <Link to={`/${unique_username}`}> */}
-              <IconButton 
-              onClick={()=> setIsPaused(!isPaused)}
-              sx={{borderLeft:`3px solid #1976D2${isPaused ? "00" :"90"}`, borderTop:`3px solid #1976D2${isPaused ? "00" :"90"}`, borderRadius: "100px 100px 10px 90px"}}  
+            <IconButton
+              onClick={() => setIsPaused(!isPaused)}
+              sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
               size="small">
 
 
@@ -212,43 +244,46 @@ export default function CallCard(props) {
               {/* 1976D2  blue*/}
               {/* 50 || 70 || 90  opacity */}
 
-                {isOnline === "" && isTheUserPro ?
-                  <StyledBadge2
-                    badgeContent={"12m"}
-                    variant="string"
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "right",
-                    }}
-                  >
-                    <Avatar
-                      src={avatar}
-                      sx={{ width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }}
-                    />
-                  </StyledBadge2>
-                  :
-                  <StyledBadge
-                    color={isOnline === "online" ? "info" : "warning"}
-                    badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
-                    variant={"dot"}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "right",
-                    }}
-                  >
-                    <Avatar
-                      src={avatar}
-                      sx={
-                        isOnline === ""
-                          ? { width: avatarSize, height: avatarSize, borderRadius: 999 }
-                          : { width: avatarSize, height: avatarSize, borderRadius: "100px 100px 10px 90px" }
-                      }
-                    />
-                  </StyledBadge>
-                }
+              {/* "20px 20px 10px 20px"  */}
+              {/* "100px 100px 10px 90px"  */}
+
+              {isOnline === "" && isTheUserPro ?
+                <StyledBadge2
+                  badgeContent={"12m"}
+                  variant="string"
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "right",
+                  }}
+                >
+                  <Avatar
+                    src={avatar}
+                    sx={{ width: avatarSize, height: avatarSize, borderRadius: avatarRadious }}
+                  />
+                </StyledBadge2>
+                :
+                <StyledBadge
+                  color={isOnline === "online" ? "info" : "warning"}
+                  badgeContent={isOnline === "online" || isOnline === "busy" ? 1 : 0}
+                  variant={"dot"}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "right",
+                  }}
+                >
+                  <Avatar
+                    src={avatar}
+                    sx={
+                      isOnline === ""
+                        ? { width: avatarSize, height: avatarSize, borderRadius: avatarRadious }
+                        : { width: avatarSize, height: avatarSize, borderRadius: avatarRadious }
+                    }
+                  />
+                </StyledBadge>
+              }
 
 
-              </IconButton>
+            </IconButton>
             {/* </Link> */}
           </Box>
 
@@ -307,7 +342,7 @@ export default function CallCard(props) {
                     sx={{ mx: 0.5, fontSize: "large", color: "#1D9BF0" }}
                   />
                 )}
-                <IoMdInfinite style={{ marginLeft: 2, color: "#33333350" }} />
+                <IoMdInfinite style={{ marginLeft: 2, color: `${isDark ? "#777" : "#33333370"}` }} />
                 {/* <Badge sx={{mx:3}} color="primary" badgeContent="Pro"></Badge> */}
 
               </Typography>
@@ -508,10 +543,10 @@ pro user can add 10 skills
           justifyContent={"space-evenly"}
         >
           <IconButton color="info">
-            <UilStar/>
+            <UilStar />
           </IconButton>
 
-          <IconButton  color="primary">
+          <IconButton color="primary">
             {/* <UilHeart/> */}
             {/* <UilStar/> */}
             {/* <UilUserPlus/> */}
@@ -535,11 +570,12 @@ pro user can add 10 skills
             <Link to={"/callpage"}>
               <Button
                 size="small"
-                sx={{ borderRadius: 3, textTransform: "none", 
-                // outline :2px || 3px|| 4px 
-                // opacity : 70 || 80 || 90
-                outline:`3px solid #1D9BF0${isPaused ? "00":"90"}`, outlineOffset:"4px" 
-              }}
+                sx={{
+                  borderRadius: 3, textTransform: "none",
+                  // outline :2px || 3px|| 4px 
+                  // opacity : 70 || 80 || 90
+                  outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
+                }}
                 variant="contained"
                 color="primary"
               >

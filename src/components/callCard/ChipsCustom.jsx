@@ -1,4 +1,4 @@
-// import { useTheme } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import { Chip } from "@mui/material";
 import PropTypes from 'prop-types';
 
@@ -8,9 +8,10 @@ const handleClick_chips = () => {
 
 
 
+
 export default function ChipsCustom(props) {
-  // const theme  = useTheme();
-  // const isDark = theme.palette.mode === "dark";
+  const theme  = useTheme();
+  const isDark = theme.palette.mode === "dark";
   const handleDelete = () => {
     console.info('You clicked the delete icon.');
   };
@@ -25,6 +26,7 @@ export default function ChipsCustom(props) {
           height: "auto",
           "& .MuiChip-label": {
             display: "block",
+            // color:`${isDark? "#999":"#666"}`,
             whiteSpace: `${props.whiteSpace ? "normal" : ""}`,
             fontSize:"",
           }, m: 0.3, py: 1, borderRadius: 2
@@ -32,6 +34,7 @@ export default function ChipsCustom(props) {
           height: "auto",
           "& .MuiChip-label": {
             display: "block",
+            color:`${isDark? "#999":"#666"}`,
             whiteSpace: "normal",
           }, m: 0.2, py: 0.6, borderRadius: 2
         } 
