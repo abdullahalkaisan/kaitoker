@@ -16,14 +16,27 @@ export default function Slider_filter() {
 
     const [sliderValue, setSliderValue] = React.useState(0);
 
+
+
+
     const handleChange_slider = (event, newValue) => {
       setSliderValue(newValue);
     };
-  
+
+
+
+
+
+
+
+
     // borderBottom:"1px solid #f1f1f1" 
   return (
     <>
-        <Box bgcolor={"background.default"} color={"text.primary"} sx={{ display:"flex", px:3, maxWidth: 1, bgcolor: 'background.paper', }}>
+        <Box 
+        bgcolor={"background.default"} 
+        color={"text.primary"} 
+        sx={{ display:"flex", px:3, maxWidth: 1, bgcolor: 'background.paper', }}>
         
         <IconButton  sx={{display:{md:"none", xs:"flex"}}}>
           <UilSlidersVAlt/>

@@ -209,8 +209,10 @@ export default function CallCard(props) {
       // bgcolor={"yellow"} 
       sx={{ marginBottom: { md: 0, xs: 1 } }}>
 
+{/* animate__bounceIn animate__jello */}
+
       <Card
-        className="animate__animated animate__bounceIn "
+        // className="animate__animated  animate__jello"
         variant=""
         sx={{
           width: { md: 340, xs: 1 },
@@ -532,11 +534,15 @@ pro user can add 10 skills
           <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
-        <Box sx={{
-          px: 4,
-          backgroundColor: `${!isPaused && "#1565C030"} `,
-          borderRadius:3
-          // display:"none" 
+
+        {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
+        <Box 
+          // className={`animate__animated  ${isPaused ? "  " : "  "}`}
+          sx={{
+            px: 4,
+            backgroundColor: `${!isPaused && "#1565C030"} `,
+            borderRadius:3
+            // display:"none" 
         }}>
           <AudioSlider_custom />
         </Box>

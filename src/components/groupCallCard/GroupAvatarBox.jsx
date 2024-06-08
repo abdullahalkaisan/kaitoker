@@ -46,7 +46,7 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
         //   4px solid 
           outline: `4px solid ${theme.palette.background.paper}`,
           padding:"0",
-          boxShadow:"1px 1px 10px black"
+          // boxShadow:"1px 1px 10px black"
         },
         });
 
@@ -135,6 +135,7 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
               subTitle={"CEO at Kaitoker"}
               accountType={"verified"}
             />
+
 
           <IconButton>
             <MoreVertIcon />
@@ -273,6 +274,10 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
             borderRadius:"100px 100px 50px 100px"
           }}
         />
+
+<img style={{height:24, position:"absolute", bottom:0}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
+
+
       </StyledBadge>
     </BadgeFollowers>
     </CardActionArea>
