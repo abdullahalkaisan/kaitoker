@@ -11,6 +11,7 @@ import {
   } from '@iconscout/react-unicons'
 import Notificatioin_message from './Notificatioin_message';
 import ChatAlertMessage from '../../ChatAlertMessage';
+import 'animate.css';
 
   
 
@@ -32,6 +33,7 @@ export default function Notification_section() {
       {/* <Box bgcolor={"red"} display={"flex"}> */}
         <Tooltip title="Notifications">
           <IconButton
+          // className="animate__animated animate__jello "
             onClick={handleClick}
             // size="small"
             // sx={{ ml: 2 }}
@@ -52,6 +54,7 @@ export default function Notification_section() {
 
 
       <Menu
+        // className="animate__animated animate__fadeIn "
         anchorEl={anchorEl}
         id="account-menu"
         open={open}

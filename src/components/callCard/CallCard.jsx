@@ -2,6 +2,9 @@
 import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 // import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
+import 'animate.css';
+
+
 
 import {
   // UilInfoCircle,
@@ -204,11 +207,10 @@ export default function CallCard(props) {
   return (
     <Box
       // bgcolor={"yellow"} 
-
-
       sx={{ marginBottom: { md: 0, xs: 1 } }}>
-      <Card
 
+      <Card
+        className="animate__animated animate__bounceIn "
         variant=""
         sx={{
           width: { md: 340, xs: 1 },
@@ -235,8 +237,9 @@ export default function CallCard(props) {
           >
             {/* <Link to={`/${unique_username}`}> */}
             <IconButton
+              className={`animate__animated ${isPaused ? " animate__jello" : "animate__rubberBand"} `}
               onClick={() => setIsPaused(!isPaused)}
-              sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
+              // sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
               size="small">
 
 
@@ -574,7 +577,7 @@ pro user can add 10 skills
                   borderRadius: 3, textTransform: "none",
                   // outline :2px || 3px|| 4px 
                   // opacity : 70 || 80 || 90
-                  outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
+                  // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
                 }}
                 variant="contained"
                 color="primary"
