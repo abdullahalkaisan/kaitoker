@@ -26,6 +26,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     width:"10px",
     height:"10px",
+    right: 8,
+    bottom: 8,
     outline: `4px solid ${theme.palette.background.paper}`,
     padding: '0 0px',
   },
@@ -58,13 +60,13 @@ export default function SideControlProfile(props) {
             }}
           >
 
-        <CardActionArea sx={{width:"auto", borderRadius:999}}>
+        <CardActionArea sx={{width:"auto", borderRadius:"40px 40px 20px 40px" }}>
           
           
             <Avatar
                   alt="Remy Sharp"
                   src={avatar}
-                  sx={{ width: 120, height: 120 }}
+                  sx={{ width: 100, height: 100, borderRadius:"40px 40px 20px 40px" }}
               />
           
 

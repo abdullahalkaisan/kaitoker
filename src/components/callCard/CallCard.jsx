@@ -1,5 +1,5 @@
 // import styled from "@emotion/styled";
-import { Avatar, Badge, Box, Button, Card, IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { Avatar, Badge, Box, Button, Card, CardActionArea, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 // import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
 import 'animate.css';
@@ -117,7 +117,7 @@ export default function CallCard(props) {
     country,
     // city, 
     skills,
-    // isUserPro
+    isUserPro
     // id
   } = props.item;
 
@@ -141,7 +141,7 @@ export default function CallCard(props) {
     large: 100
   }
   // avatar readious 
-  const avatarRadiousList = {
+   const avatarRadiousList = {
     circle: "100px 100px 10px 90px",
     square: "40px 40px 20px 40px"
   }
@@ -240,12 +240,13 @@ export default function CallCard(props) {
             {/* <Link to={`/${unique_username}`}> */}
             {/* ${isPaused ? " animate__jello" : "animate__rubberBand"}  */}
 
-            <IconButton
-
+            <CardActionArea
+              sx={{borderRadius: avatarRadious}}
               // className={`animate__animated  ${isPaused ? " animate__jello" : "animate__rubberBand"}`}
               onClick={() => setIsPaused(!isPaused)}
               // sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
-              size="small">
+              size="small"
+              >
 
 
               {/* ED6C02  orange*/}
@@ -264,6 +265,11 @@ export default function CallCard(props) {
                     horizontal: "right",
                   }}
                 >
+                  {
+                    isUserPro &&
+                      <img style={{height:24, position:"absolute", bottom:0, zIndex:1}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
+                  }
+
                   <Avatar
                     src={avatar}
                     sx={{ width: avatarSize, height: avatarSize, borderRadius: avatarRadious }}
@@ -279,6 +285,10 @@ export default function CallCard(props) {
                     horizontal: "right",
                   }}
                 >
+                  {
+                    isUserPro &&
+                      <img style={{height:24, position:"absolute", bottom:0, zIndex:1}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
+                  }
                   <Avatar
                     src={avatar}
                     sx={
@@ -291,7 +301,7 @@ export default function CallCard(props) {
               }
 
 
-            </IconButton>
+            </CardActionArea>
             {/* </Link> */}
           </Box>
 
@@ -454,6 +464,8 @@ export default function CallCard(props) {
         <Box
           // display="none"
           pl={4}>
+
+
           <SubDetails
             // user_followers={new Intl.NumberFormat("en-US", {
             //   useGrouping: true,

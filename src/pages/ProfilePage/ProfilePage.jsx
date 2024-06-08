@@ -4,7 +4,7 @@ import TabMenuProfile from "./TabMenuProfile";
 import SideControlProfile from "./SideControlProfile";
 import SideControlProfile_tab from "./SideControlProfile_tab";
 import { Box } from "@mui/material";
-import { useLoaderData, useParams } from "react-router-dom";
+import { redirect, useLoaderData, useParams } from "react-router-dom";
 // import { Helmet } from "react-helmet";
 // import { useContext } from "react";
 // import { AuthContext } from "../../Providers/AuthProvider";
@@ -21,6 +21,8 @@ export default function ProfilePage() {
 
   const userData = useLoaderData()
   const getProfile = userData.find((item)=> item.unique_username.toLowerCase() === unique_username_id.toLowerCase())
+
+
 
 
   return (

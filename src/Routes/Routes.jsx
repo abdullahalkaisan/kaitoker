@@ -63,5 +63,4 @@ import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
       element: <CallPage />,
     }
 
-
   ]);

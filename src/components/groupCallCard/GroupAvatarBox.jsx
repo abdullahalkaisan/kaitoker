@@ -275,8 +275,8 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
           }}
         />
 
-<img style={{height:24, position:"absolute", bottom:0}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
-
+{/* <img style={{height:24, position:"absolute", bottom:0}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" /> */}
+{/* kire shalar pola thikmoto kam koros na ken */}  
 
       </StyledBadge>
     </BadgeFollowers>

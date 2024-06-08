@@ -57,7 +57,7 @@ function Logout_dialog(props) {
     <Dialog  onClose={handleClose} open={open}>
 
         <Box display={"flex"} alignItems={"center"} justifyContent={"space-evenly"}  textAlign={"center"} mt={5} mx={10}>
-            <img style={{height:50, margin:"0 10px"}} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1"  />
+            <img style={{height:50, margin:"0 10px"}} src="https://pbs.twimg.com/media/GPkZgRFbkAA-Twt?format=png&name=240x240"  />
             
             {user &&
               <>

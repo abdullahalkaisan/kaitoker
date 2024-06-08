@@ -22,7 +22,7 @@ export default function LoadingWithLogo() {
             {/* https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1  */}
 
 
-            <img style={{ height: 50 }} src="https://web.opendrive.com/api/v1/download/file.json/MjdfMTY5NjUyNjRfc2l2Zlk?inline=1&preview=1" />
+            <img style={{ height: 50 }} src="https://pbs.twimg.com/media/GPkZgRFbkAA-Twt?format=png&name=240x240" />
             <Box sx={{ width: '100px', margin: "20px", overflow: "cover", borderRadius: 99 }}>
                 <LinearProgress />
             </Box>
