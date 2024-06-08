@@ -236,8 +236,11 @@ export default function CallCard(props) {
             sx={{ display: "flex", justifyContent: "center", m: 1 }}
           >
             {/* <Link to={`/${unique_username}`}> */}
+            {/* ${isPaused ? " animate__jello" : "animate__rubberBand"}  */}
+
             <IconButton
-              className={`animate__animated ${isPaused ? " animate__jello" : "animate__rubberBand"} `}
+
+              // className={`animate__animated  ${isPaused ? " animate__jello" : "animate__rubberBand"}`}
               onClick={() => setIsPaused(!isPaused)}
               // sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
               size="small">
@@ -531,6 +534,8 @@ pro user can add 10 skills
 
         <Box sx={{
           px: 4,
+          backgroundColor: `${!isPaused && "#1565C010"} `,
+          borderRadius:3
           // display:"none" 
         }}>
           <AudioSlider_custom />
