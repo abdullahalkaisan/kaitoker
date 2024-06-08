@@ -534,7 +534,7 @@ pro user can add 10 skills
 
         <Box sx={{
           px: 4,
-          backgroundColor: `${!isPaused && "#1565C010"} `,
+          backgroundColor: `${!isPaused && "#1565C030"} `,
           borderRadius:3
           // display:"none" 
         }}>
