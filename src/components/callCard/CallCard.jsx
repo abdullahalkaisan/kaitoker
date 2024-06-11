@@ -1,5 +1,5 @@
 // import styled from "@emotion/styled";
-import { Avatar, Badge, Box, Button, Card, CardActionArea, IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { Avatar, AvatarGroup, Badge, Box, Button, Card, CardActionArea, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 // import { PropTypes } from 'prop-types';
 import RoomIcon from '@mui/icons-material/Room';
 import 'animate.css';
@@ -55,6 +55,7 @@ import { IoMdInfinite } from "react-icons/io";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import { useContext } from "react";
 import { CallCardContext } from "../../Providers/CallCardProvider";
+import { MdChair } from "react-icons/md";
 
 // import ChipsCustomDynamic from "./ChipsCustomDynamic";
 // import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -143,7 +144,8 @@ export default function CallCard(props) {
   // avatar readious 
    const avatarRadiousList = {
     circle: "100px 100px 10px 90px",
-    square: "40px 40px 20px 40px"
+    square: "40px 40px 20px 40px",
+    squareEx: "30px 30px 10px 30px"
   }
 
 
@@ -160,12 +162,26 @@ export default function CallCard(props) {
 
   const StyledBadge = styled(Badge)({
     '& .MuiBadge-badge': {
-      height: "10px",
-      width: "10px",
-      outline: `8px solid ${theme.palette.background.paper}`,
+
+      // height: "10px",
+      // width: "10px",
+      // outline: `8px solid ${theme.palette.background.paper}`,
+
+
+      // online idle but not in a room  
+      height: "15px",
+      width: "15px",
+      outline: `4px solid ${theme.palette.background.paper}`,
+      border:"4px solid #1976D2",
+      background:"#fff",
+
+
+
+      
       right: 8,
       bottom: 8,
       borderRadius: 999,
+      
       padding: "0",
     },
   });
@@ -265,10 +281,10 @@ export default function CallCard(props) {
                     horizontal: "right",
                   }}
                 >
-                  {
+                  {/* {
                     isUserPro &&
                       <img style={{height:24, position:"absolute", bottom:0, zIndex:1}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
-                  }
+                  } */}
 
                   <Avatar
                     src={avatar}
@@ -285,10 +301,10 @@ export default function CallCard(props) {
                     horizontal: "right",
                   }}
                 >
-                  {
+                  {/* {
                     isUserPro &&
                       <img style={{height:24, position:"absolute", bottom:0, zIndex:1}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
-                  }
+                  } */}
                   <Avatar
                     src={avatar}
                     sx={
@@ -487,6 +503,35 @@ export default function CallCard(props) {
 
 
 
+        
+        {isOnline &&
+                <Box sx={{display:"flex", margin: "20px 0 10px 40px"}}>
+
+                {/* <AvatarGroup sx={{marginRight:"10px"}} max={4}>
+                    <Avatar src="https://pbs.twimg.com/profile_images/1775154865804558336/FjuCGPli_400x400.jpg" sx={{}}>
+                      <MdChair />
+                    </Avatar>
+                    <Avatar src="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890" sx={{}}>
+                      <MdChair />
+                    </Avatar>
+                </AvatarGroup> */}
+
+
+                  <CardActionArea sx={{width:"auto", height:"auto",  marginRight:"10px", borderRadius:999}}>
+                    <Avatar src="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"  sx={{}}>
+                      <MdChair />
+                    </Avatar>
+                  </CardActionArea>
+
+
+              </Box>
+        
+        }
+        
+
+
+
+
 
         {/* <Box display={"none"}>
           <Typography
@@ -507,11 +552,18 @@ export default function CallCard(props) {
 
 
 
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde aut sapiente eos neque in corrupti omnis ex repellat illo quia. Illum tempore provident quaerat sunt. Cumque dolores repellendus molestias excepturi!</p>
+
+
+
+
 
         {/* 
 pro user functonality 
 user can add 5 skills 
 pro user can add 10 skills
+
+
 
 */}
         <Box
@@ -601,15 +653,18 @@ pro user can add 10 skills
                   // outline :2px || 3px|| 4px 
                   // opacity : 70 || 80 || 90
                   // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
+                  backgroundColor:`${isOnline ? "#1565C0":"#777"}`
                 }}
                 variant="contained"
-                color="primary"
+                // color="primary"
               >
                 {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
                 {/* Hire  */}
                 {/* $120 Month */}
                 {/* {`$2.00/hr`} */}
-                Free
+                {/* Free */}
+                {isOnline ? "Join" : "Book"}
+                {/* Join */}
               </Button>
             </Link>
           </Box>

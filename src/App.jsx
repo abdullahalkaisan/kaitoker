@@ -68,9 +68,9 @@ function App() {
 
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
-      {isFilterProfetionShow && 
-        <Profession_filter/> 
-      }
+
+      
+      { isFilterProfetionShow && <Profession_filter/> }
 
 
       <Box 

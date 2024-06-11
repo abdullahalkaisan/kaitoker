@@ -24,6 +24,8 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import IOS_Switch from "../IOS_Switch";
 import AntSwitch_custom from "../AntSwitch_custom";
+import VideoCard from "../VideoCard/VideoCard";
+// import { LiaSearchMinusSolid } from "react-icons/lia";
 // import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 // import { useEffect } from "react";
 
@@ -113,6 +115,13 @@ export default function Center_container() {
           id="combo-box-demo"
           options={searchItemsSuggetioins}
           sx={{ width: "70%", m: 1 }}
+        //   InputProps={{
+        //     startAdornment: (
+        //         <InputAdornment position="start">
+        //             {/* <LiaSearchMinusSolid /> */}
+        //         </InputAdornment>
+        //     ),
+        // }}
           renderInput={(params) => <TextField {...params} label="Search 501,246 Users, Profession, Id, Skills" />}
         />
 
@@ -227,7 +236,10 @@ export default function Center_container() {
 
 
         <Box width={1} display={"flex"} justifyContent={"center"} flexWrap={"wrap"}>
-          
+
+ 
+          {/* <VideoCard/> */}
+
           <Outlet/>
           
           {/* {usersDataLocal.map((item)=> <CallCardReel key={item.id} item={item}/> )} */}

@@ -2,6 +2,7 @@ import { Box, IconButton } from '@mui/material'
 import './VideoCardUser_small.css'
 import VideoUserProPop from './VideoUserProPop'
 import { MdMicOff, MdOutlineVideocamOff } from 'react-icons/md'
+import Webcam from 'react-webcam'
 
 
 export default function VideoCardUser_small(props) {
@@ -11,11 +12,22 @@ export default function VideoCardUser_small(props) {
   return (
     <>
 
-    <Box sx={{position:"relative"}}>
+    <Box sx={{position:"relative", overflow:"hidden"}}>
 
 
+      {props.me ? 
+ 
+            <Webcam 
 
-        <video
+            height={150} 
+            width={150}
+            style={{ objectFit: "cover", display: "flex", borderRadius:5, margin:5, overflow:"hidden",
+              // transform:"scale(2) translate(0%, -10%) rotateY(180deg)",
+            }}
+          /> 
+            
+            
+          :<video
           // height={80}
           // width={80}
           className='videoWithQuery'
@@ -32,6 +44,11 @@ export default function VideoCardUser_small(props) {
           }}
           >
         </video>
+      }
+
+        
+
+
 
         <Box sx={{position:"absolute", bottom:10, left:10}}>
           <Box sx={{backgroundColor:"#00000099", backdropFilter: "blur(8888px)", color:"#fff", borderRadius:2}}>

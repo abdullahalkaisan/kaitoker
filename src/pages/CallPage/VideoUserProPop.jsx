@@ -56,6 +56,8 @@ export default function VideoUserProPop(props) {
                         {isNameShow &&
                         <Box sx={{display:{md:"flex", xs:"none"}}}>
                             <PeopleCard 
+                                
+                                avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"
                                 isVarified="true" 
                                 flag={props.flag} 
                                 title={"Abdullah Al Kaisan"} 

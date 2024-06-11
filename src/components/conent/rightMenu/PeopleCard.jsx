@@ -142,7 +142,7 @@ export default function PeopleCard(props) {
           :
 
           <PeopleOfflineStyledBadge
-            badgeContent={lastSeen}
+            badgeContent={badge && isOnline ? 1 : lastSeen}
             variant="string"
             anchorOrigin={{
               vertical: "bottom",
@@ -153,7 +153,7 @@ export default function PeopleCard(props) {
               sx={{
                 width: avatarSize ? avatarSize : 32,
                 height: avatarSize ? avatarSize : 32,
-                borderRadius: "100px 100px 10px 100px",
+                borderRadius: `${badge ? "100px 100px 10px 100px": 999}`,
               }
               }
               // alt={title}
