@@ -14,6 +14,7 @@ import {
   UilDownloadAlt,
   // UilWebGrid,
   UilGift,
+  UilPlusCircle
   // UilBell
 
 } from '@iconscout/react-unicons'
@@ -59,9 +60,16 @@ export default function LeftMenu_container() {
 
       sx={{ display: { md: "flex", xs: "none" } }}
     >
+      <IconButton color="primary" sx={{ m: 1 }}>
+        <UilPlusCircle/>
+      </IconButton>
       <IconButton sx={{ m: 1 }}>
         <UilSlidersVAlt />
       </IconButton>
+
+
+
+
     
     {/* <Link to={"/reel"}>
       <IconButton sx={{ m: 1 }}>
