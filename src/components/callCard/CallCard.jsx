@@ -11,7 +11,9 @@ import {
   // UilPlay,
   // UilLocationPoint,
   UilUserPlus,
-  UilStar
+  UilStar,
+  UilCommentMessage,
+  UilCommentLines
   // UilVideo,
   // UilEllipsisH
   // UilRssAlt,
@@ -53,9 +55,11 @@ import ChipsCustom from "./ChipsCustom";
 import SubDetails from "./SubDetails";
 import { IoMdInfinite } from "react-icons/io";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CallCardContext } from "../../Providers/CallCardProvider";
 import { MdChair } from "react-icons/md";
+import { Tune } from "@mui/icons-material";
+import CallCard_slot from "./CallCard_slot";
 
 // import ChipsCustomDynamic from "./ChipsCustomDynamic";
 // import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -168,12 +172,13 @@ export default function CallCard(props) {
       // outline: `8px solid ${theme.palette.background.paper}`,
 
 
+
       // online idle but not in a room  
       height: "15px",
       width: "15px",
       outline: `4px solid ${theme.palette.background.paper}`,
-      border:"4px solid #1976D2",
-      background:"#fff",
+      border:`4px solid ${isDark ? "#90CAF9" : "#1976D2"}`,
+      background:`${theme.palette.background.paper}`,
 
 
 
@@ -503,30 +508,8 @@ export default function CallCard(props) {
 
 
 
-        
-        {isOnline &&
-                <Box sx={{display:"flex", margin: "20px 0 10px 40px"}}>
-
-                {/* <AvatarGroup sx={{marginRight:"10px"}} max={4}>
-                    <Avatar src="https://pbs.twimg.com/profile_images/1775154865804558336/FjuCGPli_400x400.jpg" sx={{}}>
-                      <MdChair />
-                    </Avatar>
-                    <Avatar src="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890" sx={{}}>
-                      <MdChair />
-                    </Avatar>
-                </AvatarGroup> */}
 
 
-                  <CardActionArea sx={{width:"auto", height:"auto",  marginRight:"10px", borderRadius:999}}>
-                    <Avatar src="https://lh3.googleusercontent.com/a/ACg8ocKjcLQnbqhz1e6GuIXL1IrBSg2pG_FSAtw-vO1ejOyW890"  sx={{}}>
-                      <MdChair />
-                    </Avatar>
-                  </CardActionArea>
-
-
-              </Box>
-        
-        }
         
 
 
@@ -551,8 +534,6 @@ export default function CallCard(props) {
         </Box> */}
 
 
-
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde aut sapiente eos neque in corrupti omnis ex repellat illo quia. Illum tempore provident quaerat sunt. Cumque dolores repellendus molestias excepturi!</p>
 
 
 
@@ -598,6 +579,20 @@ pro user can add 10 skills
           <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
         </Box>
 
+        {isOnline && 
+        <Box sx={{margin:"30px 30px 15px 30px", border:"1px solid #00000010", borderRadius:3, backgroundColor:`${isDark ? "#222" : "#f1f1f170"}`}}>
+          <Box sx={{margin:"10px 10px 0 20px"}}>
+            {/* <ChipsCustom label={"Reading"}/> */}
+            <Typography variant="body2" color={isDark ? "#f1f1f195" : "#666"} >
+              Reading
+            </Typography>
+          </Box>
+          <CallCard_slot 
+          avatarHeight={30}
+          />
+        </Box>
+      }
+
 
         {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
         <Box 
@@ -620,9 +615,11 @@ pro user can add 10 skills
           alignItems={"center"}
           justifyContent={"space-evenly"}
         >
-          <IconButton color="info">
+          {/* <IconButton color="info">
             <UilStar />
-          </IconButton>
+          </IconButton> */}
+
+
 
           <IconButton color="primary">
             {/* <UilHeart/> */}
@@ -631,6 +628,12 @@ pro user can add 10 skills
             {/* <UilPlus/> */}
             <UilUserPlus />
           </IconButton>
+
+          <IconButton color="info">
+            <UilCommentLines />
+          </IconButton>
+
+
 
           <AudioPlay_button />
 
@@ -647,13 +650,14 @@ pro user can add 10 skills
             {/* #1D9BF0  */}
             <Link to={"/callpage"}>
               <Button
+                disabled={isOnline ? false : true}
                 size="small"
                 sx={{
                   borderRadius: 3, textTransform: "none",
                   // outline :2px || 3px|| 4px 
                   // opacity : 70 || 80 || 90
                   // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
-                  backgroundColor:`${isOnline ? "#1565C0":"#777"}`
+                  // backgroundColor:`${isOnline ? "#1565C0":"#333"}`
                 }}
                 variant="contained"
                 // color="primary"
@@ -663,12 +667,17 @@ pro user can add 10 skills
                 {/* $120 Month */}
                 {/* {`$2.00/hr`} */}
                 {/* Free */}
-                {isOnline ? "Join" : "Book"}
+                {isOnline ? "Free" : "Book"}
                 {/* Join */}
               </Button>
             </Link>
           </Box>
         </Stack>
+
+
+
+
+
 
         {/* #48CB8C best color for active user */}
 
