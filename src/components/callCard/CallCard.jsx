@@ -584,7 +584,7 @@ pro user can add 10 skills
           <Box sx={{margin:"10px 10px 0 20px"}}>
             {/* <ChipsCustom label={"Reading"}/> */}
             <Typography variant="body2" color={isDark ? "#f1f1f195" : "#666"} >
-              Reading
+              Javascript array class
             </Typography>
           </Box>
           <CallCard_slot 
