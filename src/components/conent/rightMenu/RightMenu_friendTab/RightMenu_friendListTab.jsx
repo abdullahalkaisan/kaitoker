@@ -105,11 +105,6 @@ export default function RightMenu_friendListTab() {
 
 
 
-
-
-
-
-
         <Box sx={{ display: "flex", height: "100%", width: "100%" }}>
           <CustomTabPanel value={value} index={0}>
 

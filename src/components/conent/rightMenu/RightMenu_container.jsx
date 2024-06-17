@@ -18,6 +18,7 @@ import LogsCard from '../../LogsCard';
 // import MessageList from './MessageList';
 import ChatList from './ChatListBox';
 import RightMenu_friendListTab from './RightMenu_friendTab/RightMenu_friendListTab';
+import MessageList from './MessageList';
 
 
 
@@ -140,8 +141,8 @@ export default function RightMenu_container() {
 
 
         <CustomTabPanel value={value} index={1}>
-          <ChatList />
-          {/* <MessageList/> */}
+          {/* <ChatList /> */}
+          <MessageList/>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>
