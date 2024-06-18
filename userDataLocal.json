@@ -47,26 +47,6 @@
       {
         "name": "Public Speaking",
         "icon": "public-speaking-icon-url"
-      },
-      {
-        "name": "Leadership",
-        "icon": "leadership-icon-url"
-      },
-      {
-        "name": "Startup Management",
-        "icon": "startup-management-icon-url"
-      },
-      {
-        "name": "Product Development",
-        "icon": "product-development-icon-url"
-      },
-      {
-        "name": "Marketing Strategy",
-        "icon": "marketing-strategy-icon-url"
-      },
-      {
-        "name": "Public Speaking",
-        "icon": "public-speaking-icon-url"
       }
     ]
   },

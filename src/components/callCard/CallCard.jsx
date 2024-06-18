@@ -548,7 +548,7 @@ pro user can add 10 skills
 
 */}
         <Box
-          display={"none"}
+          // display={"none"}
           bgcolor={"background.default"}
           color={"text.primary"}
           direction="row"
@@ -584,7 +584,7 @@ pro user can add 10 skills
         margin:"30px 30px 15px 30px", 
         border:`1px solid ${isDark ? "#ffffff10" : "#00000010"}`, 
         borderRadius:3,  
-        backgroundColor:`${isDark ? "#222" : "#f1f1f190"}`
+        backgroundColor:`${isDark ? "#222" : "#f1f1f1"}`
         }}>
 {/* 
 #f1f1f170
