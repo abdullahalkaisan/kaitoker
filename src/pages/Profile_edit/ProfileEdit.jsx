@@ -21,7 +21,7 @@ const VisuallyHiddenInput = styled('input')({
 
   const styles = {
     mainContainerStyle: {
-    //   backgroundColor: 'gray',
+
     //   border: '1px solid black',
     boxShadow:"none",
       borderRadius: '5px',
@@ -36,9 +36,11 @@ const VisuallyHiddenInput = styled('input')({
       marginTop: '10px'
     },
     controllerStyle: {
-      backgroundColor: '#f1f1f150',
-      backgroundImage: "none",
-      boxShadow:"none",
+    //   backgroundColor: '#f1f1f150',
+    backgroundColor: '#fff',
+    backgroundImage: "none",
+    // boxShadow:"none",
+    boxShadow:"0px 0px 10px #00000020",
       border: '1px solid #00000010',
       borderRadius: 9999,
       cursor: 'pointer',
@@ -171,7 +173,7 @@ export default function ProfileEdit() {
                     <TextField required rows={3}  maxRows={3} fullWidth sx={{mb:2}} id="outlined-basic" size="small" label="Skills" variant="outlined" />
                 
                     <Box sx={{display:"flex", justifyContent:"flex-end", mt:5}} fullWidth>
-                        <Box sx={{width:200, display:"flex", justifyContent:"center", alignItems:"center"}}>
+                        <Box sx={{width:300, display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <Button fullWidth sx={{borderRadius:3,  mt:0, mr:2, py:1}} >
                                 Cancel
                             </Button>

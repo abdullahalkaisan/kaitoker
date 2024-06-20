@@ -65,7 +65,7 @@ export default function TopBar() {
 
         <Logo />
         
-        {/* <NavMenu /> */}
+        <NavMenu />
 
         <Box display={"flex"}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
