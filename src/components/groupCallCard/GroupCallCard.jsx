@@ -164,7 +164,7 @@ export default function GroupCallCard() {
 
 
         <Box>
-          <Button color="error" variant="contained" size="small" sx={{ borderRadius: 3, textTransform:"capitalize" }}>
+          <Button color="error" variant="contained" size="small" sx={{ borderRadius: 333, fontWeight:"bold", textTransform:"capitalize" }}>
             Watch
           </Button>
         </Box>
