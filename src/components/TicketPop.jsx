@@ -10,7 +10,7 @@ export default function TicketPop() {
 
   return (
     <CardActionArea  sx={{
-      backgroundColor:`${isDark?"#222":"#f1f1f1"}`, 
+      // backgroundColor:`${isDark?"#222":"#f1f1f1"}`, 
       color:`${isDark?"#f1f1f1":"#333"}`,
       borderRadius:999, 
       p:1, 

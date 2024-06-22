@@ -4,7 +4,7 @@ import Logo from "../../components/topbar/others/Logo";
 import { MdArrowBack, MdDelete, MdEditSquare, MdFileUpload, MdOutlineTranslate } from "react-icons/md";
 import styled from "styled-components";
 import { VoiceRecorder } from "react-voice-recorder-player";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',

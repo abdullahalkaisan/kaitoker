@@ -9,6 +9,8 @@ import RoomIcon from '@mui/icons-material/Room';
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
 import { MdCalendarMonth } from 'react-icons/md';
 import PeopleCard from '../conent/rightMenu/PeopleCard';
+import NumberFormat from './NumberFormatCustom';
+import NumberFormatCustom from './NumberFormatCustom';
 SubDetails.propTypes = {
   user_followers: PropTypes.number.isRequired,
   user_rating: PropTypes.number.isRequired,
@@ -55,19 +57,31 @@ export default function SubDetails({user_followers, user_rating , user_language,
           ></Badge>
         </Box>
       ) : (
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            pr: 1,
-            fontSize: "medium",
-            // medium
-          }}
-        >
-          <PeopleOutlineOutlinedIcon sx={{ fontSize: "larger", mr:0.5 }} />
-          {user_followers}
-        </Box>
+
+        user_followers &&
+        <Tooltip placement='top' title={`${user_followers} followers`}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              pr: 1,
+              fontSize: "medium",
+              cursor: "pointer"
+              // medium
+            }}
+          >
+            <PeopleOutlineOutlinedIcon sx={{ fontSize: "larger", mr: 0.5 }} />
+            {new Intl.NumberFormat("en-US", {
+              useGrouping: true,
+              notation: "compact",
+            }).format(user_followers)}
+          </Box>
+        </Tooltip>
+
       )}
+
+
+
 
       <Box
         sx={{
@@ -77,12 +91,43 @@ export default function SubDetails({user_followers, user_rating , user_language,
           fontSize: "medium",
         }}
       >
+
+
+      {user_rating && 
         <StarIcon sx={{ fontSize: "medium", color: "#25c600" }} />
-        <Box sx={{ fontWeight: "bold", pr: 0.5, color: "#25C600" }}>
-          {`${user_rating}%`}
-        </Box>
-        {`(${user_total_call})`}
+      }
+
+      {user_rating &&
+        <Tooltip placement='top' title={`${user_rating}% Ratting`}>
+          <Box sx={{ fontWeight: "bold", cursor:"pointer", pr: 0.5, color: "#25C600" }}>
+            {`${user_rating}%`}
+          </Box>
+        </Tooltip>
+      }
+
+
+
+        {user_total_call &&
+          <Tooltip placement='top' title={`${user_total_call} people meet`}>
+            <Box sx={{ cursor: "pointer", }}>
+              {`(${
+                  new Intl.NumberFormat("en-US", {
+                    useGrouping: true,
+                    notation: "compact",
+                  }).format(user_total_call)
+                })`}
+            </Box>
+          </Tooltip>
+        }
       </Box>
+
+
+      {/* //   new Intl.NumberFormat("en-US", {
+        //        useGrouping: true,
+        //        notation: "compact",
+        //      }).format(totalCall)}
+        // } */}
+
 
       {/* <Box sx={{ display: "flex", alignItems: "center", pr: 1, fontSize: "medium" }}>
         <TranslateIcon sx={{ fontSize: "medium" }} />
@@ -103,54 +148,69 @@ export default function SubDetails({user_followers, user_rating , user_language,
         {"Bangladesh"}
       </Box> */}
 
-      <Tooltip
-        style={flag ? { display: "block" } : { display: "none" }}
-        title={"India"}
-        placement="top"
-      >
-        <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
-          <img
-            style={{
-              borderRadius: 4,
-              border: "1px solid #77777750",
-              boxShadow: "10px 10px 10px solid black",
-            }}
-            src={`https://flagcdn.com/w20/${flag}.png`}
-          />
-        </Box>
-      </Tooltip>
 
-      <Box
-        sx={
-          user_language
-            ? {
-                display: "flex",
-                alignItems: "center",
-                pr: 1,
-                fontSize: "medium",
-              }
-            : { display: "none" }
-        }
-      >
-        <TranslateIcon sx={{ fontSize: "medium" }} />
-        {user_language}
-        {/* {" ক क ص 항 あ"} */}
-      </Box>
+      {flag && 
+          <Tooltip
+            style={flag ? { display: "block" } : { display: "none" }}
+            title={"India"}
+            placement="top"
+          >
+            <Box sx={{ display: "flex", alignItems: "center", pr: 1 }}>
+              <img
+                style={{
+                  borderRadius: 4,
+                  border: "1px solid #77777750",
+                  boxShadow: "10px 10px 10px solid black",
+                }}
+                src={`https://flagcdn.com/w20/${flag}.png`}
+              />
+            </Box>
+          </Tooltip>
+      }
 
 
-      <Box
-        sx={ {
-                display: "flex",
-                alignItems: "center",
-                pr: 1,
-                fontSize: "medium",
-              }
-        }
-      >
-        <MdCalendarMonth sx={{ fontSize: "medium" }} />
 
-        {sinceTime}
-      </Box>
+      {user_language && 
+        <Tooltip placement='top' title="I can speak English">
+          <Box
+            sx={
+              user_language
+                ? {
+                    display: "flex",
+                    cursor:"pointer",
+                    alignItems: "center",
+                    pr: 1,
+                    fontSize: "medium",
+                  }
+                : { display: "none" }
+            }
+          >
+            <TranslateIcon sx={{ fontSize: "medium" }} />
+            {user_language}
+            {/* {" ক क ص 항 あ"} */}
+          </Box>
+        </Tooltip>
+      }
+
+
+      {sinceTime &&
+        <Tooltip placement='top' title={`Since 12th June 2021`}>
+          <Box
+            sx={ {
+                    display: "flex",
+                    cursor:"pointer",
+                    alignItems: "center",
+                    pr: 1,
+                    fontSize: "medium",
+                  }
+            }
+          >
+            <MdCalendarMonth sx={{ fontSize: "medium" }} />
+            {sinceTime}
+          </Box>
+
+        </Tooltip>
+      }
 
 
 
