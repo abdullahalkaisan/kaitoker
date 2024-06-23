@@ -106,22 +106,22 @@ export default function CallChatNav(props) {
       color={"text.primary"}
       sx={{
         height: "100%",
-        width: "370px",
-        transition:"easy .5s",
+        width: "450px",
         display: { md:`${isNavBoxOpen ? "flex":"none"}`, xs: "none" },
         flexDirection: "column",
       }}
     >
-      <Box sx={{ borderBottom: 1, borderColor: "divider", paddingTop: 1 }}>
+      <Box sx={{ display:"flex", justifyContent:"space-between", borderBottom: 1, width:1, borderColor: "divider", paddingTop: 0 }}>
         <Tabs
+          sx={{display:"flex", width:1, justifyContent:"space-between"}}
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
           <Tab  {...a11yProps(0)}  icon={<UilCommentLines />}/>
           <Tab  {...a11yProps(1)}  icon={<UilMessage />} />
-          <Tab  {...a11yProps(2)}  icon={<UilApps />} />
-          <Tab  {...a11yProps(3)}  icon={<UilSetting />} />
+          {/* <Tab  {...a11yProps(2)}  icon={<UilApps />} /> */}
+          <Tab  {...a11yProps(2)}  icon={<UilSetting />} />
         </Tabs>
       </Box>
 
@@ -214,7 +214,7 @@ export default function CallChatNav(props) {
             <MessageList/>
         </CustomTabPanel>
 
-        <CustomTabPanel value={value} index={2}>
+        <CustomTabPanel value={value} index={3}>
           <Box display={"flex"} flexDirection={"column"}>
 
             <Box>
@@ -241,7 +241,7 @@ export default function CallChatNav(props) {
 
         </CustomTabPanel>
 
-        <CustomTabPanel value={value} index={3}>
+        <CustomTabPanel value={value} index={2}>
               <SettingTab/>
         </CustomTabPanel>
 

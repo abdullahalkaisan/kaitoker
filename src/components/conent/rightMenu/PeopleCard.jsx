@@ -50,6 +50,7 @@ export default function PeopleCard(props) {
   const {
     title,
     subTitle,
+    subTitleColor,
     subTitleSize,
     subTitle2,
     subTitleSize2,
@@ -238,7 +239,7 @@ export default function PeopleCard(props) {
         <Typography
           mt={-0.5}
           // color={isDark ? "#999" : "#777"}
-          color={subTitleHighLight ? "" : "#777"}
+          color={subTitleColor ? subTitleColor  : "#777"}
           fontWeight={subTitleHighLight ? "bold" : "normal"}
           variant="body2"
           component="h6"

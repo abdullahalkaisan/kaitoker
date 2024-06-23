@@ -41,9 +41,9 @@ export default function VideoUserProPop(props) {
                             fontSize: "small",
                             // borderRadius: 20,
                             borderRadius: 4,
-                            bgcolor: "#00000090 ",
-                            // bgcolor: "#000000 ",
-                            backdropFilter: "blur(8888px)",
+                            // bgcolor: "#00000090 ",
+                            bgcolor: "#000000 ",
+                            // backdropFilter: "blur(8888px)",
                             color: "#ffffff",
                             width: "max-content",
                             p: 1,
@@ -61,7 +61,8 @@ export default function VideoUserProPop(props) {
                                 isVarified="true" 
                                 flag={props.flag} 
                                 title={"Abdullah Al Kaisan"} 
-                                subTitle={props.title} 
+                                subTitle={props.title}
+                                subTitleColor="#999"
                             />
                         </Box>
                         }
