@@ -534,53 +534,9 @@ export default function CallCard(props) {
         </Box> */}
 
 
-
-
-
-
-
-        {/* 
-pro user functonality 
-user can add 5 skills 
-pro user can add 10 skills
-
-
-
-*/}
-        <Box
-          // display={"none"}
-          bgcolor={"background.default"}
-          color={"text.primary"}
-          direction="row"
-          // justifyContent={"center"}
-          flexWrap={"wrap"}
-          px={2}
-          mt={2}
-          overflow={"auto"}
-          // fontWeight={"bold"}
-          textAlign={"center"}
-        // sx={{
-        //   maxHeight: { md: "56px", xs: "56px" },
-        //   minHeight: { md: "56px", xs: "auto" },
-        // }}
-        >
-          {/* <CallCardDynamic user_skills={user_skills}/> */}
-          {skills.map((skill, index) => (
-            <ChipsCustom key={index} hashTagStyle={true} label={skill.name} />
-          ))}
-          {/* <ChipsCustom hashTagStyle={true} label="Javascript" />
-          <ChipsCustom hashTagStyle={true} label="Node js" />
-          <ChipsCustom hashTagStyle={true} label="React" />
-          <ChipsCustom hashTagStyle={true} label="MongoDB" />
-          <ChipsCustom hashTagStyle={true} label="Photoshop" />
-          <ChipsCustom hashTagStyle={true} label="Video editor" />
-          <ChipsCustom hashTagStyle={true} label="Premire Pro" />
-          <ChipsCustom hashTagStyle={true} label="Graphics designer" />
-          <ChipsCustom hashTagStyle={true} label="Mern stack developer" /> */}
-        </Box>
-
-        {isOnline && 
+{isOnline && 
         <Box sx={{
+        display:"none",
         margin:"30px 30px 15px 30px", 
         border:`1px solid ${isDark ? "#ffffff10" : "#00000010"}`, 
         borderRadius:3,  
@@ -592,8 +548,6 @@ pro user can add 10 skills
 #f1f1f190
 #f1f1f1 
 */}
-
-
           <Box sx={{margin:"10px 10px 0 20px"}}>
             {/* <ChipsCustom label={"Reading"}/> */}
             <Typography 
@@ -609,17 +563,74 @@ pro user can add 10 skills
       }
 
 
-        {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
-        <Box 
-          // className={`animate__animated  ${isPaused ? "  " : "  "}`}
-          sx={{
-            px: 4,
-            backgroundColor: `${!isPaused && "#1565C030"} `,
-            borderRadius:3
-            // display:"none" 
-        }}>
-          <AudioSlider_custom />
+
+
+        {/* 
+pro user functonality 
+user can add 5 skills 
+pro user can add 10 skills
+
+
+
+*/}
+
+{!isPaused &&
+        <Box
+          bgcolor={"background.default"}
+          color={"text.primary"}
+          direction="row"
+          // justifyContent={"center"}
+          flexWrap={"wrap"}
+          px={2}
+          mt={2}
+          mb={1}
+          overflow={"auto"}
+          // fontWeight={"bold"}
+          textAlign={"center"}
+        // sx={{
+        //   maxHeight: { md: "56px", xs: "56px" },
+        //   minHeight: { md: "56px", xs: "auto" },
+        // }}
+        >
+          {/* <CallCardDynamic user_skills={user_skills}/> */}
+          {skills.map((skill, index) => (
+            <ChipsCustom key={index} hashTagStyle={true} label={skill.name} />
+          ))}
         </Box>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
+        
+        {!isPaused &&
+          <Box 
+            // className={`animate__animated  ${isPaused ? "  " : "  "}`}
+            sx={{
+              px: 4,
+              backgroundColor: `${!isPaused && "#1565C030"} `,
+              borderRadius:3
+              // display:"none" 
+          }}>
+            <AudioSlider_custom />
+          </Box>
+        }
+
+
 
         <Stack
           // sx={{ display: "none" }}

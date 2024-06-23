@@ -14,14 +14,16 @@ export default function VideoUserBox(props) {
   return (
     <Box
       position={"relative"}
-      width={"100%"}
-      height={"100%"}
+      width={"max-content"}
+      // height={"45%"}
+
       sx={{
-        backgroundColor:"#222", 
+        // backgroundColor:"#222", 
         display:'flex',
         justifyContent:"center", 
         alignItems:"center", 
         overflow:"hidden",
+        borderRadius:3
       }}
       // minHeight={"50%"}
       // minHeight={"50%"}

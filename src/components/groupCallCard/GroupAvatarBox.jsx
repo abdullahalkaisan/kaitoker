@@ -18,7 +18,7 @@ import {
 } from '@iconscout/react-unicons'
 
 
-export default function GroupAvatarBox({followers, avatarUrl, flag}) {
+export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
 
 
 
@@ -46,7 +46,7 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
         //   4px solid 
           outline: `4px solid ${theme.palette.background.paper}`,
           padding:"0",
-          // boxShadow:"1px 1px 10px black"
+          boxShadow:"1px 1px 10px black"
         },
         });
 
@@ -225,6 +225,10 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
 
 
     <CardActionArea
+      sx={{
+        // outline:"2px solid orangered", 
+        borderRadius:"100px 100px 50px 100px"
+      }}
       onContextMenu={(e) => {
         e.preventDefault()
         handleClick(e);
@@ -250,16 +254,11 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
               display: "flex",
               height: "fit-content",
               width: "fit-content",
-              // height:"15px",
-              // width:"15px",
-              // borderRadius:9,
-              // border:"4px solid #fff",
               objectFit: "cover",
-
-              // borderRadius: "0px",
             }}
             src={`https://flagcdn.com/w20/${flag}.png`}
           />
+          
         }
         anchorOrigin={{
           vertical: "bottom",
@@ -274,8 +273,10 @@ export default function GroupAvatarBox({followers, avatarUrl, flag}) {
             borderRadius:"100px 100px 50px 100px"
           }}
         />
+{/* {isPro &&
+<img style={{height:24, position:"absolute", bottom:0}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" />
+} */}
 
-{/* <img style={{height:24, position:"absolute", bottom:0}} src="https://media.tenor.com/F3xUrsjCSzUAAAAi/fire.gif" alt="can't load image" /> */}
 {/* kire shalar pola thikmoto kam koros na ken */}  
 
       </StyledBadge>
