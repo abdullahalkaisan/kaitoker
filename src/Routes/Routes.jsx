@@ -13,6 +13,7 @@ import CourseCard_wrapper from "../components/CaurseCard.jsx/CourseCard_wrapper"
 import CallCardWrapper from "../components/callCard/CallCardWrapper";
 import NewsContainer from "../components/NewsContainer";
 import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
+import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details";
 
 
   export  const router = createBrowserRouter([
@@ -61,6 +62,10 @@ import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
     {
       path: "/callpage",
       element: <CallPage />,
+    },{
+      path: "/coursepage",
+      element: <CourseCard_details/>
+      ,
     }
 
   ]);

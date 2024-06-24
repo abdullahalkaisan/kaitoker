@@ -1,4 +1,4 @@
-import {Box, Button, Card, CardMedia, IconButton, Typography } from "@mui/material";
+import {Avatar, AvatarGroup, Box, Button, Card, CardMedia, IconButton, Typography } from "@mui/material";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChipsCustom from "../callCard/ChipsCustom";
@@ -6,14 +6,18 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import StarIcon from '@mui/icons-material/Star';
 import TranslateIcon from '@mui/icons-material/Translate';
-export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/240x135/4471614_361e_5.jpg", title="The Ultimate React Course 2024: React, Redux & More"}) {
+import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
+import { Link } from "react-router-dom";
+export default function CourseCard({imgUrl="https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/5992673/cover_image/retina_1708x683/1005_Design-Patterns-in-React_Cover-44247834a5b31e8d08e5bbbdac4a6750.png", title="The Ultimate React Course 2024: React, Redux & More"}) {
 
     const videoTitle = title;
 
 
   return (
+    <Link to={"/coursepage"} style={{ textDecoration: 'none' }}>
     <Card
       sx={{
+        // textDecoration: 'none',
         width: { md: 340, xs: 1 },
         height: { md: "max-content", xs: 1 },
         cursor: "pointer",
@@ -25,11 +29,14 @@ export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/24
       // borderRadius={1}
       m={2}
       variant="outlined"
+      
+      
     >
-      <Box display={"flex"} justifyContent={"space-between"}>
+
+      <Box  display={"flex"} justifyContent={"space-between"}>
         <Box display={"flex"}>
           <PeopleCard
-
+            isOnline
             badge="true"
             avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
             avatar="true"
@@ -70,6 +77,12 @@ export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/24
         {" "}
         {videoTitle.length >= 40 ? videoTitle.slice(0, 40) + "..." : videoTitle}
       </Typography>
+
+
+      
+
+
+
       <Typography variant="body2">
         <Box
           color={"#777"}
@@ -121,5 +134,9 @@ export default function CourseCard({imgUrl="https://img-b.udemycdn.com/course/24
         </Box>
       </Typography>
     </Card>
+
+    </Link>
+
+
   );
 }
