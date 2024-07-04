@@ -7,7 +7,7 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import RoomIcon from '@mui/icons-material/Room';
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
-import { MdCalendarMonth } from 'react-icons/md';
+import { MdCalendarMonth, MdOutlinePeopleAlt, MdSupervisedUserCircle } from 'react-icons/md';
 import PeopleCard from '../conent/rightMenu/PeopleCard';
 import NumberFormat from './NumberFormatCustom';
 import NumberFormatCustom from './NumberFormatCustom';
@@ -18,7 +18,7 @@ SubDetails.propTypes = {
   user_total_call: PropTypes.number.isRequired,
 };
 
-export default function SubDetails({user_followers, askingCost, user_rating , user_language, user_total_call, justifyContent, flag, sinceTime }) {
+export default function SubDetails({user_followers, proposal, askingCost, user_rating , user_language, user_total_call, justifyContent, flag, sinceTime }) {
   
 
   // const [isBadge, setIsBadge] = useState(false);
@@ -91,6 +91,18 @@ export default function SubDetails({user_followers, askingCost, user_rating , us
           fontSize: "medium",
         }}
       >
+
+{proposal &&
+<Box sx={{display:"flex", alignItems:"center", fontSize:"medium", fontWeight:"", opacity:"100%", 
+  // margin:"0 10px"
+  }}>
+    {/* <MdSupervisedUserCircle /> */}
+    <MdOutlinePeopleAlt />
+    {proposal ? proposal : `0/0`}
+    
+</Box>
+}
+
 
 
       {user_rating && 

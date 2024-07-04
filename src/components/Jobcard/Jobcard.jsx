@@ -2,6 +2,7 @@ import { Box, Button, Card, Tooltip, Typography } from "@mui/material";
 import ChipsCustom from "../callCard/ChipsCustom";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import SubDetails from "../callCard/SubDetails";
+import { MdSupervisedUserCircle } from "react-icons/md";
 
 
 export default function Jobcard() {
@@ -55,26 +56,38 @@ Apply
 </Typography>
 
 
-<Box sx={{margin:"10px 0"}}>
+<Box sx={{margin:"10px 0", display:"flex", alignItems:"center"}}>
+
+
+{/* <Box sx={{display:"flex", alignItems:"center", fontSize:"15px", fontWeight:"bold", opacity:"70%", margin:"0 10px"}}>
+    <MdSupervisedUserCircle />
+    15/20
+</Box> */}
+
+
 <SubDetails 
+proposal={"15/20"}
 // user_rating={"45"}
-// user_language={"En"}
+user_language={"En"}
 // flag={"bd"}
 askingCost={"$600/mo"}
 justifyContent={"flex-start"}
 />
+
+
+
 </Box>
 
 
-<Box sx={{margin:"10px 0"}}>
-        <ChipsCustom label={"React"} />
-        <ChipsCustom label={"Ui Ux designer"} />
-        <ChipsCustom label={"Javascript "} />
-        <ChipsCustom label={"Css"} />
-        <ChipsCustom label={"Figma"} />
-        <ChipsCustom label={"Web development"} />
-        <ChipsCustom label={"Front end"} />
-        <ChipsCustom label={"English"} />
+<Box sx={{margin:"10px 0", display:"flex", flexWrap:"wrap", justifyContent:"start"}}>
+        <ChipsCustom size={"large"} label={"React"} />
+        <ChipsCustom size={"large"} label={"Ui Ux designer"} />
+        <ChipsCustom size={"large"} label={"Javascript "} />
+        <ChipsCustom size={"large"} label={"Css"} />
+        <ChipsCustom size={"large"} label={"Figma"} />
+        <ChipsCustom size={"large"} label={"Web development"} />
+        <ChipsCustom size={"large"} label={"Front end"} />
+        <ChipsCustom size={"large"} label={"English"} />
         {/* <ChipsCustom label={"Management"} /> */}
     </Box>
 

@@ -126,7 +126,9 @@ export default function RightMenu_friendListTab() {
                 </IconButton>
               </Box>
               <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:"column",  overflow: "auto" }}>
-                <Box sx={{p:2}}>
+                <Box 
+                sx={{p:2}}
+                >
                   {sortedUsers.map((item) => (
                     <PeopleList
                       key={item.id}

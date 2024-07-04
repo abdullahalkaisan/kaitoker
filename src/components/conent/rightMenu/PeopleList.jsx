@@ -9,6 +9,7 @@ import {
 import PeopleCard from "./PeopleCard";
 
 import { PropTypes } from "prop-types";
+import { useTheme } from "@emotion/react";
 
 PeopleList.propTypes = {
   title: PropTypes.string,
@@ -28,6 +29,12 @@ export default function PeopleList(props) {
   // const {title, subTitle,accountType, avatar, avatarUrl,  badge , isVarified } = props;
 
 
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
+
+
+
   return (
     <Box
       display={"flex"}
@@ -36,13 +43,24 @@ export default function PeopleList(props) {
       // flexDirection={"row"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      mb={2}
+      // mb={2}
+
+      sx={{ 
+        borderRadius:"16px", 
+        transition:"ease .3s", 
+        cursor:"pointer", 
+        // padding:0.5, 
+        // paddingY:0.5, 
+        paddingY:1, 
+        "&:hover":{backgroundColor:`${isDark ? "#222" :"#f1f1f1"}`}
+      }}
+
     >
       <PeopleCard {...props} />
 
       <Box>
+        {/* sx={{bgcolor:"#F5FAFD"}}   */}
         {/* F5FAFD  */}
-        {/* sx={{bgcolor:"#F5FAFD"}}  */}
         <span
           style={props.isOnline === "" ? { display: "none" } : { display: "" }}
         >
