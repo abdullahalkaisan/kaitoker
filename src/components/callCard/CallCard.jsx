@@ -535,8 +535,9 @@ export default function CallCard(props) {
 
 
 {isOnline && 
+!isPaused && 
         <Box sx={{
-        display:"none",
+        // display:"none",
         margin:"30px 30px 15px 30px", 
         border:`1px solid ${isDark ? "#ffffff10" : "#00000010"}`, 
         borderRadius:3,  
@@ -622,7 +623,7 @@ pro user can add 10 skills
             // className={`animate__animated  ${isPaused ? "  " : "  "}`}
             sx={{
               px: 4,
-              backgroundColor: `${!isPaused && "#1565C030"} `,
+              // backgroundColor: `${!isPaused && "#1565C030"} `,
               borderRadius:3
               // display:"none" 
           }}>

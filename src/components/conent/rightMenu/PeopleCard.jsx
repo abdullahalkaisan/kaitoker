@@ -58,13 +58,14 @@ export default function PeopleCard(props) {
     subTitleWeight2,
     avatar,
     avatarUrl,
+    avatarSize,
+    avatarRadious,
     badge,
     flag,
     country,
     time,
     isVarified,
     isOnline,
-    avatarSize,
     subTitleHighLight,
     lastSeen,
     languages,
@@ -127,7 +128,7 @@ export default function PeopleCard(props) {
                   ? {
                     width: avatarSize ? avatarSize : 32,
                     height: avatarSize ? avatarSize : 32,
-                    borderRadius: "100px 100px 10px 100px",
+                    borderRadius: avatarRadious ? avatarRadious : "100px 100px 10px 100px",
                   }
                   : {
                     width: avatarSize ? avatarSize : 32,
@@ -154,7 +155,7 @@ export default function PeopleCard(props) {
               sx={{
                 width: avatarSize ? avatarSize : 32,
                 height: avatarSize ? avatarSize : 32,
-                borderRadius: `${badge ? "100px 100px 10px 100px": 999}`,
+                borderRadius: `${badge ? "100px 100px 10px 100px" : 999}`,
               }
               }
               // alt={title}

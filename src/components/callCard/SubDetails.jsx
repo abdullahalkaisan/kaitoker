@@ -18,7 +18,7 @@ SubDetails.propTypes = {
   user_total_call: PropTypes.number.isRequired,
 };
 
-export default function SubDetails({user_followers, user_rating , user_language, user_total_call, justifyContent, flag, sinceTime }) {
+export default function SubDetails({user_followers, askingCost, user_rating , user_language, user_total_call, justifyContent, flag, sinceTime }) {
   
 
   // const [isBadge, setIsBadge] = useState(false);
@@ -171,7 +171,7 @@ export default function SubDetails({user_followers, user_rating , user_language,
 
 
       {user_language && 
-        <Tooltip placement='top' title="I can speak English">
+        <Tooltip placement='top' title="English">
           <Box
             sx={
               user_language
@@ -191,6 +191,24 @@ export default function SubDetails({user_followers, user_rating , user_language,
           </Box>
         </Tooltip>
       }
+
+
+
+
+      {
+        askingCost &&
+        <Tooltip placement='top' title={`${askingCost}`}>
+          <Box sx={{color:"#1565C0", cursor:"pointer", 
+          fontSize:"medium",
+            fontWeight:"bold"
+            }}>
+            {askingCost}
+            {/* `$500/mo` */}
+            {/* `$5.00/hr` */}
+          </Box>
+        </Tooltip>
+      }
+
 
 
       {sinceTime &&
