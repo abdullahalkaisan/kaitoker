@@ -227,7 +227,7 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
     <CardActionArea
       sx={{
         // outline:"2px solid orangered", 
-        borderRadius:"100px 100px 50px 100px"
+        // borderRadius:"100px 100px 50px 100px"
       }}
       onContextMenu={(e) => {
         e.preventDefault()
@@ -237,6 +237,7 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
     >
 
 <BadgeFollowers 
+    // badgeContent={followers}
     badgeContent={followers}
     max={99999} 
     color="error"
@@ -248,18 +249,20 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
 
 
       <StyledBadge
-        badgeContent={
-          <img
-            style={{
-              display: "flex",
-              height: "fit-content",
-              width: "fit-content",
-              objectFit: "cover",
-            }}
-            src={`https://flagcdn.com/w20/${flag}.png`}
-          />
+
+        // badgeContent={
+        //   <img
+        //     style={{
+        //       display: "flex",
+        //       height: "fit-content",
+        //       width: "fit-content",
+        //       objectFit: "cover",
+        //     }}
+        //     src={`https://flagcdn.com/w20/${flag}.png`}
+        //   />
           
-        }
+        // }
+
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "right",
@@ -269,8 +272,11 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
           alt="Remy Sharp"
           src={avatarUrl}
           sx={{ width: 70, height: 70, 
+
             // borderRadius:9999
-            borderRadius:"100px 100px 50px 100px"
+            // 7 8 
+            borderRadius:8
+            // borderRadius:"100px 100px 50px 100px"
           }}
         />
 {/* {isPro &&

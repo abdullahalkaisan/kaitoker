@@ -9,8 +9,11 @@ export default function Logo() {
         color={"primary"}
         sx={{
           fontWeight: "bold",
-          color: "#0ea5e9",
+          // color: "#0ea5e9",
           // color:"#1976d2",
+          // color:"#d32f2f",
+          // color:"royalblue",
+          color:"#333",
           cursor: "pointer",
           userSelect: "none",
           display: { md: "flex", xs: "none" },
@@ -18,12 +21,24 @@ export default function Logo() {
           m: "0 20px",
         }}
       >
-        <Box>Kai</Box>
+        {/* <Box>Kai</Box> */}
         <Box sx={{ 
           // color: "#f97316",
           // color:"#d32f2f",
-          color:"#ed6c02",
-          }}>toker</Box>
+          // color:"#ed6c02",
+          color:"#fff",
+          backgroundColor:"#1976d2",
+          // backgroundColor:"#d32f2f",
+          // backgroundColor:"royalblue",
+          // backgroundColor:"#333",
+          borderRadius:1,
+          padding:"0 5px",
+          marginLeft: 0.3,
+          display:"flex"
+          }}>
+            {/* toker */}
+              Kaitalk
+            </Box>
       </Box>
 
     </Link>

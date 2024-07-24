@@ -387,8 +387,17 @@ export default function CallCard(props) {
               </Typography>
             </Link>
 
+
+{/* 
+  #c3c3c3
+  #cdcdcd
+  #d5d5d5
+*/}
+
+
             <Typography
-              sx={{ color: "#777" }}
+              sx={{ color: `${isDark ? "#c3c3c3" :"#777" }` }}
+
               // textAlign={"center"}
               variant="subtitle1"
               mt={-2}

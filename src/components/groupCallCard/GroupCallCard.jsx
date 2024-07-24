@@ -83,8 +83,8 @@ export default function GroupCallCard() {
 
         <GroupAvatarBox isPro followers={264} avatarUrl="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" flag="bd"/>
         <GroupAvatarBox followers={46} avatarUrl="https://pbs.twimg.com/profile_images/1377353524661604356/DIMdJND1_400x400.jpg" flag="us"/>
-        <GroupAvatarBox followers={46} avatarUrl="https://lh3.googleusercontent.com/a/ACg8ocL1a-xNIqHHXT9L8DLw8U0OHXt4Gwc7erfvuod3d1V-gjw" flag="ph"/>
-        <GroupAvatarBox followers={46} avatarUrl="https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg" flag="in"/>
+        {/* <GroupAvatarBox followers={46} avatarUrl="https://lh3.googleusercontent.com/a/ACg8ocL1a-xNIqHHXT9L8DLw8U0OHXt4Gwc7erfvuod3d1V-gjw" flag="ph"/> */}
+        {/* <GroupAvatarBox followers={46} avatarUrl="https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg" flag="in"/> */}
 
 
         {/* <Avatar sx={{height:70, width:70, backgroundColor:"#f1f1f1", border:"1px solid #33333330", borderRadius:5}}>
@@ -96,18 +96,39 @@ export default function GroupCallCard() {
 
 
 
+{/* dotted  */}
 
-          {/* <Box
+
+          <Box
             sx={{
-              borderRadius: "999px",
-              border: `2px dotted ${
-                isThemeDark ? "skyblue" : "#1976d2"
-              }`,
+              // borderRadius: "999px",
+              borderRadius: "32px",
+              border: `
+              1px 
+              dashed 
+              
+              ${isThemeDark ? "skyblue" : "#1976d2"}`,
               width: 70,
               height: 70,
               mr: 1,
             }}
-          ></Box> */}
+          ></Box>
+          <Box
+            sx={{
+              // borderRadius: "999px",
+              borderRadius: "32px",
+              border: `
+              1px 
+              dashed 
+              
+              ${isThemeDark ? "skyblue" : "#1976d2"}`,
+              width: 70,
+              height: 70,
+              mr: 1,
+            }}
+          ></Box>
+
+
           {/* <Box
             sx={{
               borderRadius: "999px",
@@ -163,7 +184,7 @@ export default function GroupCallCard() {
 
 
             <IconButton sx={{ borderRadius: 2, mr:0, fontWeight:"bold", fontSize:"small" }} size="small">
-              <TranslateIcon sx={{ fontSize: ""}} />
+              <TranslateIcon sx={{ fontSize: "medium"}} />
               <Box sx={{ fontSize: "", ml: 0.2 }}>English</Box>
             </IconButton>
 
@@ -193,7 +214,7 @@ export default function GroupCallCard() {
           {/* <Button color="error" variant="contained" size="small" sx={{ borderRadius: 2, fontWeight:"bold", textTransform:"capitalize" }}>
             Watch
           </Button> */}
-          <Button color="primary" variant="contained" size="small" sx={{ borderRadius: 999, }}>
+          <Button color="primary" variant="contained" size="small" sx={{ borderRadius: 333, }}>
             Join
           </Button>
         </Box>

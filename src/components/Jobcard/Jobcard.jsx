@@ -1,13 +1,20 @@
-import { Box, Button, Card, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Card, IconButton, Tooltip, Typography } from "@mui/material";
 import ChipsCustom from "../callCard/ChipsCustom";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import SubDetails from "../callCard/SubDetails";
-import { MdSupervisedUserCircle } from "react-icons/md";
+import { MdBookmark, MdBookmarkBorder, MdMoreHoriz, MdMoreVert, MdSupervisedUserCircle } from "react-icons/md";
 
 
 export default function Jobcard() {
   return (
-    <Card variant="none" sx={{width:500, p:2,m:2, border:"1px solid #00000020", borderRadius:2, boxShadow:"0 0 10px #00000010"}}>
+    <Card variant="none" sx={{
+        width:500, 
+        p:2,
+        m:2, 
+        // border:"1px solid #00000020", 
+        borderRadius:2, 
+        boxShadow:"0 0 10px #00000010"
+        }}>
 
 
 
@@ -32,16 +39,39 @@ export default function Jobcard() {
     />
 
 
+<Box sx={{display:"flex", alignItems:"center"}}>
 
 
-<Button size="small" variant="contained" sx={{
-    borderRadius:3, 
-    // width:"100%", 
-    // padding:"10px 0px"
-    }}>
-{/* {"7/10 "}  */}
-Apply
-</Button>
+
+    <Box sx={{marginRight:2}}>
+        <Button size="small" variant="contained" sx={{
+            borderRadius:3, 
+            // width:"100%", 
+            // padding:"10px 0px"
+            }}>
+        {/* {"7/10 "}  */}
+        Apply
+        </Button>
+    </Box>
+    
+    <Box sx={{
+        marginRight:0, 
+        // backgroundColor:"#00000010", 
+        borderRadius:999
+        }}>
+        {/* <IconButton>
+            <MdBookmarkBorder/>
+        </IconButton> */}
+        <IconButton>
+            <MdMoreVert/>
+            {/* <MdMoreHoriz /> */}
+        </IconButton>
+    </Box>
+
+
+
+</Box>
+
 
 </Box>
 
