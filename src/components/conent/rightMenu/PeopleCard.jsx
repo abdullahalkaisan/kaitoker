@@ -107,79 +107,78 @@ export default function PeopleCard(props) {
 
   return (
     <Box display={"flex"} flexDirection={"row"} alignItems={`${alignItems ? alignItems : "center"}`}>
-      <CardActionArea
-        sx={{ height: "auto", width: "auto", borderRadius: "999px" }}
-      >
-
-        {isOnline ?
-          <PeopleStyledBadge
-            sx={{ display: `${avatar ? "flex" : "none"}` }}
-            color={isOnline === "online" ? "info" : "warning"}
-            badgeContent={badge && isOnline ? 1 : 0}
-            variant="dot"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar
-              sx={
-                isOnline
-                  ? {
-                    width: avatarSize ? avatarSize : 32,
-                    height: avatarSize ? avatarSize : 32,
-                    borderRadius: avatarRadious ? avatarRadious : "100px 100px 10px 100px",
-                  }
-                  : {
-                    width: avatarSize ? avatarSize : 32,
-                    height: avatarSize ? avatarSize : 32,
-                    borderRadius: 9999,
-                  }
-              }
-              // alt={title}
-              src={avatarUrl}
-            />
-          </PeopleStyledBadge>
-
-          :
-
-          <PeopleOfflineStyledBadge
-            badgeContent={badge && isOnline ? 1 : lastSeen}
-            variant="string"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-          >
-            <Avatar
-              sx={{
-                width: avatarSize ? avatarSize : 32,
-                height: avatarSize ? avatarSize : 32,
-                borderRadius: `${badge ? "100px 100px 10px 100px" : 999}`,
-              }
-              }
-              // alt={title}
-              src={avatarUrl}
-            />
-          </PeopleOfflineStyledBadge>
-
-        }
 
 
 
 
 
+      {avatar && 
+        <CardActionArea
+          sx={{ height: "auto", width: "auto", borderRadius: "999px", }}
+        >
+
+          {isOnline && avatar ?
+            <PeopleStyledBadge
+              sx={{ display: `${avatar ? "flex" : "none"}` }}
+              color={isOnline === "online" ? "info" : "warning"}
+              badgeContent={badge && isOnline ? 1 : 0}
+              variant="dot"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar
+                sx={
+                  isOnline
+                    ? {
+                      width: avatarSize ? avatarSize : 32,
+                      height: avatarSize ? avatarSize : 32,
+                      borderRadius: avatarRadious ? avatarRadious : "100px 100px 10px 100px",
+                    }
+                    : {
+                      width: avatarSize ? avatarSize : 32,
+                      height: avatarSize ? avatarSize : 32,
+                      borderRadius: 9999,
+                    }
+                }
+                // alt={title}
+                src={avatarUrl}
+              />
+            </PeopleStyledBadge>
+
+            :
+
+            <PeopleOfflineStyledBadge
+              badgeContent={badge && isOnline ? 1 : lastSeen}
+              variant="string"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+            >
+              <Avatar
+                sx={{
+                  width: avatarSize ? avatarSize : 32,
+                  height: avatarSize ? avatarSize : 32,
+                  borderRadius: `${badge ? "100px 100px 10px 100px" : 999}`,
+                }
+                }
+                // alt={title}
+                src={avatarUrl}
+              />
+            </PeopleOfflineStyledBadge>
+
+          }
+
+        </CardActionArea>
+      
+      
+      }
 
 
 
 
-
-
-
-
-
-
-      </CardActionArea>
 
       <Box display={"flex"} flexDirection={"column"} mx={1}>
         <Box display={"flex"}>

@@ -84,6 +84,8 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
 
     {/* <MenuAvatarClick anchorEl={anchorEl} handleClose={handleClose} id={"account-menu"}/> */}
 
+
+
     <Menu
       anchorEl={anchorEl}
       id="account-menu"
@@ -101,8 +103,8 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
           "& .MuiAvatar-root": {
             width: 32,
             height: 32,
-            ml: -0.5,
-            mr: 1,
+            // ml: -0.5,
+            // mr: 1,
           },
           "&::before": {
             content: '""',
@@ -121,6 +123,9 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
       transformOrigin={{ horizontal: "left", vertical: "top" }}
       anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
     >
+
+
+
       <Box p={2}>
         <Box
           sx={{
@@ -130,11 +135,14 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
           }}
         >
 
-            <PeopleCard
-              title={"Abdullah Al Kaisan"}
-              subTitle={"CEO at Kaitoker"}
-              accountType={"verified"}
-            />
+              <PeopleCard
+                avatar
+                avatarUrl={avatarUrl}
+                accountType={"verified"}
+                title={"Abdullah Al Kaisan"}
+                subTitle={"CEO at Kaitoker"}
+              />
+
 
 
           <IconButton>
@@ -151,6 +159,8 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
               user_rating={50}
               user_language={"English"}
               user_total_call={124}
+              flag={flag}
+              Avatar
             />
 
 
@@ -196,6 +206,8 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
       </Box>
       <Box sx={{px:3}}>
           <AudioSlider_custom/>
+
+
           <Box
               display={"flex"}
               bgcolor={"background.default"}
@@ -206,14 +218,25 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
               mb={2}
               mx={2}
               alignItems={"center"}
-              justifyContent={"space-evenly"}
+              // justifyContent={"space-evenly"}
+              justifyContent={"space-between"}
               // justifyContent={"center"}
             >
+
               {/* <IconButton color="primary" size="large">
                 <UilUserPlus />
               </IconButton> */}
 
+
+              <IconButton color="primary" size="large">
+                <UilUserPlus />
+              </IconButton>
+              <IconButton color="primary" size="large">
+                <UilCommentMessage />
+              </IconButton>
+
               <AudioPlay_button/>
+
 
             </Box>
 

@@ -30,6 +30,7 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { MdOutlineInsertComment, MdOutlineShare } from 'react-icons/md';
 import { useState } from 'react';
+import { IoMdEye } from 'react-icons/io';
 
 
 
@@ -158,8 +159,10 @@ export default function PostCard({item}) {
                 checkedIcon={<FavoriteIcon />}
               />
             }
-            label={"6"}
+            label={"600"}
           />
+
+
           <FormControlLabel
             control={
               <Checkbox
@@ -169,8 +172,11 @@ export default function PostCard({item}) {
                 checkedIcon={<ThumbDownAltIcon />}
               />
             }
-            label={"4"}
+            label={"400"}
           />
+
+
+
           {/* </IconButton> */}
 
           {/* <IconButton aria-label="share">
@@ -181,14 +187,25 @@ export default function PostCard({item}) {
             <ForumOutlinedIcon />
           </IconButton> */}
 
+        <FormControlLabel
+            control={
+              <IconButton>
+                <IoMdEye />
+              </IconButton>
+            }
+            label={"7K"}
+          />
+          
           <FormControlLabel
             control={
               <IconButton>
                 <MdOutlineInsertComment />
               </IconButton>
             }
-            label={"7"}
+            label={"700"}
           />
+
+
 
           <FormControlLabel
             control={
@@ -196,7 +213,7 @@ export default function PostCard({item}) {
                 <MdOutlineShare />
               </IconButton>
             }
-            label={ "1"}
+            label={ "100"}
           />
 
 

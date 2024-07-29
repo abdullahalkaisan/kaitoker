@@ -96,12 +96,12 @@ export default function Jobcard() {
 
 
 <SubDetails 
-proposal={"15/20"}
-// user_rating={"45"}
-user_language={"En"}
-// flag={"bd"}
-askingCost={"$600/mo"}
-justifyContent={"flex-start"}
+    proposal={"15/20"}
+    // user_rating={"45"}
+    user_language={"English"}
+    // flag={"bd"}
+    askingCost={"$600/mo"}
+    justifyContent={"flex-start"}
 />
 
 

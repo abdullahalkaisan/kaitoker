@@ -2,7 +2,8 @@
 import {   Avatar, Box, Button, Card, IconButton,  Tooltip, Typography } from "@mui/material";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import TranslateIcon from '@mui/icons-material/Translate';
-import { UilVideoSlash } from '@iconscout/react-unicons'
+import { UilVideoSlash, 
+  UilVideo } from '@iconscout/react-unicons'
 import { 
     UilMars
 } from '@iconscout/react-unicons'
@@ -189,9 +190,16 @@ export default function GroupCallCard() {
             </IconButton>
 
 
-            {/* <IconButton size="small">
+            {/* <IconButton color="error" size="small">
               <UilVideoSlash />
             </IconButton> */}
+
+            {/* <IconButton color="info" size="small">
+              <UilVideo />
+            </IconButton> */}
+
+
+
             <Tooltip sx={{display:"none"}} title="Only Male">
               <IconButton color="info">
                 <Box

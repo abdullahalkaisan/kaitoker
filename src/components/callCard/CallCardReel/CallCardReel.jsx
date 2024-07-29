@@ -165,13 +165,56 @@ export default function CallCardReel() {
         justifyContent={"space-between"}
         alignItems={"start"}
       >
+
+
+
+
         <Box
           p={1.5}
           width={1}
           display={"flex"}
           flexDirection={"column"}
           alignItems={"center"}
+
         >
+
+
+
+          {/* <iframe src="https://youtu.be/cFBQe45hhOs" ></iframe> */}
+          
+          
+          <iframe style={{borderRadius:8}} width="374" height="210" src="https://www.youtube.com/embed/cFBQe45hhOs?autoplay=1" title="Learn English and  French with Esther on italki" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+{/* next prev button  */}
+<Box
+            display={"flex"}
+            bgcolor={"background.default"}
+            color={"text.primary"}
+            flexDirection={"row"}
+            width={300}
+            m={"10px 0"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+{/* onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  */}
+            <IconButton onClick={() => setCurrentUser(Math.max(0, currentUser - 1))}  color="primary" size="">
+            <MdOutlineArrowBackIos/>
+            </IconButton>
+
+            {/* <AudioPlay_button /> */}
+{/* onClick={() => setCurrentUser(Math.min(usersDataLocal.length - 1, currentUser + 1))}  */}
+            <IconButton onClick={() => setCurrentUser(Math.min(userData.length - 1, currentUser + 1))}  variant="contained" color="primary" size="">
+            <MdArrowForwardIos/>
+            </IconButton>
+          </Box>
+
+
+
+
+
+        <Box sx={{display:"none"}}>
+        
+
           <CardActionArea
             sx={ isOnline === "online" || isOnline === "busy" ?  {
               height:150,
@@ -262,6 +305,9 @@ export default function CallCardReel() {
 
 
 
+
+
+
 {/* next prev button  */}
           <Box
             display={"flex"}
@@ -290,11 +336,16 @@ export default function CallCardReel() {
 
 
 
-
-
+          </Box>
 
 
         </Box>
+
+
+
+
+
+
 
         <Box
           width={800}
