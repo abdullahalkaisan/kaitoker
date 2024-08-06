@@ -80,7 +80,7 @@ export default function RightMenu_container() {
       sx={{
         display: { md: "flex", xs: "none" },
         height: "100%",
-        width: "370px",
+        width: 370,
         flexDirection: "column",
       }}
     >
@@ -88,19 +88,26 @@ export default function RightMenu_container() {
 
       <Box
         sx={{
-          borderBottom: 1,
+          // borderBottom: 1,
           // paddingTop: 1,
           borderColor: "divider",
-          display:"flex"
+          width:370,
+          display:"flex",
+          // paddingX:2
         }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          // indicatorColor=''
+
         >
-          <Tab icon={<UilUser />} {...a11yProps(0)} />
+          <Tab 
+          // sx={{minWidth:"auto", borderRadius:4}} 
+          icon={<UilUser />} {...a11yProps(0)} />
 
           <Tab
+            // sx={{minWidth:"auto", borderRadius:4}}
             icon={
               <Badge badgeContent={10} color="error" max={9}>
                 <UilCommentLines />
@@ -108,6 +115,8 @@ export default function RightMenu_container() {
             }
             {...a11yProps(1)}
           />
+
+          
           <Tab
             icon={
               <Badge color="error" badgeContent={2} max={9}>
@@ -116,7 +125,10 @@ export default function RightMenu_container() {
             }
             {...a11yProps(4)}
           />
+
+
           <Tab
+            // sx={{minWidth:"auto", borderRadius:4}}
             icon={
               <Badge color="error" badgeContent={1} max={9}>
                 <UilHistory />
@@ -124,6 +136,7 @@ export default function RightMenu_container() {
             }
             {...a11yProps(3)}
           />
+          
         </Tabs>
       </Box>
 

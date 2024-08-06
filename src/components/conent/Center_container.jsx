@@ -102,9 +102,9 @@ export default function Center_container() {
         color={"text.primary"}
         sx={{
           width: "100%",
-          display: { md: `${isNewsRoute?"none":"flex"}`, xs: "none" },
+          display: { md: `${isNewsRoute?"none":"none"}`, xs: "none" },
           alignItems: "center",
-          justifyContent: "space-betwee",
+          justifyContent: "center",
         }}
       >
         <Autocomplete
@@ -114,7 +114,8 @@ export default function Center_container() {
           disablePortal
           id="combo-box-demo"
           options={searchItemsSuggetioins}
-          sx={{ width: "70%", m: 1 }}
+          // sx={{ width: "70%", m: 1 }}
+          sx={{ m: 1 }}
         //   InputProps={{
         //     startAdornment: (
         //         <InputAdornment position="start">
@@ -122,11 +123,11 @@ export default function Center_container() {
         //         </InputAdornment>
         //     ),
         // }}
-          renderInput={(params) => <TextField {...params} label="Search 501,246 Users, Profession, Id, Skills" />}
+          renderInput={(params) => <TextField   variant="filled"  sx={{width:500}} {...params} label="Search 501,246 kaitalkers" />}
         />
 
 
-        <LanguageSelect />
+        {/* <LanguageSelect /> */}
 
         {/* <Button
           variant="contained"
@@ -157,21 +158,21 @@ export default function Center_container() {
 
 
 
-          <FormControlLabel
+          {/* <FormControlLabel
             sx={{marginLeft:2}}
             value="start"
             control={<Switch  color="primary" />}
             label="Skills"
             // labelPlacement=""
-          />
+          /> */}
 
  
 
 
-        <Button variant="soft" color="info" size="small" sx={{ m: 1, borderRadius: 999 }}>
+        {/* <Button variant="soft" color="info" size="small" sx={{ m: 1, borderRadius: 999 }}>
           <AllInclusiveOutlinedIcon color="info" sx={{ marginRight: 1 }} />
           10.16K
-        </Button>
+        </Button> */}
 
 
 

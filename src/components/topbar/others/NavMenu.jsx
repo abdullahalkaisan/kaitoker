@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs, Tooltip } from '@mui/material'
+import { Box, IconButton, Tab, Tabs, TextField, Tooltip } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 
   import { 
@@ -12,12 +12,19 @@ import React, { useEffect, useState } from 'react'
 } from '@iconscout/react-unicons'
 import { Link, useLocation } from 'react-router-dom';
 import { Home01Icon } from '@hugeicons/react-pro';
+import SearchTextArea from '../../SearchTextArea';
+import { MdTune } from 'react-icons/md';
+import { useTheme } from '@emotion/react';
 
 
 
 
 export default function NavMenu() {
 
+
+  const theme = useTheme();
+
+  const isDark = theme.palette.mode === "dark";
 
 
     const [value_mainMenu, setValue_mainMenu] = useState(0);
@@ -49,7 +56,8 @@ export default function NavMenu() {
 
   return (
 
-        <Box sx={{display:{md:"flex", xs:"none"}}} flex={1} m={"0 50px"}>
+        <Box sx={{display:{md:"flex", xs:"none"}, alignItems:"center"}} flex={1} m={"0 50px"}>
+
           <Tabs value={value_mainMenu} onChange={handleChange_mainMenu} aria-label="icon tabs example">
             
 
@@ -65,18 +73,51 @@ export default function NavMenu() {
             <Tooltip title="Group" enterDelay={1000} placement="bottom-end">
                 <Tab to="/group" component={Link} sx={{minWidth:70}} icon={<UilMicrophone />} aria-label="person"/>
             </Tooltip>
-            <Tooltip title="News" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="News" enterDelay={1000} placement="bottom-end">
                 <Tab to="/news" component={Link} sx={{minWidth:70}} icon={<UilNewspaper />} aria-label="favorite" />
             </Tooltip>
             <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilPresentationMinus />} aria-label="person" />
-            </Tooltip>
-
+            </Tooltip> */}
 
             {/* <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab sx={{minWidth:70}} icon={<UilPlayCircle />} aria-label="person" />
             </Tooltip> */}
           </Tabs>
+
+          {/* <Box sx={{width:500}}>
+            <TextField sx={{margin:1, marginLeft:10}} size='small' fullWidth label="Search 501,246 Users, Profession, Id, Skills" />
+          </Box> */}
+
+          <TextField   
+            // variant="filled" 
+            type='search' 
+            size='small'
+            sx={{
+              width:350, 
+              // marginTop:2,
+              // marginBottom:1,
+              margin:1,
+              marginLeft:4,
+              backgroundColor:`${isDark ? "#222" : ""}`
+            }} 
+            // label="Search 501,246 talent" 
+            placeholder='Search 501,246 talent'
+          />
+                <IconButton color="primary" sx={{ p: '10px' }} >
+        {/* <DirectionsIcon /> */}
+        <MdTune/>
+      </IconButton>
+
+
+    {/* <Box sx={{margin:1}}>
+      <SearchTextArea/>
+    </Box> */}
+
+
+
+
+
         </Box>
   )
 }

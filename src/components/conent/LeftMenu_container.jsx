@@ -60,12 +60,13 @@ export default function LeftMenu_container() {
 
       sx={{ display: { md: "flex", xs: "none" } }}
     >
-      <IconButton color="primary" sx={{ m: 1 }}>
+      {/* <IconButton color="primary" sx={{ m: 1 }}>
         <UilPlusCircle/>
-      </IconButton>
-      <IconButton sx={{ m: 1 }}>
+      </IconButton> */}
+
+      {/* <IconButton sx={{ m: 1 }}>
         <UilSlidersVAlt />
-      </IconButton>
+      </IconButton> */}
 
 
 
@@ -93,9 +94,9 @@ export default function LeftMenu_container() {
 
 
 
-      <IconButton sx={{ m: 1 }} onClick={handleClickOpen}>
+      {/* <IconButton sx={{ m: 1 }} onClick={handleClickOpen}>
         <UilCloudDownload />
-      </IconButton>
+      </IconButton> */}
 
       <Dialog
         display="none"
@@ -205,12 +206,12 @@ export default function LeftMenu_container() {
       </Dialog>
 
 
-
+{/* 
       <Tooltip sx={{ m: 1 }} title="About Kaitoker" placement="right">
         <IconButton>
           <UilQuestionCircle />
         </IconButton>
-      </Tooltip>
+      </Tooltip> */}
 
 
 
@@ -223,7 +224,7 @@ export default function LeftMenu_container() {
       </Tooltip>
 
       
-      {user &&
+      {/* {user &&
         <Tooltip sx={{ m: 1 }} title="Gift" placement="right">
           <IconButton
             color="primary"
@@ -233,9 +234,7 @@ export default function LeftMenu_container() {
             </Badge>
           </IconButton>
         </Tooltip>
-
-        
-      }
+      } */}
 
 
 

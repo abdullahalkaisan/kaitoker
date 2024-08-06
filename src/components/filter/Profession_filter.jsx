@@ -36,7 +36,14 @@ export default function Slider_filter() {
         <Box 
         bgcolor={"background.default"} 
         color={"text.primary"} 
-        sx={{ display:"flex", px:3, maxWidth: 1, bgcolor: 'background.paper', }}>
+        sx={{ 
+          display:"flex", 
+          px:3, 
+          maxWidth: 1, 
+          bgcolor: 'background.paper', 
+          // backgroundColor:"#ffffff90", 
+          // backdropFilter:"blur(20px)"
+          }}>
         
         <IconButton  sx={{display:{md:"none", xs:"flex"}}}>
           <UilSlidersVAlt/>
@@ -54,9 +61,9 @@ export default function Slider_filter() {
         >
 
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/neurodiverse.png" />} label="All (564)" />
-          <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/null/translation.png" />} label="Languages (64)" />
+          <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/null/translation.png" />} label="Languages Teacher (64)" />
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/console.png" />} label="Programmer (564)" />
-          <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/passenger-with-baggage.png" />} label="Traveler (964)" />
+          {/* <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/passenger-with-baggage.png" />} label="Traveler (964)" /> */}
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/design.png" />} label="Graphics designer (164)" />
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/video-trimming.png" />} label="Video editor (452)" />
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/brain.png" />} label="Psychologist (64)" />
@@ -65,7 +72,7 @@ export default function Slider_filter() {
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/light.png" />} label="Advisor (64)" />
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/pray.png" />}label="Religioist (64)" />
           <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/telescope.png" />} label="Astronomy (64)" />
-          <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/investment.png" />} label="bussiness (64)" />
+          <CustomTab iconPosition="start" icon={<img width="24" height="24" src="https://img.icons8.com/fluency/48/000000/investment.png" />} label="Bussiness (64)" />
 
         </Tabs>
         </Box>

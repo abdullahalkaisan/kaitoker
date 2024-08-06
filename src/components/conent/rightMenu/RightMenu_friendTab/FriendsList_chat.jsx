@@ -2,6 +2,7 @@ import { Box, IconButton, TextField } from '@mui/material'
 import { MdTune } from 'react-icons/md'
 import PeopleList from '../PeopleList'
 import { usersDataLocal } from '../../../../usersDataLocal';
+import SearchTextArea from '../../../SearchTextArea';
 
 export default function FriendsList_chat() {
   // Custom sort function
@@ -20,7 +21,7 @@ export default function FriendsList_chat() {
     
   return (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflow: "hidden" }}>
-    <Box sx={{ display: "flex", justifyContent: "space-between", px: 2, pb:1, pt:1 }}>
+    {/* <Box sx={{ display: "flex", justifyContent: "space-between", px: 2, pb:1, pt:1 }}>
       <TextField
         fullWidth
         id="filled-search"
@@ -33,7 +34,13 @@ export default function FriendsList_chat() {
       <IconButton sx={{marginLeft:1}}>
         <MdTune />
       </IconButton>
+    </Box> */}
+
+    <Box sx={{margin:1, width:320}}>
+      <SearchTextArea/>
     </Box>
+
+
     <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:"column",  overflow: "auto" }}>
       <Box sx={{p:2}}>
         {sortedUsers.map((item) => (

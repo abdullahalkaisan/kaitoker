@@ -68,10 +68,9 @@ function App() {
 
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
-
       
-      { isFilterProfetionShow && <Profession_filter/> }
-
+      {/* { isFilterProfetionShow && <Profession_filter/> }  */}
+      <Profession_filter/>
 
       <Box 
         display={"flex"} 
