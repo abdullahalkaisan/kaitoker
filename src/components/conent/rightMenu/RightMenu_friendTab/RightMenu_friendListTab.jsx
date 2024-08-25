@@ -136,14 +136,15 @@ export default function RightMenu_friendListTab() {
                       title={item.userName}
                       subTitle={item.profession}
                       lastSeen={"11m"}
-                      country={item.country}
+                      // country={item.country}
                       isVarified={item.isVarified}
                       avatarUrl={item.avatar}
                       isOnline={item.isOnline}
-                      flag={item.flag}
+                      // flag={item.flag}
                       avatar={true}
                       badge={true}
-                      avatarSize={47}
+                      // avatarSize={47}
+                      avatarSize={40}
                     />
                   ))}
                 </Box>

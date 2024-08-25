@@ -55,7 +55,7 @@ import ChipsCustom from "./ChipsCustom";
 import SubDetails from "./SubDetails";
 import { IoMdInfinite } from "react-icons/io";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CallCardContext } from "../../Providers/CallCardProvider";
 import { MdChair } from "react-icons/md";
 import { Tune } from "@mui/icons-material";
@@ -75,6 +75,8 @@ export default function CallCard(props) {
     isPaused,
     setIsPaused,
   } = useContext(CallCardContext)
+
+  const [isShow, setIsShow] = useState(false)
 
 
 
@@ -264,7 +266,7 @@ export default function CallCard(props) {
             <CardActionArea
               sx={{borderRadius: avatarRadious}}
               // className={`animate__animated  ${isPaused ? " animate__jello" : "animate__rubberBand"}`}
-              onClick={() => setIsPaused(!isPaused)}
+              onClick={() => { setIsPaused(!isPaused); setIsShow(!isShow)} }
               // sx={{ borderLeft: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderTop: `3px solid #1976D2${isPaused ? "00" : "90"}`, borderRadius: avatarRadious }}
               size="small"
               >
@@ -396,7 +398,10 @@ export default function CallCard(props) {
 
 
             <Typography
-              sx={{ color: `${isDark ? "#c3c3c3" :"#777" }` }}
+
+
+              sx={{ color: `${isDark ? "#c3c3c3" :"#444" }` }}
+              // sx={{ color: `${isDark ? "#c3c3c3" :"#1976d2" }` }}
 
               // textAlign={"center"}
               variant="subtitle1"
@@ -543,14 +548,16 @@ export default function CallCard(props) {
         </Box> */}
 
 
-{isOnline && 
-!isPaused && 
+
+
+{/* {isOnline && 
+!isPaused &&  */}
         <Box sx={{
-        // display:"none",
+        display:"none",
         margin:"30px 30px 15px 30px", 
         border:`1px solid ${isDark ? "#ffffff10" : "#00000010"}`, 
+        backgroundColor:`${isDark ? "#222" : "#f1f1f1"}`,
         borderRadius:3,  
-        backgroundColor:`${isDark ? "#222" : "#f1f1f1"}`
         }}>
 {/* 
 #f1f1f170
@@ -570,21 +577,31 @@ export default function CallCard(props) {
           avatarHeight={30}
           />
         </Box>
-      }
-
-
-
-
+      {/* } */}
         {/* 
 pro user functonality 
 user can add 5 skills 
 pro user can add 10 skills
-
-
-
 */}
 
-{!isPaused &&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{isShow &&
         <Box
           bgcolor={"background.default"}
           color={"text.primary"}
@@ -627,7 +644,7 @@ pro user can add 10 skills
 
         {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
         
-        {!isPaused &&
+        {isShow &&
           <Box 
             // className={`animate__animated  ${isPaused ? "  " : "  "}`}
             sx={{
@@ -642,74 +659,89 @@ pro user can add 10 skills
 
 
 
-        <Stack
-          // sx={{ display: "none" }}
-          bgcolor={"background.default"}
-          color={"text.primary"}
-          flexDirection={"row"}
-          m={"10px 0"}
-          alignItems={"center"}
-          justifyContent={"space-evenly"}
-        >
-          {/* <IconButton color="info">
-            <UilStar />
-          </IconButton> */}
+
+
+        {isShow && 
+          <Stack
+            // sx={{ display: "none" }}
+            bgcolor={"background.default"}
+            color={"text.primary"}
+            flexDirection={"row"}
+            m={"10px 0"}
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+            {/* <IconButton color="info">
+              <UilStar />
+            </IconButton> */}
 
 
 
-          <IconButton color="primary">
-            {/* <UilHeart/> */}
-            {/* <UilStar/> */}
-            {/* <UilUserPlus/> */}
-            {/* <UilPlus/> */}
-            <UilUserPlus />
-          </IconButton>
+            <IconButton color="primary">
+              {/* <UilHeart/> */}
+              {/* <UilStar/> */}
+              {/* <UilUserPlus/> */}
+              {/* <UilPlus/> */}
+              <UilUserPlus />
+            </IconButton>
+            <AudioPlay_button />
 
-          <IconButton color="info">
-            <UilCommentLines />
-          </IconButton>
-
-
-
-          <AudioPlay_button />
+            <IconButton color="info">
+              <UilCommentLines />
+            </IconButton>
 
 
 
 
-          {/* <IconButton color="primary" size="large">
-              <UilVideo />
-          </IconButton> */}
+            {/* <IconButton color="primary" size="large">
+                <UilVideo />
+            </IconButton> */}
 
-          <Box>
-            {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}
-            {/* #ED6C02  */}
-            {/* #1D9BF0  */}
-            <Link to={"/callpage"}>
-              <Button
-                // disabled={isOnline ? false : true}
-                size="small"
-                sx={{
-                  borderRadius: 3, textTransform: "none",
-                  // opacity:`${isOnline ? "100%" :"30%"}`,
-                  // outline :2px || 3px|| 4px 
-                  // opacity : 70 || 80 || 90
-                  // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
-                  // backgroundColor:`${isOnline ? "#1565C0":"#333"}`
-                }}
-                variant="contained"
-                // color=""
-              >
-                {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
-                {/* Hire  */}
-                {/* $120 Month */}
-                {/* {`$2.00/hr`} */}
-                {/* Free */}
-                {/* Join */}
-                {isOnline ? "Join" : "Book"}
-              </Button>
-            </Link>
-          </Box>
-        </Stack>
+
+            <Box 
+            sx={{display:"none"}}
+            >
+              {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}
+              {/* #ED6C02  */}
+              {/* #1D9BF0  */}
+              <Link to={"/callpage"}>
+                <Button
+                  // disabled={isOnline ? false : true}
+                  size="small"
+                  sx={{
+                    borderRadius: 3, textTransform: "none",
+                    // opacity:`${isOnline ? "100%" :"30%"}`,
+                    // outline :2px || 3px|| 4px 
+                    // opacity : 70 || 80 || 90
+                    // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
+                    // backgroundColor:`${isOnline ? "#1565C0":"#333"}`
+                  }}
+                  variant="contained"
+                  // color=""
+                >
+                  {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
+                  {/* Hire  */}
+                  {/* $120 Month */}
+                  {/* {`$2.00/hr`} */}
+                  {/* Free */}
+                  {/* Join */}
+                  {isOnline ? "Join" : "Book"}
+                </Button>
+              </Link>
+            </Box>
+
+          </Stack>
+        
+        }
+
+
+
+
+
+
+
+
+
 
 
 

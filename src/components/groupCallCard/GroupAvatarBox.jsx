@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, CardActionArea, Divider, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, CardActionArea, Divider, IconButton,  List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu } from '@mui/material';
 import { useState } from 'react'
 import AudioPlay_button from '../callCard/AudioPlay_button';
 import AudioSlider_custom from '../callCard/AudioSlider_custom';
@@ -7,7 +7,7 @@ import PeopleCard from '../conent/rightMenu/PeopleCard';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import RoomIcon from '@mui/icons-material/Room';
+// import RoomIcon from '@mui/icons-material/Room';
 
 import { 
     UilLocationPoint, 
@@ -16,9 +16,21 @@ import {
     UilCalender,
     UilLetterJapaneseA,
 } from '@iconscout/react-unicons'
+import ChipsCustom from '../callCard/ChipsCustom';
 
 
-export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
+export default function GroupAvatarBox({followers, avatarUrl, flag}) {
+
+ const skills = [
+    { name: "Javascript", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "React", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "MongoDB", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "Photoshop", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "Premiere pro", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "Graphic design", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "UX UI Design", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+    { name: "English", icon: "https://img.icons8.com/color/48/adobe-premiere-pro--v1.png" },
+  ]
 
 
 
@@ -100,24 +112,28 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
           overflow: "visible",
           filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
           mt: 1.5,
+          borderRadius:3,
+          border:"1px solid #00000020",
+
+
           "& .MuiAvatar-root": {
             width: 32,
             height: 32,
             // ml: -0.5,
             // mr: 1,
           },
-          "&::before": {
-            content: '""',
-            display: "block",
-            position: "absolute",
-            top: 0,
-            left: 30,
-            width: 10,
-            height: 10,
-            bgcolor: "background.paper",
-            transform: "translateY(-50%) rotate(45deg)",
-            zIndex: 0,
-          },
+          // "&::before": {
+          //   content: '""',
+          //   display: "block",
+          //   position: "absolute",
+          //   top: 0,
+          //   left: 30,
+          //   width: 10,
+          //   height: 10,
+          //   bgcolor: "background.paper",
+          //   transform: "translateY(-50%) rotate(45deg)",
+          //   zIndex: 0,
+          // },
         },
       }}
       transformOrigin={{ horizontal: "left", vertical: "top" }}
@@ -166,43 +182,16 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
 
 
 
-        <Divider sx={{ mt: 2, display: "none" }} />
 
-        <nav
-          style={{ display: "none" }}
-          aria-label="main mailbox folders"
-        >
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <UilLocationPoint />
-                </ListItemIcon>
-                <ListItemText size="small" primary="Bangladesh" />
-              </ListItemButton>
-            </ListItem>
+        {/* <Divider sx={{ m: 2,  }} /> */}
 
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <UilLetterJapaneseA />
-                </ListItemIcon>
-                <Box>
-                  <ListItemText primary="Bengali, Hindi, English" />
-                </Box>
-              </ListItemButton>
-            </ListItem>
+          <Box sx={{width:300, marginTop:2}}>
+            {skills.map((skill, index) => (
+                <ChipsCustom key={index} hashTagStyle={true} label={skill.name} />
+              ))}
+          </Box>
 
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <UilCalender />
-                </ListItemIcon>
-                <ListItemText primary="21 Dec 2022 (1y 4m)" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </nav>
+
       </Box>
       <Box sx={{px:3}}>
           <AudioSlider_custom/>
@@ -227,15 +216,16 @@ export default function GroupAvatarBox({followers, avatarUrl, flag, isPro}) {
                 <UilUserPlus />
               </IconButton> */}
 
-
               <IconButton color="primary" size="large">
                 <UilUserPlus />
               </IconButton>
+
+              <AudioPlay_button/>
+
               <IconButton color="primary" size="large">
                 <UilCommentMessage />
               </IconButton>
 
-              <AudioPlay_button/>
 
 
             </Box>

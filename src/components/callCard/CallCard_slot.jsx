@@ -1,16 +1,27 @@
 import { Avatar, Box, CardActionArea } from "@mui/material";
 import { MdChair } from "react-icons/md";
+import { Button } from "@mui/material";
+import { useTheme } from "@emotion/react";
+
 
 
 export default function CallCard_slot() {
+
+  // const theme = useTheme()
+  // const isDark = theme.palette.mode = "dark";
+
+
+
   return (
     
                 <Box sx={{
                   display:"flex", 
-                  width:"max-content", 
-                  // backgroundColor:`${isDark ? "#222" : "#f1f1f190"}`, 
+                  // width:"max-content", 
+                  width:"87%",
+                  justifyContent:"space-between",
+                  // backgroundColor:`${isDark ? "#222" : "#f1f1f1"}`, 
                   // border:"1px solid #00000020",
-                  p:1, 
+                  p:1,
                   borderRadius:4444, 
                 //   margin: "10px 0 10px 40px"
                   }}>
@@ -22,10 +33,15 @@ export default function CallCard_slot() {
                       <MdChair />
                     </Avatar>
                 </AvatarGroup> */}
-                  <CardActionArea sx={{width:"auto", height:"auto",  margin:"0 5px", borderRadius:999}}>
+
+
+                <Box sx={{display:"flex"}}>
+
+
+                <CardActionArea sx={{width:"auto", height:"auto",  margin:"0 5px", borderRadius:999}}>
                     <Avatar 
                       src="https://pbs.twimg.com/profile_images/1771256075418775552/Qh982rGL_400x400.jpg" 
-                    //   sx={{height:30, width:30, }} 
+                      sx={{height:30, width:30, }} 
                       >
                       <MdChair 
                       // color={isDark ? "#000" : "#999"} 
@@ -33,11 +49,12 @@ export default function CallCard_slot() {
                       />
                     </Avatar>
                   </CardActionArea>
-                  
+
+
                   
                   <CardActionArea sx={{width:"auto", height:"auto",  margin:"0 5px", borderRadius:999}}>
                     <Avatar 
-                    // sx={{height:30, width:30, }} 
+                    sx={{height:30, width:30, }} 
                     >
                       <MdChair 
                       // color={isDark ? "#000" : "#999"}
@@ -45,18 +62,27 @@ export default function CallCard_slot() {
                     </Avatar>
                   </CardActionArea>
 
+
                   <CardActionArea sx={{width:"auto", height:"auto",  margin:"0 5px", borderRadius:999}}>
                     <Avatar 
-                    // sx={{height:30, width:30, 
-                    //   // background:"transparent"
-                    //   }} 
+                    sx={{height:30, width:30, 
+                      // background:"transparent"
+                      }} 
                       >
                       <MdChair 
                       // color={isDark ? "#000" : "#999"}
                       />
                     </Avatar>
                   </CardActionArea>
-                  
+
+
+                  </Box>
+
+
+
+
+                  <Button size="small" sx={{borderRadius:333}} variant="contained" >Join</Button>
+                  {/* <Button size="small" sx={{borderRadius:3}} color="error" variant="contained" >Appointment</Button> */}
               </Box>
   )
 }

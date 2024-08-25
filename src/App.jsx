@@ -14,6 +14,7 @@ import TopBar from "./components/topbar/Topbar"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "./Providers/AuthProvider"
 import { useLocation } from "react-router-dom"
+import NavMenu from "./components/topbar/others/NavMenu"
 // import { Helmet } from "react-helmet"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
@@ -79,6 +80,7 @@ function App() {
         overflow={"hidden"}
         >
           <LeftMenu_container/>
+          {/* <NavMenu/> */}
           <Center_container/>
           { 
           user &&

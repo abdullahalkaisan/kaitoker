@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
-import { Badge, Box, Button, CircularProgress, Dialog,  DialogContent,  IconButton,  Stack, Tooltip, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Dialog,  DialogContent,  IconButton,  Stack, Tooltip, Typography } from "@mui/material";
 import { 
-  UilSlidersVAlt,
+  // UilSlidersVAlt,
   UilAnalysis,
   // UilSignout,
   // UilArrowCircleUp,
   UilSetting,
-  UilQuestionCircle,
+  // UilQuestionCircle,
   // UilMobileAndroid,
   // UilAndroidAlt,
   // UilAndroid,
-  UilCloudDownload,
+  // UilCloudDownload,
   UilDownloadAlt,
   // UilWebGrid,
-  UilGift,
-  UilPlusCircle
+  // UilGift,
+  // UilPlusCircle
   // UilBell
 
 } from '@iconscout/react-unicons'
@@ -25,6 +25,7 @@ import Logout_option from "./Logout_option";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ThemeCustomContext } from "../../Providers/ThemeCustomProvider";
 import UpdateAccount_dialog from "../UpdateAccount_dialog";
+import NavMenu from "../topbar/others/NavMenu";
 export default function LeftMenu_container() {
 
   const {user} = useContext(AuthContext)
@@ -35,15 +36,13 @@ export default function LeftMenu_container() {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);
   };
-
-
 
 
   return (
@@ -57,9 +56,15 @@ export default function LeftMenu_container() {
       width={"100px"}
       height={"100%"}
       overflow={"auto"}
-
       sx={{ display: { md: "flex", xs: "none" } }}
     >
+
+
+
+    {/* <NavMenu/> */}
+
+
+
       {/* <IconButton color="primary" sx={{ m: 1 }}>
         <UilPlusCircle/>
       </IconButton> */}

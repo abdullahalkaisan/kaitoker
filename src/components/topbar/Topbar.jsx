@@ -23,6 +23,7 @@ import LoadingWithLogo from "../LoadingWithLogo";
 // import { MdOutlineLogin } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import TicketPop from "../TicketPop";
+import SearchMain from "../SearchMain";
 // import SignInWithGoogle_Btn from "./SignInWithGoogle_Btn";
 
 
@@ -63,10 +64,11 @@ export default function TopBar() {
           <MunitesAndMoneyPop />
         </Box>
 
-        <Logo />
-        
-        <NavMenu />
-
+        <Box sx={{display:"flex", alignItems:"center"}}>
+          <Logo />
+          <NavMenu />
+          <SearchMain/>
+        </Box>
 
 
         <Box display={"flex"}>

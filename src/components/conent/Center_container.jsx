@@ -25,6 +25,7 @@ import { useEffect, useState } from "react";
 import IOS_Switch from "../IOS_Switch";
 import AntSwitch_custom from "../AntSwitch_custom";
 import VideoCard from "../VideoCard/VideoCard";
+import SearchMain from "../SearchMain";
 // import { LiaSearchMinusSolid } from "react-icons/lia";
 // import PostCard from "../../pages/ProfilePage/TabMenuProfile/PostCard";
 // import { useEffect } from "react";
@@ -90,8 +91,9 @@ export default function Center_container() {
 
 
 
-
-
+    {/* <Box sx={{display:"flex", justifyContent:"center"}}>
+      <SearchMain/>
+    </Box> */}
 
 
 
@@ -233,6 +235,9 @@ export default function Center_container() {
         <CallCardLite/>
         <CallCardLite/>
          */}
+
+
+
 
 
 
