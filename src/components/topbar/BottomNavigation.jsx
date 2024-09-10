@@ -14,6 +14,7 @@ import {
     // UilPlayCircle
 } from '@iconscout/react-unicons'
 import { Box } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 
 const navStyle = {
@@ -22,11 +23,19 @@ const navStyle = {
     margin: 0,
     flexBasis: 1,
     minWidth: 60,
-    maxWidth: 60
+    maxWidth: 60,
+    borderRadius:999
 }
 
 
+
+
 export default function LabelBottomNavigation() {
+
+    const theme = useTheme();
+    const isDark = theme.palette.mode === "dark";
+
+
     const [value, setValue] = React.useState('home');
 
     const handleChange = (event, newValue) => {
@@ -35,7 +44,9 @@ export default function LabelBottomNavigation() {
 
     return (
 
-        <BottomNavigation sx={{ width: "100%", display: {md:"none",xs:"flex"}, flexDirection: "row", justifyContent: "space-evenly", position:"absolute", bottom:0, zIndex:999, paddingY:1, backgroundColor:"#fff" }} value={value} onChange={handleChange}>
+        <BottomNavigation sx={{ width: "100%", display: {md:"none",xs:"flex"}, flexDirection: "row", justifyContent: "space-evenly", 
+        // position:"fixed", bottom:0, zIndex:999, 
+        paddingY:1, backgroundColor:`${isDark ? "#222" :"#fff"}` }} value={value} onChange={handleChange}>
             <BottomNavigationAction
                 sx={navStyle}
                 label="Home"
