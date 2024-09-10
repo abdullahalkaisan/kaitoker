@@ -59,11 +59,13 @@ export default function TopBar() {
           <MunitesAndMoneyPop />
         </Box> */}
 
+
         <Box sx={{display:"flex", alignItems:"center"}}>
             <Logo />
             {/* <NavMenu /> */}
-            {/* <SearchMain/> */}
+          <SearchMain/>
         </Box>
+
 
 
         <Box display={"flex"}>
@@ -133,7 +135,7 @@ export default function TopBar() {
                 //   </span>
                 // </Button>
 
-                <Button onClick={loginHandle} sx={{ display:"flex", alignItems:"center", justifyContent:'center', m:1, borderRadius:3, bgcolor:"#1976D210",}}  >
+                <Button onClick={loginHandle} sx={{ display:{md:"flex", xs:"none"}, alignItems:"center", justifyContent:'center', m:1, borderRadius:3, bgcolor:"#1976D210",}}  >
                   <FcGoogle fontSize={24} style={{margin:"0 10px 0 0"}} />
                   <Box sx={{margin:"0 10px 0 0"}}>
                   Sign in With google

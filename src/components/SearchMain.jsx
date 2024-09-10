@@ -13,7 +13,7 @@ export default function SearchMain() {
 
 
   return (
-    <Box sx={{display:"flex", alignItems:"center", width:"auto"}}>
+    <Box sx={{display:{md:"flex", xs:"none"}, alignItems:"center", width:"auto"}}>
     
 
     <TextField   

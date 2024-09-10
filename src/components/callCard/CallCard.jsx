@@ -151,6 +151,7 @@ export default function CallCard(props) {
    const avatarRadiousList = {
     circle: "100px 100px 10px 90px",
     square: "40px 40px 20px 40px",
+    square_mobile: "30px 30px 10px 30px",
     squareEx: "30px 30px 10px 30px"
   }
 
@@ -243,16 +244,21 @@ export default function CallCard(props) {
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
           m: { md: 2, xs: 0 },
-          p: 2,
+          pb: 2,
           // outline:`20px solid #333333${isPaused ? "00" :"50"}`, 
           // boxShadow:`0px 0px 10px #333333${isPaused ? "00" :"95"}`
         }}
         // borderRadius={1}
         // 1976D2 
-        m={2}
+        // m={2}
       >
-        <Box display={"flex"}
-          flexDirection={"row"}
+        <Box 
+        sx={{
+          display:"flex",
+          // flexDirection:{md:"row", xs:"column"}
+        }}
+
+
         // alignItems={"flex-start"}
 
         >
@@ -295,7 +301,10 @@ export default function CallCard(props) {
 
                   <Avatar
                     src={avatar}
-                    sx={{ width: avatarSize, height: avatarSize, borderRadius: avatarRadious }}
+                    sx={{ 
+                      width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                      height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                      borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile}  }}
                   />
                 </StyledBadge2>
                 :
@@ -316,8 +325,12 @@ export default function CallCard(props) {
                     src={avatar}
                     sx={
                       isOnline === ""
-                        ? { width: avatarSize, height: avatarSize, borderRadius: avatarRadious }
-                        : { width: avatarSize, height: avatarSize, borderRadius: avatarRadious }
+                        ? { width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                            height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                            borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile} }
+                        : { width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                        height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
+                        borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile} }
                     }
                   />
                 </StyledBadge>
