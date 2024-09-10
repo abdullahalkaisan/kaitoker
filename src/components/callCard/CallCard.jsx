@@ -144,7 +144,7 @@ export default function CallCard(props) {
   
   // 70 || 100
   const avatarSiseList = {
-    small: 70,
+    small: 100,
     large: 100
   }
   // avatar readious 
@@ -304,7 +304,7 @@ export default function CallCard(props) {
                     sx={{ 
                       width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
                       height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
-                      borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile}  }}
+                      borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square}  }}
                   />
                 </StyledBadge2>
                 :
@@ -327,10 +327,10 @@ export default function CallCard(props) {
                       isOnline === ""
                         ? { width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
                             height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
-                            borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile} }
+                            borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square} }
                         : { width: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
                         height: {md:avatarSiseList.large, xs:avatarSiseList.small}, 
-                        borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square_mobile} }
+                        borderRadius: {md:avatarRadiousList.square, xs:avatarRadiousList.square} }
                     }
                   />
                 </StyledBadge>

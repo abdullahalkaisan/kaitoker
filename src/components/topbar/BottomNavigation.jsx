@@ -35,7 +35,7 @@ export default function LabelBottomNavigation() {
 
     return (
 
-        <BottomNavigation sx={{ width: "100%", display: {md:"none",xs:"flex"}, flexDirection: "row", justifyContent: "space-evenly" }} value={value} onChange={handleChange}>
+        <BottomNavigation sx={{ width: "100%", display: {md:"none",xs:"flex"}, flexDirection: "row", justifyContent: "space-evenly", position:"absolute", bottom:0, zIndex:999, paddingY:1, backgroundColor:"#fff" }} value={value} onChange={handleChange}>
             <BottomNavigationAction
                 sx={navStyle}
                 label="Home"
