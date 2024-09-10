@@ -621,7 +621,7 @@ pro user can add 10 skills
         {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
         
         {
-        // isShow &&
+        isShow &&
           <Box 
             // className={`animate__animated  ${isPaused ? "  " : "  "}`}
             sx={{
@@ -637,7 +637,7 @@ pro user can add 10 skills
 
 
         {
-        // isShow && 
+        isShow && 
           <Stack
             // sx={{ display: "none" }}
             bgcolor={"background.default"}
