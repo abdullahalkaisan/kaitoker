@@ -33,7 +33,7 @@ export default function MunitesAndMoneyPop() {
 
 
 
-      {/* <Box sx={{ marginLeft: "5px" }}>234</Box> */}
+      <Box sx={{ marginLeft: "5px" }}>234</Box>
       {/* <Box sx={{ marginLeft: "5px", color:"#ED6C02" }}>2</Box> */}
       <Box
         sx={{

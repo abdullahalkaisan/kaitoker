@@ -42,11 +42,14 @@ export default function LabelBottomNavigation() {
                 value="home"
                 icon={<UilEstate />}
             />
-            <BottomNavigationAction
+
+
+            {/* <BottomNavigationAction
                 sx={navStyle}
                 label="Group"
                 value="group"
                 icon={<UilUsersAlt />} />
+
             <BottomNavigationAction
                 sx={navStyle}
                 label="Feed"
@@ -58,10 +61,11 @@ export default function LabelBottomNavigation() {
                 label="Course"
                 value="course"
                 icon={<UilPresentationMinus />}
-            />
+            /> */}
+
+
             <BottomNavigationAction
                 sx={navStyle}
-
                 label="Friends"
                 value="friends"
                 icon={<UilUser />}
@@ -69,10 +73,20 @@ export default function LabelBottomNavigation() {
             <BottomNavigationAction
                 sx={navStyle}
 
-                label="Logs"
-                value="logs"
+                label="Chat"
+                value="chat"
                 icon={<UilCommentLines />}
             />
+
+            <BottomNavigationAction
+                sx={navStyle}
+
+                label="Logs"
+                value="logs"
+                icon={<UilHistory />}
+            />
+
+
         </BottomNavigation>
     );
 }

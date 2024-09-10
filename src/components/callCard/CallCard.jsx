@@ -521,15 +521,6 @@ export default function CallCard(props) {
         </Box>
 
 
-
-
-
-        
-
-
-
-
-
         {/* <Box display={"none"}>
           <Typography
             variant="body2"
@@ -585,23 +576,8 @@ pro user can add 10 skills
 */}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{isShow &&
+{
+// isShow &&
         <Box
           bgcolor={"background.default"}
           color={"text.primary"}
@@ -629,22 +605,10 @@ pro user can add 10 skills
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         {/* animate__rubberBand  animate__headShake animate__bounceIn*/}
         
-        {isShow &&
+        {
+        // isShow &&
           <Box 
             // className={`animate__animated  ${isPaused ? "  " : "  "}`}
             sx={{
@@ -659,9 +623,8 @@ pro user can add 10 skills
 
 
 
-
-
-        {isShow && 
+        {
+        // isShow && 
           <Stack
             // sx={{ display: "none" }}
             bgcolor={"background.default"}
@@ -674,7 +637,6 @@ pro user can add 10 skills
             {/* <IconButton color="info">
               <UilStar />
             </IconButton> */}
-
 
 
             <IconButton color="primary">
@@ -691,15 +653,15 @@ pro user can add 10 skills
             </IconButton>
 
 
-
-
             {/* <IconButton color="primary" size="large">
                 <UilVideo />
             </IconButton> */}
 
 
             <Box 
-            sx={{display:"none"}}
+            sx={{
+              // display:"none"
+            }}
             >
               {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}
               {/* #ED6C02  */}
@@ -708,31 +670,40 @@ pro user can add 10 skills
                 <Button
                   // disabled={isOnline ? false : true}
                   size="small"
-                  sx={{
+                  
+                  sx={!isDark ? {
                     borderRadius: 3, textTransform: "none",
+                    bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}
                     // opacity:`${isOnline ? "100%" :"30%"}`,
                     // outline :2px || 3px|| 4px 
                     // opacity : 70 || 80 || 90
                     // outline: `3px solid #1D9BF0${isPaused ? "00" : "90"}`, outlineOffset: "4px"
                     // backgroundColor:`${isOnline ? "#1565C0":"#333"}`
-                  }}
+                  } :{
+                    borderRadius: 3, textTransform: "none",
+                  }
+                }
+
                   variant="contained"
                   // color=""
                 >
                   {/* <AccessTimeIcon sx={{fontSize:"medium", mr:0.5, display:"block"}}/> */}
                   {/* Hire  */}
                   {/* $120 Month */}
-                  {/* {`$2.00/hr`} */}
+                  {`$2.00/hr`}
                   {/* Free */}
                   {/* Join */}
-                  {isOnline ? "Join" : "Book"}
+                  {/* {isOnline ? "Join" : "Book"} */}
                 </Button>
               </Link>
             </Box>
-
           </Stack>
-        
         }
+
+
+
+
+
 
 
 

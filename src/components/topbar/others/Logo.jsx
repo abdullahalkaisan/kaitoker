@@ -16,9 +16,9 @@ export default function Logo() {
           color:"#333",
           cursor: "pointer",
           userSelect: "none",
-          display: { md: "flex", xs: "none" },
+          // display: { md: "flex", xs: "none" },
           fontSize: "22px",
-          m: "0 20px",
+          m: {md:"0 20px", xs:1},
         }}
       >
         {/* <Box>Kai</Box> */}

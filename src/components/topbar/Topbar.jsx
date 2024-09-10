@@ -1,11 +1,11 @@
-import { Avatar, Badge, Box, Button, IconButton, TextField } from "@mui/material";
+import { Avatar, Badge, Box, Button, IconButton } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 import { Link } from 'react-router-dom';
 
 import {
   UilSearch,
-  // UilBars,
+  UilBars,
   UilHistory,
   // UilBell,
   // UilCommentLines,
@@ -48,26 +48,21 @@ export default function TopBar() {
   return (
     <Box bgcolor={"background.default"} color={"text.primary"}>
       <Box
-        sx={{ p: 0 }}
+        sx={{p: {md:0, xs:"10px 0px 0px 10px"} }}
         justifyContent="space-between"
         alignItems="center"
         display={"flex"}
         flexDirection={"row"}
       >
-        {/* <IconButton sx={{ 
-          mx: 1, 
-          display: { lg: "none", xs: "flex" } }}>
-          <UilBars />
-          <UilSlidersVAlt/>
-        </IconButton> */}
-        <Box sx={{ display: { md: "none" } }}>
+
+        {/* <Box sx={{ display: { md: "none" } }}>
           <MunitesAndMoneyPop />
-        </Box>
+        </Box> */}
 
         <Box sx={{display:"flex", alignItems:"center"}}>
-          <Logo />
-          <NavMenu />
-          <SearchMain/>
+            <Logo />
+            {/* <NavMenu /> */}
+            {/* <SearchMain/> */}
         </Box>
 
 
@@ -75,7 +70,6 @@ export default function TopBar() {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {/* , bgcolor:"#F5FAFD"  */}
 
-            {user && <TicketPop/>}
 
             <IconButton sx={{ display: { md: "none" } }}>
               <UilSearch />
@@ -85,6 +79,8 @@ export default function TopBar() {
           {
             user &&
             <Box sx={{ display: { md: "flex", xs: "none" } }}>
+
+              {user && <TicketPop/>}
               <MunitesAndMoneyPop />
             </Box>
           }
@@ -95,20 +91,28 @@ export default function TopBar() {
               <Notification_section />
             }
 
+          <IconButton sx={{ 
+            mx: 1, 
+            display: { lg: "none", xs: "flex" } }}>
+            <UilBars />
+            {/* <UilSlidersVAlt/> */}
+          </IconButton>
+
+
             {/* <IconButton sx={{ display: { md: "" } }}>
               <Badge badgeContent={10} max={9} color="error">
                 <UilBell />
               </Badge>
             </IconButton> */}
 
-            {
+            {/* {
               user &&
               <IconButton sx={{ display: { md: "none" } }}>
                 <Badge badgeContent={40} max={9} color="error">
                   <UilHistory />
                 </Badge>
               </IconButton>
-            }
+            } */}
 
 
             {user ?

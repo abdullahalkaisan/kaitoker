@@ -2,7 +2,7 @@
 // import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 
-import { Box, Card, CardMedia, Checkbox, FormControlLabel, Tabs, } from '@mui/material';
+import { Avatar, AvatarGroup, Box, Card, CardMedia, Checkbox, FormControlLabel, Tabs, } from '@mui/material';
 
 // import InsertCommentOutlinedIcon from '@mui/icons-material/InsertCommentOutlined';
 // import InsertCommentIcon from '@mui/icons-material/InsertComment';
@@ -102,8 +102,6 @@ export default function PostCard({item}) {
         </CardContent>
 
 
-
-
         <Box sx={{display:"none", backgroundColor:`#f1f1f190`, cursor:"pointer", p:1, mx:3, mb:3, borderRadius:4}}>
           <PeopleCard
             title={"Luca"}
@@ -142,11 +140,24 @@ export default function PostCard({item}) {
         </Box> */}
 
 
+<Box sx={{width:1, display:"flex", paddingLeft:2}}>
+  <AvatarGroup>
+    <Avatar sx={{height:20, width: 20}}  src="https://pbs.twimg.com/profile_images/1771091617119649792/1WK8yB_C_400x400.jpg" />
+    <Avatar sx={{height:20, width: 20}}  src="https://lh3.googleusercontent.com/a/ACg8ocJNAjeGBRG_M8eEYVTbBrWw_P3o3SKDcc6uoOiX-SWM8UE" />
+    <Avatar sx={{height:20, width: 20}}  src="https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg" />
+  </AvatarGroup>
+</Box>
+
+
+
+
+
         <CardActions>
           {/* <IconButton color='' aria-label="add to favorites"> */}
           {/* <Checkbox label="214" icon={<FavoriteBorderOutlinedIcon />} checkedIcon={<FavoriteIcon />} /> */}
           
           <Tabs variant='scrollable' scrollButtons="false"  indicatorColor  value={postActionTab} onChange={handleChange_postAction} centered>
+
 
 
 

@@ -69,3 +69,6 @@ import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details"
     }
 
   ]);
+
+
+  
