@@ -126,9 +126,15 @@ export default function RightMenu_friendListTab() {
                   <TuneIcon />
                 </IconButton>
               </Box>
-              <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:"column",  overflow: "auto" }}>
+              <Box sx={{ height: "100%", 
+                // width: "100%",
+                display: "flex", flexDirection:"column",  overflow: "auto" }}>
                 <Box 
-                sx={{p:2}}
+
+                sx={
+                  // {p:2}
+                  {p:1}
+                }
                 >
                   {sortedUsers.map((item) => (
                     <PeopleList
@@ -136,15 +142,17 @@ export default function RightMenu_friendListTab() {
                       title={item.userName}
                       subTitle={item.profession}
                       lastSeen={"11m"}
-                      // country={item.country}
                       isVarified={item.isVarified}
                       avatarUrl={item.avatar}
                       isOnline={item.isOnline}
+
+                      // country={item.country}
                       // flag={item.flag}
-                      avatar={true}
-                      badge={true}
                       // avatarSize={47}
                       avatarSize={40}
+                      
+                      avatar={true}
+                      badge={true}
                     />
                   ))}
                 </Box>

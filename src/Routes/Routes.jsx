@@ -14,6 +14,7 @@ import CallCardWrapper from "../components/callCard/CallCardWrapper";
 import NewsContainer from "../components/NewsContainer";
 import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
 import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details";
+import VideoCardWrapper from "../components/VideoCardWrapper";
 
 
   export  const router = createBrowserRouter([
@@ -42,7 +43,10 @@ import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details"
         {
           path: "/class",
           element: <CourseCard_wrapper/>,
-        },
+        },{
+          path: "/watch",
+          element: <VideoCardWrapper/>,
+        }
       ],
     },
     {

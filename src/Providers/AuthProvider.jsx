@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react"
 import { auth } from "../firebase/firebase.config";
 import { 
-  // signInWithPopup, 
-  signInWithRedirect, 
+  signInWithPopup, 
+  // signInWithRedirect, 
   onAuthStateChanged, 
   GoogleAuthProvider, 
   signOut,
-  getRedirectResult
+  // getRedirectResult
 } from "firebase/auth";
 
 
@@ -29,13 +29,13 @@ export default function AuthProvider({children}) {
 
     const signIn_google = ()=>{
       setLoading(true)
-      return signInWithRedirect(auth, GoogleProvider)
+      return signInWithPopup(auth, GoogleProvider)
     }
 
-    const signIn_google_redirectResult = ()=>{
-      setLoading(true)
-      return getRedirectResult(auth)
-    }
+    // const signIn_google_redirectResult = ()=>{
+    //   setLoading(true)
+    //   return getRedirectResult(auth)
+    // }
 
 
     const signOut_google = ()=>{
@@ -62,7 +62,7 @@ export default function AuthProvider({children}) {
         loading,
         signIn_google,
         signOut_google,
-        signIn_google_redirectResult
+        // signIn_google_redirectResult
     }
 
   return (

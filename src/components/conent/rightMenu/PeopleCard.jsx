@@ -134,7 +134,8 @@ export default function PeopleCard(props) {
                     ? {
                       width: avatarSize ? avatarSize : 32,
                       height: avatarSize ? avatarSize : 32,
-                      borderRadius: avatarRadious ? avatarRadious : "100px 100px 10px 100px",
+                      // 17 | 18 | 100
+                      borderRadius: avatarRadious ? avatarRadious : "18px 18px 10px 18px",
                     }
                     : {
                       width: avatarSize ? avatarSize : 32,

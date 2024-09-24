@@ -38,7 +38,7 @@ export default function PeopleList(props) {
   return (
     <Box
       display={"flex"}
-      width={"100%"}
+      // width={"100%"}
       height={"max-content"}
       // flexDirection={"row"}
       justifyContent={"space-between"}
@@ -46,13 +46,20 @@ export default function PeopleList(props) {
       // mb={2}
 
       sx={{ 
-        borderRadius:"16px", 
+        // borderRadius: "16px" || "18px"
+        borderRadius:"18px", 
         transition:"ease .3s", 
+        // border:"1px solid transparent",
         cursor:"pointer", 
         // padding:0.5, 
         // paddingY:0.5, 
-        paddingY:1, 
-        "&:hover":{backgroundColor:`${isDark ? "#222" :"#f1f1f1"}`}
+        // paddingY:1, 
+        padding:1,
+        "&:hover":{
+          backgroundColor:`${isDark ? "#222" :"#f1f1f1"}`,
+          // border:"1px solid #00000010",
+          // boxShadow:"0px 0px 50px #00000020"
+        }
       }}
 
     >

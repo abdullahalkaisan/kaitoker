@@ -1,8 +1,8 @@
-import {Box, Card, CardMedia, IconButton, Typography } from "@mui/material";
+import {Avatar, AvatarGroup, Box, Card, CardMedia, IconButton, Typography } from "@mui/material";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ChipsCustom from "../callCard/ChipsCustom";
-import { MdOutlineRemoveRedEye, MdOutlineStar } from "react-icons/md";
+import { MdAccessTime, MdLanguage, MdOutlineRemoveRedEye, MdOutlineStar, MdTranslate } from "react-icons/md";
 
 export default function VideoCard() {
 
@@ -27,7 +27,7 @@ export default function VideoCard() {
       variant="outlined"
     >
 
-        <Box display={"flex"} justifyContent={"space-between"}>
+        {/* <Box display={"flex"} justifyContent={"space-between"}>
             <PeopleCard 
             time={"15 mins"} 
             badge="true" 
@@ -38,7 +38,9 @@ export default function VideoCard() {
             <IconButton>
                 <MoreVertIcon/>
             </IconButton>
-        </Box>
+        </Box> */}
+
+
 
       <CardMedia
           component="img"
@@ -49,8 +51,34 @@ export default function VideoCard() {
           alt="Paella dish"
         />
 
-      {/* <iframe style={{border:"none", borderRadius:9, margin:"10px 0"}} height={"500"} width="100%" src="https://www.youtube.com/embed/pBzrHxm6mco?si=IwitSnSkiKX73d3o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-       */}
+
+      {/* <iframe style={{border:"none", borderRadius:9, margin:"10px 0"}} height={"300"} width="100%" src="https://www.youtube.com/embed/pBzrHxm6mco?si=IwitSnSkiKX73d3o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen /> */}
+      
+
+
+
+
+       <Box sx={{display:"flex", mb:1}}>
+
+        {/* <PeopleCard 
+            badge="true" 
+            avatar="true" 
+            avatarUrl={"https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg"}
+            title={"Abdullah Al Kaisan"} 
+            subTitle="Web developer"/> */}
+
+      <AvatarGroup >
+        <Avatar sx={{height:33, width:33}} alt="Remy Sharp" src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" />
+        <Avatar sx={{height:33, width:33}} alt="Travis Howard" src="https://pbs.twimg.com/profile_images/1273225109528961024/FahFysNy_400x400.jpg" />
+        <Avatar sx={{height:33, width:33}} alt="Agnes Walker" src="https://pbs.twimg.com/profile_images/1771091617119649792/1WK8yB_C_400x400.jpg" />
+        <Avatar sx={{height:33, width:33}} alt="Trevor Henderson" src="https://pbs.twimg.com/profile_images/1323331494924881920/svA5JKxx_400x400.jpg" />
+      </AvatarGroup>
+
+
+            
+       </Box>
+
+
 
     <ChipsCustom hashTagStyle={true} label="English conversation"/>
 
@@ -65,6 +93,19 @@ export default function VideoCard() {
                 56% 
             </Box>
             {/* 15 mins ago */}
+
+            <Box sx={{display:"flex", alignItems:"center", margin:"0 5px"}}>
+            <MdTranslate style={{marginRight:3}} />
+                English
+            </Box>
+
+            <Box sx={{display:"flex", alignItems:"center", margin:"0 5px"}}>
+            <MdAccessTime style={{marginRight:3}} />
+                12 month ago
+            </Box>
+
+
+
         </Box>
 
 

@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
     UilNewspaper,
     UilPresentationMinus, 
     UilUsersAlt,
+    UilBagAlt,
     UilBill,
     UilMicrophone,
     UilPlayCircle
@@ -37,8 +38,8 @@ export default function NavMenu() {
       if(location.pathname === "/news"){
         setValue_mainMenu(3)
       }else if (location_pathName === "/group"){
-        // setValue_mainMenu(2)
-        setValue_mainMenu(1)
+        setValue_mainMenu(2)
+        // setValue_mainMenu(1)
       }else if (location_pathName === "/class"){
         setValue_mainMenu(4)
       }else if (location_pathName === "/hire"){
@@ -113,18 +114,24 @@ export default function NavMenu() {
 
 
 
-            {/* <Tooltip title="News" enterDelay={1000} placement="bottom-end">
+            <Tooltip title="News" enterDelay={1000} placement="bottom-end">
                 <Tab to="/news" component={Link} sx={{minWidth:70}} icon={<UilNewspaper />} aria-label="favorite" />
             </Tooltip>
-            <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
-                <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilPresentationMinus />} aria-label="person" />
-            </Tooltip> */}
 
-            {/* <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
+            <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
+                <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilBagAlt />} aria-label="person" />
+            </Tooltip>
+
+
+            {/* UilBagAlt */}
+            {/* UilPresentationMinus */}
+
+            <Tooltip title="Watch" enterDelay={1000} placement="bottom-end">
                 <Tab 
-                label="Watch" 
+                to="/watch" component={Link}
+                // label="Watch" 
                 sx={{minWidth:70}} icon={<UilPlayCircle />} aria-label="person" />
-            </Tooltip> */}
+            </Tooltip>
 
 
           </Tabs>

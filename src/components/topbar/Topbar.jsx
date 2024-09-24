@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, IconButton } from "@mui/material";
+import { Avatar, Badge, Box, Button, FormControl, IconButton, InputLabel, MenuItem, Select } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ import {
 
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 // import Topbar_mobile_sideNav from "./Topbar_mobile_sideNav";
 // import { BiUser } from "react-icons/bi";
 // import { FaGoogle } from "react-icons/fa";
@@ -28,6 +28,16 @@ import SearchMain from "../SearchMain";
 
 
 export default function TopBar() {
+
+  const [menu, setMenu] = useState('');
+
+
+
+  const handleChange = (event) => {
+    setMenu(event.target.value);
+  };
+
+
 
   const { user, loading, signIn_google, 
     // signIn_google_redirectResult
@@ -61,8 +71,38 @@ export default function TopBar() {
 
 
         <Box sx={{display:"flex", alignItems:"center"}}>
-            <Logo />
-            {/* <NavMenu /> */}
+            <Box sx={{display:{md:"flex", xs:"none"}}}>
+              <Logo />
+            </Box>
+
+
+            <Box sx={{display:{md:"none", xs:"flex", marginLeft:10}}}>
+              <img style={{ height: 35}} src="https://pbs.twimg.com/media/GPkZgRFbkAA-Twt?format=png&name=240x240" />
+            </Box>
+
+            
+            <FormControl 
+            sx={{ ml: 2, minWidth: 100, display:{md:"none", xs:"flex"} }}
+            size="small">
+              <InputLabel id="demo-select-small-label">Home</InputLabel>
+              <Select
+                labelId="demo-select-small-label"
+                id="demo-select-small"
+                value={menu}
+                label="Home"
+                onChange={handleChange}
+              >
+                {/* <MenuItem value="">
+                  <em>None</em>
+                </MenuItem> */}
+                <MenuItem value={10}>Home</MenuItem>
+                <MenuItem value={10}>Hire</MenuItem>
+                <MenuItem value={20}>Group</MenuItem>
+                <MenuItem value={30}>News</MenuItem>
+              </Select>
+          </FormControl>
+
+            <NavMenu />
           <SearchMain/>
         </Box>
 
