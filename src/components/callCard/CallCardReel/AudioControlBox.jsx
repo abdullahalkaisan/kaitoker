@@ -10,7 +10,7 @@ export default function AudioControlBox(props) {
     <>
           <Box
             display={"flex"}
-            bgcolor={"background.default"}
+            // bgcolor={"background.default"}
             color={"text.primary"}
             flexDirection={"row"}
             width={props.width}

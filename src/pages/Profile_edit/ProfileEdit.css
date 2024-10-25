@@ -1,0 +1,21 @@
+
+.voice-recorder_waveformcontainer, .voice-recorder_control{
+    background: transparent !important;
+    background-image: none !important;
+}
+
+.voice-recorder_controlscontainer .voice-recorder_stopcontainer{
+    background: transparent !important;
+}
+
+.voice-recorder_control{
+    box-shadow: none !important;
+    border: none !important;
+
+}
+
+.voice-recorder_controlgeneric{
+    box-shadow: none !important;
+    background-color: #f1f1f1 !important;
+    border: none !important;
+}

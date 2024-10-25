@@ -35,7 +35,7 @@ export default function SubDetails({user_followers, proposal, askingCost, user_r
   return (
     <Box
       display={"flex"}
-      bgcolor={"background.default"}
+      // bgcolor={"background.default"}
       color={"text.primary"}
       fontSize={"medium"}
       mb={0.5}

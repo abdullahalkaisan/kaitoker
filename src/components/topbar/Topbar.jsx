@@ -7,10 +7,14 @@ import {
   UilSearch,
   UilBars,
   UilHistory,
+  UilAngleDown
   // UilBell,
   // UilCommentLines,
   // UilSlidersVAlt
 } from "@iconscout/react-unicons";
+
+
+
 
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
@@ -81,7 +85,7 @@ export default function TopBar() {
             </Box>
 
             
-            <FormControl 
+            {/* <FormControl 
             sx={{ ml: 2, minWidth: 100, display:{md:"none", xs:"flex"} }}
             size="small">
               <InputLabel id="demo-select-small-label">Home</InputLabel>
@@ -92,15 +96,36 @@ export default function TopBar() {
                 label="Home"
                 onChange={handleChange}
               >
-                {/* <MenuItem value="">
-                  <em>None</em>
-                </MenuItem> */}
                 <MenuItem value={10}>Home</MenuItem>
                 <MenuItem value={10}>Hire</MenuItem>
                 <MenuItem value={20}>Group</MenuItem>
                 <MenuItem value={30}>News</MenuItem>
               </Select>
-          </FormControl>
+          </FormControl> */}
+
+            
+            {/* <div>
+
+              Hire
+
+            </div>
+            <div>
+              Group
+            </div>
+            <div>
+              News
+            </div> */}
+
+
+
+
+            <Box sx={{fontWeight: "bold", display:{md:"none", sm:"flex", xs:"flex"}, alignItems:"center", marginLeft:3, cursor:"pointer"}}>
+              Home
+                <UilAngleDown/>
+            </Box> 
+
+
+
 
             <NavMenu />
           <SearchMain/>

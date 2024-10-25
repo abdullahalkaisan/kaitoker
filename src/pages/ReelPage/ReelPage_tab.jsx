@@ -51,17 +51,23 @@ export default function ReelPage_tab() {
   return (
     <Box sx={{ width: '100%', height:"100%", overflow:"auto", display:"flex", flexDirection:"column", }}>
       <Box sx={{ display:"flex", 
-      justifyContent:"", 
-      borderBottom: 1, borderColor: 'divider', 
+      justifyContent:"center", 
+      // borderBottom: 1, borderColor: 'divider', 
       margin:"0 30px" 
       }}>
         <Tabs allowScrollButtonsMobile value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Details" {...a11yProps(0)} />
+          {/* <Tab label="Details" {...a11yProps(0)} /> */}
           <Tab label="Skills" {...a11yProps(1)} />
+          <Tab label="About" {...a11yProps(1)} />
           <Tab label="Shidule" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
+      <CustomTabPanel value={value} index={6}>
+
+
+
+
+
 
         {/* <Typography
           sx={{ color: "#777", display: "flex", alignItems: "center" }}
@@ -92,7 +98,7 @@ export default function ReelPage_tab() {
 
           {/* <AboutList/> */}
 
-          <ReelPage_details/>
+          {/* <ReelPage_details/> */}
 
           
 

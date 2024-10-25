@@ -10,7 +10,7 @@ export default function SearchMain() {
     const theme = useTheme();
     const isDark = theme.palette.mode === "dark";
 
-    const searchStyleType = 0;
+    const searchStyleType = 1;
 
 
   return (

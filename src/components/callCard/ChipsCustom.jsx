@@ -21,20 +21,33 @@ export default function ChipsCustom(props) {
 
       onDelete={props.onDelete &&  handleDelete}
       color={props.color && props.color}
+      // color="#fff"
       sx={props.size === "large" ?
         {
           height: "auto",
+
+          "&.MuiChip-root":{
+            background:`${props.backgroundColor && props.backgroundColor}`
+          },
+
           "& .MuiChip-label": {
             display: "block",
             // color:`${isDark? "#999":"#666"}`,
+            color:`${props.backgroundColor && "#ffffff70"}`,
+            // backgroundColor:"#000",
             whiteSpace: `${props.whiteSpace ? "normal" : ""}`,
             fontSize:"",
           }, m: 0.3, py: 1, borderRadius: 2
         } : {
           height: "auto",
+          "&.MuiChip-root":{
+            background:`${props.backgroundColor && props.backgroundColor}`
+          },
+
           "& .MuiChip-label": {
             display: "block",
             color:`${isDark? "#999":"#666"}`,
+            // backgroundColor:"#000",
             whiteSpace: "normal",
           }, m: 0.2, py: 0.6, borderRadius: 2
         } 

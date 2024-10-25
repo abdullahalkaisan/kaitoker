@@ -15,6 +15,7 @@ import NewsContainer from "../components/NewsContainer";
 import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
 import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details";
 import VideoCardWrapper from "../components/VideoCardWrapper";
+import ReelPage from "../pages/ReelPage/ReelPage";
 
 
   export  const router = createBrowserRouter([
@@ -71,6 +72,12 @@ import VideoCardWrapper from "../components/VideoCardWrapper";
       element: <CourseCard_details/>
       ,
     }
+    ,{
+      path: "/reel",
+      element: <ReelPage/>
+      ,
+    }
+
 
   ]);
 
