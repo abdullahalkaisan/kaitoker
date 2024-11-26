@@ -15,6 +15,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "./Providers/AuthProvider"
 import { useLocation } from "react-router-dom"
 import NavMenu from "./components/topbar/others/NavMenu"
+import LoginPage from "./pages/LoginPage/LoginPage"
 // import { Helmet } from "react-helmet"
 // import NavMenu from "./components/topbar/others/NavMenu"
 
@@ -22,6 +23,8 @@ import NavMenu from "./components/topbar/others/NavMenu"
 function App() {
 
   const {user} = useContext(AuthContext);
+
+
 
 
   const location = useLocation()
@@ -57,6 +60,10 @@ function App() {
       height={"100vh"}
       overflow={"hidden"}
     >
+
+      {!user &&
+      <LoginPage/>
+      }
       
 
       {/* <Box bgcolor={"gray"} overflow={"auto"}>
@@ -70,14 +77,15 @@ function App() {
       {/* <TopBar_mobile/> */}
       {/* <BottomNavigation/> */}
       
-      {/* { isFilterProfetionShow && <Profession_filter/> }  */}
-      <Profession_filter/>
+      { isFilterProfetionShow && <Profession_filter/> } 
+      {/* <Profession_filter/> */}
 
       <Box 
         display={"flex"} 
         height={"100%"}
         width={"100%"}
         overflow={"hidden"}
+
         >
           <LeftMenu_container/>
           {/* <NavMenu/> */}

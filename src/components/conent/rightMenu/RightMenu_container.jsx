@@ -117,17 +117,17 @@ export default function RightMenu_container() {
           />
 
           
-          <Tab
+          {/* <Tab
             icon={
               <Badge color="error" badgeContent={2} max={9}>
                 <UilUsdCircle />
               </Badge>
             }
             {...a11yProps(4)}
-          />
+          /> */}
 
 
-          <Tab
+          {/* <Tab
             // sx={{minWidth:"auto", borderRadius:4}}
             icon={
               <Badge color="error" badgeContent={1} max={9}>
@@ -135,7 +135,7 @@ export default function RightMenu_container() {
               </Badge>
             }
             {...a11yProps(3)}
-          />
+          /> */}
           
         </Tabs>
       </Box>
@@ -154,8 +154,8 @@ export default function RightMenu_container() {
 
 
         <CustomTabPanel value={value} index={1}>
-          {/* <ChatList /> */}
-          <MessageList/>
+          <ChatList />
+          {/* <MessageList/> */}
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>

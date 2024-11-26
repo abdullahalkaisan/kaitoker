@@ -40,7 +40,7 @@ export default function CallCard_slot() {
 
                 <CardActionArea sx={{width:"auto", height:"auto",  margin:"0 5px", borderRadius:999}}>
                     <Avatar 
-                      src="https://pbs.twimg.com/profile_images/1771256075418775552/Qh982rGL_400x400.jpg" 
+                      src="" 
                       sx={{height:30, width:30, }} 
                       >
                       <MdChair 

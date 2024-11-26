@@ -36,15 +36,19 @@ export default function NavMenu() {
 
 
       if(location.pathname === "/news"){
-        setValue_mainMenu(3)
-      }else if (location_pathName === "/group"){
-        setValue_mainMenu(2)
-        // setValue_mainMenu(1)
-      }else if (location_pathName === "/class"){
-        setValue_mainMenu(4)
-      }else if (location_pathName === "/hire"){
         setValue_mainMenu(1)
-      }else if (location_pathName === "/home"){
+      }
+      
+      // else if (location_pathName === "/group"){
+      //   setValue_mainMenu(2)
+      //   // setValue_mainMenu(1)
+      // }else if (location_pathName === "/class"){
+      //   setValue_mainMenu(4)
+      // }else if (location_pathName === "/hire"){
+      //   setValue_mainMenu(1)
+      // }
+      
+      else if (location_pathName === "/home"){
         setValue_mainMenu(0)
       }
 
@@ -87,30 +91,28 @@ export default function NavMenu() {
 
 
 
-            <Tooltip title="Hire" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="Hire" enterDelay={1000} placement="bottom-end">
                 <Tab 
-                  // label="Pro"  
                   to="/hire" 
                   component={Link} 
                   sx={{minWidth:70}} 
                   icon={<UilBill />} 
                   aria-label="phone" 
                 />
-            </Tooltip>
+            </Tooltip> */}
 
 
 
 
-            <Tooltip title="Group" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="Group" enterDelay={1000} placement="bottom-end">
                 <Tab 
-                  // label="Room"  
                   to="/group" 
                   component={Link}
                   sx={{minWidth:70}} 
                   icon={<UilMicrophone />} 
                   aria-label="person"
                 />
-            </Tooltip>
+            </Tooltip> */}
 
 
 

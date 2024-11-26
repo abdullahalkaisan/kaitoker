@@ -63,7 +63,8 @@ export default function PeopleCard(props) {
     badge,
     flag,
     country,
-    time,
+    timeAgo,
+    timeFormat,
     isVarified,
     isOnline,
     subTitleHighLight,
@@ -227,14 +228,19 @@ export default function PeopleCard(props) {
             </Tooltip>
           </Typography>
 
-          <Typography
-            display={time ? "block" : "none"}
-            style={{ margin: "0 5px", fontStyle: "italic" }}
-            variant="caption"
-            color="#999"
-          >
-            {time}
-          </Typography>
+
+          <Tooltip title={timeFormat} placement="top" >
+            <Typography
+              display={timeAgo ? "block" : "none"}
+              style={{ margin: "0 5px", fontStyle: "italic", cursor:"pointer" }}
+              variant="caption"
+              color="#999"
+            >
+              {timeAgo}
+            </Typography>
+
+          </Tooltip>
+
         </Box>
 
         <Typography

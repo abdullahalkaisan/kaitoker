@@ -19,6 +19,9 @@ import AudioSlider_custom from '../../components/callCard/AudioSlider_custom';
 import AudioPlay_button from '../../components/callCard/AudioPlay_button';
 import ChipsCustom from '../../components/callCard/ChipsCustom';
 import DonateCard from './TabMenuProfile/DonateCard';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import LoadingWithLogo from '../../components/LoadingWithLogo';
 
 
 
@@ -40,12 +43,32 @@ export default function SideControlProfile(props) {
 
   const {avatar, userName, profession, skills} = props.getProfile;
 
+  const { user, loading, signIn_google, 
+    // signIn_google_redirectResult
+   } = useContext(AuthContext);
+
+
+   if(loading){
+    return <LoadingWithLogo/>
+  }
+
+
+
+
+
+
+
+
+
+
   // const theme = useTheme();
 
   // const useMyTheme = theme.palette.mode;
 
   return (
     <Box>
+
+      {console.log("test", user.photoURL)}
 
       <Box display={"flex"} bgcolor={"background.default"} color={"text.primary"} width={"100%"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"}>
       
@@ -65,7 +88,7 @@ export default function SideControlProfile(props) {
           
             <Avatar
                   alt="Remy Sharp"
-                  src={avatar}
+                  src={user.photoURL}
                   sx={{ width: 100, height: 100, borderRadius:"40px 40px 20px 40px" }}
               />
           
