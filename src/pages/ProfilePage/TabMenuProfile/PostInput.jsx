@@ -4,9 +4,44 @@ import { useContext, useState } from "react";
 import PostContext from "../../../PostContext";
 import { MdOutlineImage, MdOutlineSettings } from "react-icons/md";
 import { IoMdPricetags } from "react-icons/io";
+import styled from "styled-components";
 
 
 export default function PostInput() {
+
+
+
+    const CssTextField = styled(TextField)({
+        '& label.Mui-focused': {
+          color: '#A0AAB4',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: '#B2BAC2',
+
+        },
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: '#E0E3E7',
+            borderRadius:16,
+          },
+          '&:hover fieldset': {
+            borderColor: '#B2BAC2',
+            
+          },
+          '&.Mui-focused fieldset': {
+            // borderColor: '#6F7E8C',
+            borderColor: '#1976D2',
+          },
+        },
+      });
+      
+
+
+
+
+
+
+
 
     const [postInput, setPostInput] = useState("")
 

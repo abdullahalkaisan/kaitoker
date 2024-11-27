@@ -118,20 +118,20 @@ export default function NavMenu() {
                 <Tab to="/news" component={Link} sx={{minWidth:70}} icon={<UilNewspaper />} aria-label="favorite" />
             </Tooltip>
 
-            <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilBagAlt />} aria-label="person" />
-            </Tooltip>
+            </Tooltip> */}
 
 
             {/* UilBagAlt */}
             {/* UilPresentationMinus */}
 
-            <Tooltip title="Watch" enterDelay={1000} placement="bottom-end">
+            {/* <Tooltip title="Watch" enterDelay={1000} placement="bottom-end">
                 <Tab 
                 to="/watch" component={Link}
                 // label="Watch" 
                 sx={{minWidth:70}} icon={<UilPlayCircle />} aria-label="person" />
-            </Tooltip>
+            </Tooltip> */}
 
 
           </Tabs>

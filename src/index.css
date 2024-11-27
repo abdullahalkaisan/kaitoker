@@ -74,3 +74,14 @@ html{
   background: #555; 
 }
 
+
+
+
+.MuiInputBase-root 
+.MuiOutlinedInput-root 
+.MuiInputBase-colorPrimary 
+.MuiInputBase-formControl 
+.MuiInputBase-multiline 
+.css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+  border-radius: 16px !important;
+}
