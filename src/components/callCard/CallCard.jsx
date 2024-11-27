@@ -239,7 +239,8 @@ export default function CallCard(props) {
         // className="animate__animated  animate__jello"
         variant=""
         sx={{
-          width: { md: 340, xs: 1 },
+          width: { md: "fit-content", xs: 1 },
+          maxWidth:{md:350, xs:1},
           // width:"auto",
           height: { md: "auto", xs: 1 },
           borderRadius: { md: 2, xs: 2 },
@@ -627,8 +628,8 @@ pro user can add 10 skills
             sx={{
               px: 4,
               // backgroundColor: `${!isPaused && "#1565C030"} `,
-              borderRadius:3
-              // display:"none" 
+              borderRadius:3,
+              display:"none" 
           }}>
             <AudioSlider_custom />
           </Box>
@@ -651,15 +652,15 @@ pro user can add 10 skills
               <UilStar />
             </IconButton> */}
 
-
-            <IconButton color="primary">
+              {/* <UilStar /> */}
               {/* <UilHeart/> */}
               {/* <UilStar/> */}
               {/* <UilUserPlus/> */}
               {/* <UilPlus/> */}
+            <IconButton color="primary">
               <UilUserPlus />
             </IconButton>
-            <AudioPlay_button />
+            {/* <AudioPlay_button /> */}
 
             <IconButton color="info">
               <UilCommentLines />
@@ -670,10 +671,13 @@ pro user can add 10 skills
                 <UilVideo />
             </IconButton> */}
 
+            <Button sx={{                    borderRadius: 3, textTransform: "none",
+                    bgcolor:"royalblue", color:"#fff", "&:hover":{bgcolor:"royalblue"}}} size="small" variant="contained">Support</Button>
+
 
             <Box 
             sx={{
-              // display:"none"
+              display:"none"
             }}
             >
               {/* bgcolor:"#333", color:"#fff", "&:hover":{bgcolor:"#444"}  */}

@@ -5,6 +5,7 @@ import {
     UilCommentLines,
     UilUserPlus,
     UilFavorite,
+    UilInfoCircle
   } from '@iconscout/react-unicons'
 
   
@@ -13,7 +14,7 @@ export default function ReelPage_action() {
     <Box width={1} display={"flex"} justifyContent={"center"}>
     <Box
       display={"flex"}
-      bgcolor={"background.default"}
+      // bgcolor={"background.default"}
       color={"text.primary"}
       flexDirection={"row"}
       width={"100%"}
@@ -23,14 +24,19 @@ export default function ReelPage_action() {
       alignItems={"center"}
       justifyContent={"space-evenly"}
     >
+
+      {/* <IconButton color="primary"  size="large">
+        {
+          <UilInfoCircle />
+        }
+      </IconButton> */}
+
       <IconButton color="primary"  size="large">
         {
           <UilUserPlus />
         }
       </IconButton>
-      <IconButton color="primary" size="large">
-        <UilFavorite  />
-      </IconButton>
+
       <IconButton color="primary" size="large">
         <UilCommentLines />
       </IconButton>

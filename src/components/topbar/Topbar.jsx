@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Button, FormControl, IconButton, InputLabel, MenuItem, Select } from "@mui/material";
+import { Avatar, Badge, Box, Button, CircularProgress, FormControl, IconButton, InputLabel, MenuItem, Select, Skeleton } from "@mui/material";
 import Logo from "./others/Logo";
 import NavMenu from "./others/NavMenu";
 import { Link } from 'react-router-dom';
@@ -7,14 +7,18 @@ import {
   UilSearch,
   UilBars,
   UilHistory,
+  UilAngleDown
   // UilBell,
   // UilCommentLines,
   // UilSlidersVAlt
 } from "@iconscout/react-unicons";
 
+
+
+
 import MunitesAndMoneyPop from "./others/MunitesAndMoneyPop";
 import Notification_section from "./notification/Notification_section";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import Topbar_mobile_sideNav from "./Topbar_mobile_sideNav";
 // import { BiUser } from "react-icons/bi";
 // import { FaGoogle } from "react-icons/fa";
@@ -22,36 +26,153 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import LoadingWithLogo from "../LoadingWithLogo";
 // import { MdOutlineLogin } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
-import TicketPop from "../TicketPop";
 import SearchMain from "../SearchMain";
+// import TicketPop from "../TicketPop";
+// import SearchMain from "../SearchMain";
+// import firebase from "firebase/compat/app";
 // import SignInWithGoogle_Btn from "./SignInWithGoogle_Btn";
 
 
 export default function TopBar() {
 
-  const [menu, setMenu] = useState('');
+  // const [menu, setMenu] = useState('');
+
+  // const [avatar, setAvatar] = useState();
 
 
 
-  const handleChange = (event) => {
-    setMenu(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setMenu(event.target.value);
+  // };
 
 
 
-  const { user, loading, signIn_google, 
-    // signIn_google_redirectResult
+  const { user, loading, signIn_google, checkAndCreateUser, user_database
    } = useContext(AuthContext);
 
-  if (loading) {
-    return <LoadingWithLogo />
-  }
+   const [avatarLoading, setAvatarLoading] = useState(true);
+
+  //  const metadata = user.metadata;
+   
+   
+   {
+    // createdAt: user.metadata.createdAt,
+    // creationTime: user.metadata.creationTime,
+    // lastLoginAt: user.metadata.lastLoginAt,
+    // lastSignInTime: user.metadata.lastSignInTime
+   }
+
+
+
+
+   
+
+
+  useEffect(()=> {
+
+    // console.log(user_database);
+    
+
+    // const userExists = user_database.find(item => item.userID === user.uid);
+
+
+
+
+    {user &&
+      checkAndCreateUser({
+        userName: user.displayName,
+        email: user.email,
+        metadata: {
+          createdAt: new Date(), // Set custom createdAt or use other values you want
+          creationTime: user.metadata.creationTime,
+          lastSignInTime: user.metadata.lastSignInTime,
+          lastLoginAt: new Date() // Use current timestamp for lastLoginAt
+        },
+        userId: user.uid,
+        userProfile: user.photoURL
+      });
+
+    }
+
+
+
+
+    
+
+
+
+
+    // user_database.find((item)=> {
+    //   item.userID !== user.uid
+    //   return add_user({
+    //        userName: user.displayName,
+    //        email: user.email,
+    //     //   // metadata:metadata,
+    //        metadata: {
+    //          createdAt: user.metadata.createdAt,
+    //          creationTime: user.metadata.creationTime,
+    //          lastSignInTime: user.metadata.lastSignInTime,
+    //          lastLoginAt: user.metadata.lastLoginAt
+    //         ,
+    //        } ,
+    //        userId: user.uid,
+    //       userProfile: user.photoURL
+    //    });
+    // } )
+    {
+      // user &&  !== user.uid &&
+
+
+      // add_user({
+      //   userName: user.displayName,
+      //   email: user.email,
+      //   // metadata:metadata,
+      //   metadata: {
+      //     createdAt: user.metadata.createdAt,
+      //     creationTime: user.metadata.creationTime,
+      //     lastSignInTime: user.metadata.lastSignInTime,
+      //     lastLoginAt: user.metadata.lastLoginAt
+      //     ,
+      //   } ,
+      //   userId: user.uid,
+      //   userProfile: user.photoURL
+      // });
+    }
+
+
+    if(!loading){
+      setAvatarLoading(false);
+
+    }
+  },[ user, loading, checkAndCreateUser])
+
+
+    if (loading) {
+      return <LoadingWithLogo />
+    }
+
+
+
 
   const loginHandle = ()=>{
+
+
     signIn_google()
-      .then((result)=> console.log(result))
-      .catch((error)=> console.log(error))
+      .then((result)=> 
+      {
+        console.log(result);
+        // add_user(user);
+      }
+
+      )
+      .catch((error)=> console.error(error))
+
+
+
   }
+
+
+
 
 
 
@@ -81,7 +202,7 @@ export default function TopBar() {
             </Box>
 
             
-            <FormControl 
+            {/* <FormControl 
             sx={{ ml: 2, minWidth: 100, display:{md:"none", xs:"flex"} }}
             size="small">
               <InputLabel id="demo-select-small-label">Home</InputLabel>
@@ -92,15 +213,36 @@ export default function TopBar() {
                 label="Home"
                 onChange={handleChange}
               >
-                {/* <MenuItem value="">
-                  <em>None</em>
-                </MenuItem> */}
                 <MenuItem value={10}>Home</MenuItem>
                 <MenuItem value={10}>Hire</MenuItem>
                 <MenuItem value={20}>Group</MenuItem>
                 <MenuItem value={30}>News</MenuItem>
               </Select>
-          </FormControl>
+          </FormControl> */}
+
+            
+            {/* <div>
+
+              Hire
+
+            </div>
+            <div>
+              Group
+            </div>
+            <div>
+              News
+            </div> */}
+
+
+
+
+            <Box sx={{fontWeight: "bold", display:{md:"none", sm:"flex", xs:"flex"}, alignItems:"center", marginLeft:3, cursor:"pointer"}}>
+              Home
+                <UilAngleDown/>
+            </Box> 
+
+
+
 
             <NavMenu />
           <SearchMain/>
@@ -117,7 +259,7 @@ export default function TopBar() {
               <UilSearch />
             </IconButton>
 
-
+{/* 
           {
             user &&
             <Box sx={{ display: { md: "flex", xs: "none" } }}>
@@ -125,7 +267,7 @@ export default function TopBar() {
               {user && <TicketPop/>}
               <MunitesAndMoneyPop />
             </Box>
-          }
+          } */}
 
 
             {
@@ -157,7 +299,17 @@ export default function TopBar() {
             } */}
 
 
+
+
             {user ?
+              <>
+              {/* <Skeleton variant="circular" width={32} height={32} /> */}
+              {
+                avatarLoading ?
+                // <CircularProgress size={32} />
+                <Skeleton variant="circular" animation="wave" sx={{m:"0 10px", cursor:"pointer"}} width={32} height={32} />
+                :
+
               <Link to="/abdullahalkaisan">
                 <IconButton sx={{ m: "0 10px", display: { md: "flex", xs: "none" } }}>
                   <Avatar
@@ -166,6 +318,16 @@ export default function TopBar() {
                   />
                 </IconButton>
               </Link>
+
+              }
+
+
+              
+              
+              </>
+
+
+
               : 
               
                 // <Button onClick={loginHandle} sx={{ mx: 2, borderRadius:3, textTransform:"none", bgcolor:"#333", "&:hover":{bgcolor:"#444"} }} color="info" variant="contained" >
@@ -197,6 +359,10 @@ export default function TopBar() {
 
 
             {/* <Topbar_mobile_sideNav /> */}
+
+
+
+            {/* {user.displayName} */}
 
 
 

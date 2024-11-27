@@ -43,7 +43,7 @@ export default function LoginPage() {
 
 
   return (
-    <Box sx={{height:"100vh", width:"100vw", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+    <Box sx={{height:"100vh", width:"100vw", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", position:"absolute", backgroundColor:"#fff", zIndex:9999}}>
         
 
         {/* <Marquee>
@@ -70,11 +70,12 @@ export default function LoginPage() {
 
 
 
-          <Box sx={{width:"50%", display:"flex", alignItems:"center", justifyContent:'center',  my:4}}>
-              <Button onClick={loginHandle} sx={{ display:"flex", alignItems:"center", justifyContent:'center', borderRadius:3, bgcolor:"#f1f1f1",}}  >
+          <Box sx={{width:"100%", display:"flex", alignItems:"center", justifyContent:'center',  my:4}}>
+              <Button onClick={loginHandle} sx={{ display:"flex", alignItems:"center", width:"100%", justifyContent:'center', borderRadius:3, bgcolor:"#f1f1f1",}}  >
               <FcGoogle fontSize={30} style={{margin:"0 10px 0 0"}} />
               <Box sx={{margin:"0 10px 0 0"}}>
-              Sign in With google
+                  Sign in 
+                  {/* With google */}
               </Box>
               {/* with Google */}
               </Button>

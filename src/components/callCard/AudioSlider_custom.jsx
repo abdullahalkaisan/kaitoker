@@ -12,9 +12,10 @@ import { useEffect } from 'react';
 
 
 
-export default function AudioSlider_custom() {
+export default function AudioSlider_custom(props) {
 
   const {audioPlayerRef, isPaused} = useContext(CallCardContext);
+  const isColor = props.color;
 
   
   const [duration, setDuration] = useState(0);
@@ -118,12 +119,14 @@ export default function AudioSlider_custom() {
 
         />
         <Box
+        
         sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         mt: -2,
-        }}
+      }
+      }
         >
         <TinyText>{formatDuration(position)}</TinyText>
         <TinyText>-{formatDuration(duration - position)}</TinyText>
