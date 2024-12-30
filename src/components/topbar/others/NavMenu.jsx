@@ -120,7 +120,7 @@ export default function NavMenu() {
                 <Tab to="/news" component={Link} sx={{minWidth:70}} icon={<UilNewspaper />} aria-label="favorite" />
             </Tooltip>
 
-            {/* <Tooltip title="Job" enterDelay={1000} placement="bottom-end">
+            <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilBagAlt />} aria-label="person" />
             </Tooltip> */}
 

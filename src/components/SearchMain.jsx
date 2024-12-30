@@ -27,7 +27,7 @@ export default function SearchMain() {
           // minWidth:350, 
           display:"flex",
           flex:1,
-          width:{md:300, lg:500,},
+          width:{md:300, lg:300,},
 
           // width:500, 
         // marginTop:2,
