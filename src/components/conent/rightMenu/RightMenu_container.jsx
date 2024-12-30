@@ -154,8 +154,8 @@ export default function RightMenu_container() {
 
 
         <CustomTabPanel value={value} index={1}>
-          <ChatList />
-          {/* <MessageList/> */}
+          {/* <ChatList /> */}
+          <MessageList/>
         </CustomTabPanel>
 
         <CustomTabPanel value={value} index={2}>

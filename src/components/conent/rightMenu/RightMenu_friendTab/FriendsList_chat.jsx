@@ -3,8 +3,11 @@ import { MdTune } from 'react-icons/md'
 import PeopleList from '../PeopleList'
 import { usersDataLocal } from '../../../../usersDataLocal';
 import SearchTextArea from '../../../SearchTextArea';
+import { useEffect } from 'react';
 
-export default function FriendsList_chat() {
+export default function FriendsList_chat(props) {
+
+  const getUserData = props.item;
   // Custom sort function
   const sortUsers = (a, b) => {
     const statusOrder = { online: 0, busy: 1, "": 2 }; // Define order for online statuses
@@ -17,6 +20,8 @@ export default function FriendsList_chat() {
   // Sort the users array
   const sortedUsers = usersDataLocal.sort(sortUsers);
 
+  console.log(getUserData);
+  
 
     
   return (
@@ -37,13 +42,13 @@ export default function FriendsList_chat() {
     </Box> */}
 
     <Box sx={{margin:1, width:320}}>
-      <SearchTextArea/>
+      <SearchTextArea length={getUserData?.length}/>
     </Box>
 
 
     <Box sx={{ height: "100%", width: "100%", display: "flex", flexDirection:"column",  overflow: "auto" }}>
       <Box sx={{p:2}}>
-        {sortedUsers.map((item) => (
+        {/* {sortedUsers.map((item) => (
           <PeopleList
             key={item.id}
             title={item.userName}
@@ -51,14 +56,43 @@ export default function FriendsList_chat() {
             lastSeen={"26m"}
             country={item.country}
             isVarified={item.isVarified}
-            avatarUrl={item.avatar}
+            avatarUrl={item.avatar.slice(0, 92)}
             isOnline={item.isOnline}
             flag={item.flag}
             avatar={1}
             badge={1}
             avatarSize={47}
           />
+        ))} */}
+
+        {getUserData?.length === 0 && <p>No user</p>}
+
+
+      
+      {getUserData?.map((item, index) => (
+          // <div key={index}>
+          //     <h1>{item.fullName}</h1>
+          // </div>
+          <PeopleList
+            key={index}
+            title={item?.fullName}
+            subTitle={item?.profession}
+            // lastSeen={"26m"}
+            // country={item?.country}
+            // isVarified={item.isVarified}
+            avatarUrl={item?.profilePic}
+            // isOnline={"item.isOnline"}
+            isOnline={"online"}
+            flag={item?.country}
+            avatar={1}
+            badge={1}
+            // avatarSize={47}
+            avatarSize={47}
+          />
         ))}
+
+
+
       </Box>
     </Box>
   </Box>

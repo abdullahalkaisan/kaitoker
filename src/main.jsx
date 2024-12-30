@@ -19,7 +19,7 @@ import CallCardProvider from './Providers/CallCardProvider.jsx';
 //     }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <CallCardProvider>
         <ThemeCustomProvider>
           <AuthProvider>
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </AuthProvider>
         </ThemeCustomProvider>
     </CallCardProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 
 )
 

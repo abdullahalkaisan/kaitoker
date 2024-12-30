@@ -7,7 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 import { MdTune } from 'react-icons/md';
 
-export default function SearchTextArea() {
+export default function SearchTextArea(props) {
   return (
     <Paper
       component="form"
@@ -28,7 +28,7 @@ export default function SearchTextArea() {
       </IconButton> */}
       <InputBase
         sx={{ ml: 1, flex: 1,}}
-        placeholder="Search 246,214 Talent"
+        placeholder={`Search ${props.length ? props.length : "0"} Talent`}
       />
       <IconButton type="button" sx={{ p: '10px' }} >
         <SearchIcon />

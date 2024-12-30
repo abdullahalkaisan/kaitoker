@@ -182,8 +182,9 @@ export default function CallCardReel() {
 
           {/* <iframe src="https://youtu.be/cFBQe45hhOs" ></iframe> */}
           
-          
+          {/* <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="cFBQe45hhOs"></div> */}
           <iframe style={{borderRadius:8}} width="374" height="210" src="https://www.youtube.com/embed/cFBQe45hhOs?autoplay=1" title="Learn English and  French with Esther on italki" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 {/* next prev button  */}
 <Box

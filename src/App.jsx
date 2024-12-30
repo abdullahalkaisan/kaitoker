@@ -1,5 +1,5 @@
 
-import { Box } from "@mui/material"
+import { Box, LinearProgress } from "@mui/material"
 import Profession_filter from "./components/filter/Profession_filter"
 // import LeftMenu_container from "./components/conent/LeftMenu_container"
 // import Center_container from "./components/conent/Center_container"
@@ -13,23 +13,82 @@ import TopBar from "./components/topbar/Topbar"
 // import LoadingWithLogo from "./components/LoadingWithLogo"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "./Providers/AuthProvider"
-import { useLocation } from "react-router-dom"
+import {  useLocation } from "react-router-dom"
 import NavMenu from "./components/topbar/others/NavMenu"
 import LoginPage from "./pages/LoginPage/LoginPage"
 // import { Helmet } from "react-helmet"
 // import NavMenu from "./components/topbar/others/NavMenu"
-
+import { useNavigate } from 'react-router-dom';
+import LoadingWithLogo from "./components/LoadingWithLogo"
+import { axiosInstance } from "./AxiosInstance"
+import { UserCheckingLoading } from "./components/UserCheckingLoading"
 
 function App() {
 
-  const {user} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const {user, getUserData, isUserDataLoading, loginMongo,isLogining, loginUserData, user_mongo,mongodb_login,createAccount_mongo, getLoginUserData,  checkUserExist, ischeckUserExist_loading} = useContext(AuthContext);
 
 
+  console.log("login user data", getUserData);
+
+  
+  isUserDataLoading && <div>loading users...</div>;
+
+
+  // useEffect(()=>{
+  //   if(isLogining){
+  //     console.log("isLogining...");
+  //   }else{
+  //     console.log("login data ", loginUserData);
+  //   }
+  // },[isLogining])
+
+
+
+  // if(user){
+  //   checkUserExist(user);
+  // }
+
+  // if (!mongodb_login) {
+  //   checkUserExist(user);
+  // }
 
 
   const location = useLocation()
-  const [isFilterProfetionShow, setIsFilterProfetionShow] = useState(true);
+  const [isFilterProfetionShow, setIsFilterProfetionShow,] = useState(true);
   
+
+
+
+  // if(loginUserData){
+  //   if(loginUserData?.completeProfile === false){
+  //     navigate('/profile/edit');
+  //   }
+  // }
+  
+
+  useEffect(() => {
+    if(!ischeckUserExist_loading){
+      if(user_mongo){
+          if(user_mongo.exists === false){
+            navigate('/profile/edit');
+          }
+      }
+    }
+
+}, [user_mongo, navigate]);
+
+
+
+
+// if(!isLogining){
+//   if(loginUserData.completeProfile){
+//     navigate('/');
+//   }
+// }
+
+
   useEffect(()=>{
     if(location.pathname === "/news"){
       setIsFilterProfetionShow(false)
@@ -40,7 +99,9 @@ function App() {
     else{
       setIsFilterProfetionShow(true)
     }
-  },[location])
+
+
+  },[location, checkUserExist])
 
 
   return (
@@ -61,9 +122,13 @@ function App() {
       overflow={"hidden"}
     >
 
-      {!user &&
+      {/* {!user && 
       <LoginPage/>
-      }
+      } */}
+
+      {ischeckUserExist_loading && <UserCheckingLoading/>}
+
+      {isLogining && <Box sx={{ width: '100%' }}><LinearProgress /> </Box>}
       
 
       {/* <Box bgcolor={"gray"} overflow={"auto"}>

@@ -70,7 +70,7 @@ export default function ChatCard(props) {
           </Box>
 
 
-          <CardActionArea
+          {/* <CardActionArea
             onClick={() => { setIsChatBubleClicked(!isChatBubleClicked) }}
             style={{
               height: "max-content",
@@ -80,11 +80,12 @@ export default function ChatCard(props) {
               // borderRadius: 24,
               fontSize: "medium",
               position: "relative",
-            }}>
+            }}> */}
 
 
 
             <Box
+            onClick={() => { setIsChatBubleClicked(!isChatBubleClicked) }}
               sx={{
                 p: 1,
                 // borderRadius: 4,
@@ -97,6 +98,7 @@ export default function ChatCard(props) {
                 maxWidth: "250px",
                 flexWrap: "wrap",
                 wordWrap: "break-word",
+                cursor:"pointer"
               }}
               bgcolor={
                 type === "me"
@@ -159,7 +161,7 @@ export default function ChatCard(props) {
               </Box>
             </Box>
 
-          </CardActionArea>
+          {/* </CardActionArea> */}
 
 
           {/* <Box sx={{maxWidth:"70%"}}>
@@ -191,12 +193,12 @@ export default function ChatCard(props) {
                 <MdMoreHoriz />
                 {/* <MdEdit /> */}
               </IconButton>
-              {/* <IconButton onClick={()=>{setIsReactEmojiClicked(!isReactEmojiClicked)}}>
+              {/* <IconButton size="small" onClick={()=>{setIsReactEmojiClicked(!isReactEmojiClicked)}}>
                 <MdOutlineAddReaction />
               </IconButton> */}
-              <IconButton sx={{bgcolor:`${isDark ? "#222" :"#f1f1f1"}`, mx:0.5}}  size="small">
+              {/* <IconButton sx={{bgcolor:`${isDark ? "#222" :"#f1f1f1"}`, mx:0.5}}  size="small">
                 <MdContentCopy />
-              </IconButton>
+              </IconButton> */}
               <IconButton sx={{bgcolor:`${isDark ? "#222" :"#f1f1f1"}`, mx:0.5}}  size="small">
                 <MdDeleteOutline />
               </IconButton>

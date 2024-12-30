@@ -41,7 +41,9 @@ import { PiChatCircle, PiChatCircleBold, PiEye, PiHeart, PiHeartBold, PiHeartFil
 
 
 
-export default function PostCard({item}) {
+export default function PostCard(props) {
+
+  const item = props.item;
 
   function formatNumber(num = 0) {
     if (num >= 1_000_000) {

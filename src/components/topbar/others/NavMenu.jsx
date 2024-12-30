@@ -104,7 +104,7 @@ export default function NavMenu() {
 
 
 
-            {/* <Tooltip title="Group" enterDelay={1000} placement="bottom-end">
+            <Tooltip title="Group" enterDelay={1000} placement="bottom-end">
                 <Tab 
                   to="/group" 
                   component={Link}
@@ -112,7 +112,7 @@ export default function NavMenu() {
                   icon={<UilMicrophone />} 
                   aria-label="person"
                 />
-            </Tooltip> */}
+            </Tooltip>
 
 
 
@@ -127,8 +127,8 @@ export default function NavMenu() {
 
             {/* UilBagAlt */}
             {/* UilPresentationMinus */}
-
-            {/* <Tooltip title="Watch" enterDelay={1000} placement="bottom-end">
+{/* 
+            <Tooltip title="Watch" enterDelay={1000} placement="bottom-end">
                 <Tab 
                 to="/watch" component={Link}
                 // label="Watch" 

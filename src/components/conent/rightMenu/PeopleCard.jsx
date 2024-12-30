@@ -192,6 +192,7 @@ export default function PeopleCard(props) {
             sx={{ cursor: "pointer", fontWeight: "bold", fontSize: titleSize && titleSize }}
           >
             {flag && title.length > 15 ? title.slice(0, 15) + "..." : title}
+            {/* {props?.fullName} */}
 
             <VerifiedIcon
               sx={{
@@ -222,7 +223,7 @@ export default function PeopleCard(props) {
                     border: "1px solid #77777750",
                     boxShadow: "10px 10px 10px solid black",
                   }}
-                  src={`https://flagcdn.com/w20/${flag}.png`}
+                  src={`https://flagcdn.com/w20/${flag?.code.toLowerCase()}.png`}
                 />
               </Box>
             </Tooltip>
@@ -264,7 +265,7 @@ export default function PeopleCard(props) {
             // color={subTitleHighLight ? "" : "#777"}
             color={subTitleColor2 && subTitleColor2}
             fontWeight={subTitleWeight2 && subTitleWeight2}
-            variant="body2"
+            variant="body1"
             component="h6"
             fontSize={subTitleSize2 && subTitleSize2}
           >

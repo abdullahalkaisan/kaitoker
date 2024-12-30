@@ -11,6 +11,8 @@ import { MdCalendarMonth, MdOutlinePeopleAlt, MdSupervisedUserCircle } from 'rea
 import PeopleCard from '../conent/rightMenu/PeopleCard';
 import NumberFormat from './NumberFormatCustom';
 import NumberFormatCustom from './NumberFormatCustom';
+import { formatedDate, timeAgo } from '../../Formats';
+import { useEffect } from 'react';
 SubDetails.propTypes = {
   user_followers: PropTypes.number.isRequired,
   user_rating: PropTypes.number.isRequired,
@@ -29,6 +31,7 @@ export default function SubDetails({user_followers, proposal, askingCost, user_r
   // 500 = lavel 1 warning  
   // 5,000 = lavel 2 error
   // 50,000 = lavel 3 secondary
+
 
 
   
@@ -224,7 +227,7 @@ export default function SubDetails({user_followers, proposal, askingCost, user_r
 
 
       {sinceTime &&
-        <Tooltip placement='top' title={`Since 12th June 2021`}>
+        <Tooltip placement='top' title={`Since ${formatedDate(sinceTime)}`}>
           <Box
             sx={ {
                     display: "flex",
@@ -235,8 +238,8 @@ export default function SubDetails({user_followers, proposal, askingCost, user_r
                   }
             }
           >
-            <MdCalendarMonth sx={{ fontSize: "medium" }} />
-            {sinceTime}
+            <MdCalendarMonth style={{marginRight:2}} sx={{ fontSize: "medium" }} />
+            {timeAgo(sinceTime)}
           </Box>
 
         </Tooltip>

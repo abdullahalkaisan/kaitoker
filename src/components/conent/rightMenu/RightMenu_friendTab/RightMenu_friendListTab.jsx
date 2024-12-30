@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -8,6 +8,14 @@ import { usersDataLocal } from '../../../../usersDataLocal';
 import PeopleList from '../PeopleList';
 import TuneIcon from '@mui/icons-material/Tune';
 import FriendsList_chat from './FriendsList_chat';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { axiosInstance } from '../../../../AxiosInstance';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../../Providers/AuthProvider';
+
+
+
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -44,6 +52,74 @@ function a11yProps(index) {
 
 export default function RightMenu_friendListTab() {
 
+
+
+
+
+  const [myFollowingUsers, setMyFollowingUsers] = useState(null)
+  const [myFriends, setMyFriends] = useState(null)
+  const [myFollowers, setMyFollowers] = useState(null)
+  const {loginUserData} = useContext(AuthContext);
+
+
+
+
+
+  useEffect(() => {
+
+    const fetchFollowing = async () => {
+      try {
+        const response = await axiosInstance.post('following/get-following', { following: loginUserData?.following });
+        setMyFollowingUsers(response.data);
+      } catch (error) {
+        console.error('Error fetching following data:', error);
+      }
+    };
+
+
+    const fetchFriends = async () => {
+      try {
+        const response = await axiosInstance.post('following/get-friends', { friends: loginUserData?.friends });
+        setMyFriends(response.data);
+      } catch (error) {
+        console.error('Error fetching following data:', error);
+      }
+    };
+
+
+    const fetchFollowers = async () => {
+      try {
+        const response = await axiosInstance.post('following/get-followers', { followers: loginUserData?.followers });
+        console.log(response.data);
+        
+        setMyFollowers(response.data);
+      } catch (error) {
+        console.error('Error fetching following data:', error);
+      }
+    };
+
+
+    fetchFollowing();
+    fetchFriends();
+    fetchFollowers();
+  }, [
+    loginUserData,
+    loginUserData?.following, 
+    loginUserData?.friends,
+    loginUserData?.followers,
+
+  ]);
+
+
+
+  // console.log(myFollowingUsers);
+  
+
+
+
+
+
+
   // Custom sort function
   const sortUsers = (a, b) => {
     const statusOrder = { online: 0, busy: 1, "": 2 }; // Define order for online statuses
@@ -62,7 +138,7 @@ export default function RightMenu_friendListTab() {
 
 
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -125,6 +201,9 @@ export default function RightMenu_friendListTab() {
                 <IconButton sx={{marginLeft:1}}>
                   <TuneIcon />
                 </IconButton>
+                <IconButton sx={{marginLeft:1}}>
+                <SettingsIcon />
+                </IconButton>
               </Box>
               <Box sx={{ height: "100%", 
                 // width: "100%",
@@ -143,13 +222,13 @@ export default function RightMenu_friendListTab() {
                       subTitle={item.profession}
                       lastSeen={"11m"}
                       isVarified={item.isVarified}
-                      avatarUrl={item.avatar}
+                      avatarUrl={item.avatar.slice(0, 92)}
                       isOnline={item.isOnline}
 
                       // country={item.country}
                       // flag={item.flag}
-                      // avatarSize={47}
-                      avatarSize={40}
+                      avatarSize={47}
+                      // avatarSize={40}
                       
                       avatar={true}
                       badge={true}
@@ -192,13 +271,17 @@ export default function RightMenu_friendListTab() {
 
 
           <CustomTabPanel value={value} index={1}>
-            <FriendsList_chat/>
+
+
+            <FriendsList_chat item={myFriends}/>
+
+
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            <FriendsList_chat/>
+            <FriendsList_chat item={myFollowingUsers}/>
           </CustomTabPanel>
-          <CustomTabPanel value={value} index={3}>
-            <FriendsList_chat/>
+          <CustomTabPanel value={value}  index={3}>
+            <FriendsList_chat item={myFollowers}/>
           </CustomTabPanel>
 
         </Box>

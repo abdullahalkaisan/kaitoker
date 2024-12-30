@@ -16,6 +16,8 @@ import ProfileEdit from "../pages/Profile_edit/ProfileEdit";
 import CourseCard_details from "../components/CaurseCard.jsx/CourseCard_details";
 import VideoCardWrapper from "../components/VideoCardWrapper";
 import ReelPage from "../pages/ReelPage/ReelPage";
+import VideoViewPage from "../pages/videoViewPage/VideoViewPage";
+import { CallCardWrapper_mongo } from "../components/callCard/CallCardWrapper_mongo";
 
 
   export  const router = createBrowserRouter([
@@ -26,9 +28,11 @@ import ReelPage from "../pages/ReelPage/ReelPage";
       children: [
         {
           path: "/",
-          element: <CallCardWrapper/>,
-          loader: ()=> fetch("/userDataLocal.json")
+          element: <CallCardWrapper_mongo/>,
+          // loader: ()=> fetch("http://localhost:5001/api/users/")
         },
+
+        
         {
           path: "/group",
           element: <GroupCallCard_wrapper/>,
@@ -36,7 +40,8 @@ import ReelPage from "../pages/ReelPage/ReelPage";
         {
           path: "/news",
           element: <NewsContainer />,
-        },{
+        },
+        {
           path: "/hire",
           element: <CallCardReel/>,
           loader: ()=> fetch("/userDataLocal.json")
@@ -53,6 +58,10 @@ import ReelPage from "../pages/ReelPage/ReelPage";
     {
       path: "/login",
       element: <LoginPage />,
+    },
+    {
+      path:"/watch/video",
+      element: <VideoViewPage/>
     },
     {
       path: "/profile/edit",

@@ -14,6 +14,7 @@ import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc, setDoc, getDoc,
 
 import { db } from "../firebase/firebase.config"; // Import Firestore instance
 import { Snackbar } from "@mui/material";
+import { axiosInstance } from "../AxiosInstance";
 
 
 
@@ -24,6 +25,11 @@ export const AuthContext = createContext(null);
 export default function AuthProvider({children}) {
     
     const [user, setUser] = useState(null);
+
+
+    const [mongodb_login, setMongodb_login] = useState(false);
+    const [createAccount_mongo, setCreateAccount_mongo] = useState(null);
+
     const [loading, setLoading] = useState(true);
 
 
@@ -571,13 +577,12 @@ export default function AuthProvider({children}) {
     useEffect(()=>{
       const unSubscribe = onAuthStateChanged(auth, currentUser =>{
         setUser(currentUser)
+        checkUserExist(currentUser);
         setLoading(false)
+        loginMongo(currentUser);
       } )
 
       fetchData()
-
-
-
 
       return ()=>{
         unSubscribe()
@@ -588,9 +593,107 @@ export default function AuthProvider({children}) {
 
 
 
+    const [ischeckUserExist_loading, setIscheckUserExist_loading] = useState(false);
+    const [user_mongo, setUser_mongo] = useState(null);
+    const checkUserExist = async(user)=>{
+      setIscheckUserExist_loading(true);
+      try {
+          const res = await axiosInstance.post("auth/checkUserExist", user);
+          setUser_mongo(res.data)
+
+          // set({authUser:res.data})
+          // toast.success("logged in successfully")
+      } catch (error) {
+          // toast.error(error.response.data.message);
+      }finally{
+          // set({isLoggingIn:false})
+        setIscheckUserExist_loading(false);
+      }
+    }
+
+
+    const [isCreatingOnMongo_loading, setIsCreateingOnMongo_loading] = useState(false);
+
+    const [getLoginUserData, setGetLoginUserData] = useState(null);
+
+    const createUserOnMongo = async(data)=>{
+      setIsCreateingOnMongo_loading(true);
+      try {
+          const res = await axiosInstance.put("/auth/createuser", data);
+          setGetLoginUserData(res.data)
+
+          // const userWithCompleteProfile = { ...res.data, completeProfile: true };
+          // setUser_mongo(userWithCompleteProfile);
+
+          // set({authUser:res.data})
+          // toast.success("logged in successfully")
+      } catch (error) {
+          console.log(error)
+          // toast.error(error.response.data.message);
+      }finally{
+          // set({isLoggingIn:false}) 
+          setIsCreateingOnMongo_loading(false);
+      }
+    }
+
+
+
+
+
+
+    const [loginUserData, setLoginUserData] = useState(null);
+    const [isLogining, setIsLogining] = useState(false);
+    const loginMongo = async(data)=>{
+      setIsLogining(true);
+      try {
+          const res = await axiosInstance.post("/auth/login", data);
+          console.log(res.data);
+          setLoginUserData(res.data)
+      } catch (error) {
+          console.log(error)
+      }finally{
+          setIsLogining(false);
+      }
+    }
+
+
+
+    const [isUserDataLoading, setIsUserDataLoading] = useState(false);
+    const [userData, setUserData] = useState(null);
+
+    const getUserData = async()=>{
+      setIsUserDataLoading(true)
+      try {
+          const res = await axiosInstance.get("/auth/users/");
+          if (res?.data) {
+            setUserData(res?.data); // Update userData with response
+        }
+      } catch (error) {
+          console.log(error.message)
+      }finally{
+          setIsUserDataLoading(false)
+      }
+    }
+
+
+
+
+
+
     const authInfo = {
         user,
         loading,
+        checkUserExist,
+        ischeckUserExist_loading,
+
+        isCreatingOnMongo_loading,createUserOnMongo,getLoginUserData,
+        isLogining, loginMongo,loginUserData,
+
+        userData, isUserDataLoading,
+
+        user_mongo,
+        mongodb_login, setMongodb_login,
+        createAccount_mongo, setCreateAccount_mongo,
         // userAvater,
         signIn_google,
         signOut_google,
@@ -611,9 +714,13 @@ export default function AuthProvider({children}) {
         likeCount, setLikeCount,
         isLikedChecked, setIsLikedChecked,
         handleLike
-
         // signIn_google_redirectResult
     }
+
+
+
+
+
 
   return (
     <AuthContext.Provider value={authInfo}>

@@ -1,12 +1,17 @@
 import { Avatar, Badge, Box, Button, CardActionArea, Chip, Divider, FormControlLabel, IconButton, Switch, TextField, Typography } from "@mui/material";
 import TopBar from "../../components/topbar/Topbar";
 import Logo from "../../components/topbar/others/Logo";
-import { MdArrowBack, MdDelete, MdEditSquare, MdFileUpload, MdMic, MdOutlineTranslate } from "react-icons/md";
+import { MdArrowBack, MdDelete, MdEditSquare, MdFileUpload, MdMic, MdOutlineTranslate, MdVerifiedUser } from "react-icons/md";
 import styled from "styled-components";
 import { VoiceRecorder } from "react-voice-recorder-player";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './ProfileEdit.css';
 import HorizontalStepperWithError from "./Stepper";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import LoadingWithLogo from "../../components/LoadingWithLogo";
+import { IoMdCloseCircle } from "react-icons/io";
+import { LogOut } from "lucide-react";
 
 
 const VisuallyHiddenInput = styled('input')({
@@ -58,31 +63,73 @@ const VisuallyHiddenInput = styled('input')({
   };
 
 
-
-
 export default function ProfileEdit() {
 
-    const handleDelete = () => {
-        console.info('You clicked the delete icon.');
-      };
+  const {user,loading, loginUserData, user_mongo,mongodb_login, checkUserExist, ischeckUserExist_loading} = useContext(AuthContext);
+
+
+
+
+
+  if(loading && !user){
+    return  <LoadingWithLogo/>
+  }
+  
+
+
+
+
+    // const handleDelete = () => {
+    //     console.info('You clicked the delete icon.');
+    //   };
     
 
 
 
+
+
+
+
     return (
-        <Box sx={{ height: "100vh", width: "100vw", display: "flex", flexDirection:"column", justifyContent: "flex-start", overflowX:"hidden",  alignItems:"center", }}>
+        <Box sx={{ 
+            height: "100vh", 
+            width: "100vw", 
+            display: "flex", 
+            flexDirection:"column", 
+            justifyContent: "flex-start", 
+            overflowX:"hidden",  
+            alignItems:"center", 
+            backgroundColor: "background.default",
+            color: "text.primary"
+            }}>
             
             
             {/* <Logo/> */}
             <Box sx={{position:"fixed", left: 20, top:20}}>
-
-
-
-            
-            <IconButton  component={Link} to="/" sx={{ backgroundColor:"#ffffff", boxShadow:"0px 0px 10px #00000020"}} size="large">
+            <IconButton  component={Link} to="/" 
+            // sx={{ backgroundColor:"#ffffff", boxShadow:"0px 0px 10px #00000020"}} 
+            size="large"
+            color="default"
+            >
                 <MdArrowBack/>
             </IconButton>
             </Box>
+
+            {/* <Box sx={{position:"fixed", right: 20, top:20}}>
+            <Button  component={Link} to="/" 
+            // sx={{ backgroundColor:"#ffffff", boxShadow:"0px 0px 10px #00000020"}} 
+            size="large"
+            color="default"
+            >
+                Logout
+            </Button>
+            </Box> */}
+
+            <Button variant="contained" color="error" onClick={mongodb_login} sx={{position:"fixed", right: 20, top:20, px:1, pr:2, borderRadius:6}}>
+                {/* <LogOut size={20} style={{marginRight:3}}/> */}
+                <Avatar src={user?.photoURL} sx={{width:30, height:30,marginRight:1, borderRadius:9999}}/>
+                Logout
+            </Button>
 
 
 
@@ -93,11 +140,8 @@ export default function ProfileEdit() {
             <HorizontalStepperWithError/>
 
                 
-                <CardActionArea sx={{ height: "fit-content", width: "fit-content", borderRadius: 999 }}>
-                    <Avatar 
-                    // src="https://pbs.twimg.com/profile_images/1544305803888566272/7uAiIOYR_400x400.jpg" 
-                    sx={{ height: 100, width: 100 }}></Avatar>
-                </CardActionArea>
+
+
                 <Box>
                 {/* <IconButton sx={{ borderRadius:3, backgroundColor:"#fff", mx:4, "&:hover":{backgroundColor:"#fff"}, boxShadow:"0px 0px 10px #00000050"}}>
                     <MdFileUpload />
@@ -106,7 +150,7 @@ export default function ProfileEdit() {
                     </span>
                 </IconButton> */}
 
-                <Button 
+                {/* <Button 
                 component="label"
                 role={undefined}
                 tabIndex={-1}
@@ -137,7 +181,7 @@ export default function ProfileEdit() {
                 startIcon={<MdFileUpload />}>
                 <VisuallyHiddenInput type="file" />
                     Upload Voice
-                </Button>
+                </Button> */}
 
 
 
@@ -173,32 +217,15 @@ export default function ProfileEdit() {
 
 
                 <Box sx={{width:{md:520, xs:1},}}>
-                    <TextField required  sx={{mb:2, mr:2}} id="outlined-basic" size="small" label="Full Name" variant="outlined" />
-                    <TextField required  sx={{mb:2, mr:2}} id="outlined-basic" size="small" label="Profession" variant="outlined" />
-                    {/* <TextField required  sx={{mb:2}} id="outlined-basic" size="small" label="Country" variant="outlined" /> */}
-                    {/* <TextField rows={6} multiline maxRows={6}  sx={{mb:2}} id="outlined-basic" size="small" label="About" variant="outlined" /> */}
-                    
 
 
 
 
-                    <Box sx={{marginY:10}}>
-                    <Divider>Language</Divider>
-                    <Box sx={{display:"flex", flexWrap:"wrap", width:{md:1, xs:1}, mt:3, mb:2}}>
-                        <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
-                        <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
-                        <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
-                        <Chip icon={<MdOutlineTranslate />} onDelete={handleDelete} sx={{m:0.5, borderRadius:3}} label="English" />
-                    </Box>
 
-                    <Box sx={{display:"flex"}}>
-                        <TextField required rows={3}  maxRows={3}  sx={{mb:2}} id="outlined-basic" size="small" label="Languages" variant="outlined" />
-                    </Box>
-                    <Typography sx={{color:"orangered", mb:40}} variant="caption" >
-                        You can add upto 4 Language
-                    </Typography>
 
-                    </Box>
+
+
+
 
                     {/* <FormControlLabel  sx={{mb:4, color:"#777",}} control={<Switch  />} labelPlacement="start" label="Do you know English?" /> */}
 
@@ -206,24 +233,9 @@ export default function ProfileEdit() {
 
 
 
-                    <Divider>Skills</Divider>
-                    <Box sx={{display:"flex", flexWrap:"wrap", mt:3, mb:2, width:{md:1, xs:1}}}>
-                        <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="Web development" />
-                        <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="Node.js" />
-                        <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="Javascript" />
-                        <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="UX UI Designer" />
-                        <Chip sx={{m:0.5, borderRadius:3}} onDelete={handleDelete}  label="English" />
-                    </Box>
- 
-
-                    <TextField required rows={3}  maxRows={3}  sx={{mb:2}} id="outlined-basic" size="small" label="Skills" variant="outlined" />
-                    <br />
-                    <Typography sx={{color:"orangered", marginBottom:6}} variant="caption" >
-                        You can add upto 5 Skills
-                    </Typography>
 
 
-                    <Box sx={{display:"flex", justifyContent:"flex-end", mt:5}} fullWidth>
+                    {/* <Box sx={{display:"flex", justifyContent:"flex-end", mt:5}} fullWidth>
                         <Box sx={{width:300, display:"flex", justifyContent:"center", alignItems:"center"}}>
                             <Button fullWidth sx={{borderRadius:3,  mt:0, mr:2, py:1}} >
                                 Cancel
@@ -232,7 +244,7 @@ export default function ProfileEdit() {
                                 SAVE
                             </Button>
                         </Box>
-                    </Box>
+                    </Box> */}
 
                 </Box>
 
