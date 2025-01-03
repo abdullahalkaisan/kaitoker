@@ -189,6 +189,7 @@ useEffect(()=>{
                   justifyContent: "center",
                   cursor: "pointer",
                   width: "max-content",
+                  color:"text.primary",
                   textDecoration: "none",
                   "&:hover": { textDecoration: "underline" },
                 }}

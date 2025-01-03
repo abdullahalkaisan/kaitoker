@@ -2,9 +2,25 @@ import { useTheme } from "@emotion/react";
 import { Box, IconButton, TextField } from "@mui/material";
 import { MdSearch, MdTune } from "react-icons/md";
 import SearchTextArea from "./SearchTextArea";
+import { useEffect, useState } from "react";
+import { axiosInstance } from "../AxiosInstance";
 
 
 export default function SearchMain() {
+
+
+
+  const [getAllUserData, setGetAllUserData] = useState(null);
+
+  useEffect(()=>{
+    axiosInstance.get('/users')
+    .then(res=>{
+      setGetAllUserData(res.data);
+    })
+  },[])
+
+
+
 
 
     const theme = useTheme();
@@ -37,7 +53,7 @@ export default function SearchMain() {
           backgroundColor:`${isDark ? "#222" : ""}`
       }} 
       // label="Search 501,246 talent" 
-      placeholder='Search 501,246 talent'
+      placeholder={`Search ${getAllUserData?.length-1} talent`}
     />
           {/* <IconButton color="primary" sx={{ p: '10px' }} >
             <MdSearch/>

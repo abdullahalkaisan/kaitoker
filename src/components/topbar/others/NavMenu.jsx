@@ -1,5 +1,5 @@
 import { Box, IconButton, Tab, Tabs, TextField, Tooltip } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
   import { 
     UilEstate,
@@ -12,10 +12,10 @@ import React, { useEffect, useState } from 'react'
     UilPlayCircle
 } from '@iconscout/react-unicons'
 import { Link, useLocation } from 'react-router-dom';
-import { Home01Icon } from '@hugeicons/react-pro';
-import SearchTextArea from '../../SearchTextArea';
-import { MdSearch, MdTune } from 'react-icons/md';
-import { useTheme } from '@emotion/react';
+// import { Home01Icon } from '@hugeicons/react-pro';
+// import SearchTextArea from '../../SearchTextArea';
+// import { MdSearch, MdTune } from 'react-icons/md';
+// import { useTheme } from '@emotion/react';
 
 
 
@@ -122,7 +122,7 @@ export default function NavMenu() {
 
             <Tooltip title="Class" enterDelay={1000} placement="bottom-end">
                 <Tab to="/class" component={Link} sx={{minWidth:70}} icon={<UilBagAlt />} aria-label="person" />
-            </Tooltip> */}
+            </Tooltip>
 
 
             {/* UilBagAlt */}

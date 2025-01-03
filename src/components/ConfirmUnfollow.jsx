@@ -1,5 +1,5 @@
-import { MenuItem, Menu, Button } from "@mui/material"
-import { UserRoundX } from "lucide-react"
+import { MenuItem, Menu, Button, ListItemIcon } from "@mui/material"
+import { Star, UserRoundX } from "lucide-react"
 
 
 
@@ -46,12 +46,27 @@ export const ConfirmUnfollow = ({unfollowState, handleUnfollowClose, openUnfollo
     >
     <MenuItem  
     // onClick={handleUnfollowClose}
+    disableRipple
+    // onClick={performUnfollow}
+    >
+          <ListItemIcon>
+            <Star style={{marginRight:4, color:"royalblue"}} size={16} strokeWidth={3} />
+          </ListItemIcon>
+        {/* <Button color="primary" variant="contained" size="small" sx={{borderRadius:3, textTransform:"capitalize"}}> */}
+            Add favorate (0/100)
+        {/* </Button> */}
+    </MenuItem>
+    <MenuItem  
+    // onClick={handleUnfollowClose}
+    disableRipple
     onClick={performUnfollow}
     >
-        <Button color="error" variant="contained" size="small" sx={{borderRadius:3, textTransform:"capitalize"}}>
-            <UserRoundX style={{marginRight:4}} size={16} strokeWidth={3} />
+      <ListItemIcon>
+            <UserRoundX style={{marginRight:4, color:"#d32f2f"}} size={16} strokeWidth={3} />
+      </ListItemIcon>
+        {/* <Button color="error" variant="contained" size="small" sx={{borderRadius:3, textTransform:"capitalize"}}> */}
             {unfollowMessage}
-        </Button>
+        {/* </Button> */}
     </MenuItem>
     
     </Menu>

@@ -3,7 +3,9 @@ import PeopleCard from "../../../components/conent/rightMenu/PeopleCard";
 import { useContext, useEffect, useState } from "react";
 import PostContext from "../../../PostContext";
 import { MdOutlineImage, MdOutlineSettings } from "react-icons/md";
-import { IoMdPricetags } from "react-icons/io";
+import { IoMdAddCircleOutline, IoMdPricetags } from "react-icons/io";
+import styled from "styled-components";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 export default function PostInput() {

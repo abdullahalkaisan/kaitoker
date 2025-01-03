@@ -13,13 +13,14 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { useContext, useState } from 'react';
 import { Avatar, CardActionArea, Chip, Tooltip, Typography } from '@mui/material';
 import { ArrowLeft, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const steps = ['Name', 'Profession', 'Skills', 'Category', 'Country'];
 
 export default function HorizontalStepperWithError() {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-
+  const navigate = useNavigate();
   const {user, createAccount_mongo,loginMongo, createUserOnMongo,isCreatingOnMongo_loading  } = useContext(AuthContext);
 
   const isStepSkipped = (step) => {
@@ -41,12 +42,14 @@ export default function HorizontalStepperWithError() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+
+
   const handleSubmit = () => {
     if (createAccount_mongo?.fullName && createAccount_mongo?.profession && createAccount_mongo?.skills?.length === 5 && createAccount_mongo?.category && createAccount_mongo?.country) {
-      console.log("submitting");
-      console.log(createAccount_mongo);
+      // console.log("submitting");
+      // console.log(createAccount_mongo);
       createUserOnMongo(createAccount_mongo);
-
+      navigate("/")
         // console.log(user);
         
 
@@ -169,7 +172,7 @@ export default function HorizontalStepperWithError() {
 
             <Button
               variant='contained' sx={{ borderRadius: 3, mr: 1 }}
-              onClick={handleSubmit}>Create Account</Button>
+              onClick={handleSubmit}>{isCreatingOnMongo_loading ? "Creating..." :"Create Account"} </Button>
           </Box>
         </>
       ) : (
