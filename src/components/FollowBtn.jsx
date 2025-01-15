@@ -130,8 +130,11 @@ const FollowButton = ({currentUserId, targetUserId }) => {
   return (
 
     <>
-    {isLoadingFetch ? <Skeleton variant="circular" width={24} height={24} /> : 
-  
+    {/* {isLoadingFetch ? <Skeleton variant="circular" width={24} height={24} /> :  */}
+    {isLoadingFetch ? <>
+            <IconButton color="primary">
+              <CirclePlus/>
+            </IconButton></> : 
           <>
         {relationship.isFriend ? (
           <>

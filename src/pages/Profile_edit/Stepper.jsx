@@ -15,7 +15,7 @@ import { Avatar, CardActionArea, Chip, Tooltip, Typography } from '@mui/material
 import { ArrowLeft, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const steps = ['Name', 'Profession', 'Skills', 'Category', 'Country'];
+const steps = ['Name', 'Profession', 'Category', 'Skills', 'Country'];
 
 export default function HorizontalStepperWithError() {
   const [activeStep, setActiveStep] = useState(0);
@@ -60,11 +60,11 @@ export default function HorizontalStepperWithError() {
     if (activeStep === 0) {
       return <Name_step />;
     } else if (activeStep === 1) {
-      return <Profession_step />;
+      return <Profession_step/>;
     } else if (activeStep === 2) {
-      return <Skills_step />;
+      return <Category_step/>;
     } else if (activeStep === 3) {
-      return <Category_step />;
+      return < Skills_step />;
     } else if (activeStep === 4) {
       return <Country_step />;
     }
@@ -73,9 +73,9 @@ export default function HorizontalStepperWithError() {
   const isNextDisabled = () => {
     if (activeStep === 1 && !createAccount_mongo?.profession) {
       return true;
-    } else if (activeStep === 2 && createAccount_mongo?.skills?.length !== 5) {
+    } else if (activeStep === 2 && !createAccount_mongo?.category) {
       return true;
-    } else if (activeStep === 3 && !createAccount_mongo?.category) {
+    } else if (activeStep === 3 && createAccount_mongo?.skills?.length !== 5) {
       return true;
     } else if (activeStep === 4 && !createAccount_mongo?.country) {
       return true;

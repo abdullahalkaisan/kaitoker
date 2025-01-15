@@ -78,8 +78,11 @@ function App() {
           }
       }
     }
+    if(!user){
+      navigate('/');
+    }
 
-}, [user_mongo, navigate]);
+}, [user_mongo, user, ischeckUserExist_loading, navigate]);
 
 
 
