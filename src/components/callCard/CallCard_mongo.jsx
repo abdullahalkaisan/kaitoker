@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Card, CardActionArea, IconButton, Stack, Tooltip, Typography } from "@mui/material";
-import {  CircleCheck, CirclePlus, Handshake, Info, MapIcon, MessageCircle, VerifiedIcon } from "lucide-react";
+import {  ChevronDown, CircleCheck, CirclePlus, Handshake, Info, MapIcon, MessageCircle, VerifiedIcon } from "lucide-react";
 import { IoMdInfinite } from "react-icons/io";
 import { Link } from "react-router-dom";
 import PeopleCard from "../conent/rightMenu/PeopleCard";
@@ -226,14 +226,31 @@ useEffect(()=>{
             <Typography
               // sx={{ color: `${isDark ? "#c3c3c3" :"#444" }` }}
               // sx={{ color: `${isDark ? "#c3c3c3" :"#1976d2" }` }}
-
               // textAlign={"center"}
+
+              sx={{
+                bgcolor:"#4169e120", 
+                "&:hover":{bgcolor:"#4169e140"},
+                transition:"0.3s",
+                color:"royalblue", 
+                width:"fit-content", 
+                borderRadius:2, 
+                pl:1, pr:0.5, mt:-1, mb:2,
+                cursor:"pointer",
+                userSelect:"none",  
+                display:"flex",
+                alignItems:"center",
+              }}
+
+
               variant="subtitle1"
-              mt={-2}
+              // mt={-2}
               p={0}
               gutterBottom
             >
               {profession}
+
+              <ChevronDown size={20} />
             </Typography>
             <Typography
               sx={{ color: "#777", display: "flex", alignItems: "center" }}
@@ -249,11 +266,15 @@ useEffect(()=>{
                 <Box sx={{ display: "flex", alignItems: "center", px: 1 }}>
                   <img
                     style={{
-                      borderRadius: 3,
-                      border: "1px solid #77777750",
+                      // borderRadius: 3,
+                      // border: "1px solid #77777750",
                       boxShadow: "10px 10px 10px solid black",
+                      height:16,
+                      borderRadius:5,
+                      cursor:"pointer"
                     }}
-                    src={`https://flagcdn.com/w20/${country.code.toLowerCase()}.png`}
+                    // src={`https://flagcdn.com/w20/${country.code.toLowerCase()}.png`}
+                    src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${country.code.toUpperCase()}.svg`}
                   />
                 </Box>
               </Tooltip>
